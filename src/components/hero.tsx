@@ -1,6 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import {
+  ArrowRightCircleIcon,
+  EnvelopeIcon,
+} from '@heroicons/react/24/outline';
 
 type Props = {
   surtitle?: string | null;
@@ -28,11 +32,13 @@ export default function Hero({ surtitle, title, subtitle }: Props) {
             {subtitle}
           </h2>
           <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 ">
-            <button className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-nunito font-bold text-lg px-6 py-2 mt-6 rounded-lg">
+            <button className="flex bg-primary-500 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-500 hover:border-primary-800 text-white font-montserrat font-light text-sm px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
               En savoir plus
+              <ArrowRightCircleIcon className="h-5 w-5 ml-2 inline-block" />
             </button>
-            <button className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-nunito font-bold text-lg px-6 py-2 mt-6 rounded-lg">
-              Un projet ? Venez en parler ☕️
+            <button className=" flex bg-almost-white dark:bg-transparent hover:bg-primary-500 dark:hover:bg-primary-500 border-solid border-2 border-primary-500 text-primary-500  hover:border-primary-500 dark:hover:border-primary-500 hover:text-almost-white font-montserrat font-light text-sm px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
+              Un projet ? Venez en parler
+              <EnvelopeIcon className="h-5 w-5 ml-2 inline-block i" />
             </button>
           </div>
         </div>
