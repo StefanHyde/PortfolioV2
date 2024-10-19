@@ -10,9 +10,11 @@ type Props = {
   surtitle?: string | null;
   title: string;
   subtitle?: string | null;
+  CTA?: string | null;
+  CTA2?: string | null;
 };
 
-export default function Hero({ surtitle, title, subtitle }: Props) {
+export default function Hero({ surtitle, title, subtitle, CTA, CTA2 }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
@@ -32,12 +34,12 @@ export default function Hero({ surtitle, title, subtitle }: Props) {
             {subtitle}
           </h2>
           <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 ">
-            <button className="flex bg-primary-500 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-500 hover:border-primary-800 text-white font-montserrat font-light text-sm px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
-              En savoir plus
+            <button className="flex bg-primary-500 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-500 hover:border-primary-800 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
+              {CTA}
               <ArrowRightCircleIcon className="h-5 w-5 ml-2 inline-block" />
             </button>
-            <button className=" flex bg-almost-white dark:bg-transparent hover:bg-primary-500 dark:hover:bg-primary-500 border-solid border-2 border-primary-500 text-primary-500  hover:border-primary-500 dark:hover:border-primary-500 hover:text-almost-white font-montserrat font-light text-sm px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
-              Un projet ? Venez en parler
+            <button className=" flex bg-almost-white dark:bg-transparent hover:bg-primary-500 dark:hover:bg-primary-500 border-solid border-2 border-primary-500 text-primary-500  hover:border-primary-500 dark:hover:border-primary-500 hover:text-almost-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
+              {CTA2}
               <EnvelopeIcon className="h-5 w-5 ml-2 inline-block i" />
             </button>
           </div>

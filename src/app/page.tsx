@@ -13,6 +13,8 @@ export default function Home() {
           surtitle="developpé par:"
           title="Stefan Heyd"
           subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          CTA="En savoir plus"
+          CTA2="Un projet ? Venez en parler"
         />
       </div>
     </main>
