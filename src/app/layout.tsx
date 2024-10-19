@@ -1,5 +1,8 @@
 import { Nunito_Sans, Montserrat } from 'next/font/google';
 
+import Header from '../components/header';
+import ThemeContextProvider from '@/context/themeContext';
+
 import type { Metadata } from 'next';
 import './globals.css';
 
@@ -27,7 +30,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${nunito.variable} ${montserrat.variable}`}>
-      <body>{children}</body>
+      <body>
+        <ThemeContextProvider>
+          <Header />
+          {children}
+        </ThemeContextProvider>
+      </body>
     </html>
   );
 }
