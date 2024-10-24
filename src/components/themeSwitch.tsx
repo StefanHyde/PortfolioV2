@@ -9,9 +9,9 @@ export default function ThemeSwitch() {
   return (
     <button onClick={toggleTheme}>
       {theme === 'light' ? (
-        <SunIcon className="w-6 h-6 hover:text-primary-500 ease-in-out duration-300 " />
+        <SunIcon className="w-8 h-8 hover:text-primary-500 ease-in-out duration-300 " />
       ) : (
-        <MoonIcon className="w-6 h-6 dark:text-almost-white hover:dark:text-primary-500 ease-in-out duration-300" />
+        <MoonIcon className="w-8 h-8 dark:text-almost-white hover:dark:text-primary-500 ease-in-out duration-300" />
       )}
     </button>
   );
