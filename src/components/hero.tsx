@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import {
   ArrowRightCircleIcon,
   EnvelopeIcon,
@@ -9,11 +10,21 @@ type Props = {
   surtitle?: string | null;
   title: string;
   subtitle?: string | null;
-  CTA?: string | null;
-  CTA2?: string | null;
+  CTA?: { text: string; url: string } | null;
+  CTA2?: { text: string; url: string } | null;
+  ctaMailto?: { text: string; url: string } | null;
+  ctaResume?: { text: string; url: string } | null;
 };
 
-export default function Hero({ surtitle, title, subtitle, CTA, CTA2 }: Props) {
+export default function Hero({
+  surtitle,
+  title,
+  subtitle,
+  CTA,
+  CTA2,
+  ctaMailto,
+  ctaResume,
+}: Props) {
   return (
     <div className="relative mx-auto flex max-w-2xl flex-col items-center mt-8">
       <div className="bg-gradient-to-r from-primary-500 to-secondary-500 inline-block text-transparent bg-clip-text">
@@ -28,14 +39,38 @@ export default function Hero({ surtitle, title, subtitle, CTA, CTA2 }: Props) {
           {subtitle}
         </h2>
         <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 ">
-          <button className="flex bg-primary-500 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-500 hover:border-primary-800 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
-            {CTA}
-            <ArrowRightCircleIcon className="h-5 w-5 ml-2 inline-block" />
-          </button>
-          <button className=" flex bg-almost-white dark:bg-transparent hover:bg-primary-500 dark:hover:bg-primary-500 border-solid border-2 border-primary-500 text-primary-500  hover:border-primary-500 dark:hover:border-primary-500 hover:text-almost-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
-            {CTA2}
-            <EnvelopeIcon className="h-5 w-5 ml-2 inline-block i" />
-          </button>
+          {CTA && (
+            <Link href={CTA.url}>
+              <button className="flex bg-primary-500 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-500 hover:border-primary-800 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
+                {CTA.text}
+                <ArrowRightCircleIcon className="h-5 w-5 ml-2 inline-block" />
+              </button>
+            </Link>
+          )}
+          {CTA2 && (
+            <Link href={CTA2.url}>
+              <button className=" flex bg-almost-white dark:bg-transparent hover:bg-primary-500 dark:hover:bg-primary-500 border-solid border-2 border-primary-500 text-primary-500  hover:border-primary-500 dark:hover:border-primary-500 hover:text-almost-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
+                {CTA2.text}
+                <EnvelopeIcon className="h-5 w-5 ml-2 inline-block i" />
+              </button>
+            </Link>
+          )}
+          {ctaMailto && (
+            <a href={`mailto:${ctaMailto.url}`}>
+              <button className="flex bg-primary-500 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-500 hover:border-primary-800 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
+                {ctaMailto.text}
+                <EnvelopeIcon className="h-5 w-5 ml-2 inline-block" />
+              </button>
+            </a>
+          )}
+          {ctaResume && (
+            <a href={ctaResume.url}>
+              <button className="flex bg-primary-500 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-500 hover:border-primary-800 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
+                {ctaResume.text}
+                <ArrowRightCircleIcon className="h-5 w-5 ml-2 inline-block" />
+              </button>
+            </a>
+          )}
         </div>
       </div>
     </div>
