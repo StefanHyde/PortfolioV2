@@ -15,11 +15,6 @@ export default function Home() {
           subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           CTA={{ text: 'En savoir plus', url: '/' }}
           CTA2={{ text: 'Un projet ? Venez en parler', url: '/' }}
-          ctaMailto={{ text: 'Me contacter', url: 'contact@stefanheyd.com' }}
-          ctaResume={{
-            text: 'Télécharger mon CV',
-            url: '/assets/CvHeydStephane.pdf',
-          }}
         />
       </div>
     </main>
