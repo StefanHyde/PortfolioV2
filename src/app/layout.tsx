@@ -6,13 +6,13 @@ import ThemeContextProvider from '@/context/themeContext';
 import type { Metadata } from 'next';
 import './globals.css';
 
-export const nunito = Nunito_Sans({
+const nunito = Nunito_Sans({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-nunito',
 });
 
-export const montserrat = Montserrat({
+const montserrat = Montserrat({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-montserrat',
