@@ -4,6 +4,7 @@ import Header from '../components/header';
 import ThemeContextProvider from '@/context/themeContext';
 
 import type { Metadata } from 'next';
+import type { Viewport } from 'next';
 import './globals.css';
 
 const nunito = Nunito_Sans({
@@ -21,6 +22,9 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: 'Developped by Stefan Heyd',
   description: 'My new portfolio',
+};
+export const viewport: Viewport = {
+  themeColor: '#020617',
 };
 
 export default function RootLayout({
