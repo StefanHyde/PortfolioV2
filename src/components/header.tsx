@@ -4,9 +4,8 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import ThemeSwitch from './themeSwitch';
 import { links } from '../../lib/data';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-
-//import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import { Bars3Icon } from '@heroicons/react/24/outline';
 
 export default function Header() {
   const pathname = usePathname();
@@ -18,17 +17,39 @@ export default function Header() {
         <Image src="/images/logo.png" alt="logo" width={40} height={40} />
       </Link>
       <nav className="flex">
-        <Bars3Icon className="md:hidden h-10 w-10 text-dark-800 dark:text-almost-white" />
-        <XMarkIcon className="md:hidden h-10 w-10 text-dark-800 dark:text-almost-white" />
-        <ul className="hidden md:flex gap-8">
+        <div className="mobile-menu    md:hidden">
+          <Menu>
+            <MenuButton className="inline-flex items-center">
+              <Bars3Icon className=" h-10 w-10 text-dark-800 dark:text-almost-white" />
+            </MenuButton>
+            <MenuItems
+              transition
+              anchor="bottom end"
+              className=" z-50 w-72  h-auto   [--anchor-gap:16px] backdrop-blur-md p-8 ml-6 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md  flex flex-col justify-center gap-10  transition duration-300 ease-in-out focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+            >
+              {links.map((link) => (
+                <MenuItem key={link.hash}>
+                  <Link
+                    href={link.url}
+                    className="text-lg font-nunito text-primary-500 dark:text-almost-white hover:text-primary-800 dark:hover:text-primary-800 ease-in-out duration-300"
+                  >
+                    {link.name}
+                  </Link>
+                </MenuItem>
+              ))}
+            </MenuItems>
+          </Menu>
+        </div>
+
+        <ul className="hidden md:flex gap-16">
           {links.map((link) => (
-            <li key={link.hash} className="mr-4">
+            <li key={link.hash}>
               {link.hash === '#home' && isHomePage ? (
                 <span className="hidden">{link.name}</span>
               ) : (
                 <Link
                   href={link.url}
-                  className="text-lg font-nunito text-primary-500 hover:text-primary-800"
+                  className="text-lg font-nunito text-primary-500 dark:text-almost-white hover:text-primary-800 dark:hover:text-primary-800 ease-in-out duration-300"
                 >
                   {link.name}
                 </Link>
