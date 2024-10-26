@@ -1,6 +1,7 @@
 import { Nunito_Sans, Montserrat } from 'next/font/google';
 
-import Header from '../components/header';
+import Header from '@/components/header';
+import Footer from '@/components/footer';
 import ThemeContextProvider from '@/context/themeContext';
 
 import type { Metadata } from 'next';
@@ -38,6 +39,7 @@ export default function RootLayout({
         <ThemeContextProvider>
           <Header />
           {children}
+          <Footer />
         </ThemeContextProvider>
       </body>
     </html>
