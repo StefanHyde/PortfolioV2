@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import ThemeSwitch from './themeSwitch';
 import { links } from '../../lib/data';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
-import { Bars3Icon } from '@heroicons/react/24/outline';
+import { HiBars3 } from 'react-icons/hi2';
 
 export default function Header() {
   const pathname = usePathname();
@@ -20,7 +20,7 @@ export default function Header() {
         <div className="mobile-menu    md:hidden">
           <Menu>
             <MenuButton className="inline-flex items-center">
-              <Bars3Icon className=" h-10 w-10 text-dark-800 dark:text-almost-white" />
+              <HiBars3 className=" h-10 w-10 text-dark-800 dark:text-almost-white" />
             </MenuButton>
             <MenuItems
               transition
