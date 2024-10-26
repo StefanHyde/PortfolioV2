@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
 import ThemeSwitch from './themeSwitch';
 import { links } from '../../lib/data';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
@@ -10,9 +11,27 @@ import { HiBars3 } from 'react-icons/hi2';
 export default function Header() {
   const pathname = usePathname();
   const isHomePage = pathname === '/';
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    //Check if the user has scrolled to change the header background
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <header className=" fixed z-50 h-auto w-full flex items-center justify-between p-4 md:p-6 ">
+    <header
+      className={`fixed z-50 h-auto w-full flex items-center justify-between p-4 ${scrolled ? 'bg-almost-white dark:bg-slate-950' : 'bg-transparent'}`}
+    >
       <Link href="/" className="hidden md:flex">
         <Image src="/images/logo.png" alt="logo" width={40} height={40} />
       </Link>
