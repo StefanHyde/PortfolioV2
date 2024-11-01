@@ -1,4 +1,4 @@
-import { SiGithub, SiLinkedin, SiX } from 'react-icons/si';
+import { socials } from '../../lib/data';
 
 export default function Footer() {
   return (
@@ -10,27 +10,16 @@ export default function Footer() {
         //TODO: Add navigation and legal / contact links
       }
       <div className="container flex justify-center items-center md:justify-end gap-8 md:gap-4 mx-auto">
-        <a
-          href="https://github.com/DrHyde01"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <SiGithub className="h-6 md:h-4 w-6 md:w-4 hover:text-primary-200 ease-in-out duration-300" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/stefan-heyd/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <SiLinkedin className="h-6 md:h-4 w-6 md:w-4 hover:text-primary-200 ease-in-out duration-300" />
-        </a>
-        <a
-          href="https://x.com/DrHyde01"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <SiX className="h-6 md:h-4 w-6 md:w-4 hover:text-primary-200 ease-in-out duration-300" />
-        </a>
+        {socials.map((social) => (
+          <a
+            key={social.name}
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <social.icon.type className="h-6 md:h-4 w-6 md:w-4 hover:text-primary-200 ease-in-out duration-300" />
+          </a>
+        ))}
       </div>
     </footer>
   );
