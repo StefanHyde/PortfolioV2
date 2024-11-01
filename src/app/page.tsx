@@ -1,5 +1,5 @@
 import Hero from '../components/hero';
-
+import Intro from '@/components/intro';
 export default function Home() {
   return (
     <main>
@@ -13,9 +13,15 @@ export default function Home() {
           surtitle="developpé par:"
           title="Stefan Heyd"
           subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          CTA={{ text: 'En savoir plus', url: '/' }}
+          CTA={{ text: 'En savoir plus', url: '#introduction' }}
           CTA2={{ text: 'Un projet ? Venez en parler', url: '/' }}
         />
+      </div>
+      <div
+        id="introduction"
+        className="mx-auto flex items-center justify-center h-screen w-full max-w-7xl p-3 md:p-12"
+      >
+        <Intro />
       </div>
     </main>
   );

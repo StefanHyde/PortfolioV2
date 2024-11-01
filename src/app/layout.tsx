@@ -34,7 +34,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${nunito.variable} ${montserrat.variable}`}>
+    <html
+      lang="en"
+      className={`${nunito.variable} ${montserrat.variable} scroll-smooth`}
+    >
       <body>
         <ThemeContextProvider>
           <Header />

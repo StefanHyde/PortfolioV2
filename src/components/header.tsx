@@ -30,7 +30,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed z-50 h-auto w-full flex items-center justify-between p-4 ${scrolled ? 'bg-almost-white dark:bg-slate-950' : 'bg-transparent'}`}
+      className={`fixed z-50 h-auto w-full flex items-center justify-between py-2 px-4 ${scrolled ? 'bg-almost-white dark:bg-slate-950' : 'bg-transparent'}`}
     >
       <Link href="/" className="hidden md:flex">
         <Image src="/images/logo.png" alt="logo" width={40} height={40} />
