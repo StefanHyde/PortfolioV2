@@ -1,5 +1,6 @@
 import Hero from '../components/hero';
 import Intro from '@/components/intro';
+
 export default function Home() {
   return (
     <main>
@@ -13,7 +14,7 @@ export default function Home() {
           surtitle="developpé par:"
           title="Stefan Heyd"
           subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          CTA={{ text: 'En savoir plus', url: '#introduction' }}
+          CTA={{ text: 'En savoir plus', url: '#introduction ' }}
           CTA2={{ text: 'Un projet ? Venez en parler', url: '/' }}
         />
       </div>
