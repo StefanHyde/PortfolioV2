@@ -20,7 +20,7 @@ export default function Home() {
       </div>
       <div
         id="introduction"
-        className="mx-auto flex items-center justify-center h-screen w-full max-w-7xl p-3 md:p-12"
+        className="mx-auto flex items-center justify-center h-screen w-full max-w-7xl p-6 md:p-12"
       >
         <Intro />
       </div>
