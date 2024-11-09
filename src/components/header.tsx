@@ -81,7 +81,7 @@ export default function Header() {
       <div className="flex items-center gap-6">
         <ThemeSwitch />
         <Link href="/">
-          <button className="flex bg-primary-500 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-500 hover:border-primary-800 text-white font-montserrat font-light text-sm text-left p-2  rounded-md ease-in-out duration-300">
+          <button className="flex bg-primary-500 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-solid border-2 border-primary-500 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 text-white font-montserrat font-light text-sm text-left p-2  rounded-md ease-in-out duration-300">
             Me contacter
           </button>
         </Link>
