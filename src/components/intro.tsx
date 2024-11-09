@@ -1,10 +1,8 @@
 'use client';
 import React from 'react';
-//import useEmblaCarousel from 'embla-carousel-react';
+import { HiOutlineArrowRightCircle } from 'react-icons/hi2';
 
 export default function Intro() {
-  //const [emblaRef] = useEmblaCarousel({ loop: false });
-
   return (
     <div className="flex flex-col items-center justify-center h-full w-full ">
       <div className="justify-start mb-12  text-dark-800 dark:text-almost-white md:w-2/3">
@@ -18,14 +16,15 @@ export default function Intro() {
             solution
           </span>
         </h2>
-        <p className="text-lg font-light">
+        <p className="text-normal md:text-lg font-light">
           Que vous débutez votre aventure sur le web ou que vous êtes déjà
           présent sur la toile, je vous accompagne dans la réalisation de vos
           projets. Je vous propose des solutions adaptées à vos besoins et à
           votre budget.
         </p>
       </div>
-      <div className="md:grid grid-rows-1 grid-cols-1 md:grid-cols-3 md:grid-rows-3 grid-flow-col gap-4  md:w-full xl:w-3/4 font-montserrat  text-dark-800 dark:text-almost-white ">
+
+      <div className="hidden md:grid md:grid-rows-3 grid-flow-col gap-4  md:w-full xl:w-3/4 font-montserrat  text-dark-800 dark:text-almost-white ">
         <div className="row-span-3 flex flex-col backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-gradient-to-br from-primary-50 dark:from-primary-950 to-transparent shadow-md">
           <h3 className="text-2xl font-semibold mb-4">
             Site web<span className="text-4xl ml-3">🧑‍💻</span>
@@ -70,6 +69,42 @@ export default function Intro() {
           </p>
         </div>
       </div>
+
+      {
+        //Alternative mobile grid
+      }
+      <div className="md:hidden grid grid-rows-3 grid-cols-2 gap-4 font-montserrat  text-dark-800 dark:text-almost-white ">
+        <div className="row-span-1 w-full flex flex-col backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-gradient-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md">
+          <h3 className="flex flex-col items-center text-center text-xl font-semibold mb-4">
+            Site web<span className="text-3xl mt-4">🧑‍💻</span>
+          </h3>
+        </div>
+        <div className="row-span-1 flex w-full flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-gradient-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md">
+          <h3 className="flex flex-col items-center text-center text-xl font-semibold mb-4">
+            Application<span className="text-3xl mt-4">⚙️</span>
+          </h3>
+        </div>
+        <div className="row-span-1 w-full flex flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-gradient-to-r from-primary-50 dark:from-primary-950 to-transparent shadow-md">
+          <h3 className="flex flex-col items-center text-center text-xl font-semibold mb-4">
+            Döner kebab<span className="text-3xl mt-4">🥙</span>
+          </h3>
+        </div>
+        <div className="row-span-1 w-full flex flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-gradient-to-l from-primary-50 dark:from-primary-950 to-transparent shadow-md">
+          <h3 className="flex flex-col items-center text-center text-xl font-semibold mb-4">
+            Maraboutage<span className="text-3xl mt-4">🧙</span>
+          </h3>
+        </div>
+        <div className="row-span-1 col-span-2 place-self-center w-1/2 flex flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-gradient-to-t from-primary-50 dark:from-primary-950 to-transparent shadow-md">
+          <h3 className="flex flex-col items-center text-center text-xl font-semibold mb-4">
+            UX / UI<span className="text-3xl mt-4">🌈</span>
+          </h3>
+        </div>
+      </div>
+
+      <button className="flex bg-primary-500 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-solid border-2 border-primary-500 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-10 rounded-md ease-in-out duration-300">
+        Découvrez mes services
+        <HiOutlineArrowRightCircle className="h-5 w-5 ml-2 inline-block" />
+      </button>
     </div>
   );
 }
