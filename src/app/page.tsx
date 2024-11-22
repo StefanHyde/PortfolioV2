@@ -1,5 +1,6 @@
 import Hero from '../components/hero';
 import Intro from '@/components/intro';
+import ContactForm from '@/components/contactForm';
 
 export default function Home() {
   return (
@@ -23,6 +24,12 @@ export default function Home() {
         className="mx-auto flex items-center justify-center  w-full max-w-7xl p-6 mb-12 md:p-12"
       >
         <Intro />
+      </div>
+      <div
+        id="contact"
+        className="mx-auto flex items-center justify-center  w-full max-w-7xl p-6 md:p-12"
+      >
+        <ContactForm />
       </div>
     </main>
   );
