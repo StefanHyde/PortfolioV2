@@ -1,29 +1,56 @@
 'use client';
 
-import React, { useState } from 'react';
-import { useForm, SubmitHandler, Controller } from 'react-hook-form';
+import { useState } from 'react';
+import { useForm, Controller } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
 import Link from 'next/link';
 
-type Inputs = {
+type FormInputs = {
   name: string;
-  email: string;
+  senderEmail: string;
   message: string;
   rgpd: boolean;
 };
 
 export default function ContactForm() {
+  const [isLoading, setIsLoading] = useState(false);
+
   const {
     register,
     handleSubmit,
     reset,
     control,
+    formState,
     formState: { errors },
-  } = useForm<Inputs>();
+    trigger,
+  } = useForm<FormInputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = async (data) => console.log(data);
+  const { isSubmitting } = formState;
 
-  const notify = () => toast('Message envoyé');
+  const onSubmit = async (formData: FormInputs) => {
+    if (!isLoading) {
+      setIsLoading(true);
+      const response = await fetch('/api/sendMail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+
+        body: JSON.stringify({
+          name: formData.name,
+          senderEmail: formData.senderEmail,
+          message: formData.message,
+        }),
+      });
+      if (response.ok) {
+        reset();
+        toast.success('Votre message a bien été envoyé');
+      } else {
+        toast.error("Une erreur est survenue lors de l'envoi de votre message");
+      }
+      setIsLoading(false);
+    }
+  };
 
   return (
     <>
@@ -42,6 +69,7 @@ export default function ContactForm() {
                 type="text"
                 className="block w-full mt-1 p-2 border border-dark-300 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-primary-500 focus:shadow-md transition ease-in-out duration-200"
                 {...register('name', { required: true })}
+                onBlur={() => trigger('name')}
               />
               {errors.name && (
                 <p className="text-primary-500 text-xs pt-1">
@@ -54,11 +82,12 @@ export default function ContactForm() {
                 Votre adresse email
               </span>
               <input
-                type="text"
+                type="email"
                 className="block w-full mt-1 p-2 border border-dark-300 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-primary-500 focus:shadow-md transition ease-in-out duration-200"
-                {...register('email', { required: true })}
+                {...register('senderEmail', { required: true })}
+                onBlur={() => trigger('senderEmail')}
               />
-              {errors.name && (
+              {errors.senderEmail && (
                 <p className="text-primary-500 text-xs pt-1">
                   Veuillez renseigner une adresse email valide
                 </p>
@@ -72,8 +101,9 @@ export default function ContactForm() {
                 rows={6}
                 className="block w-full mt-1 p-2 border border-dark-300 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-primary-500 focus:shadow-md transition ease-in-out duration-200"
                 {...register('message', { required: true })}
+                onBlur={() => trigger('message')}
               />
-              {errors.name && (
+              {errors.message && (
                 <p className="text-primary-500 text-xs pt-1">
                   Veuillez renseigner un message
                 </p>
@@ -104,14 +134,30 @@ export default function ContactForm() {
               )}
             />
 
-            <button
-              type="submit"
-              className="flex bg-primary-500 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-500 hover:border-primary-800 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300"
-              onClick={notify}
-            >
-              Envoyer
-            </button>
-            <Toaster />
+            {!isLoading && (
+              <button
+                disabled={!formState.isValid || isSubmitting}
+                type="submit"
+                className={`flex bg-primary-500 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-500 hover:border-primary-800 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300${!formState.isValid || isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+              >
+                Envoyer
+              </button>
+            )}
+            <Toaster
+              toastOptions={{
+                success: {
+                  style: {
+                    color: '#fff',
+                    background: '#2BBB6E',
+                  },
+                },
+                error: {
+                  style: {
+                    background: '#D5474C',
+                  },
+                },
+              }}
+            />
           </form>
         </div>
       </div>
