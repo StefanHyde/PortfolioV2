@@ -16,7 +16,7 @@ export default function Intro() {
             solution
           </span>
         </h2>
-        <p className="text-normal md:text-lg font-light">
+        <p className="text-normal md:text-lg font-montserrat font-light mt-10">
           Que vous débutez votre aventure sur le web ou que vous êtes déjà
           présent sur la toile, je vous accompagne dans la réalisation de vos
           projets. Je vous propose des solutions adaptées à vos besoins et à

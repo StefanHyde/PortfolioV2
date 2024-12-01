@@ -1,5 +1,5 @@
 import { createElement } from 'react';
-import { SiGithub, SiLinkedin, SiX } from 'react-icons/si';
+import { SiGithub, SiLinkedin, SiX, SiBluesky } from 'react-icons/si';
 
 export const links = [
   {
@@ -39,5 +39,10 @@ export const socials = [
     name: 'Twitter',
     url: 'https://x.com/DrHyde01',
     icon: createElement(SiX),
+  },
+  {
+    name: 'BlueSky',
+    url: 'https://bsky.app/profile/hydev.bsky.social',
+    icon: createElement(SiBluesky),
   },
 ] as const;
