@@ -43,8 +43,8 @@ export default function ContactForm() {
         }),
       });
       if (response.ok) {
-        reset();
         toast.success('Votre message a bien été envoyé');
+        reset();
       } else {
         toast.error("Une erreur est survenue lors de l'envoi de votre message");
       }

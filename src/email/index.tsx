@@ -12,12 +12,12 @@ import {
 } from '@react-email/components';
 
 type EmailProps = {
-  sender: string;
+  name: string;
   senderMail: string;
   message: string;
 };
 
-export default function Email({ sender, senderMail, message }: EmailProps) {
+export default function Email({ name, senderMail, message }: EmailProps) {
   return (
     <Html>
       <Head />
@@ -31,13 +31,13 @@ export default function Email({ sender, senderMail, message }: EmailProps) {
         fontWeight={500}
         fontStyle="normal"
       />
-      <Preview>Nouveau message de {sender}</Preview>
+      <Preview>Nouveau message de {name}</Preview>
 
       <Body>
         <Container>
           <Section>
             <Text>
-              <h1>Vous avez un nouveau message de {sender}</h1>
+              <h1>Vous avez un nouveau message de {name}</h1>
               <p>{message}</p>
             </Text>
             <Button href={`mailto:${senderMail}`}>Répondre</Button>
