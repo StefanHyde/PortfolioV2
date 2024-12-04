@@ -18,6 +18,7 @@ type EmailProps = {
 };
 
 export default function Email({ name, senderMail, message }: EmailProps) {
+  console.log(senderMail);
   return (
     <Html>
       <Head />

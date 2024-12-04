@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 type FormInputs = {
   name: string;
-  senderEmail: string;
+  senderMail: string;
   message: string;
   rgpd: boolean;
 };
@@ -38,7 +38,7 @@ export default function ContactForm() {
 
         body: JSON.stringify({
           name: formData.name,
-          senderEmail: formData.senderEmail,
+          senderMail: formData.senderMail,
           message: formData.message,
         }),
       });
@@ -84,10 +84,10 @@ export default function ContactForm() {
               <input
                 type="email"
                 className="block w-full mt-1 p-2 border border-dark-300 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-primary-500 focus:shadow-md transition ease-in-out duration-200"
-                {...register('senderEmail', { required: true })}
-                onBlur={() => trigger('senderEmail')}
+                {...register('senderMail', { required: true })}
+                onBlur={() => trigger('senderMail')}
               />
-              {errors.senderEmail && (
+              {errors.senderMail && (
                 <p className="text-primary-500 text-xs pt-1">
                   Veuillez renseigner une adresse email valide
                 </p>
