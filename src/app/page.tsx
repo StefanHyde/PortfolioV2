@@ -17,7 +17,7 @@ export default function Home() {
           title="Stefan Heyd"
           subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           CTA={{ text: 'En savoir plus', url: '#introduction ' }}
-          CTA2={{ text: 'Un projet ? Venez en parler', url: '/' }}
+          CTA2={{ text: 'Un projet ? Venez en parler', url: '#contact' }}
         />
       </div>
       <div

@@ -10,17 +10,17 @@ export const links = [
   {
     name: 'A propos',
     hash: '#about',
-    url: '/',
+    url: '/about',
   },
   {
-    name: 'Projets',
-    hash: '#projects',
-    url: '/',
+    name: 'Services',
+    hash: '#services',
+    url: '/products',
   },
   {
     name: 'Blog',
     hash: '#blog',
-    url: '/',
+    url: '/blog',
   },
 ] as const;
 
