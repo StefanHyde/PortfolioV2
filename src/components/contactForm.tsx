@@ -43,10 +43,14 @@ export default function ContactForm() {
         }),
       });
       if (response.ok) {
-        toast.success('Votre message a bien été envoyé');
+        toast.success(
+          'Votre message a bien été envoyé, je vous répondrai dans les plus brefs délais',
+        );
         reset();
       } else {
-        toast.error("Une erreur est survenue lors de l'envoi de votre message");
+        toast.error(
+          "Oups, une erreur est survenue lors de l'envoi de votre message",
+        );
       }
       setIsLoading(false);
     }
@@ -55,9 +59,14 @@ export default function ContactForm() {
   return (
     <>
       <div className="flex flex-col items-center justify-center h-full w-full ">
-        <h2 className="mb-6 text-2xl md:text-4xl font-montserrat font-semibold  text-dark-800 dark:text-almost-white ">
-          On se contacte ?
-        </h2>
+        <div className="">
+          <h2 className="mb-6 text-2xl md:text-4xl font-montserrat font-semibold  text-dark-800 dark:text-almost-white ">
+            Prenons{' '}
+            <span className="text-6xl md:text-7xl bg-gradient-to-r from-primary-500 to-secondary-500 inline-block text-transparent bg-clip-text">
+              contact
+            </span>{' '}
+          </h2>
+        </div>
 
         <div className="w-full p-6 lg:w-2/4">
           <form onSubmit={handleSubmit(onSubmit)} className="font-montserrat">
@@ -150,11 +159,13 @@ export default function ContactForm() {
                     color: '#fff',
                     background: '#2BBB6E',
                   },
+                  duration: 5000,
                 },
                 error: {
                   style: {
                     background: '#D5474C',
                   },
+                  duration: 5000,
                 },
               }}
             />
