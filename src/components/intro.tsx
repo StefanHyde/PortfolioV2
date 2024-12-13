@@ -1,20 +1,48 @@
 'use client';
 import React from 'react';
+import { motion } from 'framer-motion';
+import useAnimateOnView from '../hooks/useAnimateOnView';
+
 import { HiOutlineArrowRightCircle } from 'react-icons/hi2';
 
 export default function Intro() {
+  const { ref: refFirst, controls: controlsFirst } = useAnimateOnView();
+  const { ref: refSecond, controls: controlsSecond } = useAnimateOnView();
   return (
     <div className="flex flex-col items-center justify-center h-full w-full ">
       <div className="justify-start mb-12  text-dark-800 dark:text-almost-white md:w-2/3">
         <h2 className="mb-6 text-4xl md:text-5xl font-montserrat font-semibold">
           Quelque soit vos{' '}
-          <span className="text-6xl md:text-7xl bg-gradient-to-r from-primary-800 to-primary-400 inline-block text-transparent bg-clip-text text-primary-500">
+          <motion.div
+            ref={refFirst}
+            style={{ overflow: 'hidden' }}
+            className="text-6xl md:text-7xl bg-gradient-to-r from-primary-800 to-primary-400 inline-block text-transparent bg-clip-text text-primary-500"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate={controlsFirst}
+            viewport={{ once: true }}
+            transition={{ duration: 0.25, delay: 0.5 }}
+          >
             ambtions
-          </span>{' '}
+          </motion.div>{' '}
           je vous trouve la{' '}
-          <span className="text-6xl md:text-7xl bg-gradient-to-r from-secondary-500 to-secondary-200 inline-block text-transparent bg-clip-text">
+          <motion.span
+            ref={refSecond}
+            className="text-6xl md:text-7xl bg-gradient-to-r from-secondary-500 to-secondary-200 inline-block text-transparent bg-clip-text"
+            variants={{
+              hidden: { opacity: 0, y: -20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate={controlsSecond}
+            viewport={{ once: true }}
+            transition={{ duration: 0.25, delay: 0.5 }}
+          >
             solution
-          </span>
+          </motion.span>
         </h2>
         <p className="text-normal md:text-lg font-montserrat font-light mt-10">
           Que vous débutez votre aventure sur le web ou que vous êtes déjà
