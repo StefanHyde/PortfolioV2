@@ -13,9 +13,9 @@ export default function Home() {
       </div>
       <div className="relative mx-auto h-screen w-full max-w-7xl flex items-center justify-center px-6 md:px-8 lg:px-12">
         <Hero
-          surtitle="developpé par:"
-          title="Stefan Heyd"
-          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          surtitle="developpé par"
+          title="Stefan H"
+          subtitle="Site ou application web ? Transformons ensemble vos idées en solutions modernes, accessibles, et inclusives"
           CTA={{ text: 'En savoir plus', url: '#introduction ' }}
           CTA2={{ text: 'Un projet ? Venez en parler', url: '#contact' }}
         />

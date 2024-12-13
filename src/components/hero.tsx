@@ -1,5 +1,7 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 import Link from 'next/link';
 import {
   HiOutlineArrowRightCircle,
@@ -26,6 +28,10 @@ export default function Hero({
   ctaMailto,
   ctaResume,
 }: Props) {
+  const titleAnimationText = title
+    .split('')
+    .map((char) => (char === ' ' ? '\u00A0' : char)); // Replace space with non-breaking space
+
   return (
     <div className="relative mx-auto flex max-w-2xl flex-col items-center mt-8">
       <div className="bg-gradient-to-r from-primary-500 to-secondary-500 inline-block text-transparent bg-clip-text">
@@ -33,7 +39,21 @@ export default function Hero({
           <span className="text-dark-800 dark:text-almost-white text-sm md:text-lg font-thin">
             {surtitle}
           </span>
-          {title}
+          <div className="flex flex-row">
+            {titleAnimationText.map((el, i) => (
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  duration: 0.25,
+                  delay: i / 10,
+                }}
+                key={i}
+              >
+                {el}{' '}
+              </motion.span>
+            ))}
+          </div>
         </h1>
 
         <h2 className="font-nunito text-dark-800 dark:text-almost-white font-light text-xl md:text-2xl pt-6">
