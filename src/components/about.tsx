@@ -1,19 +1,49 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import useAnimateOnView from '@/hooks/useAnimateOnView';
 import { HiOutlineArrowRightCircle } from 'react-icons/hi2';
 
 export default function About() {
+  const { ref: refFirstTitle, controls: controlsFirstTitle } =
+    useAnimateOnView();
+  const { ref: refSecondTitle, controls: controlsSecondTitle } =
+    useAnimateOnView();
+
   return (
     <div className="flex flex-col items-center justify-center h-full w-full ">
       <div className="justify-start mb-12  text-dark-800 dark:text-almost-white md:w-2/3">
         <h2 className="mb-6 text-4xl md:text-5xl font-montserrat font-semibold">
-          <span className="text-6xl md:text-7xl bg-gradient-to-r from-primary-800 to-primary-400 inline-block text-transparent bg-clip-text text-primary-500">
+          <motion.div
+            ref={refFirstTitle}
+            className="text-6xl md:text-7xl bg-gradient-to-r from-primary-800 to-primary-400 inline-block text-transparent bg-clip-text text-primary-500"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate={controlsFirstTitle}
+            viewport={{ once: true }}
+            transition={{ duration: 0.25, delay: 0.5 }}
+          >
             Développer
-          </span>{' '}
+          </motion.div>{' '}
           et vous
-          <span className="text-6xl md:text-7xl bg-gradient-to-r from-secondary-500 to-secondary-200 inline-block text-transparent bg-clip-text">
+          <motion.div
+            ref={refSecondTitle}
+            className="text-6xl md:text-7xl bg-gradient-to-r from-secondary-500 to-secondary-200 inline-block text-transparent bg-clip-text"
+            variants={{
+              hidden: { opacity: 0, y: -20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate={controlsSecondTitle}
+            viewport={{ once: true }}
+            transition={{ duration: 0.25, delay: 0.25 }}
+          >
             écouter
-          </span>{' '}
+          </motion.div>{' '}
         </h2>
       </div>
 
