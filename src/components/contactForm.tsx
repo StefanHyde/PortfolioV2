@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 type FormInputs = {
   name: string;
@@ -56,6 +57,8 @@ export default function ContactForm() {
     }
   };
 
+  const titleAnimationText = 'contact'.split('');
+
   return (
     <>
       <div className="flex flex-col items-center justify-center h-full w-full ">
@@ -63,8 +66,20 @@ export default function ContactForm() {
           <h2 className="mb-6 text-2xl md:text-4xl font-montserrat font-semibold  text-dark-800 dark:text-almost-white ">
             Prenons{' '}
             <span className="text-6xl md:text-7xl bg-gradient-to-r from-primary-500 to-secondary-500 inline-block text-transparent bg-clip-text">
-              contact
-            </span>{' '}
+              {titleAnimationText.map((el, i) => (
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    duration: 0.25,
+                    delay: i / 10,
+                  }}
+                  key={i}
+                >
+                  {el}
+                </motion.span>
+              ))}
+            </span>
           </h2>
         </div>
 
