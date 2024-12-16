@@ -9,6 +9,7 @@ type FormInputs = {
   name: string;
   senderMail: string;
   message: string;
+  honeyPot?: string;
   rgpd: boolean;
 };
 
@@ -40,6 +41,7 @@ export default function ContactForm() {
           name: formData.name,
           senderMail: formData.senderMail,
           message: formData.message,
+          honeyPot: formData.honeyPot,
         }),
       });
       if (response.ok) {
@@ -118,6 +120,17 @@ export default function ContactForm() {
                 </p>
               )}
             </label>
+
+            <div className="">
+              <label htmlFor="website" className="block w-full">
+                Website (Laisser ce champ vide)
+              </label>
+              <input
+                type="text"
+                className="block w-full mt-1 p-2 border border-dark-300 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-primary-500 focus:shadow-md transition ease-in-out duration-200"
+                {...register('honeyPot')}
+              />
+            </div>
 
             <Controller
               name="rgpd"
