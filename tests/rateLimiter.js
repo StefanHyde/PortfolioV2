@@ -11,7 +11,7 @@ async function testRateLimiter() {
                 body: JSON.stringify({
                     name: 'Test',
                     senderMail: 'test@example.com',
-                    message: 'kakoo kakoo',
+                    message: 'test message',
                     honeyPot: '',
                 }),
             });

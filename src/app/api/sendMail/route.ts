@@ -9,7 +9,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 // Rate limiter to prevent spam and abuse
 const rateLimiter = new RateLimiterMemory({
   points: 5, // Max 5 requests
-  duration: 5 * 60, // Per 5 minutesconsole.log('Client IP:', ip);
+  duration: 15 * 60, // Per 15 minutes
 });
 
 export async function POST(req: NextRequest) {
