@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
-import { RateLimiterMemory } from 'rate-limiter-flexible';
+import { RateLimiterMemory, RateLimiterRes } from 'rate-limiter-flexible';
 
 import Email from '@/email';
 
@@ -9,7 +9,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 // Rate limiter to prevent spam and abuse
 const rateLimiter = new RateLimiterMemory({
   points: 5, // Max 5 requests
-  duration: 5 * 60, // Per 5 minutes
+  duration: 5 * 60, // Per 5 minutesconsole.log('Client IP:', ip);
 });
 
 export async function POST(req: NextRequest) {
@@ -41,18 +41,21 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json(data);
-  } catch (rateLimiterError) {
-    // Rate limit exceeded
-    if (rateLimiterError instanceof Error) {
+  } catch (err) {
+    if (err instanceof RateLimiterRes) {
+      // Handle rate limit exceeded error
+      console.warn('Rate limit exceeded', { retryIn: err.msBeforeNext });
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
         { status: 429 },
       );
     }
-    const errorMessage =
-      rateLimiterError instanceof Error
-        ? rateLimiterError.message
-        : 'Unknown error';
-    return NextResponse.json({ error: errorMessage }, { status: 500 });
+
+    // Log other unexpected errors
+    console.error('Unexpected error:', err);
+    return NextResponse.json(
+      { error: 'An unexpected error occurred' },
+      { status: 500 },
+    );
   }
 }
