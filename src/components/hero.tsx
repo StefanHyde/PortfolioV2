@@ -9,7 +9,7 @@ import {
   HiOutlineDocumentText,
 } from 'react-icons/hi2';
 
-type Props = {
+type heroProps = {
   surtitle?: string | null;
   title: string;
   subtitle?: string | null;
@@ -27,7 +27,7 @@ export default function Hero({
   CTA2,
   ctaMailto,
   ctaResume,
-}: Props) {
+}: heroProps) {
   const titleAnimationText = title
     .split('')
     .map((char) => (char === ' ' ? '\u00A0' : char)); // Replace space with non-breaking space
@@ -35,13 +35,13 @@ export default function Hero({
   return (
     <div className="relative mx-auto flex max-w-2xl flex-col items-center mt-8">
       <div className="bg-gradient-to-r from-primary-500 to-secondary-500 inline-block text-transparent bg-clip-text">
-        <h1 className="flex flex-col font-nunito font-bold text-6xl md:text-8xl uppercase">
+        <div className="flex flex-col font-nunito font-bold text-6xl md:text-8xl uppercase">
           <span className="text-dark-800 dark:text-almost-white text-sm md:text-lg font-thin">
             {surtitle}
           </span>
           <div className="flex flex-row">
             {titleAnimationText.map((el, i) => (
-              <motion.span
+              <motion.h1
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{
@@ -51,10 +51,10 @@ export default function Hero({
                 key={i}
               >
                 {el}{' '}
-              </motion.span>
+              </motion.h1>
             ))}
           </div>
-        </h1>
+        </div>
 
         <h2 className="font-nunito text-dark-800 dark:text-almost-white font-light text-xl md:text-2xl pt-6">
           {subtitle}
