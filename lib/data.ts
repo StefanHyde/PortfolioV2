@@ -41,3 +41,64 @@ export const socials = [
     icon: createElement(SiBluesky),
   },
 ] as const;
+
+export const experiencesData = [
+  {
+    title: 'Développeur fullstack (freelance)',
+    company: 'Heyd Stefan',
+    date: '2021 - Présent',
+    description:
+      'Développement de sites web et applications web. Conception et création UX / UI',
+    stack: ['React', 'NextJS', 'WordPress', 'Figma'],
+  },
+  {
+    title: 'Développeur frontend',
+    company: 'La 25ème Heure',
+    date: '2024 - Présent',
+    description: 'Développement de sites web et applications web.',
+    stack: ['React', 'Docker', 'Material UI'],
+  },
+  {
+    title: 'Développeur frontend',
+    company: 'Thuria',
+    date: '2023 - 2024',
+    description:
+      'Création de plateformes et de thèmes personnalisés sur Wordpress ayant pour but de promouvoir le tourisme régional',
+    stack: ['WordPress'],
+  },
+  {
+    title: 'Développeur fullstack',
+    company: 'Advisa',
+    date: '2022 - 2023',
+    description:
+      'Intégration et personnalisation de solutions e - commerce. Création de thèmes ainsi que de plugins sous diverses plateformes.',
+    stack: ['Prestashop', 'BigCommerce', 'Magento 1'],
+  },
+] as const;
+
+export const skillsData = [
+  {
+    languages: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'TypeScript',
+      'PHP',
+      'Twig',
+      'SQL',
+    ],
+    technologies: {
+      frontEnd: [
+        'React',
+        'NextJS',
+        'Vue',
+        'Nuxt',
+        'Tailwind',
+        'WordPress',
+        'Webpack',
+      ],
+      backEnd: ['NodeJS', 'Express', 'MySQL'],
+    },
+    tools: ['GitHub / GitLab', 'Git', 'Docker', 'Figma'],
+  },
+] as const;
