@@ -78,15 +78,7 @@ export const experiencesData = [
 
 export const skillsData = [
   {
-    languages: [
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'TypeScript',
-      'PHP',
-      'Twig',
-      'SQL',
-    ],
+    languages: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Twig', 'SQL'],
     technologies: {
       frontEnd: [
         'React',
