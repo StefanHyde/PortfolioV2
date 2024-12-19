@@ -42,7 +42,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="flex flex-col  md:w-3/4 p-8  backdrop-blur-md border-solid  dark:border-almost-white rounded-md dark:text-almost-white skew-container">
+        <div className="flex flex-col  md:w-3/4 p-8  backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container">
           <p className="text-normal text-sm md:text-base font-montserrat font-light ">
             Je suis Stéphane, développeur web basé en France.
             <br />
@@ -63,7 +63,7 @@ export default function About() {
 
       <div
         ref={refExperience}
-        className="mx-auto flex flex-col md:flex-row justify-center w-full max-w-7xl gap-10 p-6 md:p-12"
+        className="mx-auto flex flex-col md:flex-row justify-center w-full max-w-7xl gap-10 p-6 md:p-12 text-dark-800 dark:text-almost-white"
       >
         <div className="flex flex-col w-full md:w-1/2">
           <motion.h2
@@ -84,7 +84,7 @@ export default function About() {
           <div className="w-full  backdrop-blur-md p-4 md:p-8  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-gradient-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md text-center">
             {experiencesData.map((experience, index) => (
               <motion.div
-                className="flex flex-col items-start justify-start text-left mb-8   dark:text-almost-white  from-primary-50 dark:from-primary-950 "
+                className="flex flex-col items-start justify-start text-left mb-8   from-primary-50 dark:from-primary-950 "
                 key={index}
                 variants={{
                   hidden: { opacity: 0 },

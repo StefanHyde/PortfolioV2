@@ -48,7 +48,7 @@ export default function About() {
       </div>
 
       <div className="relative flex flex-col items-center xl:flex-row xl:w-1/2 mt-24 xl:mt-12">
-        <div className="flex flex-col p-8 pt-28 md:pt-32 xl:pt-12 xl:pr-28 backdrop-blur-md border-solid  dark:border-almost-white rounded-md dark:text-almost-white skew-container">
+        <div className="flex flex-col p-8 pt-28 md:pt-32 xl:pt-12 xl:pr-28 backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container">
           <p className="text-normal text-sm md:text-base font-montserrat font-light ">
             Je suis Stefan, <strong>développeur passionné</strong>, spécialisé
             dans la création de sites et d’applications sur mesure.
@@ -86,7 +86,7 @@ export default function About() {
         </div>
       </div>
 
-      <Link href="/">
+      <Link href="/about">
         <button className="flex bg-primary-500 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-solid border-2 border-primary-500 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-10 rounded-md ease-in-out duration-300">
           En savoir plus
           <HiOutlineArrowRightCircle className="h-5 w-5 ml-2 inline-block" />
