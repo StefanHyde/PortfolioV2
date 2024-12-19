@@ -6,6 +6,29 @@
   strong {
     @apply underline decoration-primary-500;
   }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #ebd6ff;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #aa5cf0;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7f2ac6;
+  }
+
+  /* Firefox fix */
+  html {
+    scrollbar-color: #aa5cf0 #ebd6ff;
+  }
+
   .skew-container {
     &::before {
       content: '';
