@@ -81,7 +81,7 @@ export default function About() {
             Expériences <span className="text-black">🧑‍💻</span>
           </motion.h2>
 
-          <div className="w-full  backdrop-blur-md p-4 md:p-8  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-gradient-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md text-center">
+          <div className="w-full overflow-hidden  backdrop-blur-md p-4 md:p-8  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-gradient-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md text-center">
             {experiencesData.map((experience, index) => (
               <motion.div
                 className="flex flex-col items-start justify-start text-left mb-8   from-primary-50 dark:from-primary-950 "
@@ -123,7 +123,10 @@ export default function About() {
             ))}
           </div>
         </div>
-        <div ref={refSkills} className="flex flex-col w-full md:w-1/2">
+        <div
+          ref={refSkills}
+          className="overflow-hidden flex flex-col w-full md:w-1/2"
+        >
           <motion.h2
             ref={refSkillsTitle}
             className="text-center md:text-right mb-12 text-4xl md:text-5xl font-montserrat font-semibold  bg-gradient-to-r from-secondary-500 to-secondary-200  inline-block text-transparent bg-clip-text text-primary-500"
@@ -218,9 +221,6 @@ export default function About() {
         </div>
       </div>
 
-      {
-        //TODO: Add btn to download CV
-      }
       <div className="mx-auto flex flex-col justify-center items-center mt-12 p-6 mb-12 md:p-12">
         <p className="text-normal text-center text-sm md:text-base font-montserrat font-light  text-dark-900 dark:text-almost-white">
           Vous souhaitez en savoir davantage ? Téléchargez mon CV ci-dessous.
