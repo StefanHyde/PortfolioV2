@@ -1,14 +1,21 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import PageTitle from '@/components/pageTitle';
 import useAnimateOnView from '@/hooks/useAnimateOnView';
 import { experiencesData, skillsData } from '../../../lib/data';
+import { HiOutlineDocumentText } from 'react-icons/hi2';
 
 export default function About() {
+  const { ref: refExeprienceTitle, controls: controlsExperienceTitle } =
+    useAnimateOnView();
+  const { ref: refSkillsTitle, controls: controlsSkillsTitle } =
+    useAnimateOnView();
   const { ref: refExperience, controls: controlsExperience } =
     useAnimateOnView();
-  const { ref: refSkils, controls: controlsSkills } = useAnimateOnView();
+  const { ref: refSkills, controls: controlsSkills } = useAnimateOnView();
+
   return (
     <main>
       <div className="fixed left-0 top-0 -z-10 h-full w-full">
@@ -54,16 +61,29 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mx-auto flex flex-col md:flex-row justify-center w-full max-w-7xl gap-10 p-6 md:p-12">
+      <div
+        ref={refExperience}
+        className="mx-auto flex flex-col md:flex-row justify-center w-full max-w-7xl gap-10 p-6 md:p-12"
+      >
         <div className="flex flex-col w-full md:w-1/2">
-          <h2 className="text-center md:text-left mb-12 text-4xl md:text-5xl font-montserrat font-semibold  bg-gradient-to-r from-primary-800 to-primary-400 inline-block text-transparent bg-clip-text text-primary-500">
-            Expériences
-          </h2>
+          <motion.h2
+            ref={refExeprienceTitle}
+            className="text-center md:text-left mb-12 text-4xl md:text-5xl font-montserrat font-semibold  bg-gradient-to-r from-primary-800 to-primary-400 inline-block text-transparent bg-clip-text text-primary-500"
+            variants={{
+              hidden: { opacity: 0, x: -200 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            initial="hidden"
+            animate={controlsExperienceTitle}
+            viewport={{ once: true }}
+            transition={{ duration: 0.25, delay: 0.5 }}
+          >
+            Expériences <span className="text-black">🧑‍💻</span>
+          </motion.h2>
 
           <div className="w-full  backdrop-blur-md p-4 md:p-8  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-gradient-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md text-center">
             {experiencesData.map((experience, index) => (
               <motion.div
-                ref={refExperience}
                 className="flex flex-col items-start justify-start text-left mb-8   dark:text-almost-white  from-primary-50 dark:from-primary-950 "
                 key={index}
                 variants={{
@@ -103,14 +123,24 @@ export default function About() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col w-full md:w-1/2">
-          <h2 className="text-center md:text-right mb-12 text-4xl md:text-5xl font-montserrat font-semibold  bg-gradient-to-r from-secondary-500 to-secondary-200  inline-block text-transparent bg-clip-text text-primary-500">
-            Stack technique
-          </h2>
+        <div ref={refSkills} className="flex flex-col w-full md:w-1/2">
+          <motion.h2
+            ref={refSkillsTitle}
+            className="text-center md:text-right mb-12 text-4xl md:text-5xl font-montserrat font-semibold  bg-gradient-to-r from-secondary-500 to-secondary-200  inline-block text-transparent bg-clip-text text-primary-500"
+            variants={{
+              hidden: { opacity: 0, x: 200 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            initial="hidden"
+            animate={controlsSkillsTitle}
+            viewport={{ once: true }}
+            transition={{ duration: 0.25, delay: 0.5 }}
+          >
+            Stack technique <span className="text-black">⚙️</span>
+          </motion.h2>
           <div className="w-full backdrop-blur-md p-4  md:p-8  border-solid border-2 border-secondary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-gradient-to-b from-secondary-50 dark:from-secondary-950 to-transparent shadow-md text-center">
             {skillsData.map((skill, index) => (
               <motion.div
-                ref={refSkils}
                 key={index}
                 className="flex flex-col items-end justify-end text-right mb-8"
                 variants={{
@@ -120,7 +150,7 @@ export default function About() {
                 initial="hidden"
                 animate={controlsSkills}
                 viewport={{ once: true }}
-                transition={{ duration: 0.25, delay: 0.5 }}
+                transition={{ duration: 0.25, delay: 0.25 }}
               >
                 <h3 className="text-2xl font-montserrat font-semibold">
                   Languages
@@ -191,6 +221,21 @@ export default function About() {
       {
         //TODO: Add btn to download CV
       }
+      <div className="mx-auto flex flex-col justify-center items-center mt-12 p-6 mb-12 md:p-12">
+        <p className="text-normal text-center text-sm md:text-base font-montserrat font-light  text-dark-900 dark:text-almost-white">
+          Vous souhaitez en savoir davantage ? Téléchargez mon CV ci-dessous.
+        </p>
+        <Link
+          href="/assets/CvHeydStephane.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="flex bg-primary-500 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-500 hover:border-primary-800 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
+            Télécharger mon CV
+            <HiOutlineDocumentText className="h-5 w-5 ml-2 inline-block" />
+          </button>
+        </Link>
+      </div>
     </main>
   );
 }
