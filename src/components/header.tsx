@@ -10,7 +10,6 @@ import { HiBars3, HiMiniXMark } from 'react-icons/hi2';
 
 export default function Header() {
   const pathname = usePathname();
-  const isHomePage = pathname === '/';
   const [scrolled, setScrolled] = useState(false);
   const [menuOpened, setMenuOpened] = useState(false);
 
@@ -42,26 +41,24 @@ export default function Header() {
       </Link>
       <nav className="flex">
         <ul className="hidden md:flex gap-16">
-          {links.map((link) => (
-            <li key={link.hash}>
-              {link.hash === '#home' && isHomePage ? (
-                <span className="hidden">{link.name}</span>
-              ) : (
+          {links.map((link) =>
+            link.url === pathname ? null : (
+              <li key={link.hash}>
                 <Link
                   href={link.url}
                   className="text-lg font-nunito text-primary-500 dark:text-almost-white hover:text-primary-800 dark:hover:text-primary-800 ease-in-out duration-300"
                 >
                   {link.name}
                 </Link>
-              )}
-            </li>
-          ))}
+              </li>
+            ),
+          )}
         </ul>
       </nav>
 
       <div className="flex items-center gap-6">
         <ThemeSwitch />
-        <Link href="/" className="hidden md:flex">
+        <Link href="/#contact" className="hidden md:flex">
           <button className="flex bg-primary-500 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-solid border-2 border-primary-500 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 text-white font-montserrat font-light text-sm text-left p-2  rounded-md ease-in-out duration-300">
             Me contacter
           </button>
