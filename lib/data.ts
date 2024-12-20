@@ -17,11 +17,11 @@ export const links = [
     hash: '#services',
     url: '/products',
   },
-  {
+  /* {
     name: 'Blog',
     hash: '#blog',
     url: '/blog',
-  },
+  }, */
 ] as const;
 
 export const socials = [
