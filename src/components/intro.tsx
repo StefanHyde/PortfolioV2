@@ -74,17 +74,21 @@ export default function Intro() {
         </div>
         <div className="row-span-1 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-gradient-to-t from-primary-50 dark:from-primary-950 to-transparent shadow-md text-center">
           <h3 className="text-2xl font-semibold  mb-4">
-            Döner kebab<span className="text-4xl ml-3">🥙</span>
+            Conseil<span className="text-4xl ml-3">👨‍🏫</span>
           </h3>
           <p className="text-sm font-extralight">
-            Salade tomates oignons chef !
+            Afin de vous aider à faire les bons choix pour votre transition
+            numérique.
           </p>
         </div>
         <div className="row-span-1 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-tr-2xl dark:text-almost-white bg-gradient-to-bl from-primary-50 dark:from-primary-950 to-transparent shadow-md text-end">
           <h3 className="text-2xl font-semibold  mb-4">
-            Maraboutage<span className="text-4xl ml-3">🧙</span>
+            Optimisation<span className="text-4xl ml-3">🚀</span>
           </h3>
-          <p className="text-sm font-extralight">Au cas où</p>
+          <p className="text-sm font-extralight">
+            Car son image passe aussi par une plateforme performante et fluide à
+            l&apos;utilisation.
+          </p>
         </div>
         <div className="row-span-2 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-br-2xl dark:text-almost-white bg-gradient-to-tl from-primary-50 dark:from-primary-950 to-transparent shadow-md text-end">
           <h3 className="text-2xl font-semibold  mb-4">
@@ -114,12 +118,12 @@ export default function Intro() {
         </div>
         <div className="row-span-1 w-full flex flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-gradient-to-r from-primary-50 dark:from-primary-950 to-transparent shadow-md">
           <h3 className="flex flex-col items-center text-center text-xl font-semibold mb-4">
-            Döner kebab<span className="text-3xl mt-4">🥙</span>
+            Conseil<span className="text-3xl mt-4">👨‍🏫</span>
           </h3>
         </div>
         <div className="row-span-1 w-full flex flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-gradient-to-l from-primary-50 dark:from-primary-950 to-transparent shadow-md">
           <h3 className="flex flex-col items-center text-center text-xl font-semibold mb-4">
-            Maraboutage<span className="text-3xl mt-4">🧙</span>
+            Optimisation<span className="text-3xl mt-4">🚀</span>
           </h3>
         </div>
         <div className="row-span-1 col-span-2 place-self-center w-1/2 flex flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-gradient-to-t from-primary-50 dark:from-primary-950 to-transparent shadow-md">
