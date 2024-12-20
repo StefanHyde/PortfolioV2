@@ -2,6 +2,7 @@ import { Nunito_Sans, Montserrat } from 'next/font/google';
 
 import Header from '@/components/header';
 import Footer from '@/components/footer';
+import ScrollToTop from '@/components/scrollToTop';
 import ThemeContextProvider from '@/context/themeContext';
 
 import type { Metadata } from 'next';
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body>
         <ThemeContextProvider>
           <Header />
+          <ScrollToTop />
           {children}
           <Footer />
         </ThemeContextProvider>
