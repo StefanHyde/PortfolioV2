@@ -1,21 +1,12 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import PageTitle from '@/components/pageTitle';
-import useAnimateOnView from '@/hooks/useAnimateOnView';
-import { experiencesData, skillsData } from '../../../lib/data';
+import Experiences from '@/components/experiences';
+import Skills from '@/components/skills';
 import { HiOutlineDocumentText } from 'react-icons/hi2';
 
 export default function About() {
-  const { ref: refExeprienceTitle, controls: controlsExperienceTitle } =
-    useAnimateOnView();
-  const { ref: refSkillsTitle, controls: controlsSkillsTitle } =
-    useAnimateOnView();
-  const { ref: refExperience, controls: controlsExperience } =
-    useAnimateOnView();
-  const { ref: refSkills, controls: controlsSkills } = useAnimateOnView();
-
   return (
     <main>
       <div className="fixed left-0 top-0 -z-10 h-full w-full">
@@ -61,164 +52,9 @@ export default function About() {
         </div>
       </div>
 
-      <div
-        ref={refExperience}
-        className="mx-auto flex flex-col md:flex-row justify-center w-full max-w-7xl gap-10 p-6 md:p-12 text-dark-800 dark:text-almost-white"
-      >
-        <div className="flex flex-col w-full md:w-1/2">
-          <motion.h2
-            ref={refExeprienceTitle}
-            className="text-center md:text-left mb-12 text-4xl md:text-5xl font-montserrat font-semibold  bg-gradient-to-r from-primary-800 to-primary-400 inline-block text-transparent bg-clip-text text-primary-500"
-            variants={{
-              hidden: { opacity: 0, x: -200 },
-              visible: { opacity: 1, x: 0 },
-            }}
-            initial="hidden"
-            animate={controlsExperienceTitle}
-            viewport={{ once: true }}
-            transition={{ duration: 0.25, delay: 0.5 }}
-          >
-            Expériences <span className="text-black">🧑‍💻</span>
-          </motion.h2>
-
-          <div className="w-full overflow-hidden  backdrop-blur-md p-4 md:p-8  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-gradient-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md text-center">
-            {experiencesData.map((experience, index) => (
-              <motion.div
-                className="flex flex-col items-start justify-start text-left mb-8   from-primary-50 dark:from-primary-950 "
-                key={index}
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: { opacity: 1 },
-                }}
-                initial="hidden"
-                animate={controlsExperience}
-                viewport={{ once: true }}
-                transition={{ duration: 0.25, delay: 0.5 }}
-              >
-                <h3 className="text-2xl font-montserrat font-semibold">
-                  {experience.title}
-                </h3>
-                <p className="text-normal text-sm md:text-base font-montserrat font-semibold">
-                  {experience.company}
-                </p>
-                <p className="text-sm md:text-base font-montserrat font-thin">
-                  {experience.date}
-                </p>
-                <p className="text-normal text-sm md:text-base font-montserrat font-light">
-                  {experience.description}
-                </p>
-                <div className="flex flex-wrap gap-4 mt-3">
-                  {experience.stack.map((tech, index) => (
-                    <div
-                      key={index}
-                      className="p-1  bg-primary-500  text-almost-white"
-                    >
-                      <p className="text-normal text-sm md:text-base font-montserrat font-light">
-                        {tech}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-        <div
-          ref={refSkills}
-          className="overflow-hidden flex flex-col w-full md:w-1/2"
-        >
-          <motion.h2
-            ref={refSkillsTitle}
-            className="text-center md:text-right mb-12 text-4xl md:text-5xl font-montserrat font-semibold  bg-gradient-to-r from-secondary-500 to-secondary-200  inline-block text-transparent bg-clip-text text-primary-500"
-            variants={{
-              hidden: { opacity: 0, x: 200 },
-              visible: { opacity: 1, x: 0 },
-            }}
-            initial="hidden"
-            animate={controlsSkillsTitle}
-            viewport={{ once: true }}
-            transition={{ duration: 0.25, delay: 0.5 }}
-          >
-            Stack technique <span className="text-black">⚙️</span>
-          </motion.h2>
-          <div className="w-full backdrop-blur-md p-4  md:p-8  border-solid border-2 border-secondary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-gradient-to-b from-secondary-50 dark:from-secondary-950 to-transparent shadow-md text-center">
-            {skillsData.map((skill, index) => (
-              <motion.div
-                key={index}
-                className="flex flex-col items-end justify-end text-right mb-8"
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: { opacity: 1 },
-                }}
-                initial="hidden"
-                animate={controlsSkills}
-                viewport={{ once: true }}
-                transition={{ duration: 0.25, delay: 0.25 }}
-              >
-                <h3 className="text-2xl font-montserrat font-semibold">
-                  Languages
-                </h3>
-                <div className="flex flex-wrap gap-4 mt-3 mb-8">
-                  {skill.languages.map((language, index) => (
-                    <div
-                      key={index}
-                      className="p-1 bg-secondary-500  text-almost-white"
-                    >
-                      <p className="text-normal text-sm md:text-base font-montserrat font-light">
-                        {language}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-                <h3 className="text-2xl font-montserrat font-semibold mt-4">
-                  Technologies Frontend
-                </h3>
-                <div className="flex flex-wrap gap-4 mt-3 mb-8">
-                  {skill.technologies.frontEnd.map((tech, index) => (
-                    <div
-                      key={index}
-                      className="p-1 bg-secondary-500  text-almost-white"
-                    >
-                      <p className="text-normal text-sm md:text-base font-montserrat font-light">
-                        {tech}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-                <h3 className="text-2xl font-montserrat font-semibold mt-4">
-                  Technologies Backend
-                </h3>
-                <div className="flex flex-wrap gap-4 mt-3 mb-8">
-                  {skill.technologies.backEnd.map((tech, index) => (
-                    <div
-                      key={index}
-                      className="p-1 bg-secondary-500  text-almost-white "
-                    >
-                      <p className="text-normal text-sm md:text-base font-montserrat font-light">
-                        {tech}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-                <h3 className="text-2xl font-montserrat font-semibold mt-4">
-                  Tools
-                </h3>
-                <div className="flex flex-wrap gap-4 mt-3 mb-8">
-                  {skill.tools.map((tool, index) => (
-                    <div
-                      key={index}
-                      className="p-1 bg-secondary-500  text-almost-white"
-                    >
-                      <p className="text-normal text-sm md:text-base font-montserrat font-light">
-                        {tool}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+      <div className="mx-auto flex flex-col md:flex-row justify-center w-full max-w-7xl gap-10 p-6 md:p-12 text-dark-800 dark:text-almost-white">
+        <Experiences />
+        <Skills />
       </div>
 
       <div className="mx-auto flex flex-col justify-center items-center mt-12 p-6 mb-12 md:p-12">
