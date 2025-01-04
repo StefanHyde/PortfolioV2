@@ -4,6 +4,7 @@ import Link from 'next/link';
 import PageTitle from '@/components/pageTitle';
 import Experiences from '@/components/experiences';
 import Skills from '@/components/skills';
+import Projects from '@/components/projects';
 import { HiOutlineDocumentText } from 'react-icons/hi2';
 
 export default function About() {
@@ -71,6 +72,9 @@ export default function About() {
             <HiOutlineDocumentText className="h-5 w-5 ml-2 inline-block" />
           </button>
         </Link>
+      </div>
+      <div className="mx-auto flex flex-col md:flex-row justify-center w-full max-w-7xl gap-10 p-6 md:p-12 text-dark-800 dark:text-almost-white">
+        <Projects />
       </div>
     </main>
   );
