@@ -1,5 +1,9 @@
 import { createElement } from 'react';
 import { SiGithub, SiLinkedin, SiBluesky } from 'react-icons/si';
+import cuultImg from '../public/images/25h.png';
+import dhdaImg from '../public/images/dhda.png';
+import nctImg from '../public/images/nct.png';
+import mariergoImg from '../public/images/mariergo.png';
 
 export const links = [
   {
@@ -84,5 +88,36 @@ export const skillsData = [
       backEnd: ['NodeJS', 'Express', 'MySQL'],
     },
     tools: ['GitHub / GitLab', 'Git', 'Docker', 'Figma'],
+  },
+] as const;
+
+export const projectsData = [
+  {
+    title: 'Neon Cobra Tattoo',
+    description: `Salon de tatouage ancré depuis des années dans le milieu, Neon Cobra Tattoo a fait appel à mes services afin de gagner en visibilité dans un secteur à très forte concurrence. Grâce à mon expertise couplée de celle d'un expert en SEO ils ont à présent toutes les clés pour gagner en attractivité !`,
+    services: ['Développement', 'UX / UI'],
+    image: nctImg,
+    url: 'https://neoncobratattoo.com',
+  },
+  {
+    title: 'Marie André Ergothérapeute',
+    description: `En tant que ergothératpeute Marie nécessitait un site vitrine permettant de présenter son activité et être mise en relation de la manière la plus simple possible. C'est chose faite grâce à un site moderne respectant les normes d'accessibilité.`,
+    services: ['Développement', 'UX / UI'],
+    image: mariergoImg,
+    url: 'https://m-andre-ergotherapeute.fr/',
+  },
+  {
+    title: 'La 25ème Heure / Cuult',
+    description: `Afin de constamment faire évoluer leur plateforme de diffusion cinématographique, la 25ème heure a fait appel à mon expérience en développement React pour mettre en place de nouvelles fonctionnalités et améliorer l'expérience utilisateur de leur front et back-office`,
+    services: ['Développement'],
+    image: cuultImg,
+    url: 'https://cuult.fr',
+  },
+  {
+    title: 'DHDA',
+    description: `Ayant également travaillé en agence j'ai pu intégrer divers sites web, dans divers domaines. Parmi eux, DHDA, un projet collaboratif valorisant le patrimoine forestier. Un site Wordpress propulsé par l'agence Thuria.`,
+    services: ['Intégration', 'Développement'],
+    image: dhdaImg,
+    url: 'https://www.deshommesetdesarbres.org/',
   },
 ] as const;
