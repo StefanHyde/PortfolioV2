@@ -49,9 +49,9 @@ export default function Skills() {
               {skill.languages.map((language, index) => (
                 <div
                   key={index}
-                  className="p-1 bg-secondary-500  text-almost-white"
+                  className="p-1 text- bg-secondary-500  text-almost-white"
                 >
-                  <p className="text-normal text-sm md:text-base font-montserrat font-light">
+                  <p className="text-normal text-sm font-montserrat font-light">
                     {language}
                   </p>
                 </div>
@@ -66,7 +66,7 @@ export default function Skills() {
                   key={index}
                   className="p-1 bg-secondary-500  text-almost-white"
                 >
-                  <p className="text-normal text-sm md:text-base font-montserrat font-light">
+                  <p className="text-normal text-sm font-montserrat font-light">
                     {tech}
                   </p>
                 </div>
@@ -81,7 +81,7 @@ export default function Skills() {
                   key={index}
                   className="p-1 bg-secondary-500  text-almost-white "
                 >
-                  <p className="text-normal text-sm md:text-base font-montserrat font-light">
+                  <p className="text-normal text-sm font-montserrat font-light">
                     {tech}
                   </p>
                 </div>
@@ -96,7 +96,7 @@ export default function Skills() {
                   key={index}
                   className="p-1 bg-secondary-500  text-almost-white"
                 >
-                  <p className="text-normal text-sm md:text-base font-montserrat font-light">
+                  <p className="text-normal text-sm font-montserrat font-light">
                     {tool}
                   </p>
                 </div>

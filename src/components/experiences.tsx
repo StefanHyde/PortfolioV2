@@ -59,7 +59,7 @@ export default function Experiences() {
                     key={index}
                     className="p-1  bg-primary-500  text-almost-white"
                   >
-                    <p className="text-normal text-sm md:text-base font-montserrat font-light">
+                    <p className="text-normal text-sm font-montserrat font-light">
                       {tech}
                     </p>
                   </div>
