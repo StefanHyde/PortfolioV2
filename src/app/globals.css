@@ -64,3 +64,38 @@
     }
   }
 }
+
+.skew-container__reverse {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    border: 4px solid #66efc1;
+    z-index: -1;
+    border-radius: inherit;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 4px solid #d9b7fb;
+    transform: skew(3deg);
+    z-index: -1;
+    border-radius: inherit;
+  }
+
+  .dark &::before {
+    border-color: #39e0ad;
+  }
+
+  .dark &::after {
+    border-color: #3c0b60;
+  }
+}
