@@ -19,7 +19,7 @@ export const links = [
   {
     name: 'Services',
     hash: '#services',
-    url: '/products',
+    url: '/services',
   },
   /* {
     name: 'Blog',
