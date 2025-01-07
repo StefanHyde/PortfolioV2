@@ -22,7 +22,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'Developped by Stefan Heyd',
+  title: 'Développé par Stefan H',
   description: 'My new portfolio',
 };
 export const viewport: Viewport = {
