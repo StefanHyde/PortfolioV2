@@ -4,7 +4,7 @@ import { links } from '../../lib/data';
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-500 dark:bg-primary-800 text-white dark:text-almost-white md:flex md:flex-row md:justify-between items-center mt-12 p-8 md:py-6 md:px-4">
+    <footer className="bg-primary-500 dark:bg-primary-800 text-white dark:text-almost-white md:flex md:flex-row md:justify-between items-center mt-12 p-8 md:py-4 md:px-16">
       <div className="container mx-auto text-center md:text-start mb-7 md:mb-0">
         <p className="text-xs">&copy; {new Date().getFullYear()} Stefan Heyd</p>
       </div>
