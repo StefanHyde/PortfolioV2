@@ -8,7 +8,7 @@ export default function ServicesGrid() {
   const { ref: refService3, controls: controlsService3 } = useAnimateOnInView();
   const { ref: refService4, controls: controlsService4 } = useAnimateOnInView();
   return (
-    <div className="mx-auto flex flex-col md:grid grid-cols-2 grid-rows-2 w-full max-w-7xl gap-10 p-6 md:p-12 mt-24 xl:mt-12 text-dark-800 dark:text-almost-white">
+    <div className="overflow-hidden mx-auto flex flex-col md:grid grid-cols-2 grid-rows-2 w-full max-w-7xl gap-10 p-6 md:p-12 mt-24  text-dark-800 dark:text-almost-white">
       <motion.div
         ref={refService1}
         variants={{
@@ -19,7 +19,7 @@ export default function ServicesGrid() {
         animate={controlsService1}
         viewport={{ once: true }}
         transition={{ duration: 0.25, delay: 0.5 }}
-        className="flex flex-col items-start justify-start gap-6 h-fit w-full p-6 md:p-12 backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container"
+        className="relative flex flex-col items-start justify-start gap-6 h-fit w-full p-6 md:p-12 backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container"
       >
         <h2 className="text-2xl font-montserrat font-bold text-dark-800 dark:text-almost-white">
           Site web <span className="text-4xl ml-3">🧑‍💻</span>
@@ -32,6 +32,7 @@ export default function ServicesGrid() {
           </strong>
           .
         </p>
+        <div className="absolute top-0 md:-right-3/4 w-96 h-96 bg-primary-500 dark:bg-primary-900 rounded-full opacity-10 dark:opacity-30 mix-blend-multiply filter blur-2xl animate-blob"></div>
       </motion.div>
       <motion.div
         ref={refService2}
@@ -43,8 +44,10 @@ export default function ServicesGrid() {
         animate={controlsService2}
         viewport={{ once: true }}
         transition={{ duration: 0.25, delay: 0.5 }}
-        className="flex flex-col items-start justify-start gap-6 h-fit w-full p-6 md:p-12 md:mt-64 backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container__reverse"
+        className="relative flex flex-col items-start justify-start gap-6 h-fit w-full p-6 md:p-12 md:mt-64 backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container__reverse"
       >
+        <div className="absolute top-0 md:-left-3/4 w-72 h-72 bg-secondary-500 dark:bg-secondary-800 rounded-full opacity-20 dark:opacity-30 mix-blend-multiply filter blur-2xl animate-blob"></div>
+
         <h2 className="text-2xl font-montserrat font-bold text-dark-800 dark:text-almost-white">
           Application Web<span className="text-4xl ml-3">⚙️</span>
         </h2>
@@ -66,7 +69,7 @@ export default function ServicesGrid() {
         animate={controlsService3}
         viewport={{ once: true }}
         transition={{ duration: 0.25, delay: 0.5 }}
-        className="flex flex-col items-start justify-start gap-6 h-fit w-full p-6 md:p-12 backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container"
+        className="relative flex flex-col items-start justify-start gap-6 h-fit w-full p-6 md:p-12 backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container"
       >
         <h2 className="text-2xl font-montserrat font-bold text-dark-800 dark:text-almost-white">
           UX / UI <span className="text-4xl ml-3">🌈</span>
@@ -77,6 +80,7 @@ export default function ServicesGrid() {
           créer un design sur mesure pour votre site web ou votre application,
           en accord avec votre identité visuelle.
         </p>
+        <div className="absolute top-0 md:-right-3/4 w-96 h-96 bg-primary-500 dark:bg-primary-900 rounded-full opacity-10 dark:opacity-30 mix-blend-multiply filter blur-2xl animate-blob"></div>
       </motion.div>
       <motion.div
         ref={refService4}
@@ -88,8 +92,10 @@ export default function ServicesGrid() {
         animate={controlsService4}
         viewport={{ once: true }}
         transition={{ duration: 0.25, delay: 0.5 }}
-        className="flex flex-col items-start justify-start gap-6 h-fit w-full p-6 md:p-12 md:mt-64 backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container__reverse"
+        className="relative flex flex-col items-start justify-start gap-6 h-fit w-full p-6 md:p-12 md:mt-64 backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container__reverse"
       >
+        <div className="absolute top-0 md:-left-3/4 w-72 h-72 bg-secondary-500 dark:bg-secondary-800 rounded-full opacity-20 dark:opacity-30 mix-blend-multiply filter blur-2xl animate-blob"></div>
+
         <h2 className="text-2xl font-montserrat font-bold text-dark-800 dark:text-almost-white">
           Optimisation et maintenance<span className="text-4xl ml-3">🚀</span>
         </h2>
