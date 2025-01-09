@@ -23,7 +23,7 @@ export default function PageTitle({
       : 'text-6xl md:text-7xl uppercase';
 
   return (
-    <div className="relative mx-auto h-auto w-full md:max-w-7xl flex flex-col items-start px-6 mt-32">
+    <div className="relative mx-auto h-auto w-full flex flex-col items-start px-6 mt-32">
       <div className="bg-gradient-to-r from-primary-500 to-secondary-500 inline-block text-transparent bg-clip-text">
         <div
           className={`flex flex-col font-nunito font-bold  ${titleSizeClass}  `}
