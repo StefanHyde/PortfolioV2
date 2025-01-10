@@ -45,7 +45,7 @@ export default function Skills() {
             <h3 className="text-2xl font-montserrat font-semibold">
               Languages
             </h3>
-            <div className="flex flex-wrap gap-4 mt-3 mb-8">
+            <div className="flex justify-end  flex-wrap gap-4 mt-3 mb-8">
               {skill.languages.map((language, index) => (
                 <div
                   key={index}
@@ -60,7 +60,7 @@ export default function Skills() {
             <h3 className="text-2xl font-montserrat font-semibold mt-4">
               Technologies Frontend
             </h3>
-            <div className="flex flex-wrap gap-4 mt-3 mb-8">
+            <div className="flex justify-end flex-wrap gap-4 mt-3 mb-8">
               {skill.technologies.frontEnd.map((tech, index) => (
                 <div
                   key={index}
@@ -75,7 +75,7 @@ export default function Skills() {
             <h3 className="text-2xl font-montserrat font-semibold mt-4">
               Technologies Backend
             </h3>
-            <div className="flex flex-wrap gap-4 mt-3 mb-8">
+            <div className="flex justify-end  flex-wrap gap-4 mt-3 mb-8">
               {skill.technologies.backEnd.map((tech, index) => (
                 <div
                   key={index}
@@ -90,7 +90,7 @@ export default function Skills() {
             <h3 className="text-2xl font-montserrat font-semibold mt-4">
               Tools
             </h3>
-            <div className="flex flex-wrap gap-4 mt-3 mb-8">
+            <div className="flex justify-end  flex-wrap gap-4 mt-3 mb-8">
               {skill.tools.map((tool, index) => (
                 <div
                   key={index}

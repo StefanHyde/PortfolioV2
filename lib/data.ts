@@ -59,7 +59,8 @@ export const experiencesData = [
     title: 'Développeur frontend',
     company: 'La 25ème Heure',
     date: '2024 - Présent',
-    description: 'Développement de sites web et applications web.',
+    description:
+      'Développement d’évolutions sur une application back-office et front destinée aux différents acteurs de la distribution cinématographique',
     stack: ['React', 'Docker', 'Material UI'],
   },
   {

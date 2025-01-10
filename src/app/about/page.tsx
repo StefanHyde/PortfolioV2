@@ -1,4 +1,3 @@
-'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import PageTitle from '@/components/pageTitle';
@@ -6,6 +5,17 @@ import Experiences from '@/components/experiences';
 import Skills from '@/components/skills';
 import Projects from '@/components/projects';
 import { HiOutlineDocumentText } from 'react-icons/hi2';
+
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Développé par Stefan H - A propos',
+  description:
+    'Développeur web spécialisé dans la création de sites et d’applications web. Transformons ensemble vos idées en solutions modernes, accessibles, et inclusives.',
+  keywords:
+    'développeur web, développeur freelance, création site web, nextjs, javascript, react, wordpress, UX UI, accessibilité',
+  authors: [{ name: 'Stefan Heyd' }],
+};
 
 export default function About() {
   return (
@@ -30,19 +40,21 @@ export default function About() {
 
         <div className="flex flex-col  md:w-3/4 p-8  backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container">
           <p className="text-normal text-sm md:text-base font-montserrat font-light ">
-            Je suis Stéphane, développeur web basé en France.
+            Je suis Stéphane, développeur web basé en France, spécialisé dans la
+            création de sites internet et d&apos;applications web.
             <br />
             Après de nombreuses expériences dans le support technique et la
             communication, j&apos;ai décidé de me reconvertir dans le domaine du
             développement web. Grâce à l&apos;attrait qui m&apos;anime et à ma
-            soif de nouvelles connaissances je peux chaque jour, apprendre de
-            nouvelles choses : langages, frameworks, techniques... Le tout afin
-            de m&rsquo;adapter au mieux à chaque nouveau challenge qui
-            s&rsquo;offre à moi.
+            soif de nouvelles connaissances, j&apos;apprends chaque jour de
+            nouvelles compétences : langages de programmation, frameworks,
+            techniques de développement... Le tout afin de m&rsquo;adapter au
+            mieux à chaque nouveau challenge qui s&rsquo;offre à moi.
             <br />
-            Au-delà de ma curiosité je suis également créatif, dans divers
-            domaines. J&apos;utilise cet atout dans le cadre du développement
-            pour proposer des solutions originales et adaptées à chaque projet.
+            Au-delà de ma curiosité, je suis également créatif dans divers
+            domaines. J&apos;utilise cette créativité dans le cadre du
+            développement web pour proposer des solutions originales et adaptées
+            à chaque projet.
           </p>
         </div>
       </div>
