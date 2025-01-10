@@ -1,8 +1,18 @@
-'use client';
 import Link from 'next/link';
 import PageTitle from '@/components/pageTitle';
 import ServicesGrid from '@/components/servicesGrid';
 import { HiOutlineEnvelope } from 'react-icons/hi2';
+
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Développé par Stefan H - Mes services',
+  description:
+    'Développeur web spécialisé dans la création de sites et d’applications web. Transformons ensemble vos idées en solutions modernes, accessibles, et inclusives.',
+  keywords:
+    'développeur web, développeur freelance, création site web, création applications web, web app, saas, react, wordpress, blog',
+  authors: [{ name: 'Stefan Heyd' }],
+};
 
 export default function Services() {
   return (
@@ -16,7 +26,7 @@ export default function Services() {
       <div className="relative mx-auto flex max-w-2xl flex-col items-start ">
         <PageTitle
           title="Mes services & solutions"
-          subtitle="Site vitrine, e-commerce, blog, ou encore application web, je vous propose un large éventail de services pour répondre à vos besoins."
+          subtitle="Création de sites vitrines, applications web, … Des solutions personnalisées pour donner vie à vos projets numériques."
         />
       </div>
 

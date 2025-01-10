@@ -25,12 +25,16 @@ export default function ServicesGrid() {
           Site web <span className="text-4xl ml-3">🧑‍💻</span>
         </h2>
         <p className="text-normal text-sm md:text-base font-montserrat font-light ">
-          Vous avez besoin d&apos;un site vitrine pour présenter votre activité
-          ou votre entreprise ? Je vous propose de créer un{' '}
+          Des sites vitrines, e-commerces et blogs sur mesure avec{' '}
+          <strong>WordPress ou Next.js/React</strong>. Que vous souhaitiez
+          présenter votre entreprise, vendre vos produits ou partager vos idées,
+          je conçois des sites web personnalisés et performants, adaptés à vos
+          besoins et à votre image. Grâce à des solutions modernes comme
+          WordPress pour la flexibilité ou Next.js/React pour des performances
+          optimales,{' '}
           <strong>
-            site web sur mesure, adapté à vos besoins et à votre image
+            votre présence en ligne sera à la hauteur de vos ambitions.
           </strong>
-          .
         </p>
         <div className="absolute -z-10 top-12 md:-right-3/4 w-40 md:w-96 h-40 md:h-96 bg-primary-500 dark:bg-primary-900 rounded-full opacity-10 dark:opacity-30 mix-blend-multiply filter blur-2xl animate-blob"></div>
       </motion.div>
@@ -52,11 +56,16 @@ export default function ServicesGrid() {
           Application Web<span className="text-4xl ml-3">⚙️</span>
         </h2>
         <p className="text-normal text-sm md:text-base font-montserrat font-light ">
-          Une application web sur mesure pour répondre à vos besoins ? Je vous
-          accompagne dans la création de votre application web, de la conception
-          à la mise en ligne. Que ce soit pour un outil de gestion, un CRM, un
-          ERP, ou encore un outil de reporting, je vous propose une solution
-          adaptée à vos besoins.
+          <strong>
+            Une application web sur mesure pour répondre à vos besoins
+          </strong>
+          . Je vous accompagne dans la création de votre application web, de la
+          conception à la mise en ligne. Que ce soit pour un dashboard
+          interactif, une solution SaaS ou un outil de reporting, je conçois une{' '}
+          <strong>
+            application parfaitement adaptée à vos attentes et à vos objectifs
+          </strong>
+          .
         </p>
       </motion.div>
       <motion.div
@@ -75,10 +84,17 @@ export default function ServicesGrid() {
           UX / UI <span className="text-4xl ml-3">🌈</span>
         </h2>
         <p className="text-normal text-sm md:text-base font-montserrat font-light ">
-          Une esthétique soignée et une expérience utilisateur optimale sont des
-          éléments clés pour la réussite de votre projet. Je vous propose de
-          créer un design sur mesure pour votre site web ou votre application,
-          en accord avec votre identité visuelle.
+          <strong>
+            Un design adapté pour une expérience utilisateur optimale
+          </strong>
+          . Allier esthétique soignée, une navigation intuitive, et une
+          interface accessible pour garantir le succès de votre site web ou
+          application. Je conçois des designs personnalisés, en parfaite
+          harmonie avec votre identité visuelle, pour offrir{' '}
+          <strong>
+            une expérience captivante et mémorable à vos utilisateurs
+          </strong>
+          .
         </p>
         <div className="absolute top-0 -z-10 md:-right-3/4 w-40 md:w-96 h-40 md:h-96 bg-primary-500 dark:bg-primary-900 rounded-full opacity-10 dark:opacity-30 mix-blend-multiply filter blur-2xl animate-blob"></div>
       </motion.div>
@@ -100,9 +116,16 @@ export default function ServicesGrid() {
           Optimisation et maintenance<span className="text-4xl ml-3">🚀</span>
         </h2>
         <p className="text-normal text-sm md:text-base font-montserrat font-light ">
-          Un site ou une application nécessitent un suivi régulier pour rester à
-          jour et performant. Je vous propose un service de maintenance et
-          d&apos;optimisation pour garantir la pérennité de votre projet.
+          Maintenance et optimisation :{' '}
+          <strong>un site toujours à jour et performant</strong>. Un site web ou
+          une application nécessite un suivi constant pour rester rapide,
+          sécurisé et efficace. Je vous propose des services de maintenance
+          régulière et d&apos;optimisation technique, assurant{' '}
+          <strong>
+            la pérennité, la maintenabilité et la performance de votre projet au
+            fil du temps
+          </strong>
+          .
         </p>
       </motion.div>
     </div>
