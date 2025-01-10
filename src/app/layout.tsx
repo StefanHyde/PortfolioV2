@@ -23,7 +23,11 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: 'Développé par Stefan H',
-  description: 'My new portfolio',
+  description:
+    'Développeur web spécialisé dans la création de sites et d’applications web. Transformons ensemble vos idées en solutions modernes, accessibles, et inclusives.',
+  keywords:
+    'développeur web, développeur freelance, création site web, création application web, développement web, react, wordpress, UX UI, accessibilité',
+  authors: [{ name: 'Stefan Heyd' }],
 };
 export const viewport: Viewport = {
   themeColor: '#020617',

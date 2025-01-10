@@ -3,6 +3,16 @@ import Intro from '@/components/intro';
 import About from '@/components/about';
 import ContactForm from '@/components/contactForm';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  description:
+    'Développeur web spécialisé dans la création de sites et d’applications web. Transformons ensemble vos idées en solutions modernes, accessibles, et inclusives.',
+  keywords:
+    'développeur web, développeur freelance, création site web, création application web, développement web, react, wordpress, UX UI, accessibilité',
+  authors: [{ name: 'Stefan Heyd' }],
+};
+
 export default function Home() {
   return (
     <main>

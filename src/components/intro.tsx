@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import useAnimateOnView from '../hooks/useAnimateOnView';
 
@@ -45,10 +46,10 @@ export default function Intro() {
           </motion.span>
         </h2>
         <p className="text-normal md:text-lg font-montserrat font-light mt-10">
-          Que vous débutez votre aventure sur le web ou que vous êtes déjà
-          présent sur la toile, je vous accompagne dans la réalisation de vos
-          projets. Je vous propose des solutions adaptées à vos besoins et à
-          votre budget.
+          Que vous lanciez votre premier projet web ou que vous souhaitiez
+          optimiser votre présence en ligne, je vous accompagne à chaque étape.
+          Ensemble, nous concevons des solutions adaptées à vos objectifs, vos
+          besoins et votre budget.
         </p>
       </div>
 
@@ -68,8 +69,9 @@ export default function Intro() {
             Application<span className="text-4xl ml-3">⚙️</span>
           </h3>
           <p className="text-sm font-extralight">
-            Au delà d&apos;un site web, une application peut être un atout
-            considérable pour votre développement !
+            Une application web : bien plus qu&apos;un site, un levier puissant
+            pour accélérer votre croissance et transformer vos idées en
+            solutions concrètes.
           </p>
         </div>
         <div className="row-span-1 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-gradient-to-t from-primary-50 dark:from-primary-950 to-transparent shadow-md text-center">
@@ -77,8 +79,9 @@ export default function Intro() {
             Conseil<span className="text-4xl ml-3">👨‍🏫</span>
           </h3>
           <p className="text-sm font-extralight">
-            Afin de vous aider à faire les bons choix pour votre transition
-            numérique.
+            Des conseils sur-mesure pour guider vos choix et réussir votre
+            transition numérique grâce à un site ou une application web adaptée
+            à vos besoins.
           </p>
         </div>
         <div className="row-span-1 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-tr-2xl dark:text-almost-white bg-gradient-to-bl from-primary-50 dark:from-primary-950 to-transparent shadow-md text-end">
@@ -86,8 +89,9 @@ export default function Intro() {
             Optimisation<span className="text-4xl ml-3">🚀</span>
           </h3>
           <p className="text-sm font-extralight">
-            Car son image passe aussi par une plateforme performante et fluide à
-            l&apos;utilisation.
+            Une plateforme performante, fluide et facile à maintenir : renforcez
+            votre image en ligne avec un site rapide, agréable pour vos
+            utilisateurs et conçu pour durer.
           </p>
         </div>
         <div className="row-span-2 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-br-2xl dark:text-almost-white bg-gradient-to-tl from-primary-50 dark:from-primary-950 to-transparent shadow-md text-end">
@@ -95,9 +99,10 @@ export default function Intro() {
             UX / UI<span className="text-4xl ml-3">🌈</span>
           </h3>
           <p className="text-sm font-extralight">
-            La conception d&apos;une maquette est une étape cruciale dans la
-            création de votre site web ou application. Je vous propose des
-            maquettes modernes et ergonomiques respectant les standards actuels.
+            Une maquette accessible et inclusive pour un site ou une application
+            web réussie. Je conçois des designs modernes, ergonomiques et
+            conformes aux standards UX/UI actuels, en veillant à offrir une
+            expérience adaptée à tous les utilisateurs.
           </p>
         </div>
       </div>
@@ -133,10 +138,12 @@ export default function Intro() {
         </div>
       </div>
 
-      <button className="flex bg-primary-500 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-solid border-2 border-primary-500 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-10 rounded-md ease-in-out duration-300">
-        Découvrez mes services
-        <HiOutlineArrowRightCircle className="h-5 w-5 ml-2 inline-block" />
-      </button>
+      <Link href="/services">
+        <button className="flex bg-primary-500 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-solid border-2 border-primary-500 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-10 rounded-md ease-in-out duration-300">
+          Découvrez mes services
+          <HiOutlineArrowRightCircle className="h-5 w-5 ml-2 inline-block" />
+        </button>
+      </Link>
     </div>
   );
 }
