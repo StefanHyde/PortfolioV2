@@ -39,11 +39,11 @@ export default function Header() {
       <Link href="/" className="flex">
         <Image src="/images/logo.png" alt="logo" width={40} height={40} />
       </Link>
-      <nav className="flex">
-        <ul className="hidden md:flex gap-16">
+      <nav aria-label="Menu de navigation" className="flex">
+        <ul className="hidden md:flex gap-16" role="menu">
           {links.map((link) =>
             link.url === pathname ? null : (
-              <li key={link.hash}>
+              <li key={link.hash} role="lien du menu">
                 <Link
                   href={link.url}
                   className="text-lg font-nunito text-primary-600 dark:text-almost-white hover:text-primary-800 dark:hover:text-primary-800 ease-in-out duration-300"
@@ -66,6 +66,9 @@ export default function Header() {
         <div className="mobile-menu flex items-center md:hidden">
           <Menu>
             <MenuButton
+              aria-label="menu de navigation"
+              aria-expanded={menuOpened}
+              aria-controls="nav-menu"
               className="inline-flex items-center ml-6"
               onClick={toggleMenu}
             >
