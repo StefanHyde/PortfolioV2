@@ -63,6 +63,10 @@
       border-color: #3c0b60;
     }
   }
+
+  .submitbtn:disabled {
+    opacity: 50%;
+  }
 }
 
 @layer utilities {
