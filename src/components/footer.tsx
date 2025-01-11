@@ -48,6 +48,7 @@ export default function Footer() {
             href={social.url}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={social.name}
           >
             <social.icon.type className="h-6 md:h-4 w-6 md:w-4 hover:text-primary-200 ease-in-out duration-300" />
           </a>
