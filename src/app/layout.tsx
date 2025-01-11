@@ -1,5 +1,7 @@
 import { Nunito_Sans, Montserrat } from 'next/font/google';
 
+import { GoogleAnalytics } from '@next/third-parties/google';
+
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import ScrollToTop from '@/components/scrollToTop';
@@ -43,6 +45,8 @@ export default function RootLayout({
       lang="en"
       className={`${nunito.variable} ${montserrat.variable} scroll-smooth`}
     >
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
+
       <body>
         <ThemeContextProvider>
           <Header />

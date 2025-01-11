@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import ThemeSwitch from './themeSwitch';
+import { sendGAEvent } from '@next/third-parties/google';
 import { links } from '../../lib/data';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { HiBars3, HiMiniXMark } from 'react-icons/hi2';
@@ -59,7 +60,12 @@ export default function Header() {
       <div className="flex items-center gap-6">
         <ThemeSwitch />
         <Link href="/#contact" className="hidden md:flex">
-          <button className="flex bg-primary-600 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-solid border-2 border-primary-600 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 text-white font-montserrat font-light text-sm text-left p-2  rounded-md ease-in-out duration-300">
+          <button
+            className="flex bg-primary-600 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-solid border-2 border-primary-600 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 text-white font-montserrat font-light text-sm text-left p-2  rounded-md ease-in-out duration-300"
+            onClick={() =>
+              sendGAEvent('event', 'buttonClicked', { value: 'xyz' })
+            }
+          >
             Me contacter
           </button>
         </Link>
