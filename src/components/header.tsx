@@ -43,7 +43,7 @@ export default function Header() {
         <ul className="hidden md:flex gap-16" role="menu">
           {links.map((link) =>
             link.url === pathname ? null : (
-              <li key={link.hash} role="lien du menu">
+              <li key={link.hash}>
                 <Link
                   href={link.url}
                   className="text-lg font-nunito text-primary-600 dark:text-almost-white hover:text-primary-800 dark:hover:text-primary-800 ease-in-out duration-300"
