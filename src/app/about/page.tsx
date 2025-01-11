@@ -45,16 +45,15 @@ export default function About() {
             <br />
             Après de nombreuses expériences dans le support technique et la
             communication, j&apos;ai décidé de me reconvertir dans le domaine du
-            développement web. Grâce à l&apos;attrait qui m&apos;anime et à ma
-            soif de nouvelles connaissances, j&apos;apprends chaque jour de
-            nouvelles compétences : langages de programmation, frameworks,
-            techniques de développement... Le tout afin de m&rsquo;adapter au
-            mieux à chaque nouveau challenge qui s&rsquo;offre à moi.
+            développement web. Passionné et curieux, j’enrichis chaque jour mes
+            compétences en développement, conception, logique, pour répondre de
+            manière optimale à chaque nouveau challenge qui s&rsquo;offre à moi.
             <br />
             Au-delà de ma curiosité, je suis également créatif dans divers
             domaines. J&apos;utilise cette créativité dans le cadre du
             développement web pour proposer des solutions originales et adaptées
-            à chaque projet.
+            à chaque projet. Car le développement ne doit pas s&apos;arrêter à
+            une ligne de code !
           </p>
         </div>
       </div>
