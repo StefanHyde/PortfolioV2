@@ -49,29 +49,31 @@ export default function About() {
 
       <div className="relative flex flex-col items-center xl:flex-row xl:w-1/2 mt-24 xl:mt-12">
         <div className="flex flex-col p-8 pt-28 md:pt-32 xl:pt-12 xl:pr-28 backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container">
-          <p className="text-normal text-sm md:text-base font-montserrat font-light ">
-            Je suis Stefan, <strong>développeur passionné</strong>, spécialisé
-            dans la création de sites et d’applications sur mesure.
-            <br />
-            <br /> Mon objectif est de transformer vos idées en solutions
-            numériques <strong>modernes, esthétiques et fonctionnelles</strong>.
-            <br />
-            <br /> À <strong>l’écoute de vos besoins et de vos attentes</strong>
-            , je mets un point d’honneur à concevoir des interfaces intuitives
-            et des expériences utilisateur qui reflètent votre identité et
-            captivent vos utilisateurs. <br />
-            <br /> De la première ligne de code à la mise en ligne, je travaille
-            en étroite collaboration avec vous pour m&lsquo;assurer que le
-            résultat final dépasse vos espérances. Mon expertise couvre tant le{' '}
+          <p className="text-normal text-sm md:text-base font-montserrat font-light mb-6">
+            Je suis Stefan, <strong>développeur passionné et engagé</strong>,
+            spécialisé dans la création de sites et d’applications web sur
+            mesure. Mon objectif : transformer vos idées en solutions numériques{' '}
+            <strong>modernes, accessibles, et performantes</strong>. À l’écoute
+            de vos besoins et de vos ambitions, je conçois des interfaces
+            ergonomiques, inclusives et adaptées à tous vos utilisateurs, tout
+            en respectant les standards UX/UI actuels. Ensemble, nous bâtirons
+            une <strong>expérience numérique qui reflète votre identité</strong>{' '}
+            tout en captivant et fidélisant votre audience.
+          </p>
+          <p className="text-normal text-sm md:text-base font-montserrat font-light mb-6">
+            Ensemble, nous donnerons vie à vos projets avec des solutions qui
+            allient esthétique, fonctionnalité et longévité. Je suis ici pour
             <strong>
-              front-end, pour des designs élégants et réactifs, que le back-end,
-              pour des fonctionnalités robustes et sécurisées
+              {' '}
+              écouter et créer des solutions qui soutiennent votre vision
             </strong>
-            . <br />
-            <br /> Faites-moi confiance pour donner vie à vos projets et bâtir
-            avec vous des solutions qui allient esthétisme et performance <br />
-            <br /> Je suis là pour
-            <strong> écouter, comprendre et créer</strong>.
+            .
+          </p>
+          <p className="text-normal font-normal text-sm md:text-base font-montserrat">
+            <strong>
+              Faites le choix d’un développement pensé pour vous et vos
+              utilisateurs.{' '}
+            </strong>
           </p>
         </div>
 
@@ -87,7 +89,7 @@ export default function About() {
       </div>
 
       <Link href="/about">
-        <button className="flex bg-primary-500 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-solid border-2 border-primary-500 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-10 rounded-md ease-in-out duration-300">
+        <button className="flex bg-primary-600 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-solid border-2 border-primary-600 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-10 rounded-md ease-in-out duration-300">
           En savoir plus
           <HiOutlineArrowRightCircle className="h-5 w-5 ml-2 inline-block" />
         </button>

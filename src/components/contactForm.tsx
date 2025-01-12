@@ -175,7 +175,7 @@ export default function ContactForm() {
               <button
                 disabled={!formState.isValid || isSubmitting}
                 type="submit"
-                className={`flex bg-primary-500 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-500 hover:border-primary-800 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300${!formState.isValid || isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`submitbtn flex bg-primary-600 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-600 hover:border-primary-800 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300${!formState.isValid || isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
               >
                 Envoyer
               </button>
