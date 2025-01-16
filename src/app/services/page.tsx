@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     'Développeur web spécialisé dans la création de sites et d’applications web. Transformons ensemble vos idées en solutions modernes, accessibles, et inclusives.',
   keywords:
-    'développeur web, développeur freelance, création site web, création applications web, web app, saas, react, wordpress, blog',
+    'développeur web, développeur freelance, développeur strasbourg, développeur react, développeur wordpress, création site web, création applications web, web app, saas, react, wordpress, UX/UI, graphisme',
   authors: [{ name: 'Stefan Heyd' }],
 };
 

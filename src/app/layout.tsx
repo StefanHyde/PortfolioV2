@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description:
     'Développeur web spécialisé dans la création de sites et d’applications web. Transformons ensemble vos idées en solutions modernes, accessibles, et inclusives.',
   keywords:
-    'développeur web, développeur freelance, création site web, création application web, développement web, react, wordpress, UX UI, accessibilité',
+    'développeur web, développeur strasbourg, développeur react, développeur wordpress, site web, application web, développement web, react, wordpress, UX UI, accessibilité',
   authors: [{ name: 'Stefan Heyd' }],
 };
 export const viewport: Viewport = {
