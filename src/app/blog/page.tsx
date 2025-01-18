@@ -1,24 +1,26 @@
 import { getPosts } from '../api/wordPress/service';
 
-interface Post {
-  id: string;
-  title: string;
-  excerpt: string;
-  //TODO: Add others fields here
-}
+import PageTitle from '@/components/pageTitle';
+import BlogPostBlock from '@/components/blogPostBlock';
 
 export default async function BlogPage() {
   const posts = await getPosts(50); // Get the 50 latest posts
 
   return (
-    <div>
-      {/* Render your posts here */}
-      {posts.map((post: Post) => (
-        <>
-          <div key={post.id}>{post.title} </div>
-          <div>{post.excerpt} </div>
-        </>
-      ))}
-    </div>
+    <main>
+      <div className="relative mx-auto flex max-w-2xl flex-col items-start ">
+        <PageTitle
+          title="Le blog"
+          subtitle="Discussions, réfléxions, actualités, ou conseils. Ici on aborde divers sujets autour du développement web 🧑‍💻"
+        />
+      </div>
+      <div className="mx-auto flex flex-col items-start justify-center gap-20 w-full md:w-full p-6 mb-12 md:p-12 mt-24 xl:mt-32">
+        <div className="flex flex-col md:grid md:grid-rows-3 grid-flow-col gap-4  md:w-full font-montserrat  text-dark-800 dark:text-almost-white ">
+          {posts.map((post: any) => {
+            return <BlogPostBlock key={post.slug} post={post} />;
+          })}
+        </div>
+      </div>
+    </main>
   );
 }
