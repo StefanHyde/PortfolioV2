@@ -14,11 +14,15 @@ export default async function BlogPage() {
           subtitle="Discussions, réfléxions, actualités, ou conseils. Ici on aborde divers sujets autour du développement web 🧑‍💻"
         />
       </div>
-      <div className="mx-auto flex flex-col items-start justify-center gap-20 w-full md:w-full p-6 mb-12 md:p-12 mt-24 xl:mt-32">
-        <div className="flex flex-col md:grid md:grid-rows-3 grid-flow-col gap-4  md:w-full font-montserrat  text-dark-800 dark:text-almost-white ">
-          {posts.map((post: any) => {
-            return <BlogPostBlock key={post.slug} post={post} />;
-          })}
+
+      <div className="mx-auto flex flex-col md:flex-row justify-center w-full max-w-7xl gap-10  p-6 mb-12 md:p-12 mt-24 xl:mt-32 text-dark-800 dark:text-almost-white">
+        <div className="flex flex-col w-full">
+          <h3 className="text-2xl font-semibold  mb-4">Derniers articles</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 font-montserrat text-dark-800 dark:text-almost-white">
+            {posts.map((post: any) => {
+              return <BlogPostBlock key={post.slug} post={post} />;
+            })}
+          </div>
         </div>
       </div>
     </main>
