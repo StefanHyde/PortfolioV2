@@ -7,22 +7,28 @@
  */
 import { fetchWPAPI } from './base';
 
+// To gets posts
 export async function getPosts(first = 10) {
   const data = await fetchWPAPI(
     `query FetchPosts($first: Int = 10) {
-        posts(first: $first) {
-          nodes {
-            excerpt
-            featuredImage {
-              node {
-                sourceUrl
-              }
-            }
-            slug
-            title
-          }
+  posts(first: $first) {
+    nodes {
+      excerpt
+      featuredImage {
+        node {
+          sourceUrl
         }
-      }`,
+      }
+      slug
+      title
+      tags {
+        nodes {
+          name
+        }
+      }
+    }
+  }
+}`,
     {
       variables: {
         first,
@@ -31,4 +37,29 @@ export async function getPosts(first = 10) {
   );
 
   return data?.posts?.nodes;
+}
+
+// To get a single post
+export async function getPostBySlug(slug: string) {
+  const data = await fetchWPAPI(
+    `query GetPost($id: ID = "") {
+    post(id: $id, idType: SLUG) {
+      content
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      slug
+      title
+    }
+  }`,
+    {
+      variables: {
+        id: slug,
+      },
+    },
+  );
+
+  return data?.post;
 }
