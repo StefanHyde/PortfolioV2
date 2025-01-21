@@ -1,10 +1,10 @@
 'use client';
-import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-import useAnimateOnView from '../hooks/useAnimateOnView';
-
+import Link from 'next/link';
+import React from 'react';
 import { HiOutlineArrowRightCircle } from 'react-icons/hi2';
+
+import useAnimateOnView from '../hooks/useAnimateOnView';
 
 export default function Intro() {
   const { ref: refFirst, controls: controlsFirst } = useAnimateOnView();

@@ -29,18 +29,18 @@ export default function PageTitle({
           className={`flex flex-col font-nunito font-bold  ${titleSizeClass}  `}
         >
           <div className="flex flex-row flex-wrap">
-            {titleAnimationText.map((el, i) => (
+            {titleAnimationText.map((element, index) => (
               <motion.h1
                 className="text-wrap"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{
                   duration: 0.25,
-                  delay: i / 10,
+                  delay: index / 10,
                 }}
-                key={i}
+                key={index}
               >
-                {el}{' '}
+                {element}{' '}
               </motion.h1>
             ))}
           </div>

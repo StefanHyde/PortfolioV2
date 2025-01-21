@@ -1,12 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-
 import Link from 'next/link';
 import {
   HiOutlineArrowRightCircle,
-  HiOutlineEnvelope,
   HiOutlineDocumentText,
+  HiOutlineEnvelope,
 } from 'react-icons/hi2';
 
 type heroProps = {
@@ -40,17 +39,17 @@ export default function Hero({
             {surtitle}
           </span>
           <div className="flex flex-row">
-            {titleAnimationText.map((el, i) => (
+            {titleAnimationText.map((element, index) => (
               <motion.h1
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{
                   duration: 0.25,
-                  delay: i / 10,
+                  delay: index / 10,
                 }}
-                key={i}
+                key={index}
               >
-                {el}{' '}
+                {element}{' '}
               </motion.h1>
             ))}
           </div>

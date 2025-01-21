@@ -1,13 +1,14 @@
 'use client';
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
-import ThemeSwitch from './themeSwitch';
-import { sendGAEvent } from '@next/third-parties/google';
-import { links } from '../../lib/data';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import { sendGAEvent } from '@next/third-parties/google';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import { HiBars3, HiMiniXMark } from 'react-icons/hi2';
+
+import { links } from '../../lib/data';
+import ThemeSwitch from './themeSwitch';
 
 export default function Header() {
   const pathname = usePathname();
@@ -30,7 +31,7 @@ export default function Header() {
   }, []);
 
   const toggleMenu = () => {
-    setMenuOpened((prevState) => !prevState);
+    setMenuOpened((previousState) => !previousState);
   };
 
   return (
@@ -78,10 +79,10 @@ export default function Header() {
               className="inline-flex items-center ml-6"
               onClick={toggleMenu}
             >
-              {!menuOpened ? (
-                <HiBars3 className=" h-10 w-10 text-dark-800 dark:text-almost-white" />
-              ) : (
+              {menuOpened ? (
                 <HiMiniXMark className=" h-10 w-10 text-dark-800 dark:text-almost-white" />
+              ) : (
+                <HiBars3 className=" h-10 w-10 text-dark-800 dark:text-almost-white" />
               )}
             </MenuButton>
             <MenuItems

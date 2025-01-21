@@ -1,6 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
+
 import useAnimateOnView from '@/hooks/useAnimateOnView';
+
 import { skillsData } from './../../lib/data';
 
 export default function Skills() {

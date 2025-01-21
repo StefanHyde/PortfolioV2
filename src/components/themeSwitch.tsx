@@ -1,9 +1,10 @@
 'use client';
 
 import React from 'react';
-import { useTheme } from '@/context/themeContext';
+import { HiOutlineMoon, HiOutlineSun } from 'react-icons/hi2';
 import { Tooltip } from 'react-tooltip';
-import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi2';
+
+import { useTheme } from '@/context/themeContext';
 
 export default function ThemeSwitch() {
   const { theme, toggleTheme } = useTheme();

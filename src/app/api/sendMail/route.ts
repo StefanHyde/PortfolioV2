@@ -1,6 +1,6 @@
-import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
 import { RateLimiterMemory, RateLimiterRes } from 'rate-limiter-flexible';
+import { Resend } from 'resend';
 
 import Email from '@/email';
 
@@ -12,15 +12,16 @@ const rateLimiter = new RateLimiterMemory({
   duration: 15 * 60, // Per 15 minutes
 });
 
-export async function POST(req: NextRequest) {
+export async function POST(request: NextRequest) {
   try {
     // Get client IP (or a fallback if not behind a proxy)
-    const ip = req.headers.get('x-forwarded-for') || req.ip || 'unknown';
+    const ip =
+      request.headers.get('x-forwarded-for') || request.ip || 'unknown';
 
     // Consume a rate limit point
     await rateLimiter.consume(ip);
 
-    const { name, message, senderMail, honeyPot } = await req.json();
+    const { name, message, senderMail, honeyPot } = await request.json();
 
     // Check honeypot field
     if (honeyPot) {
@@ -41,10 +42,10 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json(data);
-  } catch (err) {
-    if (err instanceof RateLimiterRes) {
+  } catch (error) {
+    if (error instanceof RateLimiterRes) {
       // Handle rate limit exceeded error
-      console.warn('Rate limit exceeded', { retryIn: err.msBeforeNext });
+      console.warn('Rate limit exceeded', { retryIn: error.msBeforeNext });
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
         { status: 429 },
@@ -52,7 +53,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Log other unexpected errors
-    console.error('Unexpected error:', err);
+    console.error('Unexpected error:', error);
     return NextResponse.json(
       { error: 'An unexpected error occurred' },
       { status: 500 },

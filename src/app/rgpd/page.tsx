@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+
 import PageTitle from '@/components/pageTitle';
 
 export default function RgpdPage() {
