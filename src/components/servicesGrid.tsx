@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+
 import useAnimateOnInView from '@/hooks/useAnimateOnView';
 
 export default function ServicesGrid() {

@@ -1,9 +1,9 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import PageTitle from '@/components/pageTitle';
-import ServicesGrid from '@/components/servicesGrid';
 import { HiOutlineEnvelope } from 'react-icons/hi2';
 
-import type { Metadata } from 'next';
+import PageTitle from '@/components/pageTitle';
+import ServicesGrid from '@/components/servicesGrid';
 
 export const metadata: Metadata = {
   title: 'Développé par Stefan H - Mes services',

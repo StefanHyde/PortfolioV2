@@ -1,15 +1,13 @@
-import { Nunito_Sans, Montserrat } from 'next/font/google';
+import './globals.css';
 
 import { GoogleAnalytics } from '@next/third-parties/google';
+import type { Metadata, Viewport } from 'next';
+import { Montserrat, Nunito_Sans } from 'next/font/google';
 
-import Header from '@/components/header';
 import Footer from '@/components/footer';
+import Header from '@/components/header';
 import ScrollToTop from '@/components/scrollToTop';
 import ThemeContextProvider from '@/context/themeContext';
-
-import type { Metadata } from 'next';
-import type { Viewport } from 'next';
-import './globals.css';
 
 const nunito = Nunito_Sans({
   subsets: ['latin'],

@@ -1,15 +1,15 @@
-import React from 'react';
 import {
-  Html,
-  Head,
-  Preview,
   Body,
-  Container,
-  Section,
-  Font,
-  Text,
   Button,
+  Container,
+  Font,
+  Head,
+  Html,
+  Preview,
+  Section,
+  Text,
 } from '@react-email/components';
+import React from 'react';
 
 type EmailProps = {
   name: string;

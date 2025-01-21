@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { socials } from '../../lib/data';
-import { links } from '../../lib/data';
+
+import { links, socials } from '../../lib/data';
 
 export default function Footer() {
   return (

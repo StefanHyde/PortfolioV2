@@ -1,9 +1,10 @@
 'use client';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import useAnimateOnView from '@/hooks/useAnimateOnView';
 import { HiOutlineArrowRightCircle } from 'react-icons/hi2';
+
+import useAnimateOnView from '@/hooks/useAnimateOnView';
 
 export default function About() {
   const { ref: refFirstTitle, controls: controlsFirstTitle } =

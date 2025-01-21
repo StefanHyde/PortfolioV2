@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { HiArrowSmUp } from 'react-icons/hi';
 
 export default function ScrollToTop() {

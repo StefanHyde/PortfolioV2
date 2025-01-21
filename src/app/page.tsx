@@ -1,9 +1,10 @@
-import Hero from '../components/hero';
-import Intro from '@/components/intro';
+import type { Metadata } from 'next';
+
 import About from '@/components/about';
 import ContactForm from '@/components/contactForm';
+import Intro from '@/components/intro';
 
-import type { Metadata } from 'next';
+import Hero from '../components/hero';
 
 export const metadata: Metadata = {
   description:

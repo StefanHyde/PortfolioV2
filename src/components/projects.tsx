@@ -1,10 +1,12 @@
 'use client';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import useAnimateOnView from '@/hooks/useAnimateOnView';
-import { projectsData } from './../../lib/data';
+import Link from 'next/link';
 import { SiGithub } from 'react-icons/si';
+
+import useAnimateOnView from '@/hooks/useAnimateOnView';
+
+import { projectsData } from './../../lib/data';
 
 export default function Projects() {
   const { ref: refProjectTitle, controls: controlsProjectTitle } =

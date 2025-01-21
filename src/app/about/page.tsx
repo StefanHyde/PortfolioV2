@@ -1,12 +1,12 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import PageTitle from '@/components/pageTitle';
-import Experiences from '@/components/experiences';
-import Skills from '@/components/skills';
-import Projects from '@/components/projects';
 import { HiOutlineDocumentText } from 'react-icons/hi2';
 
-import type { Metadata } from 'next';
+import Experiences from '@/components/experiences';
+import PageTitle from '@/components/pageTitle';
+import Projects from '@/components/projects';
+import Skills from '@/components/skills';
 
 export const metadata: Metadata = {
   title: 'Développé par Stefan H - A propos',

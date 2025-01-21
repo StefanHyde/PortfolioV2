@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 import PageTitle from '@/components/pageTitle';
 
 export default function LegalPage() {

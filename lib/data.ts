@@ -1,9 +1,10 @@
 import { createElement } from 'react';
-import { SiGithub, SiLinkedin, SiBluesky } from 'react-icons/si';
+import { SiBluesky, SiGithub, SiLinkedin } from 'react-icons/si';
+
 import cuultImg from '../public/images/25h.png';
 import dhdaImg from '../public/images/dhda.png';
-import nctImg from '../public/images/nct.png';
 import mariergoImg from '../public/images/mariergo.png';
+import nctImg from '../public/images/nct.png';
 
 export const links = [
   {

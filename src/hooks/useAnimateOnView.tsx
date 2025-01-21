@@ -15,8 +15,8 @@
  * );
  */
 
-import { useEffect, useRef } from 'react';
 import { useAnimation, useInView } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
 const useAnimateOnInView = (options = { once: true }) => {
   const ref = useRef(null);
