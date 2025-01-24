@@ -36,19 +36,19 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed z-50 h-auto w-full flex items-center justify-between py-2 px-4 ${scrolled ? 'bg-almost-white dark:bg-slate-950' : 'bg-transparent'}`}
+      className={`fixed z-50 flex h-auto w-full items-center justify-between px-4 py-2 ${scrolled ? 'bg-almost-white dark:bg-slate-950' : 'bg-transparent'}`}
     >
       <Link href="/" className="flex">
         <Image src="/images/logo.png" alt="logo" width={40} height={40} />
       </Link>
       <nav aria-label="Menu de navigation" className="flex">
-        <ul className="hidden md:flex gap-16" role="menu">
+        <ul className="hidden gap-16 md:flex" role="menu">
           {links.map((link) =>
             link.url === pathname ? null : (
               <li key={link.hash}>
                 <Link
                   href={link.url}
-                  className="text-lg font-nunito text-primary-600 dark:text-almost-white hover:text-primary-800 dark:hover:text-primary-800 ease-in-out duration-300"
+                  className="font-nunito text-primary-600 dark:text-almost-white hover:text-primary-800 dark:hover:text-primary-800 text-lg duration-300 ease-in-out"
                 >
                   {link.name}
                 </Link>
@@ -62,7 +62,7 @@ export default function Header() {
         <ThemeSwitch />
         <Link href="/#contact" className="hidden md:flex">
           <button
-            className="flex bg-primary-600 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-solid border-2 border-primary-600 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 text-white font-montserrat font-light text-sm text-left p-2  rounded-md ease-in-out duration-300"
+            className="bg-primary-600 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-primary-600 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 font-montserrat flex rounded-md border-2 border-solid p-2 text-left text-sm font-light text-white duration-300 ease-in-out"
             onClick={() =>
               sendGAEvent('event', 'buttonClicked', { value: 'xyz' })
             }
@@ -76,26 +76,26 @@ export default function Header() {
               aria-label="menu de navigation"
               aria-expanded={menuOpened}
               aria-controls="nav-menu"
-              className="inline-flex items-center ml-6"
+              className="ml-6 inline-flex items-center"
               onClick={toggleMenu}
             >
               {menuOpened ? (
-                <HiMiniXMark className=" h-10 w-10 text-dark-800 dark:text-almost-white" />
+                <HiMiniXMark className="text-dark-800 dark:text-almost-white h-10 w-10" />
               ) : (
-                <HiBars3 className=" h-10 w-10 text-dark-800 dark:text-almost-white" />
+                <HiBars3 className="text-dark-800 dark:text-almost-white h-10 w-10" />
               )}
             </MenuButton>
             <MenuItems
               transition
               anchor="top start"
-              className=" z-50 w-full h-screen p-8 [--anchor-gap:8px] backdrop-blur-xl border-solid border-2 border-primary-500 dark:border-almost-white rounded-md  flex flex-col justify-center gap-10  transition duration-300 ease-in-out focus:outline-hidden data-closed:scale-95 data-closed:opacity-0"
+              className="border-primary-500 dark:border-almost-white z-50 flex h-screen w-full flex-col justify-center gap-10 rounded-md border-2 border-solid p-8 backdrop-blur-xl transition duration-300 ease-in-out [--anchor-gap:8px] focus:outline-hidden data-closed:scale-95 data-closed:opacity-0"
             >
               {links.map((link) => (
                 <MenuItem key={link.hash}>
                   <Link
                     href={link.url}
                     onClick={() => setMenuOpened(false)}
-                    className="text-lg font-nunito text-primary-500 dark:text-almost-white hover:text-primary-800 dark:hover:text-primary-800 ease-in-out duration-300"
+                    className="font-nunito text-primary-500 dark:text-almost-white hover:text-primary-800 dark:hover:text-primary-800 text-lg duration-300 ease-in-out"
                   >
                     {link.name}
                   </Link>
@@ -103,7 +103,7 @@ export default function Header() {
               ))}
               <MenuItem>
                 <button
-                  className="flex justify-center bg-primary-500 dark:bg-primary-800 text-lg font-nunito text-almost-white border-solid border-2 border-primary-500 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 p-2 mt-12 rounded-md "
+                  className="bg-primary-500 dark:bg-primary-800 font-nunito text-almost-white border-primary-500 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 mt-12 flex justify-center rounded-md border-2 border-solid p-2 text-lg"
                   onClick={() => setMenuOpened(false)}
                 >
                   Me contacter

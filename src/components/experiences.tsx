@@ -12,11 +12,11 @@ export default function Experiences() {
     useAnimateOnView();
 
   return (
-    <div ref={refExperience} className=" flex flex-col w-full md:w-1/2">
-      <div className="flex flex-col w-full">
+    <div ref={refExperience} className="flex w-full flex-col md:w-1/2">
+      <div className="flex w-full flex-col">
         <motion.h2
           ref={refExeprienceTitle}
-          className="text-center md:text-left mb-12 text-4xl md:text-5xl font-montserrat font-semibold  bg-linear-to-r from-primary-800 to-primary-400 inline-block text-transparent bg-clip-text text-primary-500"
+          className="font-montserrat from-primary-800 to-primary-400 text-primary-500 mb-12 inline-block bg-linear-to-r bg-clip-text text-center text-4xl font-semibold text-transparent md:text-left md:text-5xl"
           variants={{
             hidden: { opacity: 0, x: -200 },
             visible: { opacity: 1, x: 0 },
@@ -29,10 +29,10 @@ export default function Experiences() {
           Expériences <span className="text-black">🧑‍💻</span>
         </motion.h2>
 
-        <div className="w-full overflow-hidden  backdrop-blur-md p-4 md:p-8  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-linear-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md text-center">
+        <div className="border-primary-500 dark:border-almost-white dark:text-almost-white from-primary-50 dark:from-primary-950 w-full overflow-hidden rounded-md border-2 border-solid bg-linear-to-b to-transparent p-4 text-center shadow-md backdrop-blur-md md:p-8">
           {experiencesData.map((experience, index) => (
             <motion.div
-              className="flex flex-col items-start justify-start text-left mb-8   from-primary-50 dark:from-primary-950 "
+              className="from-primary-50 dark:from-primary-950 mb-8 flex flex-col items-start justify-start text-left"
               key={index}
               variants={{
                 hidden: { opacity: 0 },
@@ -43,25 +43,25 @@ export default function Experiences() {
               viewport={{ once: true }}
               transition={{ duration: 0.25, delay: 0.5 }}
             >
-              <h3 className="text-2xl font-montserrat font-semibold">
+              <h3 className="font-montserrat text-2xl font-semibold">
                 {experience.title}
               </h3>
-              <p className="text-normal text-sm md:text-base font-montserrat font-semibold">
+              <p className="text-normal font-montserrat text-sm font-semibold md:text-base">
                 {experience.company}
               </p>
-              <p className="text-sm md:text-base font-montserrat font-thin">
+              <p className="font-montserrat text-sm font-thin md:text-base">
                 {experience.date}
               </p>
-              <p className="text-normal text-sm md:text-base font-montserrat font-light">
+              <p className="text-normal font-montserrat text-sm font-light md:text-base">
                 {experience.description}
               </p>
-              <div className="flex flex-wrap gap-4 mt-3">
+              <div className="mt-3 flex flex-wrap gap-4">
                 {experience.stack.map((tech, index) => (
                   <div
                     key={index}
-                    className="p-1  bg-primary-500  text-almost-white"
+                    className="bg-primary-500 text-almost-white p-1"
                   >
-                    <p className="text-normal text-sm font-montserrat font-light">
+                    <p className="text-normal font-montserrat text-sm font-light">
                       {tech}
                     </p>
                   </div>

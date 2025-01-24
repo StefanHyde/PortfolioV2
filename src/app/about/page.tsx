@@ -20,14 +20,14 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <main>
-      <div className="relative mx-auto flex max-w-2xl flex-col items-start ">
+      <div className="relative mx-auto flex max-w-2xl flex-col items-start">
         <PageTitle title="À propos" subtitle="Mon parcours, mes expériences" />
       </div>
 
-      <div className="mx-auto flex flex-col md:flex-row items-start justify-center gap-20 w-full md:w-full xl:w-1/2 p-6 mb-12 md:p-12 mt-24 xl:mt-32">
-        <div className="w-full md:w-1/4 flex justify-center md:block">
-          <div className="relative flex items-center justify-center bg-linear-to-bl from-primary-50 to-primary-100 dark:from-primary-950 dark:to-slate-950 h-44 w-44 md:h-52 md:w-52 rounded-full  border-primary-300 dark:border-primary-950 shadow-xl hover:rotate-2 hover:scale-105 duration-300">
-            <div className="absolute inset-0 border-8 border-primary-300 dark:border-primary-950 rounded-full z-10"></div>
+      <div className="mx-auto mt-24 mb-12 flex w-full flex-col items-start justify-center gap-20 p-6 md:w-full md:flex-row md:p-12 xl:mt-32 xl:w-1/2">
+        <div className="flex w-full justify-center md:block md:w-1/4">
+          <div className="from-primary-50 to-primary-100 dark:from-primary-950 border-primary-300 dark:border-primary-950 relative flex h-44 w-44 items-center justify-center rounded-full bg-linear-to-bl shadow-xl duration-300 hover:scale-105 hover:rotate-2 md:h-52 md:w-52 dark:to-slate-950">
+            <div className="border-primary-300 dark:border-primary-950 absolute inset-0 z-10 rounded-full border-8"></div>
             <Image
               src="/images/avatar2.png"
               width={200}
@@ -38,8 +38,8 @@ export default function About() {
           </div>
         </div>
 
-        <div className="flex flex-col  md:w-3/4 p-8  backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container">
-          <p className="text-normal text-sm md:text-base font-montserrat font-light ">
+        <div className="dark:border-almost-white text-dark-800 dark:text-almost-white skew-container flex flex-col rounded-md border-solid p-8 backdrop-blur-md md:w-3/4">
+          <p className="text-normal font-montserrat text-sm font-light md:text-base">
             Je suis Stéphane, développeur web basé en France, spécialisé dans la
             création de sites internet et d&apos;applications web.
             <br />
@@ -58,13 +58,13 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mx-auto flex flex-col md:flex-row justify-center w-full max-w-7xl gap-10 p-6 md:p-12 text-dark-800 dark:text-almost-white">
+      <div className="text-dark-800 dark:text-almost-white mx-auto flex w-full max-w-7xl flex-col justify-center gap-10 p-6 md:flex-row md:p-12">
         <Experiences />
         <Skills />
       </div>
 
-      <div className="mx-auto flex flex-col justify-center items-center mt-12 p-6 mb-12 md:p-12">
-        <p className="text-normal text-center text-sm md:text-base font-montserrat font-light  text-dark-900 dark:text-almost-white">
+      <div className="mx-auto mt-12 mb-12 flex flex-col items-center justify-center p-6 md:p-12">
+        <p className="text-normal font-montserrat text-dark-900 dark:text-almost-white text-center text-sm font-light md:text-base">
           Vous souhaitez en savoir davantage ? Téléchargez mon CV ci-dessous.
         </p>
         <Link
@@ -72,13 +72,13 @@ export default function About() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="flex bg-primary-600 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-600 hover:border-primary-800 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
+          <button className="bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white duration-300 ease-in-out">
             Télécharger mon CV
-            <HiOutlineDocumentText className="h-5 w-5 ml-2 inline-block" />
+            <HiOutlineDocumentText className="ml-2 inline-block h-5 w-5" />
           </button>
         </Link>
       </div>
-      <div className="mx-auto flex flex-col md:flex-row justify-center w-full max-w-7xl gap-10 p-6 md:p-12 text-dark-800 dark:text-almost-white">
+      <div className="text-dark-800 dark:text-almost-white mx-auto flex w-full max-w-7xl flex-col justify-center gap-10 p-6 md:flex-row md:p-12">
         <Projects />
       </div>
     </main>

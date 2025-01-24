@@ -10,14 +10,14 @@ export default function Intro() {
   const { ref: refFirst, controls: controlsFirst } = useAnimateOnView();
   const { ref: refSecond, controls: controlsSecond } = useAnimateOnView();
   return (
-    <div className="flex flex-col items-center justify-center h-full w-full ">
-      <div className="justify-start mb-12  text-dark-800 dark:text-almost-white md:w-2/3">
-        <h2 className="mb-6 text-4xl md:text-5xl font-montserrat font-semibold">
+    <div className="flex h-full w-full flex-col items-center justify-center">
+      <div className="text-dark-800 dark:text-almost-white mb-12 justify-start md:w-2/3">
+        <h2 className="font-montserrat mb-6 text-4xl font-semibold md:text-5xl">
           Quelque soit vos{' '}
           <motion.div
             ref={refFirst}
             style={{ overflow: 'hidden' }}
-            className="text-6xl md:text-7xl bg-linear-to-r from-primary-800 to-primary-400 inline-block text-transparent bg-clip-text text-primary-500"
+            className="from-primary-800 to-primary-400 text-primary-500 inline-block bg-linear-to-r bg-clip-text text-6xl text-transparent md:text-7xl"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
@@ -32,7 +32,7 @@ export default function Intro() {
           je vous trouve la{' '}
           <motion.span
             ref={refSecond}
-            className="text-6xl md:text-7xl bg-linear-to-r from-secondary-500 to-secondary-200 inline-block text-transparent bg-clip-text"
+            className="from-secondary-500 to-secondary-200 inline-block bg-linear-to-r bg-clip-text text-6xl text-transparent md:text-7xl"
             variants={{
               hidden: { opacity: 0, y: -20 },
               visible: { opacity: 1, y: 0 },
@@ -45,7 +45,7 @@ export default function Intro() {
             solution
           </motion.span>
         </h2>
-        <p className="text-normal md:text-lg font-montserrat font-light mt-10">
+        <p className="text-normal font-montserrat mt-10 font-light md:text-lg">
           Que vous lanciez votre premier projet web ou que vous souhaitiez
           optimiser votre présence en ligne, je vous accompagne à chaque étape.
           Ensemble, nous concevons des solutions adaptées à vos objectifs, vos
@@ -53,10 +53,10 @@ export default function Intro() {
         </p>
       </div>
 
-      <div className="hidden md:grid md:grid-rows-3 grid-flow-col gap-4  md:w-full xl:w-3/4 font-montserrat  text-dark-800 dark:text-almost-white ">
-        <div className="row-span-3 flex flex-col backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-linear-to-br from-primary-50 dark:from-primary-950 to-transparent shadow-md">
-          <h3 className="text-2xl font-semibold mb-4">
-            Site web<span className="text-4xl ml-3">🧑‍💻</span>
+      <div className="font-montserrat text-dark-800 dark:text-almost-white hidden grid-flow-col gap-4 md:grid md:w-full md:grid-rows-3 xl:w-3/4">
+        <div className="border-primary-500 dark:border-almost-white from-primary-50 dark:from-primary-950 row-span-3 flex flex-col rounded-md border-2 border-solid bg-linear-to-br to-transparent p-4 shadow-md backdrop-blur-md md:rounded-l-2xl">
+          <h3 className="mb-4 text-2xl font-semibold">
+            Site web<span className="ml-3 text-4xl">🧑‍💻</span>
           </h3>
           <p className="text-sm font-extralight">
             Un site destiné à promouvoir votre activité, un site e-commerce pour
@@ -64,9 +64,9 @@ export default function Intro() {
             vous accompagne dans le developpement de votre projet.
           </p>
         </div>
-        <div className="row-span-2 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-linear-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md text-center">
-          <h3 className="text-2xl font-semibold  mb-4">
-            Application<span className="text-4xl ml-3">⚙️</span>
+        <div className="border-primary-500 dark:border-almost-white dark:text-almost-white from-primary-50 dark:from-primary-950 row-span-2 rounded-md border-2 border-solid bg-linear-to-b to-transparent p-4 text-center shadow-md backdrop-blur-md">
+          <h3 className="mb-4 text-2xl font-semibold">
+            Application<span className="ml-3 text-4xl">⚙️</span>
           </h3>
           <p className="text-sm font-extralight">
             Une application web : bien plus qu&apos;un site, un levier puissant
@@ -74,9 +74,9 @@ export default function Intro() {
             solutions concrètes.
           </p>
         </div>
-        <div className="row-span-1 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-linear-to-t from-primary-50 dark:from-primary-950 to-transparent shadow-md text-center">
-          <h3 className="text-2xl font-semibold  mb-4">
-            Conseil<span className="text-4xl ml-3">👨‍🏫</span>
+        <div className="border-primary-500 dark:border-almost-white dark:text-almost-white from-primary-50 dark:from-primary-950 row-span-1 rounded-md border-2 border-solid bg-linear-to-t to-transparent p-4 text-center shadow-md backdrop-blur-md">
+          <h3 className="mb-4 text-2xl font-semibold">
+            Conseil<span className="ml-3 text-4xl">👨‍🏫</span>
           </h3>
           <p className="text-sm font-extralight">
             Des conseils sur-mesure pour guider vos choix et réussir votre
@@ -84,9 +84,9 @@ export default function Intro() {
             à vos besoins.
           </p>
         </div>
-        <div className="row-span-1 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-tr-2xl dark:text-almost-white bg-linear-to-bl from-primary-50 dark:from-primary-950 to-transparent shadow-md text-end">
-          <h3 className="text-2xl font-semibold  mb-4">
-            Optimisation<span className="text-4xl ml-3">🚀</span>
+        <div className="border-primary-500 dark:border-almost-white dark:text-almost-white from-primary-50 dark:from-primary-950 row-span-1 rounded-md border-2 border-solid bg-linear-to-bl to-transparent p-4 text-end shadow-md backdrop-blur-md md:rounded-tr-2xl">
+          <h3 className="mb-4 text-2xl font-semibold">
+            Optimisation<span className="ml-3 text-4xl">🚀</span>
           </h3>
           <p className="text-sm font-extralight">
             Une plateforme performante, fluide et facile à maintenir : renforcez
@@ -94,9 +94,9 @@ export default function Intro() {
             utilisateurs et conçu pour durer.
           </p>
         </div>
-        <div className="row-span-2 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-br-2xl dark:text-almost-white bg-linear-to-tl from-primary-50 dark:from-primary-950 to-transparent shadow-md text-end">
-          <h3 className="text-2xl font-semibold  mb-4">
-            UX / UI<span className="text-4xl ml-3">🌈</span>
+        <div className="border-primary-500 dark:border-almost-white dark:text-almost-white from-primary-50 dark:from-primary-950 row-span-2 rounded-md border-2 border-solid bg-linear-to-tl to-transparent p-4 text-end shadow-md backdrop-blur-md md:rounded-br-2xl">
+          <h3 className="mb-4 text-2xl font-semibold">
+            UX / UI<span className="ml-3 text-4xl">🌈</span>
           </h3>
           <p className="text-sm font-extralight">
             Une maquette accessible et inclusive pour un site ou une application
@@ -110,38 +110,38 @@ export default function Intro() {
       {
         //Alternative mobile grid
       }
-      <div className="md:hidden grid grid-rows-3 grid-cols-2 gap-4 font-montserrat  text-dark-800 dark:text-almost-white ">
-        <div className="row-span-1 w-full flex flex-col backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-linear-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md">
-          <h3 className="flex flex-col items-center text-center text-xl font-semibold mb-4">
-            Site web<span className="text-3xl mt-4">🧑‍💻</span>
+      <div className="font-montserrat text-dark-800 dark:text-almost-white grid grid-cols-2 grid-rows-3 gap-4 md:hidden">
+        <div className="border-primary-500 dark:border-almost-white from-primary-50 dark:from-primary-950 row-span-1 flex w-full flex-col rounded-md border-2 border-solid bg-linear-to-b to-transparent p-4 shadow-md backdrop-blur-md md:rounded-l-2xl">
+          <h3 className="mb-4 flex flex-col items-center text-center text-xl font-semibold">
+            Site web<span className="mt-4 text-3xl">🧑‍💻</span>
           </h3>
         </div>
-        <div className="row-span-1 flex w-full flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-linear-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md">
-          <h3 className="flex flex-col items-center text-center text-xl font-semibold mb-4">
-            Application<span className="text-3xl mt-4">⚙️</span>
+        <div className="border-primary-500 dark:border-almost-white from-primary-50 dark:from-primary-950 row-span-1 flex w-full flex-col rounded-md border-2 border-solid bg-linear-to-b to-transparent p-4 shadow-md backdrop-blur-md md:rounded-l-2xl">
+          <h3 className="mb-4 flex flex-col items-center text-center text-xl font-semibold">
+            Application<span className="mt-4 text-3xl">⚙️</span>
           </h3>
         </div>
-        <div className="row-span-1 w-full flex flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-linear-to-r from-primary-50 dark:from-primary-950 to-transparent shadow-md">
-          <h3 className="flex flex-col items-center text-center text-xl font-semibold mb-4">
-            Conseil<span className="text-3xl mt-4">👨‍🏫</span>
+        <div className="border-primary-500 dark:border-almost-white from-primary-50 dark:from-primary-950 row-span-1 flex w-full flex-col rounded-md border-2 border-solid bg-linear-to-r to-transparent p-4 shadow-md backdrop-blur-md md:rounded-l-2xl">
+          <h3 className="mb-4 flex flex-col items-center text-center text-xl font-semibold">
+            Conseil<span className="mt-4 text-3xl">👨‍🏫</span>
           </h3>
         </div>
-        <div className="row-span-1 w-full flex flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-linear-to-l from-primary-50 dark:from-primary-950 to-transparent shadow-md">
-          <h3 className="flex flex-col items-center text-center text-xl font-semibold mb-4">
-            Optimisation<span className="text-3xl mt-4">🚀</span>
+        <div className="border-primary-500 dark:border-almost-white from-primary-50 dark:from-primary-950 row-span-1 flex w-full flex-col rounded-md border-2 border-solid bg-linear-to-l to-transparent p-4 shadow-md backdrop-blur-md md:rounded-l-2xl">
+          <h3 className="mb-4 flex flex-col items-center text-center text-xl font-semibold">
+            Optimisation<span className="mt-4 text-3xl">🚀</span>
           </h3>
         </div>
-        <div className="row-span-1 col-span-2 place-self-center w-1/2 flex flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-linear-to-t from-primary-50 dark:from-primary-950 to-transparent shadow-md">
-          <h3 className="flex flex-col items-center text-center text-xl font-semibold mb-4">
-            UX / UI<span className="text-3xl mt-4">🌈</span>
+        <div className="border-primary-500 dark:border-almost-white from-primary-50 dark:from-primary-950 col-span-2 row-span-1 flex w-1/2 flex-col place-self-center rounded-md border-2 border-solid bg-linear-to-t to-transparent p-4 shadow-md backdrop-blur-md md:rounded-l-2xl">
+          <h3 className="mb-4 flex flex-col items-center text-center text-xl font-semibold">
+            UX / UI<span className="mt-4 text-3xl">🌈</span>
           </h3>
         </div>
       </div>
 
       <Link href="/services">
-        <button className="flex bg-primary-600 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-solid border-2 border-primary-600 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-10 rounded-md ease-in-out duration-300">
+        <button className="bg-primary-600 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-primary-600 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 font-montserrat mt-10 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white duration-300 ease-in-out">
           Découvrez mes services
-          <HiOutlineArrowRightCircle className="h-5 w-5 ml-2 inline-block" />
+          <HiOutlineArrowRightCircle className="ml-2 inline-block h-5 w-5" />
         </button>
       </Link>
     </div>

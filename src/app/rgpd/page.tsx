@@ -6,13 +6,13 @@ import PageTitle from '@/components/pageTitle';
 export default function RgpdPage() {
   return (
     <main>
-      <div className="relative mx-auto flex flex-col items-start ">
+      <div className="relative mx-auto flex flex-col items-start">
         <PageTitle title="Politique de confidentialité" titleSize="small" />
       </div>
-      <div className="mx-auto flex flex-col items-start justify-center gap-20 w-full  p-6 mb-12 md:p-12 mt-24 xl:mt-32 text-normal text-sm md:text-base font-montserrat font-light  text-dark-800 dark:text-almost-white ">
+      <div className="text-normal font-montserrat text-dark-800 dark:text-almost-white mx-auto mt-24 mb-12 flex w-full flex-col items-start justify-center gap-20 p-6 text-sm font-light md:p-12 md:text-base xl:mt-32">
         <section className="mb-4">
           <div>
-            <h2 className="text-2xl font-semibold mb-4">
+            <h2 className="mb-4 text-2xl font-semibold">
               Collecte des données personnelles
             </h2>
             <p>Nous collectons les données personnelles suivantes :</p>
@@ -24,7 +24,7 @@ export default function RgpdPage() {
         </section>
         <section className="mb-4">
           <div>
-            <h2 className="text-2xl font-semibold mb-4">
+            <h2 className="mb-4 text-2xl font-semibold">
               Utilisation des données personnelles
             </h2>
             <p>Les données personnelles collectées sont utilisées pour :</p>
@@ -37,7 +37,7 @@ export default function RgpdPage() {
         </section>
         <section className="mb-4">
           <div>
-            <h2 className="text-2xl font-semibold mb-4">
+            <h2 className="mb-4 text-2xl font-semibold">
               Protection des données
             </h2>
             <p>
@@ -49,7 +49,7 @@ export default function RgpdPage() {
         </section>
         <section className="mb-4">
           <div>
-            <h2 className="text-2xl font-semibold mb-4">
+            <h2 className="mb-4 text-2xl font-semibold">
               Conservation des données
             </h2>
             <p>
@@ -61,7 +61,7 @@ export default function RgpdPage() {
         </section>
         <section className="mb-4">
           <div>
-            <h2 className="text-2xl font-semibold mb-4">
+            <h2 className="mb-4 text-2xl font-semibold">
               Droits des utilisateurs
             </h2>
             <p>
@@ -79,7 +79,7 @@ export default function RgpdPage() {
         </section>
         <section className="mb-4">
           <div>
-            <h2 className="text-2xl font-semibold mb-4">
+            <h2 className="mb-4 text-2xl font-semibold">
               Politique en matière de cookies
             </h2>
             <p>
@@ -93,7 +93,7 @@ export default function RgpdPage() {
         </section>
         <section className="mb-4">
           <div>
-            <h2 className="text-2xl font-semibold mb-4">Contact</h2>
+            <h2 className="mb-4 text-2xl font-semibold">Contact</h2>
 
             <p>
               Pour toute question ou demande concernant notre politique de

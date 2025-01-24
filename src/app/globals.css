@@ -147,7 +147,7 @@
 
 @layer components {
   strong {
-    @apply underline decoration-primary-500;
+    @apply decoration-primary-500 underline;
   }
 
   ::-webkit-scrollbar {

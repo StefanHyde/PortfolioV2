@@ -17,9 +17,9 @@ export default function ThemeSwitch() {
         className="themeswitchbtn focus:outline-hidden"
       >
         {theme === 'light' ? (
-          <HiOutlineSun className="w-8 h-8 hover:text-primary-600 ease-in-out duration-300 " />
+          <HiOutlineSun className="hover:text-primary-600 h-8 w-8 duration-300 ease-in-out" />
         ) : (
-          <HiOutlineMoon className="w-8 h-8 dark:text-almost-white dark:hover:text-primary-600 ease-in-out duration-300" />
+          <HiOutlineMoon className="dark:text-almost-white dark:hover:text-primary-600 h-8 w-8 duration-300 ease-in-out" />
         )}
       </button>
       <Tooltip

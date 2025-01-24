@@ -63,11 +63,11 @@ export default function ContactForm() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center h-full w-full ">
+      <div className="flex h-full w-full flex-col items-center justify-center">
         <div className="">
-          <h2 className="mb-6 text-2xl md:text-4xl font-montserrat font-semibold  text-dark-800 dark:text-almost-white ">
+          <h2 className="font-montserrat text-dark-800 dark:text-almost-white mb-6 text-2xl font-semibold md:text-4xl">
             Prenons{' '}
-            <span className="text-6xl md:text-7xl bg-linear-to-r from-primary-500 to-secondary-500 inline-block text-transparent bg-clip-text">
+            <span className="from-primary-500 to-secondary-500 inline-block bg-linear-to-r bg-clip-text text-6xl text-transparent md:text-7xl">
               {titleAnimationText.map((element, index) => (
                 <motion.span
                   initial={{ opacity: 0 }}
@@ -87,50 +87,50 @@ export default function ContactForm() {
 
         <div className="w-full p-6 lg:w-2/4">
           <form onSubmit={handleSubmit(onSubmit)} className="font-montserrat">
-            <label className="block mb-6" htmlFor="name">
-              <span className=" text-dark-800 dark:text-almost-white">
+            <label className="mb-6 block" htmlFor="name">
+              <span className="text-dark-800 dark:text-almost-white">
                 Votre nom
               </span>
               <input
                 type="text"
-                className="block w-full mt-1 p-2 border border-dark-300 rounded-md focus:outline-hidden focus:ring-1 focus:ring-purple-500 focus:border-primary-500 focus:shadow-md transition ease-in-out duration-200"
+                className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:ring-1 focus:shadow-md focus:ring-purple-500 focus:outline-hidden"
                 {...register('name', { required: true })}
                 onBlur={() => trigger('name')}
               />
               {errors.name && (
-                <p className="text-primary-500 text-xs pt-1">
+                <p className="text-primary-500 pt-1 text-xs">
                   Veuillez renseigner votre nom et / ou prénom
                 </p>
               )}
             </label>
-            <label className="block mb-6" htmlFor="email">
-              <span className=" text-dark-800 dark:text-almost-white">
+            <label className="mb-6 block" htmlFor="email">
+              <span className="text-dark-800 dark:text-almost-white">
                 Votre adresse email
               </span>
               <input
                 type="email"
-                className="block w-full mt-1 p-2 border border-dark-300 rounded-md focus:outline-hidden focus:ring-1 focus:ring-purple-500 focus:border-primary-500 focus:shadow-md transition ease-in-out duration-200"
+                className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:ring-1 focus:shadow-md focus:ring-purple-500 focus:outline-hidden"
                 {...register('senderMail', { required: true })}
                 onBlur={() => trigger('senderMail')}
               />
               {errors.senderMail && (
-                <p className="text-primary-500 text-xs pt-1">
+                <p className="text-primary-500 pt-1 text-xs">
                   Veuillez renseigner une adresse email valide
                 </p>
               )}
             </label>
-            <label className="block mb-6" htmlFor="message">
-              <span className=" text-dark-800 dark:text-almost-white">
+            <label className="mb-6 block" htmlFor="message">
+              <span className="text-dark-800 dark:text-almost-white">
                 Votre message
               </span>
               <textarea
                 rows={6}
-                className="block w-full mt-1 p-2 border border-dark-300 rounded-md focus:outline-hidden focus:ring-1 focus:ring-purple-500 focus:border-primary-500 focus:shadow-md transition ease-in-out duration-200"
+                className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:ring-1 focus:shadow-md focus:ring-purple-500 focus:outline-hidden"
                 {...register('message', { required: true })}
                 onBlur={() => trigger('message')}
               />
               {errors.message && (
-                <p className="text-primary-500 text-xs pt-1">
+                <p className="text-primary-500 pt-1 text-xs">
                   Veuillez renseigner un message
                 </p>
               )}
@@ -142,7 +142,7 @@ export default function ContactForm() {
               </label>
               <input
                 type="text"
-                className="block w-full mt-1 p-2 border border-dark-300 rounded-md focus:outline-hidden focus:ring-1 focus:ring-purple-500 focus:border-primary-500 focus:shadow-md transition ease-in-out duration-200"
+                className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:ring-1 focus:shadow-md focus:ring-purple-500 focus:outline-hidden"
                 {...register('honeyPot')}
               />
             </div>
@@ -156,13 +156,13 @@ export default function ContactForm() {
                 <label className="flex pb-4">
                   <input
                     type="checkbox"
-                    className="w-4 h-4 accent-primary-500"
+                    className="accent-primary-500 h-4 w-4"
                     {...field}
                     value={field.value ? 'true' : 'false'}
                   />
                   <Link
                     href={'/rgpd'}
-                    className="ml-2 font-light text-dark-900 dark:text-almost-white text-xs hover:underline"
+                    className="text-dark-900 dark:text-almost-white ml-2 text-xs font-light hover:underline"
                   >
                     J&apos;accepte les conditions générales et la politique de
                     confidentialité
@@ -175,7 +175,7 @@ export default function ContactForm() {
               <button
                 disabled={!formState.isValid || isSubmitting}
                 type="submit"
-                className={`submitbtn flex bg-primary-600 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-600 hover:border-primary-800 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300${!formState.isValid || isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white ease-in-out duration-300${!formState.isValid || isSubmitting ? 'cursor-not-allowed opacity-50' : ''}`}
               >
                 Envoyer
               </button>
