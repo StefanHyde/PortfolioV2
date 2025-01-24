@@ -18,7 +18,7 @@ export default function Skills() {
     >
       <motion.h2
         ref={refSkillsTitle}
-        className="text-center md:text-right mb-12 text-4xl md:text-5xl font-montserrat font-semibold  bg-gradient-to-r from-secondary-500 to-secondary-200  inline-block text-transparent bg-clip-text text-primary-500"
+        className="text-center md:text-right mb-12 text-4xl md:text-5xl font-montserrat font-semibold  bg-linear-to-r from-secondary-500 to-secondary-200  inline-block text-transparent bg-clip-text text-primary-500"
         variants={{
           hidden: { opacity: 0, x: 200 },
           visible: { opacity: 1, x: 0 },
@@ -30,7 +30,7 @@ export default function Skills() {
       >
         Stack technique <span className="text-black">⚙️</span>
       </motion.h2>
-      <div className="w-full backdrop-blur-md p-4  md:p-8  border-solid border-2 border-secondary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-gradient-to-b from-secondary-50 dark:from-secondary-950 to-transparent shadow-md text-center">
+      <div className="w-full backdrop-blur-md p-4  md:p-8  border-solid border-2 border-secondary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-linear-to-b from-secondary-50 dark:from-secondary-950 to-transparent shadow-md text-center">
         {skillsData.map((skill, index) => (
           <motion.div
             key={index}

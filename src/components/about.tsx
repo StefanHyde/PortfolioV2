@@ -18,7 +18,7 @@ export default function About() {
         <h2 className="mb-6 text-4xl md:text-5xl font-montserrat font-semibold">
           <motion.div
             ref={refFirstTitle}
-            className="text-6xl md:text-7xl bg-gradient-to-r from-primary-800 to-primary-400 inline-block text-transparent bg-clip-text text-primary-500"
+            className="text-6xl md:text-7xl bg-linear-to-r from-primary-800 to-primary-400 inline-block text-transparent bg-clip-text text-primary-500"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
@@ -33,7 +33,7 @@ export default function About() {
           et vous
           <motion.div
             ref={refSecondTitle}
-            className="text-6xl md:text-7xl bg-gradient-to-r from-secondary-500 to-secondary-200 inline-block text-transparent bg-clip-text"
+            className="text-6xl md:text-7xl bg-linear-to-r from-secondary-500 to-secondary-200 inline-block text-transparent bg-clip-text"
             variants={{
               hidden: { opacity: 0, y: -20 },
               visible: { opacity: 1, y: 0 },
@@ -78,7 +78,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="absolute xl:-right-24 -top-24 xl:-top-12 z-10 flex items-center justify-center bg-gradient-to-bl from-primary-50 to-primary-100 dark:from-primary-950 dark:to-slate-950 h-44 w-44 md:h-52 md:w-52 rounded-full border-8 border-primary-300 dark:border-primary-950 shadow-xl hover:rotate-2 hover:scale-105 duration-300">
+        <div className="absolute xl:-right-24 -top-24 xl:-top-12 z-10 flex items-center justify-center bg-linear-to-bl from-primary-50 to-primary-100 dark:from-primary-950 dark:to-slate-950 h-44 w-44 md:h-52 md:w-52 rounded-full border-8 border-primary-300 dark:border-primary-950 shadow-xl hover:rotate-2 hover:scale-105 duration-300">
           <Image
             src="/images/avatar.png"
             width={300}

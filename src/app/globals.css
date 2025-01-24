@@ -1,6 +1,149 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --animate-blob: blob 10s infinite;
+
+  --color-primary-50: #faf5ff;
+  --color-primary-100: #f3e9fe;
+  --color-primary-200: #e9d7fd;
+  --color-primary-300: #d9b7fb;
+  --color-primary-400: #c189f7;
+  --color-primary-500: #aa5cf0;
+  --color-primary-600: #953be2;
+  --color-primary-700: #7f2ac6;
+  --color-primary-800: #742aae;
+  --color-primary-900: #582182;
+  --color-primary-950: #3c0b60;
+
+  --color-secondary-50: #ebfef6;
+  --color-secondary-100: #cefde8;
+  --color-secondary-200: #a2f8d5;
+  --color-secondary-300: #66efc1;
+  --color-secondary-400: #39e0ad;
+  --color-secondary-500: #05c490;
+  --color-secondary-600: #00a077;
+  --color-secondary-700: #008062;
+  --color-secondary-800: #00654f;
+  --color-secondary-900: #015342;
+  --color-secondary-950: #002f26;
+
+  --color-tertiary-50: #effefd;
+  --color-tertiary-100: #c7fffb;
+  --color-tertiary-200: #90fff7;
+  --color-tertiary-300: #5ef8f3;
+  --color-tertiary-400: #1de4e4;
+  --color-tertiary-500: #04c6c8;
+  --color-tertiary-600: #009ba1;
+  --color-tertiary-700: #057b80;
+  --color-tertiary-800: #0a6065;
+  --color-tertiary-900: #0d5054;
+  --color-tertiary-950: #002e33;
+
+  --color-dark-50: #f6f6f6;
+  --color-dark-100: #e7e7e7;
+  --color-dark-200: #d1d1d1;
+  --color-dark-300: #b0b0b0;
+  --color-dark-400: #888888;
+  --color-dark-500: #6d6d6d;
+  --color-dark-600: #5d5d5d;
+  --color-dark-700: #4f4f4f;
+  --color-dark-800: #454545;
+  --color-dark-900: #3d3d3d;
+  --color-dark-950: #232323;
+
+  --color-almost-white: #fefefe;
+  --color-success: #2bbb6e;
+  --color-warning: #df8620;
+  --color-danger: #d5474c;
+
+  --font-nunito: var(--font-nunito), sans-serif;
+  --font-montserrat: var(--font-montserrat), sans-serif;
+
+  @keyframes blob {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    25% {
+      transform: translate(20px, -50px) scale(1.2);
+    }
+    50% {
+      transform: translate(0, 0px) scale(1);
+    }
+    75% {
+      transform: translate(-20px, -20px) scale(0.9);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility skew-container {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    border: 4px solid #66efc1;
+    z-index: -1;
+    border-radius: inherit;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 4px solid #d9b7fb;
+    transform: skew(-3deg);
+    z-index: -1;
+    border-radius: inherit;
+  }
+
+  .dark &::before {
+    border-color: #39e0ad;
+  }
+
+  .dark &::after {
+    border-color: #3c0b60;
+  }
+}
+
+@utility submitbtn {
+  &:disabled {
+    opacity: 50%;
+  }
+}
+
+@utility animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+@utility animation-delay-4000 {
+  animation-delay: 4s;
+}
 
 @layer components {
   strong {
@@ -27,54 +170,6 @@
   /* Firefox fix */
   html {
     scrollbar-color: #aa5cf0 #ebd6ff;
-  }
-
-  .skew-container {
-    &::before {
-      content: '';
-      position: absolute;
-      top: 10px;
-      left: 0;
-      right: 0;
-      bottom: 10px;
-      border: 4px solid #66efc1;
-      z-index: -1;
-      border-radius: inherit;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border: 4px solid #d9b7fb;
-      transform: skew(-3deg);
-      z-index: -1;
-      border-radius: inherit;
-    }
-
-    .dark &::before {
-      border-color: #39e0ad;
-    }
-
-    .dark &::after {
-      border-color: #3c0b60;
-    }
-  }
-
-  .submitbtn:disabled {
-    opacity: 50%;
-  }
-}
-
-@layer utilities {
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-  .animation-delay-4000 {
-    animation-delay: 4s;
   }
 }
 

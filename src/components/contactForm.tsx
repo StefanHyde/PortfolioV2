@@ -67,7 +67,7 @@ export default function ContactForm() {
         <div className="">
           <h2 className="mb-6 text-2xl md:text-4xl font-montserrat font-semibold  text-dark-800 dark:text-almost-white ">
             Prenons{' '}
-            <span className="text-6xl md:text-7xl bg-gradient-to-r from-primary-500 to-secondary-500 inline-block text-transparent bg-clip-text">
+            <span className="text-6xl md:text-7xl bg-linear-to-r from-primary-500 to-secondary-500 inline-block text-transparent bg-clip-text">
               {titleAnimationText.map((element, index) => (
                 <motion.span
                   initial={{ opacity: 0 }}
@@ -93,7 +93,7 @@ export default function ContactForm() {
               </span>
               <input
                 type="text"
-                className="block w-full mt-1 p-2 border border-dark-300 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-primary-500 focus:shadow-md transition ease-in-out duration-200"
+                className="block w-full mt-1 p-2 border border-dark-300 rounded-md focus:outline-hidden focus:ring-1 focus:ring-purple-500 focus:border-primary-500 focus:shadow-md transition ease-in-out duration-200"
                 {...register('name', { required: true })}
                 onBlur={() => trigger('name')}
               />
@@ -109,7 +109,7 @@ export default function ContactForm() {
               </span>
               <input
                 type="email"
-                className="block w-full mt-1 p-2 border border-dark-300 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-primary-500 focus:shadow-md transition ease-in-out duration-200"
+                className="block w-full mt-1 p-2 border border-dark-300 rounded-md focus:outline-hidden focus:ring-1 focus:ring-purple-500 focus:border-primary-500 focus:shadow-md transition ease-in-out duration-200"
                 {...register('senderMail', { required: true })}
                 onBlur={() => trigger('senderMail')}
               />
@@ -125,7 +125,7 @@ export default function ContactForm() {
               </span>
               <textarea
                 rows={6}
-                className="block w-full mt-1 p-2 border border-dark-300 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-primary-500 focus:shadow-md transition ease-in-out duration-200"
+                className="block w-full mt-1 p-2 border border-dark-300 rounded-md focus:outline-hidden focus:ring-1 focus:ring-purple-500 focus:border-primary-500 focus:shadow-md transition ease-in-out duration-200"
                 {...register('message', { required: true })}
                 onBlur={() => trigger('message')}
               />
@@ -142,7 +142,7 @@ export default function ContactForm() {
               </label>
               <input
                 type="text"
-                className="block w-full mt-1 p-2 border border-dark-300 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-primary-500 focus:shadow-md transition ease-in-out duration-200"
+                className="block w-full mt-1 p-2 border border-dark-300 rounded-md focus:outline-hidden focus:ring-1 focus:ring-purple-500 focus:border-primary-500 focus:shadow-md transition ease-in-out duration-200"
                 {...register('honeyPot')}
               />
             </div>

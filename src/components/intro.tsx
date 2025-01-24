@@ -17,7 +17,7 @@ export default function Intro() {
           <motion.div
             ref={refFirst}
             style={{ overflow: 'hidden' }}
-            className="text-6xl md:text-7xl bg-gradient-to-r from-primary-800 to-primary-400 inline-block text-transparent bg-clip-text text-primary-500"
+            className="text-6xl md:text-7xl bg-linear-to-r from-primary-800 to-primary-400 inline-block text-transparent bg-clip-text text-primary-500"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
@@ -32,7 +32,7 @@ export default function Intro() {
           je vous trouve la{' '}
           <motion.span
             ref={refSecond}
-            className="text-6xl md:text-7xl bg-gradient-to-r from-secondary-500 to-secondary-200 inline-block text-transparent bg-clip-text"
+            className="text-6xl md:text-7xl bg-linear-to-r from-secondary-500 to-secondary-200 inline-block text-transparent bg-clip-text"
             variants={{
               hidden: { opacity: 0, y: -20 },
               visible: { opacity: 1, y: 0 },
@@ -54,7 +54,7 @@ export default function Intro() {
       </div>
 
       <div className="hidden md:grid md:grid-rows-3 grid-flow-col gap-4  md:w-full xl:w-3/4 font-montserrat  text-dark-800 dark:text-almost-white ">
-        <div className="row-span-3 flex flex-col backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-gradient-to-br from-primary-50 dark:from-primary-950 to-transparent shadow-md">
+        <div className="row-span-3 flex flex-col backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-linear-to-br from-primary-50 dark:from-primary-950 to-transparent shadow-md">
           <h3 className="text-2xl font-semibold mb-4">
             Site web<span className="text-4xl ml-3">🧑‍💻</span>
           </h3>
@@ -64,7 +64,7 @@ export default function Intro() {
             vous accompagne dans le developpement de votre projet.
           </p>
         </div>
-        <div className="row-span-2 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-gradient-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md text-center">
+        <div className="row-span-2 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-linear-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md text-center">
           <h3 className="text-2xl font-semibold  mb-4">
             Application<span className="text-4xl ml-3">⚙️</span>
           </h3>
@@ -74,7 +74,7 @@ export default function Intro() {
             solutions concrètes.
           </p>
         </div>
-        <div className="row-span-1 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-gradient-to-t from-primary-50 dark:from-primary-950 to-transparent shadow-md text-center">
+        <div className="row-span-1 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-linear-to-t from-primary-50 dark:from-primary-950 to-transparent shadow-md text-center">
           <h3 className="text-2xl font-semibold  mb-4">
             Conseil<span className="text-4xl ml-3">👨‍🏫</span>
           </h3>
@@ -84,7 +84,7 @@ export default function Intro() {
             à vos besoins.
           </p>
         </div>
-        <div className="row-span-1 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-tr-2xl dark:text-almost-white bg-gradient-to-bl from-primary-50 dark:from-primary-950 to-transparent shadow-md text-end">
+        <div className="row-span-1 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-tr-2xl dark:text-almost-white bg-linear-to-bl from-primary-50 dark:from-primary-950 to-transparent shadow-md text-end">
           <h3 className="text-2xl font-semibold  mb-4">
             Optimisation<span className="text-4xl ml-3">🚀</span>
           </h3>
@@ -94,7 +94,7 @@ export default function Intro() {
             utilisateurs et conçu pour durer.
           </p>
         </div>
-        <div className="row-span-2 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-br-2xl dark:text-almost-white bg-gradient-to-tl from-primary-50 dark:from-primary-950 to-transparent shadow-md text-end">
+        <div className="row-span-2 backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-br-2xl dark:text-almost-white bg-linear-to-tl from-primary-50 dark:from-primary-950 to-transparent shadow-md text-end">
           <h3 className="text-2xl font-semibold  mb-4">
             UX / UI<span className="text-4xl ml-3">🌈</span>
           </h3>
@@ -111,27 +111,27 @@ export default function Intro() {
         //Alternative mobile grid
       }
       <div className="md:hidden grid grid-rows-3 grid-cols-2 gap-4 font-montserrat  text-dark-800 dark:text-almost-white ">
-        <div className="row-span-1 w-full flex flex-col backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-gradient-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md">
+        <div className="row-span-1 w-full flex flex-col backdrop-blur-md p-4  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-linear-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md">
           <h3 className="flex flex-col items-center text-center text-xl font-semibold mb-4">
             Site web<span className="text-3xl mt-4">🧑‍💻</span>
           </h3>
         </div>
-        <div className="row-span-1 flex w-full flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-gradient-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md">
+        <div className="row-span-1 flex w-full flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-linear-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md">
           <h3 className="flex flex-col items-center text-center text-xl font-semibold mb-4">
             Application<span className="text-3xl mt-4">⚙️</span>
           </h3>
         </div>
-        <div className="row-span-1 w-full flex flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-gradient-to-r from-primary-50 dark:from-primary-950 to-transparent shadow-md">
+        <div className="row-span-1 w-full flex flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-linear-to-r from-primary-50 dark:from-primary-950 to-transparent shadow-md">
           <h3 className="flex flex-col items-center text-center text-xl font-semibold mb-4">
             Conseil<span className="text-3xl mt-4">👨‍🏫</span>
           </h3>
         </div>
-        <div className="row-span-1 w-full flex flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-gradient-to-l from-primary-50 dark:from-primary-950 to-transparent shadow-md">
+        <div className="row-span-1 w-full flex flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-linear-to-l from-primary-50 dark:from-primary-950 to-transparent shadow-md">
           <h3 className="flex flex-col items-center text-center text-xl font-semibold mb-4">
             Optimisation<span className="text-3xl mt-4">🚀</span>
           </h3>
         </div>
-        <div className="row-span-1 col-span-2 place-self-center w-1/2 flex flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-gradient-to-t from-primary-50 dark:from-primary-950 to-transparent shadow-md">
+        <div className="row-span-1 col-span-2 place-self-center w-1/2 flex flex-col backdrop-blur-md p-4 border-solid border-2 border-primary-500 dark:border-almost-white rounded-md md:rounded-l-2xl  bg-linear-to-t from-primary-50 dark:from-primary-950 to-transparent shadow-md">
           <h3 className="flex flex-col items-center text-center text-xl font-semibold mb-4">
             UX / UI<span className="text-3xl mt-4">🌈</span>
           </h3>

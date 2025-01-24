@@ -88,7 +88,7 @@ export default function Header() {
             <MenuItems
               transition
               anchor="top start"
-              className=" z-50 w-full h-screen p-8 [--anchor-gap:8px] backdrop-blur-xl border-solid border-2 border-primary-500 dark:border-almost-white rounded-md  flex flex-col justify-center gap-10  transition duration-300 ease-in-out focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+              className=" z-50 w-full h-screen p-8 [--anchor-gap:8px] backdrop-blur-xl border-solid border-2 border-primary-500 dark:border-almost-white rounded-md  flex flex-col justify-center gap-10  transition duration-300 ease-in-out focus:outline-hidden data-closed:scale-95 data-closed:opacity-0"
             >
               {links.map((link) => (
                 <MenuItem key={link.hash}>

@@ -14,12 +14,12 @@ export default function ThemeSwitch() {
         onClick={toggleTheme}
         aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
         data-tip={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-        className="themeswitchbtn focus:outline-none"
+        className="themeswitchbtn focus:outline-hidden"
       >
         {theme === 'light' ? (
           <HiOutlineSun className="w-8 h-8 hover:text-primary-600 ease-in-out duration-300 " />
         ) : (
-          <HiOutlineMoon className="w-8 h-8 dark:text-almost-white hover:dark:text-primary-600 ease-in-out duration-300" />
+          <HiOutlineMoon className="w-8 h-8 dark:text-almost-white dark:hover:text-primary-600 ease-in-out duration-300" />
         )}
       </button>
       <Tooltip

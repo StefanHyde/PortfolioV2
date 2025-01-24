@@ -33,7 +33,7 @@ export default function Hero({
 
   return (
     <div className="relative mx-auto flex max-w-2xl flex-col items-center mt-8">
-      <div className="bg-gradient-to-r from-primary-500 to-secondary-500 inline-block text-transparent bg-clip-text">
+      <div className="bg-linear-to-r from-primary-500 to-secondary-500 inline-block text-transparent bg-clip-text">
         <div className="flex flex-col font-nunito font-bold text-6xl md:text-8xl uppercase">
           <span className="text-dark-800 dark:text-almost-white text-sm md:text-lg font-thin">
             {surtitle}

@@ -16,7 +16,7 @@ export default function Experiences() {
       <div className="flex flex-col w-full">
         <motion.h2
           ref={refExeprienceTitle}
-          className="text-center md:text-left mb-12 text-4xl md:text-5xl font-montserrat font-semibold  bg-gradient-to-r from-primary-800 to-primary-400 inline-block text-transparent bg-clip-text text-primary-500"
+          className="text-center md:text-left mb-12 text-4xl md:text-5xl font-montserrat font-semibold  bg-linear-to-r from-primary-800 to-primary-400 inline-block text-transparent bg-clip-text text-primary-500"
           variants={{
             hidden: { opacity: 0, x: -200 },
             visible: { opacity: 1, x: 0 },
@@ -29,7 +29,7 @@ export default function Experiences() {
           Expériences <span className="text-black">🧑‍💻</span>
         </motion.h2>
 
-        <div className="w-full overflow-hidden  backdrop-blur-md p-4 md:p-8  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-gradient-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md text-center">
+        <div className="w-full overflow-hidden  backdrop-blur-md p-4 md:p-8  border-solid border-2 border-primary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-linear-to-b from-primary-50 dark:from-primary-950 to-transparent shadow-md text-center">
           {experiencesData.map((experience, index) => (
             <motion.div
               className="flex flex-col items-start justify-start text-left mb-8   from-primary-50 dark:from-primary-950 "
