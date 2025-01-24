@@ -45,7 +45,7 @@ export default function RootLayout({
     >
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
 
-      <body>
+      <body className="selection:bg-primary-500 selection:text-almost-white caret-primary-500">
         <ThemeContextProvider>
           <Header />
           <div className="fixed top-0 left-0 -z-10 h-full w-full">

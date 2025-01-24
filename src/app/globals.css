@@ -150,6 +150,15 @@
     @apply decoration-primary-500 underline;
   }
 
+  button {
+    @apply cursor-pointer;
+  }
+
+  input,
+  textarea {
+    @apply bg-almost-white;
+  }
+
   ::-webkit-scrollbar {
     width: 10px;
   }
