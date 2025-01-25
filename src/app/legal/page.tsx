@@ -5,12 +5,12 @@ import PageTitle from '@/components/pageTitle';
 export default function LegalPage() {
   return (
     <main>
-      <div className="relative mx-auto flex flex-col items-start ">
+      <div className="relative mx-auto flex flex-col items-start">
         <PageTitle title="Mentions légales" titleSize="small" />
       </div>
-      <div className="mx-auto flex flex-col items-start justify-center gap-20 w-full  p-6 mb-12 md:p-12 mt-24 xl:mt-32 text-normal text-sm md:text-base font-montserrat font-light  text-dark-800 dark:text-almost-white ">
+      <div className="text-normal font-montserrat text-dark-800 dark:text-almost-white mx-auto mt-24 mb-12 flex w-full flex-col items-start justify-center gap-20 p-6 text-sm font-light md:p-12 md:text-base xl:mt-32">
         <section className="mb-4">
-          <h2 className="text-2xl font-semibold mb-4">1. Éditeur du site</h2>
+          <h2 className="mb-4 text-2xl font-semibold">1. Éditeur du site</h2>
           <ul>
             <li>
               <strong>Nom :</strong> Stéphane Heyd
@@ -37,7 +37,7 @@ export default function LegalPage() {
         </section>
 
         <section className="mb-4">
-          <h2 className="text-2xl font-semibold mb-4">
+          <h2 className="mb-4 text-2xl font-semibold">
             2. Hébergement du site
           </h2>
           <ul>
@@ -73,7 +73,7 @@ export default function LegalPage() {
         </section>
 
         <section className="mb-4">
-          <h2 className="text-2xl font-semibold mb-4">3. Objet du site</h2>
+          <h2 className="mb-4 text-2xl font-semibold">3. Objet du site</h2>
           <p>
             Le présent site est un site vitrine ayant pour objectif de présenter
             les services de Stéphane Heyd.
@@ -81,7 +81,7 @@ export default function LegalPage() {
         </section>
 
         <section className="mb-4">
-          <h2 className="text-2xl font-semibold mb-4">
+          <h2 className="mb-4 text-2xl font-semibold">
             4. Propriété intellectuelle
           </h2>
           <p>
@@ -95,7 +95,7 @@ export default function LegalPage() {
         </section>
 
         <section className="mb-4">
-          <h2 className="text-2xl font-semibold mb-4">
+          <h2 className="mb-4 text-2xl font-semibold">
             5. Protection des données personnelles
           </h2>
           <p>
@@ -120,7 +120,7 @@ export default function LegalPage() {
         </section>
 
         <section className="mb-4">
-          <h2 className="text-2xl font-semibold mb-4">6. Cookies</h2>
+          <h2 className="mb-4 text-2xl font-semibold">6. Cookies</h2>
           <p>
             Le site peut utiliser des cookies pour améliorer l’expérience
             utilisateur. Vous pouvez configurer votre navigateur pour refuser
@@ -129,7 +129,7 @@ export default function LegalPage() {
         </section>
 
         <section className="mb-4">
-          <h2 className="text-2xl font-semibold mb-4">7. Responsabilité</h2>
+          <h2 className="mb-4 text-2xl font-semibold">7. Responsabilité</h2>
           <p>
             Stéphane Heyd s’efforce de fournir sur ce site des informations
             aussi précises que possible. Toutefois, il ne peut être tenu
@@ -140,7 +140,7 @@ export default function LegalPage() {
         </section>
 
         <section className="mb-4">
-          <h2 className="text-2xl font-semibold mb-4">8. Contact</h2>
+          <h2 className="mb-4 text-2xl font-semibold">8. Contact</h2>
           <p>
             Pour toute question ou réclamation concernant ce site, vous pouvez
             contacter Stéphane Heyd à l’adresse suivante :{' '}

@@ -23,10 +23,10 @@ export default function PageTitle({
       : 'text-6xl md:text-7xl uppercase';
 
   return (
-    <div className="relative mx-auto h-auto w-full flex flex-col items-start px-6 mt-32">
-      <div className="bg-gradient-to-r from-primary-500 to-secondary-500 inline-block text-transparent bg-clip-text">
+    <div className="relative mx-auto mt-32 flex h-auto w-full flex-col items-start px-6">
+      <div className="from-primary-500 to-secondary-500 inline-block bg-linear-to-r bg-clip-text text-transparent">
         <div
-          className={`flex flex-col font-nunito font-bold  ${titleSizeClass}  `}
+          className={`font-nunito flex flex-col font-bold ${titleSizeClass} `}
         >
           <div className="flex flex-row flex-wrap">
             {titleAnimationText.map((element, index) => (
@@ -48,7 +48,7 @@ export default function PageTitle({
       </div>
 
       {subtitle && (
-        <h2 className="font-nunito text-dark-800 dark:text-almost-white font-light text-xl md:text-2xl pt-6">
+        <h2 className="font-nunito text-dark-800 dark:text-almost-white pt-6 text-xl font-light md:text-2xl">
           {subtitle}
         </h2>
       )}

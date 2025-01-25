@@ -14,11 +14,11 @@ export default function Skills() {
   return (
     <div
       ref={refSkills}
-      className="overflow-hidden flex flex-col w-full md:w-1/2"
+      className="flex w-full flex-col overflow-hidden md:w-1/2"
     >
       <motion.h2
         ref={refSkillsTitle}
-        className="text-center md:text-right mb-12 text-4xl md:text-5xl font-montserrat font-semibold  bg-gradient-to-r from-secondary-500 to-secondary-200  inline-block text-transparent bg-clip-text text-primary-500"
+        className="font-montserrat from-secondary-500 to-secondary-200 text-primary-500 mb-12 inline-block bg-linear-to-r bg-clip-text text-center text-4xl font-semibold text-transparent md:text-right md:text-5xl"
         variants={{
           hidden: { opacity: 0, x: 200 },
           visible: { opacity: 1, x: 0 },
@@ -30,11 +30,11 @@ export default function Skills() {
       >
         Stack technique <span className="text-black">⚙️</span>
       </motion.h2>
-      <div className="w-full backdrop-blur-md p-4  md:p-8  border-solid border-2 border-secondary-500 dark:border-almost-white rounded-md dark:text-almost-white bg-gradient-to-b from-secondary-50 dark:from-secondary-950 to-transparent shadow-md text-center">
+      <div className="border-secondary-500 dark:border-almost-white dark:text-almost-white from-secondary-50 dark:from-secondary-950 w-full rounded-md border-2 border-solid bg-linear-to-b to-transparent p-4 text-center shadow-md backdrop-blur-md md:p-8">
         {skillsData.map((skill, index) => (
           <motion.div
             key={index}
-            className="flex flex-col items-end justify-end text-right mb-8"
+            className="mb-8 flex flex-col items-end justify-end text-right"
             variants={{
               hidden: { opacity: 0 },
               visible: { opacity: 1 },
@@ -44,61 +44,61 @@ export default function Skills() {
             viewport={{ once: true }}
             transition={{ duration: 0.25, delay: 0.25 }}
           >
-            <h3 className="text-2xl font-montserrat font-semibold">
+            <h3 className="font-montserrat text-2xl font-semibold">
               Languages
             </h3>
-            <div className="flex justify-end  flex-wrap gap-4 mt-3 mb-8">
+            <div className="mt-3 mb-8 flex flex-wrap justify-end gap-4">
               {skill.languages.map((language, index) => (
                 <div
                   key={index}
-                  className="p-1 text- bg-secondary-500  text-almost-white"
+                  className="text- bg-secondary-500 text-almost-white p-1"
                 >
-                  <p className="text-normal text-sm font-montserrat font-light">
+                  <p className="text-normal font-montserrat text-sm font-light">
                     {language}
                   </p>
                 </div>
               ))}
             </div>
-            <h3 className="text-2xl font-montserrat font-semibold mt-4">
+            <h3 className="font-montserrat mt-4 text-2xl font-semibold">
               Technologies Frontend
             </h3>
-            <div className="flex justify-end flex-wrap gap-4 mt-3 mb-8">
+            <div className="mt-3 mb-8 flex flex-wrap justify-end gap-4">
               {skill.technologies.frontEnd.map((tech, index) => (
                 <div
                   key={index}
-                  className="p-1 bg-secondary-500  text-almost-white"
+                  className="bg-secondary-500 text-almost-white p-1"
                 >
-                  <p className="text-normal text-sm font-montserrat font-light">
+                  <p className="text-normal font-montserrat text-sm font-light">
                     {tech}
                   </p>
                 </div>
               ))}
             </div>
-            <h3 className="text-2xl font-montserrat font-semibold mt-4">
+            <h3 className="font-montserrat mt-4 text-2xl font-semibold">
               Technologies Backend
             </h3>
-            <div className="flex justify-end  flex-wrap gap-4 mt-3 mb-8">
+            <div className="mt-3 mb-8 flex flex-wrap justify-end gap-4">
               {skill.technologies.backEnd.map((tech, index) => (
                 <div
                   key={index}
-                  className="p-1 bg-secondary-500  text-almost-white "
+                  className="bg-secondary-500 text-almost-white p-1"
                 >
-                  <p className="text-normal text-sm font-montserrat font-light">
+                  <p className="text-normal font-montserrat text-sm font-light">
                     {tech}
                   </p>
                 </div>
               ))}
             </div>
-            <h3 className="text-2xl font-montserrat font-semibold mt-4">
+            <h3 className="font-montserrat mt-4 text-2xl font-semibold">
               Tools
             </h3>
-            <div className="flex justify-end  flex-wrap gap-4 mt-3 mb-8">
+            <div className="mt-3 mb-8 flex flex-wrap justify-end gap-4">
               {skill.tools.map((tool, index) => (
                 <div
                   key={index}
-                  className="p-1 bg-secondary-500  text-almost-white"
+                  className="bg-secondary-500 text-almost-white p-1"
                 >
-                  <p className="text-normal text-sm font-montserrat font-light">
+                  <p className="text-normal font-montserrat text-sm font-light">
                     {tool}
                   </p>
                 </div>

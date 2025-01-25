@@ -13,12 +13,12 @@ export default function About() {
     useAnimateOnView();
 
   return (
-    <div className="flex flex-col items-center justify-center h-full w-full ">
-      <div className="justify-start mb-12  text-dark-800 dark:text-almost-white md:w-2/3">
-        <h2 className="mb-6 text-4xl md:text-5xl font-montserrat font-semibold">
+    <div className="flex h-full w-full flex-col items-center justify-center">
+      <div className="text-dark-800 dark:text-almost-white mb-12 justify-start md:w-2/3">
+        <h2 className="font-montserrat mb-6 text-4xl font-semibold md:text-5xl">
           <motion.div
             ref={refFirstTitle}
-            className="text-6xl md:text-7xl bg-gradient-to-r from-primary-800 to-primary-400 inline-block text-transparent bg-clip-text text-primary-500"
+            className="from-primary-800 to-primary-400 text-primary-500 inline-block bg-linear-to-r bg-clip-text text-6xl text-transparent md:text-7xl"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
@@ -33,7 +33,7 @@ export default function About() {
           et vous
           <motion.div
             ref={refSecondTitle}
-            className="text-6xl md:text-7xl bg-gradient-to-r from-secondary-500 to-secondary-200 inline-block text-transparent bg-clip-text"
+            className="from-secondary-500 to-secondary-200 inline-block bg-linear-to-r bg-clip-text text-6xl text-transparent md:text-7xl"
             variants={{
               hidden: { opacity: 0, y: -20 },
               visible: { opacity: 1, y: 0 },
@@ -48,9 +48,9 @@ export default function About() {
         </h2>
       </div>
 
-      <div className="relative flex flex-col items-center xl:flex-row xl:w-1/2 mt-24 xl:mt-12">
-        <div className="flex flex-col p-8 pt-28 md:pt-32 xl:pt-12 xl:pr-28 backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container">
-          <p className="text-normal text-sm md:text-base font-montserrat font-light mb-6">
+      <div className="relative mt-24 flex flex-col items-center xl:mt-12 xl:w-1/2 xl:flex-row">
+        <div className="dark:border-almost-white text-dark-800 dark:text-almost-white skew-container flex flex-col rounded-md border-solid p-8 pt-28 backdrop-blur-md md:pt-32 xl:pt-12 xl:pr-28">
+          <p className="text-normal font-montserrat mb-6 text-sm font-light md:text-base">
             Je suis Stefan, <strong>développeur passionné et engagé</strong>,
             spécialisé dans la création de sites et d’applications web sur
             mesure. Mon objectif : transformer vos idées en solutions numériques{' '}
@@ -61,7 +61,7 @@ export default function About() {
             une <strong>expérience numérique qui reflète votre identité</strong>{' '}
             tout en captivant et fidélisant votre audience.
           </p>
-          <p className="text-normal text-sm md:text-base font-montserrat font-light mb-6">
+          <p className="text-normal font-montserrat mb-6 text-sm font-light md:text-base">
             Ensemble, nous donnerons vie à vos projets avec des solutions qui
             allient esthétique, fonctionnalité et longévité. Je suis ici pour
             <strong>
@@ -70,7 +70,7 @@ export default function About() {
             </strong>
             .
           </p>
-          <p className="text-normal font-normal text-sm md:text-base font-montserrat">
+          <p className="text-normal font-montserrat text-sm font-normal md:text-base">
             <strong>
               Faites le choix d’un développement pensé pour vous et vos
               utilisateurs.{' '}
@@ -78,7 +78,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="absolute xl:-right-24 -top-24 xl:-top-12 z-10 flex items-center justify-center bg-gradient-to-bl from-primary-50 to-primary-100 dark:from-primary-950 dark:to-slate-950 h-44 w-44 md:h-52 md:w-52 rounded-full border-8 border-primary-300 dark:border-primary-950 shadow-xl hover:rotate-2 hover:scale-105 duration-300">
+        <div className="from-primary-50 to-primary-100 dark:from-primary-950 border-primary-300 dark:border-primary-950 absolute -top-24 z-10 flex h-44 w-44 items-center justify-center rounded-full border-8 bg-linear-to-bl shadow-xl duration-300 hover:scale-105 hover:rotate-2 md:h-52 md:w-52 xl:-top-12 xl:-right-24 dark:to-slate-950">
           <Image
             src="/images/avatar.png"
             width={300}
@@ -90,9 +90,9 @@ export default function About() {
       </div>
 
       <Link href="/about">
-        <button className="flex bg-primary-600 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-solid border-2 border-primary-600 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-10 rounded-md ease-in-out duration-300">
+        <button className="bg-primary-600 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-primary-600 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 font-montserrat mt-10 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white duration-300 ease-in-out">
           En savoir plus
-          <HiOutlineArrowRightCircle className="h-5 w-5 ml-2 inline-block" />
+          <HiOutlineArrowRightCircle className="ml-2 inline-block h-5 w-5" />
         </button>
       </Link>
     </div>

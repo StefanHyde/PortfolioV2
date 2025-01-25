@@ -32,10 +32,10 @@ export default function Hero({
     .map((char) => (char === ' ' ? '\u00A0' : char)); // Replace space with non-breaking space
 
   return (
-    <div className="relative mx-auto flex max-w-2xl flex-col items-center mt-8">
-      <div className="bg-gradient-to-r from-primary-500 to-secondary-500 inline-block text-transparent bg-clip-text">
-        <div className="flex flex-col font-nunito font-bold text-6xl md:text-8xl uppercase">
-          <span className="text-dark-800 dark:text-almost-white text-sm md:text-lg font-thin">
+    <div className="relative mx-auto mt-8 flex max-w-2xl flex-col items-center">
+      <div className="from-primary-500 to-secondary-500 inline-block bg-linear-to-r bg-clip-text text-transparent">
+        <div className="font-nunito flex flex-col text-6xl font-bold uppercase md:text-8xl">
+          <span className="text-dark-800 dark:text-almost-white text-sm font-thin md:text-lg">
             {surtitle}
           </span>
           <div className="flex flex-row">
@@ -55,39 +55,39 @@ export default function Hero({
           </div>
         </div>
 
-        <h2 className="font-nunito text-dark-800 dark:text-almost-white font-light text-xl md:text-2xl pt-6">
+        <h2 className="font-nunito text-dark-800 dark:text-almost-white pt-6 text-xl font-light md:text-2xl">
           {subtitle}
         </h2>
-        <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 ">
+        <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3">
           {CTA && (
             <Link href={CTA.url}>
-              <button className="flex bg-primary-600 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-600 hover:border-primary-800 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
+              <button className="bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white duration-300 ease-in-out">
                 {CTA.text}
-                <HiOutlineArrowRightCircle className="h-5 w-5 ml-2 inline-block" />
+                <HiOutlineArrowRightCircle className="ml-2 inline-block h-5 w-5" />
               </button>
             </Link>
           )}
           {CTA2 && (
             <Link href={CTA2.url}>
-              <button className=" flex bg-almost-white dark:bg-transparent hover:bg-primary-600 dark:hover:bg-primary-600 border-solid border-2 border-primary-600 text-primary-600  hover:border-primary-600 dark:hover:border-primary-600 hover:text-almost-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
+              <button className="bg-almost-white hover:bg-primary-600 dark:hover:bg-primary-600 border-primary-600 text-primary-600 hover:border-primary-600 dark:hover:border-primary-600 hover:text-almost-white font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light duration-300 ease-in-out dark:bg-transparent">
                 {CTA2.text}
-                <HiOutlineEnvelope className="h-5 w-5 ml-2 inline-block i" />
+                <HiOutlineEnvelope className="i ml-2 inline-block h-5 w-5" />
               </button>
             </Link>
           )}
           {ctaMailto && (
             <a href={`mailto:${ctaMailto.url}`}>
-              <button className="flex bg-primary-600 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-600 hover:border-primary-800 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
+              <button className="bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white duration-300 ease-in-out">
                 {ctaMailto.text}
-                <HiOutlineEnvelope className="h-5 w-5 ml-2 inline-block" />
+                <HiOutlineEnvelope className="ml-2 inline-block h-5 w-5" />
               </button>
             </a>
           )}
           {ctaResume && (
             <a href={ctaResume.url}>
-              <button className="flex bg-primary-600 hover:bg-primary-800 to-secondary-500 border-solid border-2 border-primary-600 hover:border-primary-800 text-white font-montserrat font-light text-sm text-left px-4 py-2 mt-6 rounded-md ease-in-out duration-300">
+              <button className="bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white duration-300 ease-in-out">
                 {ctaResume.text}
-                <HiOutlineDocumentText className="h-5 w-5 ml-2 inline-block" />
+                <HiOutlineDocumentText className="ml-2 inline-block h-5 w-5" />
               </button>
             </a>
           )}

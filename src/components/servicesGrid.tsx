@@ -9,7 +9,7 @@ export default function ServicesGrid() {
   const { ref: refService3, controls: controlsService3 } = useAnimateOnInView();
   const { ref: refService4, controls: controlsService4 } = useAnimateOnInView();
   return (
-    <div className="overflow-hidden mx-auto flex flex-col md:grid grid-cols-2 grid-rows-2 w-full max-w-7xl gap-10 p-6 md:p-12 mt-24  text-dark-800 dark:text-almost-white">
+    <div className="text-dark-800 dark:text-almost-white mx-auto mt-24 flex w-full max-w-7xl grid-cols-2 grid-rows-2 flex-col gap-10 overflow-hidden p-6 md:grid md:p-12">
       <motion.div
         ref={refService1}
         variants={{
@@ -20,12 +20,12 @@ export default function ServicesGrid() {
         animate={controlsService1}
         viewport={{ once: true }}
         transition={{ duration: 0.25, delay: 0.5 }}
-        className="relative flex flex-col items-start justify-start gap-6 h-fit w-full p-6 md:p-12 backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container"
+        className="dark:border-almost-white text-dark-800 dark:text-almost-white skew-container relative flex h-fit w-full flex-col items-start justify-start gap-6 rounded-md border-solid p-6 backdrop-blur-md md:p-12"
       >
-        <h2 className="text-2xl font-montserrat font-bold text-dark-800 dark:text-almost-white">
-          Site web <span className="text-4xl ml-3">🧑‍💻</span>
+        <h2 className="font-montserrat text-dark-800 dark:text-almost-white text-2xl font-bold">
+          Site web <span className="ml-3 text-4xl">🧑‍💻</span>
         </h2>
-        <p className="text-normal text-sm md:text-base font-montserrat font-light ">
+        <p className="text-normal font-montserrat text-sm font-light md:text-base">
           Des sites vitrines, e-commerces et blogs sur mesure avec{' '}
           <strong>WordPress ou Next.js/React</strong>. Que vous souhaitiez
           présenter votre entreprise, vendre vos produits ou partager vos idées,
@@ -37,7 +37,7 @@ export default function ServicesGrid() {
             votre présence en ligne sera à la hauteur de vos ambitions.
           </strong>
         </p>
-        <div className="absolute -z-10 top-12 md:-right-3/4 w-40 md:w-96 h-40 md:h-96 bg-primary-500 dark:bg-primary-900 rounded-full opacity-10 dark:opacity-30 mix-blend-multiply filter blur-2xl animate-blob"></div>
+        <div className="bg-primary-500 dark:bg-primary-900 animate-blob absolute top-12 -z-10 h-40 w-40 rounded-full opacity-10 mix-blend-multiply blur-2xl filter md:-right-3/4 md:h-96 md:w-96 dark:opacity-30"></div>
       </motion.div>
       <motion.div
         ref={refService2}
@@ -49,14 +49,14 @@ export default function ServicesGrid() {
         animate={controlsService2}
         viewport={{ once: true }}
         transition={{ duration: 0.25, delay: 0.5 }}
-        className="relative flex flex-col items-start justify-start gap-6 h-fit w-full p-6 md:p-12 md:mt-64 backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container__reverse"
+        className="dark:border-almost-white text-dark-800 dark:text-almost-white skew-container__reverse relative flex h-fit w-full flex-col items-start justify-start gap-6 rounded-md border-solid p-6 backdrop-blur-md md:mt-64 md:p-12"
       >
-        <div className="absolute -z-10 top-0 md:-left-3/4 w-40 md:w-72 h-40 md:h-72 bg-secondary-500 dark:bg-secondary-800 rounded-full opacity-20 dark:opacity-30 mix-blend-multiply filter blur-2xl animate-blob"></div>
+        <div className="bg-secondary-500 dark:bg-secondary-800 animate-blob absolute top-0 -z-10 h-40 w-40 rounded-full opacity-20 mix-blend-multiply blur-2xl filter md:-left-3/4 md:h-72 md:w-72 dark:opacity-30"></div>
 
-        <h2 className="text-2xl font-montserrat font-bold text-dark-800 dark:text-almost-white">
-          Application Web<span className="text-4xl ml-3">⚙️</span>
+        <h2 className="font-montserrat text-dark-800 dark:text-almost-white text-2xl font-bold">
+          Application Web<span className="ml-3 text-4xl">⚙️</span>
         </h2>
-        <p className="text-normal text-sm md:text-base font-montserrat font-light ">
+        <p className="text-normal font-montserrat text-sm font-light md:text-base">
           <strong>
             Une application web sur mesure pour répondre à vos besoins
           </strong>
@@ -79,12 +79,12 @@ export default function ServicesGrid() {
         animate={controlsService3}
         viewport={{ once: true }}
         transition={{ duration: 0.25, delay: 0.5 }}
-        className="relative flex flex-col items-start justify-start gap-6 h-fit w-full p-6 md:p-12 backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container"
+        className="dark:border-almost-white text-dark-800 dark:text-almost-white skew-container relative flex h-fit w-full flex-col items-start justify-start gap-6 rounded-md border-solid p-6 backdrop-blur-md md:p-12"
       >
-        <h2 className="text-2xl font-montserrat font-bold text-dark-800 dark:text-almost-white">
-          UX / UI <span className="text-4xl ml-3">🌈</span>
+        <h2 className="font-montserrat text-dark-800 dark:text-almost-white text-2xl font-bold">
+          UX / UI <span className="ml-3 text-4xl">🌈</span>
         </h2>
-        <p className="text-normal text-sm md:text-base font-montserrat font-light ">
+        <p className="text-normal font-montserrat text-sm font-light md:text-base">
           <strong>
             Un design adapté pour une expérience utilisateur optimale
           </strong>
@@ -97,7 +97,7 @@ export default function ServicesGrid() {
           </strong>
           .
         </p>
-        <div className="absolute top-0 -z-10 md:-right-3/4 w-40 md:w-96 h-40 md:h-96 bg-primary-500 dark:bg-primary-900 rounded-full opacity-10 dark:opacity-30 mix-blend-multiply filter blur-2xl animate-blob"></div>
+        <div className="bg-primary-500 dark:bg-primary-900 animate-blob absolute top-0 -z-10 h-40 w-40 rounded-full opacity-10 mix-blend-multiply blur-2xl filter md:-right-3/4 md:h-96 md:w-96 dark:opacity-30"></div>
       </motion.div>
       <motion.div
         ref={refService4}
@@ -109,14 +109,14 @@ export default function ServicesGrid() {
         animate={controlsService4}
         viewport={{ once: true }}
         transition={{ duration: 0.25, delay: 0.5 }}
-        className="relative flex flex-col items-start justify-start gap-6 h-fit w-full p-6 md:p-12 md:mt-64 backdrop-blur-md border-solid  dark:border-almost-white rounded-md text-dark-800 dark:text-almost-white skew-container__reverse"
+        className="dark:border-almost-white text-dark-800 dark:text-almost-white skew-container__reverse relative flex h-fit w-full flex-col items-start justify-start gap-6 rounded-md border-solid p-6 backdrop-blur-md md:mt-64 md:p-12"
       >
-        <div className="absolute -z-10 top-0 md:-left-3/4 w-40 md:w-72 h-40 md:h-72 bg-secondary-500 dark:bg-secondary-800 rounded-full opacity-20 dark:opacity-30 mix-blend-multiply filter blur-2xl animate-blob"></div>
+        <div className="bg-secondary-500 dark:bg-secondary-800 animate-blob absolute top-0 -z-10 h-40 w-40 rounded-full opacity-20 mix-blend-multiply blur-2xl filter md:-left-3/4 md:h-72 md:w-72 dark:opacity-30"></div>
 
-        <h2 className="text-2xl font-montserrat font-bold text-dark-800 dark:text-almost-white">
-          Optimisation et maintenance<span className="text-4xl ml-3">🚀</span>
+        <h2 className="font-montserrat text-dark-800 dark:text-almost-white text-2xl font-bold">
+          Optimisation et maintenance<span className="ml-3 text-4xl">🚀</span>
         </h2>
-        <p className="text-normal text-sm md:text-base font-montserrat font-light ">
+        <p className="text-normal font-montserrat text-sm font-light md:text-base">
           Maintenance et optimisation :{' '}
           <strong>un site toujours à jour et performant</strong>. Un site web ou
           une application nécessite un suivi constant pour rester rapide,

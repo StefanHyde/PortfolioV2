@@ -34,9 +34,9 @@ export default function ScrollToTop() {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed right-4 bottom-12 z-50 p-2 bg-primary-500 dark:bg-primary-800 rounded-full shadow-md hover:shadow-lg hover:scale-105 focus:outline-none ease-in-out duration-300"
+          className="bg-primary-500 dark:bg-primary-800 fixed right-4 bottom-12 z-50 rounded-full p-2 shadow-md duration-300 ease-in-out hover:scale-105 hover:shadow-lg focus:outline-hidden"
         >
-          <HiArrowSmUp className="text-3xl text-almost-white" />
+          <HiArrowSmUp className="text-almost-white text-3xl" />
         </button>
       )}
     </div>

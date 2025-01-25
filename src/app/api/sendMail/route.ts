@@ -16,7 +16,10 @@ export async function POST(request: NextRequest) {
   try {
     // Get client IP (or a fallback if not behind a proxy)
     const ip =
-      request.headers.get('x-forwarded-for') || request.ip || 'unknown';
+      request.headers.get('x-forwarded-for') ||
+      request.headers.get('x-real-ip') ||
+      request.headers.get('cf-connecting-ip') ||
+      'unknown';
 
     // Consume a rate limit point
     await rateLimiter.consume(ip);
