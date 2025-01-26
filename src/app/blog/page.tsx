@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { getPosts } from '@api/wordPress/service';
 
 import BlogPostBlock from '@/components/blogPostBlock';
@@ -8,17 +9,17 @@ export default async function BlogPage() {
 
   return (
     <main>
-      <div className="relative mx-auto flex max-w-2xl flex-col items-start ">
+      <div className="relative mx-auto flex max-w-2xl flex-col items-start">
         <PageTitle
           title="Le blog"
           subtitle="Discussions, réfléxions, actualités, ou conseils. Ici on aborde divers sujets autour du développement web 🧑‍💻"
         />
       </div>
 
-      <div className="mx-auto flex flex-col md:flex-row justify-center w-full max-w-7xl gap-10  p-6 mb-12 md:p-12 mt-24 xl:mt-32 text-dark-800 dark:text-almost-white">
-        <div className="flex flex-col w-full">
-          <h3 className="text-2xl font-semibold  mb-4">Derniers articles</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 font-montserrat text-dark-800 dark:text-almost-white">
+      <div className="text-dark-800 dark:text-almost-white mx-auto mt-24 mb-12 flex w-full max-w-7xl flex-col justify-center gap-10 p-6 md:flex-row md:p-12 xl:mt-32">
+        <div className="flex w-full flex-col">
+          <h3 className="mb-4 text-2xl font-semibold">Derniers articles</h3>
+          <div className="font-montserrat text-dark-800 dark:text-almost-white grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
             {posts.map((post: any) => {
               return <BlogPostBlock key={post.slug} post={post} />;
             })}
