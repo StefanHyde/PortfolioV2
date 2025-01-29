@@ -96,6 +96,61 @@
   }
 }
 
+/* Mapping WP classes to Tailwind CSS */
+@utility post-content {
+  h1 {
+    @apply mt-8 mb-4 text-4xl font-bold md:text-5xl;
+  }
+
+  h2 {
+    @apply mt-8 mb-4 text-3xl font-bold md:text-4xl;
+  }
+
+  h3 {
+    @apply mt-8 mb-4 text-2xl font-bold md:text-3xl;
+  }
+
+  h4 {
+    @apply mt-8 mb-4 text-xl font-bold md:text-2xl;
+  }
+
+  h5 {
+    @apply mt-8 mb-4 text-lg font-bold md:text-xl;
+  }
+
+  h6 {
+    @apply mt-8 mb-4 text-base font-bold md:text-lg;
+  }
+
+  a {
+    @apply decoration-primary-500 text-primary-500 hover:text-primary-600 underline duration-300 ease-in-out hover:no-underline hover:decoration-0;
+  }
+
+  hr {
+    @apply border-primary-200 my-8 border-t;
+  }
+
+  .wp-block-image.aligncenter {
+    @apply flex justify-center;
+  }
+
+  .wp-block-columns {
+    @apply grid grid-cols-1 items-center gap-8 md:grid-cols-2;
+  }
+
+  blockquote {
+    @apply bg-primary-50 dark:bg-primary-500 dark:text-almost-white border-primary-500 dark:border-primary-900 my-8 border-l-4 p-4 italic;
+  }
+
+  .wp-block-list {
+    @apply list-inside list-disc;
+  }
+
+  .wp-block-gallery {
+    @apply grid grid-cols-1 gap-8 md:grid-cols-2;
+  }
+}
+
 @utility skew-container {
   &::before {
     content: '';
