@@ -36,7 +36,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed z-50 flex h-auto w-full items-center justify-between px-4 py-2 ${scrolled ? 'bg-almost-white dark:bg-slate-950' : 'bg-transparent'}`}
+      className={`fixed z-50 flex h-auto w-full items-center justify-between px-4 py-2 ${!scrolled ? 'bg-almost-white dark:bg-slate-950' : 'backdrop-blur-3xl'}`}
     >
       <Link href="/" className="flex">
         <Image src="/images/logo.png" alt="logo" width={40} height={40} />
@@ -88,7 +88,7 @@ export default function Header() {
             <MenuItems
               transition
               anchor="top start"
-              className="border-primary-500 dark:border-almost-white z-50 flex h-screen w-full flex-col justify-center gap-10 rounded-md border-2 border-solid p-8 backdrop-blur-xl transition duration-300 ease-in-out [--anchor-gap:8px] focus:outline-hidden data-closed:scale-95 data-closed:opacity-0"
+              className="border-primary-500 dark:border-almost-white z-50 flex h-screen w-full flex-col justify-center gap-10 rounded-md border-2 border-solid p-8 backdrop-blur-3xl transition duration-300 ease-in-out [--anchor-gap:8px] focus:outline-hidden data-closed:scale-95 data-closed:opacity-0"
             >
               {links.map((link) => (
                 <MenuItem key={link.hash}>
