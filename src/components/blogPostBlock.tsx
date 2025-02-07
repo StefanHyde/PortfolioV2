@@ -51,11 +51,11 @@ export default function BlogPostBlock({ post }: { post: Post }) {
           <h3 className="font-montserrat group-hover:text-primary-500 flex-1 overflow-hidden text-base font-semibold text-ellipsis duration-300 ease-in-out md:text-lg">
             {post.title}
           </h3>
-          <div className="mt-3 flex-none text-sm text-gray-500">
+          <div className="mt-3 flex flex-wrap gap-2 text-sm text-gray-500">
             {post.tags.nodes.map((tag: { name: string }) => (
               <span
                 key={tag.name}
-                className="bg-primary-200 dark:bg-primary-500 text-primary-900 dark:text-almost-white mr-2 rounded-sm p-1 text-xs"
+                className="bg-primary-200 dark:bg-primary-500 text-primary-900 dark:text-almost-white rounded-sm p-1 text-xs"
               >
                 {tag.name}
               </span>
