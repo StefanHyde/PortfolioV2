@@ -16,6 +16,7 @@ export default async function BlogPost({
         <BlogPostHeader
           title={post.title}
           coverImage={post.featuredImage?.node?.sourceUrl || null}
+          tags={post.tags}
         />
       </div>
       <div className="text-dark-800 dark:text-almost-white mx-auto flex w-full flex-col justify-center gap-10 p-6 md:p-12">
