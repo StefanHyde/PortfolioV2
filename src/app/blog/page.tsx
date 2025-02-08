@@ -1,11 +1,38 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+'use client';
+
+import { useEffect, useState } from 'react';
 import { getPosts } from '@api/wordPress/service';
 
 import BlogPostBlock from '@/components/blogPostBlock';
 import PageTitle from '@/components/pageTitle';
+import Pagination from '@/components/pagination';
 
-export default async function BlogPage() {
-  const posts = await getPosts(50); // Get the 50 latest posts
+const POSTS_PER_PAGE = 8;
+
+export default function BlogPage() {
+  const [posts, setPosts] = useState<any[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPosts, setTotalPosts] = useState(0);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const allPosts = await getPosts(50); // Get 50 posts as a buffer
+      setPosts(allPosts);
+      setTotalPosts(allPosts.length);
+    };
+
+    fetchPosts();
+  }, []);
+
+  const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
+  const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+  const visiblePosts = posts.slice(startIndex, startIndex + POSTS_PER_PAGE);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <main>
@@ -20,10 +47,15 @@ export default async function BlogPage() {
         <div className="flex w-full flex-col">
           <h3 className="mb-4 text-2xl font-semibold">Derniers articles</h3>
           <div className="font-montserrat text-dark-800 dark:text-almost-white grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
-            {posts.map((post: any) => {
+            {visiblePosts.map((post: any) => {
               return <BlogPostBlock key={post.slug} post={post} />;
             })}
           </div>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
         </div>
       </div>
     </main>
