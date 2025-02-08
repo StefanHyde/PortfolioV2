@@ -4,6 +4,7 @@ import defaultCoverImage from '@images/defaultblog.jpg';
 type blogPostHeaderProps = {
   title: string;
   date: string;
+  author: string;
   coverImage: string;
   defaultCoverImage?: string;
   tags?: {
@@ -16,6 +17,7 @@ type blogPostHeaderProps = {
 export default function BlogPostHeader({
   title,
   date,
+  author,
   coverImage,
   tags,
 }: blogPostHeaderProps) {
@@ -32,8 +34,9 @@ export default function BlogPostHeader({
             month: 'long',
             day: 'numeric',
             year: 'numeric',
-          })}`}
+          })} par ${author}`}
         </p>
+
         <div className="flex flex-wrap gap-2">
           {tags?.nodes?.map((tag) => (
             <div

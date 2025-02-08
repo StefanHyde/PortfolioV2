@@ -16,6 +16,7 @@ export default async function BlogPost({
         <BlogPostHeader
           title={post.title}
           date={post.date}
+          author={post.author?.node?.name}
           coverImage={post.featuredImage?.node?.sourceUrl || null}
           tags={post.tags}
         />

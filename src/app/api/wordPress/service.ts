@@ -54,6 +54,11 @@ export async function getPostBySlug(slug: string) {
       slug
       title
       date
+      author {
+        node {
+          name
+        }
+      }
       tags {
         nodes {
           name
