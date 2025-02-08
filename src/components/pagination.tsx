@@ -14,11 +14,11 @@ export default function Pagination({
   onPageChange,
 }: PaginationProps) {
   return (
-    <div className="mt-12 flex items-center justify-center gap-2">
+    <div className="mt-8 flex items-center justify-center gap-2">
       <button
         onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="hover:bg-dark-50 rounded-sm p-2 disabled:cursor-not-allowed disabled:opacity-50 dark:hover:bg-slate-800"
+        className="hover:bg-dark-50 rounded-md p-2 disabled:cursor-not-allowed disabled:opacity-50 dark:hover:bg-slate-800"
         aria-label="Previous page"
       >
         <HiArrowSmLeft className="h-5 w-5" />
@@ -30,7 +30,7 @@ export default function Pagination({
           <button
             key={pageNumber}
             onClick={() => onPageChange(pageNumber)}
-            className={`rounded-lg px-4 py-2 ${
+            className={`rounded-md px-4 py-2 ${
               currentPage === pageNumber
                 ? 'bg-primary-600 dark:bg-primary-800 text-white'
                 : 'hover:bg-dark-50 dark:hover:bg-slate-800'
@@ -46,7 +46,7 @@ export default function Pagination({
           currentPage < totalPages && onPageChange(currentPage + 1)
         }
         disabled={currentPage === totalPages}
-        className="hover:bg-dark-50 rounded-lg p-2 disabled:cursor-not-allowed disabled:opacity-50 dark:hover:bg-slate-800"
+        className="hover:bg-dark-50 rounded-md p-2 disabled:cursor-not-allowed disabled:opacity-50 dark:hover:bg-slate-800"
         aria-label="Next page"
       >
         <HiArrowSmRight className="h-5 w-5" />

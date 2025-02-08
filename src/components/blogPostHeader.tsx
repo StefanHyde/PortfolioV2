@@ -3,6 +3,7 @@ import defaultCoverImage from '@images/defaultblog.jpg';
 
 type blogPostHeaderProps = {
   title: string;
+  date: string;
   coverImage: string;
   defaultCoverImage?: string;
   tags?: {
@@ -14,6 +15,7 @@ type blogPostHeaderProps = {
 
 export default function BlogPostHeader({
   title,
+  date,
   coverImage,
   tags,
 }: blogPostHeaderProps) {
@@ -24,6 +26,14 @@ export default function BlogPostHeader({
         <h1 className="font-montserrat text-almost-white mb-6 text-4xl font-semibold md:text-5xl">
           {title}
         </h1>
+        <p className="font-montserrat text-almost-white mb-6 text-sm">
+          {`Posté le 
+          ${new Date(date).toLocaleDateString('fr-FR', {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric',
+          })}`}
+        </p>
         <div className="flex flex-wrap gap-2">
           {tags?.nodes?.map((tag) => (
             <div

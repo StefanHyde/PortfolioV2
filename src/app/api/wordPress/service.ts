@@ -21,6 +21,7 @@ export async function getPosts(first = 10) {
       }
       slug
       title
+      date
       tags {
         nodes {
           name
@@ -52,6 +53,7 @@ export async function getPostBySlug(slug: string) {
       }
       slug
       title
+      date
       tags {
         nodes {
           name
