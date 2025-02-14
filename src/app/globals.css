@@ -157,6 +157,14 @@
       @apply font-nunito text-almost-white text-sm;
     }
   }
+
+  .wp-block-embed__wrapper {
+    @apply flex justify-center;
+
+    iframe {
+      @apply rounded-sm;
+    }
+  }
 }
 
 @utility skew-container {
