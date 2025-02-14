@@ -1,6 +1,6 @@
 import { getPostBySlug } from '@api/wordPress/service';
 
-import BlogPostHeader from '@/components/blogPostHeader';
+import BlogPostHeader from '@/components/blog/blogPostHeader';
 
 export default async function BlogPost({
   params: paramsPromise,
