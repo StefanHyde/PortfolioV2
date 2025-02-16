@@ -130,6 +130,14 @@
     @apply border-primary-200 my-8 border-t;
   }
 
+  .wp-block-image {
+    @apply flex flex-col items-center justify-center;
+
+    .wp-element-caption {
+      @apply text-dark-500 dark:text-almost-white mt-2 text-center text-sm italic;
+    }
+  }
+
   .wp-block-image.aligncenter {
     @apply flex justify-center;
   }
