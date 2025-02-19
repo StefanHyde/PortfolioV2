@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 
+import { useTranslations } from 'next-intl';
+
 import About from '@/components/about';
 import ContactForm from '@/components/contactForm';
 import Intro from '@/components/intro';
 
-import Hero from '../components/hero';
+import Hero from '../../components/hero';
 
 export const metadata: Metadata = {
   description:
@@ -15,11 +17,13 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const t = useTranslations('Home');
+
   return (
     <main>
       <div className="relative mx-auto flex h-screen w-full max-w-7xl items-center justify-center px-6 md:px-8 lg:px-12">
         <Hero
-          surtitle="developpé par"
+          surtitle={t('developpe-par')}
           title="Stefan H"
           subtitle="Site ou application web ? Transformons ensemble vos idées en solutions modernes, accessibles, et inclusives"
           CTA={{ text: 'En savoir plus', url: '#introduction ' }}
