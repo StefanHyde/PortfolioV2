@@ -4,7 +4,7 @@ import { sendGAEvent } from '@next/third-parties/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { HiBars3, HiMiniXMark } from 'react-icons/hi2';
 
 import { links } from '../../lib/data';
@@ -12,32 +12,14 @@ import ThemeSwitch from './themeSwitch';
 
 export default function Header() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpened, setMenuOpened] = useState(false);
-
-  useEffect(() => {
-    //Check if the user has scrolled to change the header background
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const toggleMenu = () => {
     setMenuOpened((previousState) => !previousState);
   };
 
   return (
-    <header
-      className={`fixed z-50 flex h-auto w-full items-center justify-between px-4 py-2 ${!scrolled ? 'bg-almost-white dark:bg-slate-950' : 'backdrop-blur-3xl'}`}
-    >
+    <header className="bg-almost-white fixed z-50 flex h-auto w-full items-center justify-between px-4 py-2 dark:bg-slate-950">
       <Link href="/" className="flex">
         <Image src="/images/logo.png" alt="logo" width={40} height={40} />
       </Link>
@@ -88,7 +70,7 @@ export default function Header() {
             <MenuItems
               transition
               anchor="top start"
-              className="border-primary-500 dark:border-almost-white z-50 flex h-screen w-full flex-col justify-center gap-10 rounded-md border-2 border-solid p-8 backdrop-blur-3xl transition duration-300 ease-in-out [--anchor-gap:8px] focus:outline-hidden data-closed:scale-95 data-closed:opacity-0"
+              className="border-primary-500 dark:border-almost-white bg-almost-white z-50 flex h-screen w-full flex-col justify-center gap-10 rounded-md border-2 border-solid p-8 transition duration-300 ease-in-out [--anchor-gap:8px] focus:outline-hidden data-closed:scale-95 data-closed:opacity-0 dark:bg-slate-950"
             >
               {links.map((link) => (
                 <MenuItem key={link.hash}>

@@ -22,11 +22,11 @@ export const links = [
     hash: '#services',
     url: '/services',
   },
-  /* {
+  {
     name: 'Blog',
     hash: '#blog',
     url: '/blog',
-  }, */
+  },
 ] as const;
 
 export const socials = [

@@ -40,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="fr"
       className={`${nunito.variable} ${montserrat.variable} scroll-smooth`}
     >
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />

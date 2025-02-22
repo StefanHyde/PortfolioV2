@@ -19,7 +19,7 @@ export default function Home() {
     <main>
       <div className="relative mx-auto flex h-screen w-full max-w-7xl items-center justify-center px-6 md:px-8 lg:px-12">
         <Hero
-          surtitle="developpé par"
+          surtitle="Développé par"
           title="Stefan H"
           subtitle="Site ou application web ? Transformons ensemble vos idées en solutions modernes, accessibles, et inclusives"
           CTA={{ text: 'En savoir plus', url: '#introduction ' }}
