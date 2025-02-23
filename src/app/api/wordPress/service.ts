@@ -60,6 +60,7 @@ export async function getPostBySlug(slug: string) {
         opengraphImage {
         id
         uri
+        link
         }
       opengraphDescription
       opengraphTitle

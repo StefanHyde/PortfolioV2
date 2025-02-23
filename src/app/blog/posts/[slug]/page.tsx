@@ -31,7 +31,7 @@ export async function generateMetadata({
       url: post.seo.opengraphUrl,
       images: [
         {
-          url: post.seo.opengraphImage?.uri || '',
+          url: post.seo.opengraphImage?.link || '',
           width: 1200,
           height: 630,
         },
