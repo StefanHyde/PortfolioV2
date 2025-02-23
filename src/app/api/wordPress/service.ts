@@ -57,6 +57,13 @@ export async function getPostBySlug(slug: string) {
         title
         fullHead
         focuskw
+        opengraphImage {
+        id
+        uri
+        }
+      opengraphDescription
+      opengraphTitle
+      opengraphUrl
           }
       title
       date

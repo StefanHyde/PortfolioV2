@@ -25,6 +25,18 @@ export async function generateMetadata({
     title: post.seo.title,
     description: post.seo.metaDesc,
     keywords: post.seo.focuskw,
+    openGraph: {
+      title: post.seo.opengraphTitle || post.seo.title,
+      description: post.seo.opengraphDescription || post.seo.metaDesc,
+      url: post.seo.opengraphUrl,
+      images: [
+        {
+          url: post.seo.opengraphImage?.uri || '',
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
   };
 }
 
