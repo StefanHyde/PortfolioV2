@@ -52,6 +52,12 @@ export async function getPostBySlug(slug: string) {
         }
       }
       slug
+      seo {
+        metaDesc
+        title
+        fullHead
+        focuskw
+          }
       title
       date
       author {
@@ -64,6 +70,7 @@ export async function getPostBySlug(slug: string) {
           name
         }
       }
+        
     }
   }`,
     {
