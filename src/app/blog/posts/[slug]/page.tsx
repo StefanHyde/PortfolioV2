@@ -1,8 +1,32 @@
 import { getPostBySlug } from '@api/wordPress/service';
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
 
 import BlogPostHeader from '@/components/blog/blogPostHeader';
 import Breadcrumbs from '@/components/blog/blogBreadcrumbs';
+
+// To generate the metadata from WP
+export async function generateMetadata({
+  params: paramsPromise,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await paramsPromise;
+  const post = await getPostBySlug(slug);
+
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+      description: 'The post you are looking for does not exist',
+    };
+  }
+
+  return {
+    title: post.seo.title,
+    description: post.seo.metaDesc,
+    keywords: post.seo.focuskw,
+  };
+}
 
 export default async function BlogPost({
   params: paramsPromise,
