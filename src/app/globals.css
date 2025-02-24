@@ -122,10 +122,6 @@
     @apply mt-8 mb-4 text-base font-bold md:text-lg;
   }
 
-  p {
-    @apply text-sm md:text-base;
-  }
-
   a {
     @apply decoration-primary-500 text-primary-500 hover:text-primary-600 underline duration-300 ease-in-out hover:no-underline hover:decoration-0;
   }
