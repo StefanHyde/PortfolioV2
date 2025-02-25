@@ -4,7 +4,7 @@ import About from '@/components/about';
 import ContactForm from '@/components/contactForm';
 import Intro from '@/components/intro';
 
-import Hero from '../components/hero';
+import Hero from '../../components/hero';
 
 export const metadata: Metadata = {
   description:
