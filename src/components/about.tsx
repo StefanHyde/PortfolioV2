@@ -4,9 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { HiOutlineArrowRightCircle } from 'react-icons/hi2';
 
+import { useParams } from 'next/navigation';
+
 import useAnimateOnView from '@/hooks/useAnimateOnView';
 
 export default function About() {
+  const params = useParams();
+  const locale = params.locale as string;
   const { ref: refFirstTitle, controls: controlsFirstTitle } =
     useAnimateOnView();
   const { ref: refSecondTitle, controls: controlsSecondTitle } =
@@ -89,7 +93,7 @@ export default function About() {
         </div>
       </div>
 
-      <Link href="/about">
+      <Link href={`${locale}/about`}>
         <button className="bg-primary-600 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-primary-600 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 font-montserrat mt-10 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white duration-300 ease-in-out">
           En savoir plus
           <HiOutlineArrowRightCircle className="ml-2 inline-block h-5 w-5" />

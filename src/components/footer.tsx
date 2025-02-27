@@ -1,8 +1,13 @@
+'use client';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
 import { links, socials } from '../../lib/data';
 
 export default function Footer() {
+  const params = useParams();
+  const locale = params.locale as string;
+
   return (
     <footer className="bg-primary-600 dark:bg-primary-800 dark:text-almost-white mt-12 items-center p-8 text-white md:flex md:flex-row md:justify-between md:px-16 md:py-4">
       <div className="container mx-auto mb-7 text-center md:mb-0 md:text-start">
@@ -13,7 +18,7 @@ export default function Footer() {
           {links.map((link) => (
             <li key={link.hash}>
               <Link
-                href={link.url}
+                href={`/${locale}/${link.url}`}
                 className="font-nunito text-almost-white hover:text-primary-200 text-xs font-light duration-300 ease-in-out"
               >
                 {link.name}
@@ -24,7 +29,7 @@ export default function Footer() {
         <ul className="flex flex-col text-right">
           <li>
             <Link
-              href="/legal"
+              href={`${locale}/legal`}
               className="font-nunito text-almost-white hover:text-primary-200 text-xs font-light duration-300 ease-in-out"
             >
               Mentions légales
@@ -32,7 +37,7 @@ export default function Footer() {
           </li>
           <li>
             <Link
-              href="/rgpd"
+              href={`${locale}/rgpd`}
               className="font-nunito text-almost-white hover:text-primary-200 text-xs font-light duration-300 ease-in-out"
             >
               Politique de confidentialité

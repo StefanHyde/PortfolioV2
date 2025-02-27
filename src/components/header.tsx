@@ -4,6 +4,7 @@ import { sendGAEvent } from '@next/third-parties/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { useState } from 'react';
 import { HiBars3, HiMiniXMark } from 'react-icons/hi2';
 
@@ -13,6 +14,10 @@ import ThemeSwitch from './themeSwitch';
 export default function Header() {
   const pathname = usePathname();
   const [menuOpened, setMenuOpened] = useState(false);
+  const params = useParams();
+  const locale = params.locale as string;
+
+  console.log('locale', locale);
 
   const toggleMenu = () => {
     setMenuOpened((previousState) => !previousState);
@@ -29,7 +34,7 @@ export default function Header() {
             link.url === pathname ? null : (
               <li key={link.hash}>
                 <Link
-                  href={link.url}
+                  href={`/${locale}/${link.url}`}
                   className="font-nunito text-primary-600 dark:text-almost-white hover:text-primary-800 dark:hover:text-primary-800 text-lg duration-300 ease-in-out"
                 >
                   {link.name}
@@ -75,7 +80,7 @@ export default function Header() {
               {links.map((link) => (
                 <MenuItem key={link.hash}>
                   <Link
-                    href={link.url}
+                    href={`/${locale}/${link.url}`}
                     onClick={() => setMenuOpened(false)}
                     className="font-nunito text-primary-500 dark:text-almost-white hover:text-primary-800 dark:hover:text-primary-800 text-lg duration-300 ease-in-out"
                   >
