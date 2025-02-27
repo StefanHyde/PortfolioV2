@@ -1,5 +1,8 @@
 {
   "HomePage": {
-    "surtitle": "Developped by"
+    "surtitle": "Developped by",
+    "subtitle": "Website or web application? Let’s turn your ideas into modern, accessible, and inclusive solutions together.",
+    "en-savoir-plus": "Learn more",
+    "un-projet-?-venez-en-parler": "A project ? Let’s talk about it"
   }
 }
