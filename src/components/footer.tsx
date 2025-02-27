@@ -29,7 +29,7 @@ export default function Footer() {
         <ul className="flex flex-col text-right">
           <li>
             <Link
-              href={`${locale}/legal`}
+              href={`/${locale}/legal`}
               className="font-nunito text-almost-white hover:text-primary-200 text-xs font-light duration-300 ease-in-out"
             >
               Mentions légales
@@ -37,7 +37,7 @@ export default function Footer() {
           </li>
           <li>
             <Link
-              href={`${locale}/rgpd`}
+              href={`/${locale}/rgpd`}
               className="font-nunito text-almost-white hover:text-primary-200 text-xs font-light duration-300 ease-in-out"
             >
               Politique de confidentialité
