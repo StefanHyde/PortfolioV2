@@ -24,7 +24,7 @@ export default function About() {
         <h2 className="font-montserrat mb-6 text-4xl font-semibold md:text-5xl">
           <motion.div
             ref={refFirstTitle}
-            className="from-primary-800 to-primary-400 text-primary-500 inline-block bg-linear-to-r bg-clip-text text-6xl text-transparent md:text-7xl"
+            className="from-primary-800 to-primary-400 text-primary-500 inline-block bg-linear-to-r bg-clip-text text-6xl md:text-7xl"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },

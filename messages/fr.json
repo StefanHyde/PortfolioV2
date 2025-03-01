@@ -6,6 +6,24 @@
       "en-savoir-plus": "En savoir plus",
       "un-projet-?-venez-en-parler": "Un projet ? Venez en parler"
     },
+    "IntroSection": {
+      "quelque-soit-vos": "Quelque soit vos",
+      "ambitions": "ambitions",
+      "je-vous-trouve-la": "je vous trouve la",
+      "solution": "solution",
+      "intro-paragraph": "Que vous lanciez votre premier projet web ou que vous souhaitiez optimiser votre présence en ligne, je vous accompagne à chaque étape. Ensemble, nous concevons des solutions adaptées à vos objectifs, vos besoins et votre budget.",
+      "site-web": "site web",
+      "site-web-description": "Un site destiné à promouvoir votre activité, un site e-commerce pour vendre vos créations, ou un blog pour partager vos passions ? Je vous accompagne dans le developpement de votre projet.",
+      "application-web": "Application web",
+      "application-web-description": "Une application web : bien plus qu'un site, un levier puissant pour accélérer votre croissance et transformer vos idées en solutions concrètes.",
+      "conseil": "Conseil",
+      "conseil-description": "Des conseils sur-mesure pour guider vos choix et réussir votre transition numérique grâce à un site ou une application web adaptée à vos besoins.",
+      "optimisation": "Optimisation",
+      "optimisation-description": "Une plateforme performante, fluide et facile à maintenir : renforcez votre image en ligne avec un site rapide, agréable pour vos utilisateurs et conçu pour durer.",
+      "ux-ui": "UX/UI",
+      "ux-ui-description": "Une maquette accessible et inclusive pour un site ou une application web réussie. Je conçois des designs modernes, ergonomiques et conformes aux standards UX/UI actuels, en veillant à offrir une expérience adaptée à tous les utilisateurs.",
+      "decouvrez-mes-services": "Découvrez mes services"
+    },
     "AboutSection": {
       "developper": "Développer",
       "et-vous": "et vous",

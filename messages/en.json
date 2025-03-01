@@ -2,9 +2,27 @@
   "HomePage": {
     "Hero": {
       "surtitle": "Developped by",
-      "subtitle": "Website or web application? Let’s turn your ideas into modern, accessible, and inclusive solutions together.",
+      "subtitle": "Website or web application ? Let’s turn your ideas into modern, accessible, and inclusive solutions together.",
       "en-savoir-plus": "Learn more",
       "un-projet-?-venez-en-parler": "A project ? Let’s talk about it"
+    },
+    "IntroSection": {
+      "quelque-soit-vos": "Whatever your",
+      "ambitions": "ambitions",
+      "je-vous-trouve-la": "i will find the",
+      "solution": "solution",
+      "intro-paragraph": "Whether you’re launching your first web project or looking to optimize your online presence, I support you at every stage. Together, we create solutions designed to your goals, needs, and budget.",
+      "site-web": "Website",
+      "site-web-description": "A website to promote your business, an e-commerce site to sell your creations, or a blog to share your passions ? I support you in the development of your project.",
+      "application-web": "Web Application",
+      "application-web-description": "A web application : much more than a website, a powerful lever to accelerate your growth and turn your ideas into powerful solutions.",
+      "conseil": "Advice",
+      "conseil-description": "Personalized advice to guide your choices and successfully transition to digital with a website or web application suited to your needs.",
+      "optimisation": "Optimization",
+      "optimisation-description": "A high-performance, smooth, and easy-to-maintain platform: strengthen your online image with a fast, user-friendly website built to last.",
+      "ux-ui": "UX/UI",
+      "ux-ui-description": "An accessible and inclusive mockup for a successful website or web application. I design modern, ergonomic interfaces that comply with current UX/UI standards, ensuring an experience tailored to all users.",
+      "decouvrez-mes-services": "Discover my services"
     },
     "AboutSection": {
       "developper": "Develop",
