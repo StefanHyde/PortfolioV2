@@ -1,8 +1,19 @@
 {
   "HomePage": {
-    "surtitle": "Développé par",
-    "subtitle": "Site web ou application web ? Transformons ensemble vos idées en solutions modernes, accessibles et inclusives.",
-    "en-savoir-plus": "En savoir plus",
-    "un-projet-?-venez-en-parler": "Un projet ? Venez en parler"
+    "Hero": {
+      "surtitle": "Développé par",
+      "subtitle": "Site web ou application web ? Transformons ensemble vos idées en solutions modernes, accessibles et inclusives.",
+      "en-savoir-plus": "En savoir plus",
+      "un-projet-?-venez-en-parler": "Un projet ? Venez en parler"
+    },
+    "AboutSection": {
+      "developper": "Développer",
+      "et-vous": "et vous",
+      "ecouter": "écouter",
+      "presentation-paragraph": "Je suis Stefan, <strong>développeur passionné et engagé</strong>, spécialisé dans la création de sites et d'applications web sur mesure. Mon objectif : transformer vos idées en solutions numériques <strong>modernes, accessibles, et performantes</strong>. À l'écoute de vos besoins et de vos ambitions, je conçois des interfaces ergonomiques, inclusives et adaptées à tous vos utilisateurs, tout en respectant les standards UX/UI actuels. Ensemble, nous bâtirons une <strong>expérience numérique qui reflète votre identité</strong> tout en captivant et fidélisant votre audience.",
+      "presentation-paragraph-2": "Ensemble, nous donnerons vie à vos projets avec des solutions qui allient esthétique, fonctionnalité et longévité. Je suis ici pour <strong> écouter et créer des solutions qui soutiennent votre vision </strong>",
+      "presentation-conclusion": "<strong> Faites le choix d’un développement pensé pour vous et vos utilisateurs.</strong>",
+      "en-savoir-plus": "En savoir plus"
+    }
   }
 }

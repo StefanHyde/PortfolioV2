@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const t = useTranslations('HomePage');
+  const t = useTranslations('HomePage.Hero');
   return (
     <main>
       <div className="relative mx-auto flex h-screen w-full max-w-7xl items-center justify-center px-6 md:px-8 lg:px-12">

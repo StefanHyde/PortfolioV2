@@ -1,8 +1,19 @@
 {
   "HomePage": {
-    "surtitle": "Developped by",
-    "subtitle": "Website or web application? Let’s turn your ideas into modern, accessible, and inclusive solutions together.",
-    "en-savoir-plus": "Learn more",
-    "un-projet-?-venez-en-parler": "A project ? Let’s talk about it"
+    "Hero": {
+      "surtitle": "Developped by",
+      "subtitle": "Website or web application? Let’s turn your ideas into modern, accessible, and inclusive solutions together.",
+      "en-savoir-plus": "Learn more",
+      "un-projet-?-venez-en-parler": "A project ? Let’s talk about it"
+    },
+    "AboutSection": {
+      "developper": "Develop",
+      "et-vous": "and",
+      "ecouter": "listen to you",
+      "presentation-paragraph": "I’m Stefan, <strong>a passionate and dedicated developer</strong> specializing in custom website and web application development. My goal: to turn your ideas into <strong>modern, accessible, and high-performance digital solutions</strong>. Attentive to your needs and ambitions, I design ergonomic, inclusive interfaces tailored to all your users while adhering to current UX/UI standards. Together, we will build a <strong>digital experience that reflects your identity</strong> while engaging and retaining your audience.",
+      "presentation-paragraph-2": "Together, we will bring your projects to life with solutions that combine aesthetics, functionality, and longevity. I am here to <strong>listen and create solutions that support your vision</strong>",
+      "presentation-conclusion": "<strong> Choose development designed to you and your users.</strong>",
+      "en-savoir-plus": "Learn more"
+    }
   }
 }
