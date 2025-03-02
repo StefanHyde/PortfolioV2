@@ -6,6 +6,8 @@ import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
 
+import { useTranslations } from 'next-intl';
+
 type FormInputs = {
   name: string;
   senderMail: string;
@@ -16,6 +18,8 @@ type FormInputs = {
 
 export default function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
+
+  const t = useTranslations('HomePage.ContactSection');
 
   const {
     register,
@@ -46,27 +50,25 @@ export default function ContactForm() {
         }),
       });
       if (response.ok) {
-        toast.success(
-          'Votre message a bien été envoyé, je vous répondrai dans les plus brefs délais',
-        );
+        toast.success(t('votre-message-a-bien-ete-envoye'));
         reset();
       } else {
         toast.error(
-          "Oups, une erreur est survenue lors de l'envoi de votre message",
+          t('une-erreur-est-survenue-lors-de-l-envoi-de-votre-message'),
         );
       }
       setIsLoading(false);
     }
   };
 
-  const titleAnimationText = [...'contact'];
+  const titleAnimationText = [...t('contact')];
 
   return (
     <>
       <div className="flex h-full w-full flex-col items-center justify-center">
         <div className="">
           <h2 className="font-montserrat text-dark-800 dark:text-almost-white mb-6 text-2xl font-semibold md:text-4xl">
-            Prenons{' '}
+            {t('prenons')}{' '}
             <span className="from-primary-500 to-secondary-500 inline-block bg-linear-to-r bg-clip-text text-6xl text-transparent md:text-7xl">
               {titleAnimationText.map((element, index) => (
                 <motion.span
@@ -89,7 +91,7 @@ export default function ContactForm() {
           <form onSubmit={handleSubmit(onSubmit)} className="font-montserrat">
             <label className="mb-6 block" htmlFor="name">
               <span className="text-dark-800 dark:text-almost-white">
-                Votre nom
+                {t('votre-nom')}
               </span>
               <input
                 type="text"
@@ -99,13 +101,13 @@ export default function ContactForm() {
               />
               {errors.name && (
                 <p className="text-primary-500 pt-1 text-xs">
-                  Veuillez renseigner votre nom et / ou prénom
+                  {t('veuillez-renseigner-votre-nom')}
                 </p>
               )}
             </label>
             <label className="mb-6 block" htmlFor="email">
               <span className="text-dark-800 dark:text-almost-white">
-                Votre adresse email
+                {t('votre-email')}
               </span>
               <input
                 type="email"
@@ -115,13 +117,13 @@ export default function ContactForm() {
               />
               {errors.senderMail && (
                 <p className="text-primary-500 pt-1 text-xs">
-                  Veuillez renseigner une adresse email valide
+                  {t('veuillez-renseigner-votre-email')}
                 </p>
               )}
             </label>
             <label className="mb-6 block" htmlFor="message">
               <span className="text-dark-800 dark:text-almost-white">
-                Votre message
+                {t('votre-message')}
               </span>
               <textarea
                 rows={6}
@@ -131,7 +133,7 @@ export default function ContactForm() {
               />
               {errors.message && (
                 <p className="text-primary-500 pt-1 text-xs">
-                  Veuillez renseigner un message
+                  {t('veuillez-renseigner-votre-message')}
                 </p>
               )}
             </label>
@@ -164,8 +166,7 @@ export default function ContactForm() {
                     href={'/rgpd'}
                     className="text-dark-900 dark:text-almost-white ml-2 text-xs font-light hover:underline"
                   >
-                    J&apos;accepte les conditions générales et la politique de
-                    confidentialité
+                    {t('j-accepte-les-cgv')}
                   </Link>
                 </label>
               )}
@@ -177,7 +178,7 @@ export default function ContactForm() {
                 type="submit"
                 className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white ease-in-out duration-300${!formState.isValid || isSubmitting ? 'cursor-not-allowed opacity-50' : ''}`}
               >
-                Envoyer
+                {t('envoyer')}
               </button>
             )}
             <Toaster

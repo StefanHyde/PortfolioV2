@@ -32,6 +32,20 @@
       "presentation-paragraph-2": "Ensemble, nous donnerons vie à vos projets avec des solutions qui allient esthétique, fonctionnalité et longévité. Je suis ici pour <strong> écouter et créer des solutions qui soutiennent votre vision </strong>",
       "presentation-conclusion": "<strong> Faites le choix d’un développement pensé pour vous et vos utilisateurs.</strong>",
       "en-savoir-plus": "En savoir plus"
+    },
+    "ContactSection": {
+      "prenons": "Prenons",
+      "contact": "contact",
+      "votre-nom": "Votre nom",
+      "veuillez-renseigner-votre-nom": "Veuillez renseigner votre nom et / ou prénom",
+      "votre-email": "Votre adresse email",
+      "veuillez-renseigner-votre-email": "Veuillez renseigner une adresse email valide",
+      "votre-message": "Votre message",
+      "veuillez-renseigner-votre-message": "Veuillez renseigner un message",
+      "envoyer": "Envoyer",
+      "j-accepte-les-cgv": "J'accepte les conditions générales et la politique de confidentialité",
+      "votre-message-a-bien-ete-envoye": "Votre message a bien été envoyé, je vous répondrai dans les plus brefs délais",
+      "une-erreur-est-survenue-lors-de-l-envoi-de-votre-message": "Oups, une erreur est survenue lors de l'envoi de votre message"
     }
   }
 }

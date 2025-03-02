@@ -32,6 +32,20 @@
       "presentation-paragraph-2": "Together, we will bring your projects to life with solutions that combine aesthetics, functionality, and longevity. I am here to <strong>listen and create solutions that support your vision</strong>",
       "presentation-conclusion": "<strong> Choose development designed to you and your users.</strong>",
       "en-savoir-plus": "Learn more"
+    },
+    "ContactSection": {
+      "prenons": "Let's get in",
+      "contact": "touch",
+      "votre-nom": "Your name",
+      "veuillez-renseigner-votre-nom": "Please enter your name and / or first name",
+      "votre-email": "Your email address",
+      "veuillez-renseigner-votre-email": "Please enter a valid email address",
+      "votre-message": "Your message",
+      "veuillez-renseigner-votre-message": "Please enter a message",
+      "envoyer": "Send",
+      "j-accepte-les-cgv": "I accept the general conditions and the privacy policy",
+      "votre-message-a-bien-ete-envoye": "Your message has been sent, I will answer you in the shortest possible time",
+      "une-erreur-est-survenue-lors-de-l-envoi-de-votre-message": "Oops, an error occurred while sending your message"
     }
   }
 }
