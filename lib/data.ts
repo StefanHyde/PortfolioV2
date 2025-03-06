@@ -8,24 +8,24 @@ import nctImg from '../public/images/nct.png';
 
 export const links = [
   {
-    name: 'Accueil',
+    name: 'accueil',
     hash: '#home',
-    url: '/',
+    url: '',
   },
   {
-    name: 'A propos',
+    name: 'a-propos',
     hash: '#about',
     url: '/about',
   },
   {
-    name: 'Services',
+    name: 'services',
     hash: '#services',
-    url: '/services',
+    url: 'services',
   },
   {
-    name: 'Blog',
+    name: 'blog',
     hash: '#blog',
-    url: '/blog',
+    url: 'blog',
   },
 ] as const;
 

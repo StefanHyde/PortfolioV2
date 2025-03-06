@@ -47,5 +47,11 @@
       "votre-message-a-bien-ete-envoye": "Your message has been sent, I will answer you in the shortest possible time",
       "une-erreur-est-survenue-lors-de-l-envoi-de-votre-message": "Oops, an error occurred while sending your message"
     }
+  },
+  "Navigation": {
+    "accueil": "Home",
+    "a-propos": "About",
+    "services": "Services",
+    "blog": "Blog"
   }
 }

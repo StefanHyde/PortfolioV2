@@ -8,6 +8,8 @@ import { useParams } from 'next/navigation';
 import { useState } from 'react';
 import { HiBars3, HiMiniXMark } from 'react-icons/hi2';
 
+import { useTranslations } from 'next-intl';
+
 import { links } from '../../lib/data';
 import ThemeSwitch from './themeSwitch';
 
@@ -16,9 +18,7 @@ export default function Header() {
   const [menuOpened, setMenuOpened] = useState(false);
   const params = useParams();
   const locale = params.locale as string;
-
-  console.log('locale', locale);
-
+  const t = useTranslations('Navigation');
   const toggleMenu = () => {
     setMenuOpened((previousState) => !previousState);
   };
@@ -31,13 +31,14 @@ export default function Header() {
       <nav aria-label="Menu de navigation" className="flex">
         <ul className="hidden gap-16 md:flex" role="menu">
           {links.map((link) =>
-            link.url === pathname ? null : (
+            `/${locale}${link.url ? `/${link.url}` : ''}` ===
+            pathname ? null : (
               <li key={link.hash}>
                 <Link
-                  href={`/${locale}/${link.url}`}
+                  href={`/${locale}${link.url ? `/${link.url}` : ''}`}
                   className="font-nunito text-primary-600 dark:text-almost-white hover:text-primary-800 dark:hover:text-primary-800 text-lg duration-300 ease-in-out"
                 >
-                  {link.name}
+                  {t(link.name)}
                 </Link>
               </li>
             ),
@@ -80,11 +81,11 @@ export default function Header() {
               {links.map((link) => (
                 <MenuItem key={link.hash}>
                   <Link
-                    href={`/${locale}/${link.url}`}
+                    href={`/${locale}${link.url ? `/${link.url}` : ''}`}
                     onClick={() => setMenuOpened(false)}
                     className="font-nunito text-primary-500 dark:text-almost-white hover:text-primary-800 dark:hover:text-primary-800 text-lg duration-300 ease-in-out"
                   >
-                    {link.name}
+                    {t(link.name)}
                   </Link>
                 </MenuItem>
               ))}
