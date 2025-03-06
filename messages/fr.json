@@ -48,6 +48,23 @@
       "une-erreur-est-survenue-lors-de-l-envoi-de-votre-message": "Oups, une erreur est survenue lors de l'envoi de votre message"
     }
   },
+  "About": {
+    "title": "À propos",
+    "subtitle": "Mon parcours, mes expériences",
+    "presentation-paragraph": "Je suis Stéphane, développeur web basé en France, spécialisé dans la création de sites internet et d&apos;applications web.<br />Après de nombreuses expériences dans le support technique et la communication, j&apos;ai décidé de me reconvertir dans le domaine du développement web. Passionné et curieux, j’enrichis chaque jour mes compétences en développement, conception, logique, pour répondre de manière optimale à chaque nouveau challenge qui s&rsquo;offre à moi. <br /> Au-delà de ma curiosité, je suis également créatif dans divers domaines. J&apos;utilise cette créativité dans le cadre du développement web pour proposer des solutions originales et adaptées à chaque projet. Car le développement ne doit pas s&apos;arrêter à une ligne de code !",
+    "experiences": "Expériences",
+    "stack-technique": "Stack technique",
+    "developpeur-full-stack": "Développeur full-stack (freelance)",
+    "developpeur-frontend": "Développeur frontend",
+    "freelance-description": "Développement de sites web et applications web. Conception et création UX / UI",
+    "la-25eme-heure-description": "Développement d’évolutions sur une application back-office et front destinée aux différents acteurs de la distribution cinématographique",
+    "thuria-description": "Création de plateformes et de thèmes personnalisés sur Wordpress ayant pour but de promouvoir le tourisme régional",
+    "advisa-description": "Intégration et personnalisation de solutions e - commerce. Création de thèmes ainsi que de plugins sous diverses plateformes.",
+    "langages": "Langages",
+    "technologies-frontend": "Technologies frontend",
+    "technologies-backend": "Technologies backend",
+    "outils": "Outils"
+  },
   "Navigation": {
     "accueil": "Accueil",
     "a-propos": "A propos",
