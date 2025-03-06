@@ -63,7 +63,21 @@
     "langages": "Langages",
     "technologies-frontend": "Technologies frontend",
     "technologies-backend": "Technologies backend",
-    "outils": "Outils"
+    "outils": "Outils",
+    "vous-souhaitez-en-savoir-plus-CV": "Vous souhaitez en savoir davantage ? Téléchargez mon CV ci-dessous.",
+    "telecharger-mon-CV": "Télécharger mon CV",
+    "projets": "Projets",
+    "nct-description": "Salon de tatouage ancré depuis des années dans le milieu, Neon Cobra Tattoo a fait appel à mes services afin de gagner en visibilité dans un secteur à très forte concurrence. Grâce à mon expertise couplée de celle d'un expert en SEO ils ont à présent toutes les clés pour gagner en attractivité !",
+    "mariergo-description": "En tant que ergothératpeute Marie nécessitait un site vitrine permettant de présenter son activité et être mise en relation de la manière la plus simple possible. C'est chose faite grâce à un site moderne respectant les normes d'accessibilité.",
+    "cuult-description": "Afin de constamment faire évoluer leur plateforme de diffusion cinématographique, la 25ème heure a fait appel à mon expérience en développement React pour mettre en place de nouvelles fonctionnalités et améliorer l'expérience utilisateur de leur front et back-office",
+    "dhda-description": "Ayant également travaillé en agence j'ai pu intégrer divers sites web, dans divers domaines. Parmi eux, DHDA, un projet collaboratif valorisant le patrimoine forestier. Un site Wordpress propulsé par l'agence Thuria.",
+    "services": {
+      "development": "Développement",
+      "integration": "Intégration",
+      "ux-ui": "UX/UI"
+    },
+    "plus-de-projets": "Plus de projets sont disponibles sur mon repo GitHub ! N'hésitez pas à y jeter un oeil.",
+    "vers-mon-repo": "Vers mon repo"
   },
   "Navigation": {
     "accueil": "Accueil",

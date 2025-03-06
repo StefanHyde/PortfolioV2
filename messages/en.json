@@ -63,7 +63,21 @@
     "langages": "Languages",
     "technologies-frontend": "Frontend tools",
     "technologies-backend": "Backend tools",
-    "outils": "Tools"
+    "outils": "Tools",
+    "vous-souhaitez-en-savoir-plus-CV": "Want to know more ? Download my resume below.",
+    "telecharger-mon-CV": "Download my resume",
+    "projets": "Projects",
+    "nct-description": "A tattoo studio well-established in the industry for years, Neon Cobra Tattoo reached out to me to enhance its visibility in a highly competitive market. Thanks to my expertise combined with that of an SEO specialist, they now have all the tools to boost their attractiveness!",
+    "mariergo-description": "As a occupational therapist, Marie needed a website to present her activity and be easily contacted. This is now done thanks to a modern website respecting accessibility standards.",
+    "cuult-description": "In order to constantly evolve their platform for the distribution of cinema, the 25th Hour called on my expertise in React development to implement new features and improve the user experience of their front and back office.",
+    "dhda-description": "Having also worked in an agency, I was able to integrate various websites, in various fields. Among them, DHDA, a collaborative project valuing forest heritage. A Wordpress site powered by the Thuria agency.",
+    "services": {
+      "development": "Development",
+      "integration": "Integration",
+      "ux-ui": "UX/UI"
+    },
+    "plus-de-projets": "More projects are available on my GitHub repository ! Don't hesitate to take a look.",
+    "vers-mon-repo": "To my repository"
   },
   "Navigation": {
     "accueil": "Home",

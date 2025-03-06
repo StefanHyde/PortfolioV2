@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { HiOutlineDocumentText } from 'react-icons/hi2';
 
+import { useTranslations } from 'next-intl';
+
 import Experiences from '@/components/experiences';
 import PageTitle from '@/components/pageTitle';
 import Projects from '@/components/projects';
@@ -18,10 +20,11 @@ export const metadata: Metadata = {
 };
 
 export default function About() {
+  const t = useTranslations('About');
   return (
     <main>
       <div className="relative mx-auto flex max-w-2xl flex-col items-start">
-        <PageTitle title="À propos" subtitle="Mon parcours, mes expériences" />
+        <PageTitle title={t('title')} subtitle={t('subtitle')} />
       </div>
 
       <div className="mx-auto mt-24 mb-12 flex w-full flex-col items-start justify-center gap-20 p-6 md:w-full md:flex-row md:p-12 xl:mt-32 xl:w-1/2">
@@ -39,22 +42,10 @@ export default function About() {
         </div>
 
         <div className="dark:border-almost-white text-dark-800 dark:text-almost-white skew-container flex flex-col rounded-md border-solid p-8 backdrop-blur-md md:w-3/4">
-          <p className="text-normal font-montserrat text-sm font-light md:text-base">
-            Je suis Stéphane, développeur web basé en France, spécialisé dans la
-            création de sites internet et d&apos;applications web.
-            <br />
-            Après de nombreuses expériences dans le support technique et la
-            communication, j&apos;ai décidé de me reconvertir dans le domaine du
-            développement web. Passionné et curieux, j’enrichis chaque jour mes
-            compétences en développement, conception, logique, pour répondre de
-            manière optimale à chaque nouveau challenge qui s&rsquo;offre à moi.
-            <br />
-            Au-delà de ma curiosité, je suis également créatif dans divers
-            domaines. J&apos;utilise cette créativité dans le cadre du
-            développement web pour proposer des solutions originales et adaptées
-            à chaque projet. Car le développement ne doit pas s&apos;arrêter à
-            une ligne de code !
-          </p>
+          <p
+            className="text-normal font-montserrat text-sm font-light md:text-base"
+            dangerouslySetInnerHTML={{ __html: t('presentation-paragraph') }}
+          />
         </div>
       </div>
 
@@ -65,7 +56,7 @@ export default function About() {
 
       <div className="mx-auto mt-12 mb-12 flex flex-col items-center justify-center p-6 md:p-12">
         <p className="text-normal font-montserrat text-dark-900 dark:text-almost-white text-center text-sm font-light md:text-base">
-          Vous souhaitez en savoir davantage ? Téléchargez mon CV ci-dessous.
+          {t('vous-souhaitez-en-savoir-plus-CV')}
         </p>
         <Link
           href="/assets/CvHeydStephane.pdf"
@@ -73,7 +64,7 @@ export default function About() {
           rel="noopener noreferrer"
         >
           <button className="bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white duration-300 ease-in-out">
-            Télécharger mon CV
+            {t('telecharger-mon-CV')}
             <HiOutlineDocumentText className="ml-2 inline-block h-5 w-5" />
           </button>
         </Link>
