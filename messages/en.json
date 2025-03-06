@@ -81,10 +81,19 @@
     "plus-de-projets": "More projects are available on my GitHub repository ! Don't hesitate to take a look.",
     "vers-mon-repo": "To my repository"
   },
+  "Services": {
+    "Hero": {
+      "title": "My services & solutions",
+      "subtitle": "Creation of websites, web applications, … Custom solutions to give life to your digital projects."
+    },
+    "contact-message": "You want to know more about the services I offer ? Or you want to entrust me a project ? I am at your disposal.",
+    "contact-button": "Contact me"
+  },
   "Navigation": {
     "accueil": "Home",
     "a-propos": "About",
     "services": "Services",
-    "blog": "Blog"
+    "blog": "Blog",
+    "contact": "Contact me"
   }
 }

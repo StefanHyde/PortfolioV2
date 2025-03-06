@@ -55,7 +55,7 @@ export default function Header() {
               sendGAEvent('event', 'buttonClicked', { value: 'xyz' })
             }
           >
-            Me contacter
+            {t('contact')}
           </button>
         </Link>
         <div className="mobile-menu flex items-center md:hidden">
