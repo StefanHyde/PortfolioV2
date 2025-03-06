@@ -24,7 +24,7 @@ export default function About() {
   return (
     <main>
       <div className="relative mx-auto flex max-w-2xl flex-col items-start">
-        <PageTitle title={t('title')} subtitle={t('subtitle')} />
+        <PageTitle title={t('Hero.title')} subtitle={t('Hero.subtitle')} />
       </div>
 
       <div className="mx-auto mt-24 mb-12 flex w-full flex-col items-start justify-center gap-20 p-6 md:w-full md:flex-row md:p-12 xl:mt-32 xl:w-1/2">

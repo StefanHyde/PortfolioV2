@@ -49,8 +49,10 @@
     }
   },
   "About": {
-    "title": "À propos",
-    "subtitle": "Mon parcours, mes expériences",
+    "Hero": {
+      "title": "À propos",
+      "subtitle": "Mon parcours, mes expériences"
+    },
     "presentation-paragraph": "Je suis Stéphane, développeur web basé en France, spécialisé dans la création de sites internet et d&apos;applications web.<br />Après de nombreuses expériences dans le support technique et la communication, j&apos;ai décidé de me reconvertir dans le domaine du développement web. Passionné et curieux, j’enrichis chaque jour mes compétences en développement, conception, logique, pour répondre de manière optimale à chaque nouveau challenge qui s&rsquo;offre à moi. <br /> Au-delà de ma curiosité, je suis également créatif dans divers domaines. J&apos;utilise cette créativité dans le cadre du développement web pour proposer des solutions originales et adaptées à chaque projet. Car le développement ne doit pas s&apos;arrêter à une ligne de code !",
     "experiences": "Expériences",
     "stack-technique": "Stack technique",
@@ -78,6 +80,10 @@
     },
     "plus-de-projets": "Plus de projets sont disponibles sur mon repo GitHub ! N'hésitez pas à y jeter un oeil.",
     "vers-mon-repo": "Vers mon repo"
+  },
+  "Services": {
+    "title": "Mes services & solutions",
+    "subtitle": "Création de sites vitrines, applications web, … Des solutions personnalisées pour donner vie à vos projets numériques."
   },
   "Navigation": {
     "accueil": "Accueil",

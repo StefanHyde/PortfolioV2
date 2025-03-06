@@ -49,8 +49,10 @@
     }
   },
   "About": {
-    "title": "About",
-    "subtitle": "My Path, My Experiences",
+    "Hero": {
+      "title": "About",
+      "subtitle": "My Path, My Experiences"
+    },
     "presentation-paragraph": "I am Stéphane, a web developer based in France, specializing in the creation of websites and web applications.  <br />   After many experiences in technical support and communication, I decided to transition into web development. Passionate and curious, I continuously enhance my skills in development, design, and logic to optimally tackle every new challenge that comes my way.  <br />   Beyond my curiosity, I am also creative in various fields. I apply this creativity to web development to offer original and tailored solutions for each project. Because development should not stop at a single line of code!  ",
     "experiences": "Experiences",
     "stack-technique": "Technical Stack",
