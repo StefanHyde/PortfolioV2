@@ -94,7 +94,7 @@ export default function Header() {
                   className="bg-primary-500 dark:bg-primary-800 font-nunito text-almost-white border-primary-500 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 mt-12 flex justify-center rounded-md border-2 border-solid p-2 text-lg"
                   onClick={() => setMenuOpened(false)}
                 >
-                  Me contacter
+                  {t('contact')}
                 </button>
               </MenuItem>
             </MenuItems>
