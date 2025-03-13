@@ -106,6 +106,18 @@ export async function getCommentsByPostId(postId: string) {
                 name
               }
             }
+            replies {
+              nodes {
+                id
+                content(format: RENDERED)
+                date
+                author {
+                  node {
+                    name
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -157,6 +169,53 @@ export async function addComment(
           content,
           author,
           authorEmail: email,
+        },
+      },
+    },
+  );
+
+  return data?.createComment;
+}
+
+// To add a reply to a comment
+export async function addReply(
+  postSlug: string,
+  parentCommentId: string,
+  author: string,
+  content: string,
+  email: string,
+) {
+  // First, get the post's database ID
+  const post = await getPostBySlug(postSlug);
+  if (!post?.databaseId) {
+    throw new Error("Impossible de trouver l'ID de l'article");
+  }
+
+  const data = await fetchWPAPI(
+    `mutation CreateComment($input: CreateCommentInput!) {
+      createComment(input: $input) {
+        success
+        comment {
+          id
+          content
+          date
+          status
+          author {
+            node {
+              name
+            }
+          }
+        }
+      }
+    }`,
+    {
+      variables: {
+        input: {
+          commentOn: post.databaseId,
+          content,
+          author,
+          authorEmail: email,
+          parent: parentCommentId,
         },
       },
     },
