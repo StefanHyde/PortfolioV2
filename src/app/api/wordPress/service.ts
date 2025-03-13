@@ -101,6 +101,7 @@ export async function getCommentsByPostId(postId: string) {
             id
             content(format: RENDERED)
             date
+            parentId
             author {
               node {
                 name
@@ -111,6 +112,7 @@ export async function getCommentsByPostId(postId: string) {
                 id
                 content(format: RENDERED)
                 date
+                parentId
                 author {
                   node {
                     name
