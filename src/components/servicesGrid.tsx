@@ -1,6 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
 
+import { useTranslations } from 'next-intl';
+
 import useAnimateOnInView from '@/hooks/useAnimateOnView';
 
 export default function ServicesGrid() {
@@ -8,6 +10,7 @@ export default function ServicesGrid() {
   const { ref: refService2, controls: controlsService2 } = useAnimateOnInView();
   const { ref: refService3, controls: controlsService3 } = useAnimateOnInView();
   const { ref: refService4, controls: controlsService4 } = useAnimateOnInView();
+  const t = useTranslations('Services.servicesGrid');
   return (
     <div className="text-dark-800 dark:text-almost-white mx-auto mt-24 flex w-full max-w-7xl grid-cols-2 grid-rows-2 flex-col gap-10 overflow-hidden p-6 md:grid md:p-12">
       <motion.div
@@ -23,7 +26,7 @@ export default function ServicesGrid() {
         className="dark:border-almost-white text-dark-800 dark:text-almost-white skew-container relative flex h-fit w-full flex-col items-start justify-start gap-6 rounded-md border-solid p-6 backdrop-blur-md md:p-12"
       >
         <h2 className="font-montserrat text-dark-800 dark:text-almost-white text-2xl font-bold">
-          Site web <span className="ml-3 text-4xl">🧑‍💻</span>
+          {t('site-web')} <span className="ml-3 text-4xl">🧑‍💻</span>
         </h2>
         <p className="text-normal font-montserrat text-sm font-light md:text-base">
           Des sites vitrines, e-commerces et blogs sur mesure avec{' '}
@@ -54,7 +57,7 @@ export default function ServicesGrid() {
         <div className="bg-secondary-500 dark:bg-secondary-800 animate-blob absolute top-0 -z-10 h-40 w-40 rounded-full opacity-20 mix-blend-multiply blur-2xl filter md:-left-3/4 md:h-72 md:w-72 dark:opacity-30"></div>
 
         <h2 className="font-montserrat text-dark-800 dark:text-almost-white text-2xl font-bold">
-          Application Web<span className="ml-3 text-4xl">⚙️</span>
+          {t('application-web')} <span className="ml-3 text-4xl">⚙️</span>
         </h2>
         <p className="text-normal font-montserrat text-sm font-light md:text-base">
           <strong>
@@ -82,7 +85,7 @@ export default function ServicesGrid() {
         className="dark:border-almost-white text-dark-800 dark:text-almost-white skew-container relative flex h-fit w-full flex-col items-start justify-start gap-6 rounded-md border-solid p-6 backdrop-blur-md md:p-12"
       >
         <h2 className="font-montserrat text-dark-800 dark:text-almost-white text-2xl font-bold">
-          UX / UI <span className="ml-3 text-4xl">🌈</span>
+          {t('ux-ui')} <span className="ml-3 text-4xl">🌈</span>
         </h2>
         <p className="text-normal font-montserrat text-sm font-light md:text-base">
           <strong>
@@ -114,7 +117,8 @@ export default function ServicesGrid() {
         <div className="bg-secondary-500 dark:bg-secondary-800 animate-blob absolute top-0 -z-10 h-40 w-40 rounded-full opacity-20 mix-blend-multiply blur-2xl filter md:-left-3/4 md:h-72 md:w-72 dark:opacity-30"></div>
 
         <h2 className="font-montserrat text-dark-800 dark:text-almost-white text-2xl font-bold">
-          Optimisation et maintenance<span className="ml-3 text-4xl">🚀</span>
+          {t('optimisation-maintenance')}
+          <span className="ml-3 text-4xl">🚀</span>
         </h2>
         <p className="text-normal font-montserrat text-sm font-light md:text-base">
           Maintenance et optimisation :{' '}

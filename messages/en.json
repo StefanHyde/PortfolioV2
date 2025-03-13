@@ -87,7 +87,13 @@
       "subtitle": "Creation of websites, web applications, … Custom solutions to give life to your digital projects."
     },
     "contact-message": "You want to know more about the services I offer ? Or you want to entrust me a project ? I am at your disposal.",
-    "contact-button": "Contact me"
+    "contact-button": "Contact me",
+    "servicesGrid": {
+      "site-web": "Website",
+      "application-web": "Web Application",
+      "ux-ui": "UX/UI",
+      "optimisation-maintenance": "Optimization & Maintenance"
+    }
   },
   "Navigation": {
     "accueil": "Home",

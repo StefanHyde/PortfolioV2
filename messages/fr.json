@@ -87,7 +87,13 @@
       "subtitle": "Création de sites vitrines, applications web, … Des solutions personnalisées pour donner vie à vos projets numériques."
     },
     "contact-message": "Vous souhaitez en savoir davantage sur les prestations que je propose ? Ou vous souhaitez me confier un projet ? Je suis à votre écoute.",
-    "contact-button": "Me contacter"
+    "contact-button": "Me contacter",
+    "servicesGrid": {
+      "site-web": "Site web",
+      "application-web": "Application web",
+      "ux-ui": "UX/UI",
+      "optimisation-maintenance": "Optimisation & Maintenance"
+    }
   },
   "Navigation": {
     "accueil": "Accueil",
