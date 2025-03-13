@@ -1,9 +1,11 @@
-import { getPostBySlug } from '@api/wordPress/service';
+import { getPostBySlug, getCommentsByPostId } from '@api/wordPress/service';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import { Toaster } from 'react-hot-toast';
 
 import BlogPostHeader from '@/components/blog/blogPostHeader';
 import Breadcrumbs from '@/components/blog/blogBreadcrumbs';
+import Comments from '@/components/blog/blogPostComments';
 
 // To generate the metadata from WP
 export async function generateMetadata({
@@ -47,6 +49,7 @@ export default async function BlogPost({
 }) {
   const { slug } = await paramsPromise;
   const post = await getPostBySlug(slug);
+  const comments = await getCommentsByPostId(slug);
 
   if (!post) {
     notFound();
@@ -54,6 +57,7 @@ export default async function BlogPost({
 
   return (
     <main>
+      <Toaster position="top-center" />
       <div className="relative mx-auto flex w-full flex-col items-start">
         <BlogPostHeader
           title={post.title}
@@ -71,6 +75,10 @@ export default async function BlogPost({
             className="post-content mx-auto w-full space-y-6 py-6 text-base sm:w-4/5 xl:w-3/5"
             dangerouslySetInnerHTML={{ __html: post.content }}
           ></div>
+        </section>
+
+        <section className="border-dark-300 mx-auto mt-12 w-full space-y-6 border-t py-6 pt-6 text-base sm:w-4/5 xl:w-3/5">
+          <Comments postSlug={slug} initialComments={comments} />
         </section>
       </div>
     </main>

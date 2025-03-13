@@ -45,6 +45,7 @@ export async function getPostBySlug(slug: string) {
   const data = await fetchWPAPI(
     `query GetPost($id: ID = "") {
     post(id: $id, idType: SLUG) {
+      databaseId
       content
       featuredImage {
         node {
@@ -58,14 +59,14 @@ export async function getPostBySlug(slug: string) {
         fullHead
         focuskw
         opengraphImage {
-        id
-        uri
-        link
+          id
+          uri
+          link
         }
-      opengraphDescription
-      opengraphTitle
-      opengraphUrl
-          }
+        opengraphDescription
+        opengraphTitle
+        opengraphUrl
+      }
       title
       date
       author {
@@ -78,7 +79,6 @@ export async function getPostBySlug(slug: string) {
           name
         }
       }
-        
     }
   }`,
     {
@@ -89,4 +89,139 @@ export async function getPostBySlug(slug: string) {
   );
 
   return data?.post;
+}
+
+// To get comments for a post
+export async function getCommentsByPostId(postId: string) {
+  const data = await fetchWPAPI(
+    `query GetComments($postId: ID!) {
+      post(id: $postId, idType: SLUG) {
+        comments {
+          nodes {
+            id
+            content(format: RENDERED)
+            date
+            parentId
+            author {
+              node {
+                name
+              }
+            }
+            replies {
+              nodes {
+                id
+                content(format: RENDERED)
+                date
+                parentId
+                author {
+                  node {
+                    name
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }`,
+    {
+      variables: {
+        postId,
+      },
+    },
+  );
+
+  return data?.post?.comments?.nodes || [];
+}
+
+// To add a comment to a post
+export async function addComment(
+  postSlug: string,
+  author: string,
+  content: string,
+  email: string,
+) {
+  // First, get the post's database ID
+  const post = await getPostBySlug(postSlug);
+  if (!post?.databaseId) {
+    throw new Error("Impossible de trouver l'ID de l'article");
+  }
+
+  const data = await fetchWPAPI(
+    `mutation CreateComment($input: CreateCommentInput!) {
+      createComment(input: $input) {
+        success
+        comment {
+          id
+          content
+          date
+          status
+          author {
+            node {
+              name
+            }
+          }
+        }
+      }
+    }`,
+    {
+      variables: {
+        input: {
+          commentOn: post.databaseId,
+          content,
+          author,
+          authorEmail: email,
+        },
+      },
+    },
+  );
+
+  return data?.createComment;
+}
+
+// To add a reply to a comment
+export async function addReply(
+  postSlug: string,
+  parentCommentId: string,
+  author: string,
+  content: string,
+  email: string,
+) {
+  // First, get the post's database ID
+  const post = await getPostBySlug(postSlug);
+  if (!post?.databaseId) {
+    throw new Error("Impossible de trouver l'ID de l'article");
+  }
+
+  const data = await fetchWPAPI(
+    `mutation CreateComment($input: CreateCommentInput!) {
+      createComment(input: $input) {
+        success
+        comment {
+          id
+          content
+          date
+          status
+          author {
+            node {
+              name
+            }
+          }
+        }
+      }
+    }`,
+    {
+      variables: {
+        input: {
+          commentOn: post.databaseId,
+          content,
+          author,
+          authorEmail: email,
+          parent: parentCommentId,
+        },
+      },
+    },
+  );
+
+  return data?.createComment;
 }
