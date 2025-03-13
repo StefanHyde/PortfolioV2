@@ -26,8 +26,13 @@ export async function fetchWPAPI(
   const json = await res.json();
 
   if (json.errors) {
-    console.error(json.errors);
-    throw new Error('Failed to fetch WP API');
+    const errorMessage = json.errors
+      .map((error: { message: string }) => error.message)
+      .join(', ');
+    throw new Error(
+      errorMessage || 'Une erreur est survenue lors de la requête API',
+    );
   }
+
   return json.data;
 }
