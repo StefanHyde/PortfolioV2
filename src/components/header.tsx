@@ -12,7 +12,7 @@ import { useTranslations } from 'next-intl';
 
 import { links } from '../../lib/data';
 import ThemeSwitch from './themeSwitch';
-
+import LanguageSwitcher from './languageSwticher';
 export default function Header() {
   const pathname = usePathname();
   const [menuOpened, setMenuOpened] = useState(false);
@@ -48,6 +48,7 @@ export default function Header() {
 
       <div className="flex items-center gap-6">
         <ThemeSwitch />
+        <LanguageSwitcher />
         <Link href="/#contact" className="hidden md:flex">
           <button
             className="bg-primary-600 dark:bg-primary-800 hover:bg-primary-800 dark:hover:bg-primary-900 to-secondary-500 border-primary-600 dark:border-primary-800 hover:border-primary-800 dark:hover:border-primary-900 font-montserrat flex rounded-md border-2 border-solid p-2 text-left text-sm font-light text-white duration-300 ease-in-out"
