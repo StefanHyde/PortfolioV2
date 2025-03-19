@@ -7,6 +7,8 @@ import { usePathname } from 'next/navigation';
 import { useParams } from 'next/navigation';
 import { useState } from 'react';
 import { HiBars3, HiMiniXMark } from 'react-icons/hi2';
+import { useRouter } from 'next/navigation';
+import { FR, GB } from 'country-flag-icons/react/3x2';
 
 import { useTranslations } from 'next-intl';
 
@@ -19,6 +21,7 @@ export default function Header() {
   const params = useParams();
   const locale = params.locale as string;
   const t = useTranslations('Navigation');
+  const router = useRouter();
   const toggleMenu = () => {
     setMenuOpened((previousState) => !previousState);
   };
@@ -97,6 +100,38 @@ export default function Header() {
                 >
                   {t('contact')}
                 </button>
+              </MenuItem>
+              <MenuItem>
+                <div className="mt-4 flex justify-center gap-10">
+                  <button
+                    className={`font-nunito text-primary-500 dark:text-almost-white hover:text-primary-800 dark:hover:text-primary-800 rounded-md p-2 transition-all duration-300 ease-in-out ${
+                      locale === 'fr'
+                        ? 'bg-primary-500 dark:bg-primary-800'
+                        : 'bg-transparent dark:bg-transparent'
+                    }`}
+                    onClick={() => {
+                      const currentPath = pathname.replace(`/${locale}`, '');
+                      router.push(`/fr${currentPath}`);
+                      setMenuOpened(false);
+                    }}
+                  >
+                    <FR className="h-8 w-8" />
+                  </button>
+                  <button
+                    className={`font-nunito text-primary-500 dark:text-almost-white hover:text-primary-800 dark:hover:text-primary-800 rounded-md p-2 transition-all duration-300 ease-in-out ${
+                      locale === 'en'
+                        ? 'bg-primary-500 dark:bg-primary-800'
+                        : 'bg-transparent dark:bg-transparent'
+                    }`}
+                    onClick={() => {
+                      const currentPath = pathname.replace(`/${locale}`, '');
+                      router.push(`/en${currentPath}`);
+                      setMenuOpened(false);
+                    }}
+                  >
+                    <GB className="h-8 w-8" />
+                  </button>
+                </div>
               </MenuItem>
             </MenuItems>
           </Menu>
