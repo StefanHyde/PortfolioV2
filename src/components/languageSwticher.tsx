@@ -10,14 +10,15 @@ import {
   Transition,
 } from '@headlessui/react';
 import { HiChevronDown, HiChevronUp } from 'react-icons/hi2';
+import { Tooltip } from 'react-tooltip';
 import { FR, GB } from 'country-flag-icons/react/3x2';
 import { Fragment } from 'react';
-
+import { useTranslations } from 'next-intl';
 export default function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
   const locale = useLocale();
-
+  const t = useTranslations('Utils.languageSwitcher');
   const handleLanguageChange = (language: string) => {
     const currentPath = pathname.replace(`/${locale}`, '');
     router.push(`/${language}${currentPath}`);
@@ -31,7 +32,7 @@ export default function LanguageSwitcher() {
             <MenuButton
               as="button"
               aria-label={`Changer la langue. Langue actuelle : ${locale === 'en' ? 'Anglais' : 'Français'}`}
-              className="inline-flex items-center justify-center gap-2 rounded-md px-2 py-1 text-lg transition-all duration-300 ease-in-out hover:text-white"
+              className="languageswitchbtn inline-flex items-center justify-center gap-2 rounded-md px-2 py-1 text-lg transition-all duration-300 ease-in-out hover:text-white"
             >
               <span className="flex h-6 w-6 items-center justify-center">
                 {locale === 'en' ? <GB /> : <FR />}
@@ -44,6 +45,18 @@ export default function LanguageSwitcher() {
                 )}
               </span>
             </MenuButton>
+            <Tooltip
+              anchorSelect=".languageswitchbtn"
+              place="left"
+              className="hidden md:block"
+              style={{
+                padding: '4px',
+                backgroundColor: '#aa5cf0',
+                fontSize: '12px',
+              }}
+            >
+              {t('changer-langue')}
+            </Tooltip>
             <Transition
               as={Fragment}
               enter="transition ease-out duration-100"
