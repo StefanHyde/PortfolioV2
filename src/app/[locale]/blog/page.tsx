@@ -3,7 +3,7 @@
 
 import { Suspense, useEffect, useState } from 'react';
 import { getPosts } from '@api/wordPress/service';
-
+import { useTranslations } from 'next-intl';
 import BlogPostBlock from '@/components/blog/blogPostBlock';
 import PageTitle from '@/components/pageTitle';
 import Pagination from '@/components/pagination';
@@ -25,6 +25,7 @@ function BlogPostList({ posts }: { posts: any[] }) {
 }
 
 export default function BlogPage() {
+  const t = useTranslations('Blog.PostsList');
   const [posts, setPosts] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -54,15 +55,14 @@ export default function BlogPage() {
   return (
     <main>
       <div className="relative mx-auto flex max-w-2xl flex-col items-start">
-        <PageTitle
-          title="Le blog"
-          subtitle="Discussions, réfléxions, actualités, ou conseils. Ici on aborde divers sujets autour du développement web 🧑‍💻"
-        />
+        <PageTitle title={t('title')} subtitle={t('subtitle')} />
       </div>
 
       <div className="text-dark-800 dark:text-almost-white mx-auto mt-24 mb-12 flex w-full max-w-7xl flex-col justify-center gap-10 p-6 md:flex-row md:p-12 xl:mt-32">
         <div className="flex w-full flex-col">
-          <h3 className="mb-4 text-2xl font-semibold">Derniers articles</h3>
+          <h3 className="mb-4 text-2xl font-semibold">
+            {t('derniers-articles')}
+          </h3>
           {isLoading ? (
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
               {Array(POSTS_PER_PAGE)

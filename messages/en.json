@@ -99,6 +99,13 @@
       "optimisation-maintenance-description": "Maintenance and optimization : <strong>a website always up to date and performing</strong>. A website or an application requires constant monitoring to remain fast, secure, and efficient. I offer regular maintenance and technical optimization services, ensuring <strong>the longevity, maintainability, and performance of your project over time</strong>."
     }
   },
+  "Blog": {
+    "PostsList": {
+      "title": "Blog",
+      "subtitle": "Discussions, reflections, news, or advice. Here we discuss various topics around web development 🧑‍💻",
+      "derniers-articles": "Latest articles"
+    }
+  },
   "Navigation": {
     "accueil": "Home",
     "a-propos": "About",

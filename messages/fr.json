@@ -99,6 +99,13 @@
       "optimisation-maintenance-description": "Maintenance et optimisation : <strong>un site toujours à jour et performant</strong>. Un site web ouune application nécessite un suivi constant pour rester rapide, sécurisé et efficace. Je vous propose des services de maintenance régulière et d&apos;optimisation technique, assurant <strong>la pérennité, la maintenabilité et la performance de votre projet au fil du temps</strong>."
     }
   },
+  "Blog": {
+    "PostsList": {
+      "title": "Le blog",
+      "subtitle": "Discussions, réfléxions, actualités, ou conseils. Ici on aborde divers sujets autour du développement web 🧑‍💻",
+      "derniers-articles": "Derniers articles"
+    }
+  },
   "Navigation": {
     "accueil": "Accueil",
     "a-propos": "A propos",
