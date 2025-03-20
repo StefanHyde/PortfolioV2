@@ -105,5 +105,15 @@
     "services": "Services",
     "blog": "Blog",
     "contact": "Contact me"
+  },
+  "Utils": {
+    "themeSwitch": {
+      "passer-en-mode": "Switch to",
+      "clair": "light mode",
+      "sombre": "dark mode"
+    },
+    "languageSwitcher": {
+      "changer-langue": "Change language"
+    }
   }
 }
