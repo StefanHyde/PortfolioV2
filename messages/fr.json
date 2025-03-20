@@ -12,7 +12,7 @@
       "je-vous-trouve-la": "je vous trouve la",
       "solution": "solution",
       "intro-paragraph": "Que vous lanciez votre premier projet web ou que vous souhaitiez optimiser votre présence en ligne, je vous accompagne à chaque étape. Ensemble, nous concevons des solutions adaptées à vos objectifs, vos besoins et votre budget.",
-      "site-web": "site web",
+      "site-web": "Site web",
       "site-web-description": "Un site destiné à promouvoir votre activité, un site e-commerce pour vendre vos créations, ou un blog pour partager vos passions ? Je vous accompagne dans le developpement de votre projet.",
       "application-web": "Application web",
       "application-web-description": "Une application web : bien plus qu'un site, un levier puissant pour accélérer votre croissance et transformer vos idées en solutions concrètes.",
@@ -30,7 +30,7 @@
       "ecouter": "écouter",
       "presentation-paragraph": "Je suis Stefan, <strong>développeur passionné et engagé</strong>, spécialisé dans la création de sites et d'applications web sur mesure. Mon objectif : transformer vos idées en solutions numériques <strong>modernes, accessibles, et performantes</strong>. À l'écoute de vos besoins et de vos ambitions, je conçois des interfaces ergonomiques, inclusives et adaptées à tous vos utilisateurs, tout en respectant les standards UX/UI actuels. Ensemble, nous bâtirons une <strong>expérience numérique qui reflète votre identité</strong> tout en captivant et fidélisant votre audience.",
       "presentation-paragraph-2": "Ensemble, nous donnerons vie à vos projets avec des solutions qui allient esthétique, fonctionnalité et longévité. Je suis ici pour <strong> écouter et créer des solutions qui soutiennent votre vision </strong>",
-      "presentation-conclusion": "<strong> Faites le choix d’un développement pensé pour vous et vos utilisateurs.</strong>",
+      "presentation-conclusion": "<strong> Faites le choix d'un développement pensé pour vous et vos utilisateurs.</strong>",
       "en-savoir-plus": "En savoir plus"
     },
     "ContactSection": {
@@ -53,13 +53,13 @@
       "title": "À propos",
       "subtitle": "Mon parcours, mes expériences"
     },
-    "presentation-paragraph": "Je suis Stéphane, développeur web basé en France, spécialisé dans la création de sites internet et d&apos;applications web.<br />Après de nombreuses expériences dans le support technique et la communication, j&apos;ai décidé de me reconvertir dans le domaine du développement web. Passionné et curieux, j’enrichis chaque jour mes compétences en développement, conception, logique, pour répondre de manière optimale à chaque nouveau challenge qui s&rsquo;offre à moi. <br /> Au-delà de ma curiosité, je suis également créatif dans divers domaines. J&apos;utilise cette créativité dans le cadre du développement web pour proposer des solutions originales et adaptées à chaque projet. Car le développement ne doit pas s&apos;arrêter à une ligne de code !",
+    "presentation-paragraph": "Je suis Stéphane, développeur web basé en France, spécialisé dans la création de sites internet et d&apos;applications web.<br />Après de nombreuses expériences dans le support technique et la communication, j&apos;ai décidé de me reconvertir dans le domaine du développement web. Passionné et curieux, j'enrichis chaque jour mes compétences en développement, conception, logique, pour répondre de manière optimale à chaque nouveau challenge qui s&rsquo;offre à moi. <br /> Au-delà de ma curiosité, je suis également créatif dans divers domaines. J&apos;utilise cette créativité dans le cadre du développement web pour proposer des solutions originales et adaptées à chaque projet. Car le développement ne doit pas s&apos;arrêter à une ligne de code !",
     "experiences": "Expériences",
     "stack-technique": "Stack technique",
     "developpeur-full-stack": "Développeur full-stack (freelance)",
     "developpeur-frontend": "Développeur frontend",
     "freelance-description": "Développement de sites web et applications web. Conception et création UX / UI",
-    "la-25eme-heure-description": "Développement d’évolutions sur une application back-office et front destinée aux différents acteurs de la distribution cinématographique",
+    "la-25eme-heure-description": "Développement d'évolutions sur une application back-office et front destinée aux différents acteurs de la distribution cinématographique",
     "thuria-description": "Création de plateformes et de thèmes personnalisés sur Wordpress ayant pour but de promouvoir le tourisme régional",
     "advisa-description": "Intégration et personnalisation de solutions e - commerce. Création de thèmes ainsi que de plugins sous diverses plateformes.",
     "langages": "Langages",
@@ -92,7 +92,11 @@
       "site-web": "Site web",
       "application-web": "Application web",
       "ux-ui": "UX/UI",
-      "optimisation-maintenance": "Optimisation & Maintenance"
+      "optimisation-maintenance": "Optimisation & Maintenance",
+      "site-web-description": "Des sites vitrines, e-commerces et blogs sur mesure avec<strong> WordPress ou Next.js/React</strong>. Que vous souhaitiez présenter votre entreprise, vendre vos produits ou partager vos idées, je conçois des sites web personnalisés et performants, adaptés à vos besoins et à votre image. Grâce à des solutions modernes comme WordPress pour la flexibilité ou Next.js/React pour des performances optimales,<strong>votre présence en ligne sera à la hauteur de vos ambitions.</strong>",
+      "application-web-description": "<strong>Une application web sur mesure pour répondre à vos besoins</strong>. Je vous accompagne dans la création de votre application web, de la conception à la mise en ligne. Que ce soit pour un dashboard interactif, une solution SaaS ou un outil de reporting, je conçois une <strong>application parfaitement adaptée à vos attentes et à vos objectifs</strong>.",
+      "ux-ui-description": "<strong>Un design adapté pour une expérience utilisateur optimale</strong>. Allier esthétique soignée, une navigation intuitive, et une interface accessible pour garantir le succès de votre site web ou application. Je conçois des designs personnalisés, en parfaite harmonie avec votre identité visuelle, pour offrir <strong>une expérience captivante et mémorable à vos utilisateurs</strong>.",
+      "optimisation-maintenance-description": "Maintenance et optimisation : <strong>un site toujours à jour et performant</strong>. Un site web ouune application nécessite un suivi constant pour rester rapide, sécurisé et efficace. Je vous propose des services de maintenance régulière et d&apos;optimisation technique, assurant <strong>la pérennité, la maintenabilité et la performance de votre projet au fil du temps</strong>."
     }
   },
   "Navigation": {

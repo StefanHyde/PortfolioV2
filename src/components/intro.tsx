@@ -63,7 +63,11 @@ export default function Intro() {
             {t('site-web')}
             <span className="ml-3 text-4xl">🧑‍💻</span>
           </h3>
-          <p className="text-sm font-extralight">{t('site-web-description')}</p>
+          <p className="text-sm font-extralight">
+            {t.rich('site-web-description', {
+              strong: (chunks) => <strong>{chunks}</strong>,
+            })}
+          </p>
         </div>
         <div className="border-primary-500 dark:border-almost-white dark:text-almost-white from-primary-50 dark:from-primary-950 row-span-2 rounded-md border-2 border-solid bg-linear-to-b to-transparent p-4 text-center shadow-md backdrop-blur-md">
           <h3 className="mb-4 text-2xl font-semibold">

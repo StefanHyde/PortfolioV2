@@ -28,18 +28,12 @@ export default function ServicesGrid() {
         <h2 className="font-montserrat text-dark-800 dark:text-almost-white text-2xl font-bold">
           {t('site-web')} <span className="ml-3 text-4xl">🧑‍💻</span>
         </h2>
-        <p className="text-normal font-montserrat text-sm font-light md:text-base">
-          Des sites vitrines, e-commerces et blogs sur mesure avec{' '}
-          <strong>WordPress ou Next.js/React</strong>. Que vous souhaitiez
-          présenter votre entreprise, vendre vos produits ou partager vos idées,
-          je conçois des sites web personnalisés et performants, adaptés à vos
-          besoins et à votre image. Grâce à des solutions modernes comme
-          WordPress pour la flexibilité ou Next.js/React pour des performances
-          optimales,{' '}
-          <strong>
-            votre présence en ligne sera à la hauteur de vos ambitions.
-          </strong>
-        </p>
+        <p
+          className="text-normal font-montserrat text-sm font-light md:text-base"
+          dangerouslySetInnerHTML={{
+            __html: t.raw('site-web-description'),
+          }}
+        ></p>
         <div className="bg-primary-500 dark:bg-primary-900 animate-blob absolute top-12 -z-10 h-40 w-40 rounded-full opacity-10 mix-blend-multiply blur-2xl filter md:-right-3/4 md:h-96 md:w-96 dark:opacity-30"></div>
       </motion.div>
       <motion.div
@@ -59,18 +53,12 @@ export default function ServicesGrid() {
         <h2 className="font-montserrat text-dark-800 dark:text-almost-white text-2xl font-bold">
           {t('application-web')} <span className="ml-3 text-4xl">⚙️</span>
         </h2>
-        <p className="text-normal font-montserrat text-sm font-light md:text-base">
-          <strong>
-            Une application web sur mesure pour répondre à vos besoins
-          </strong>
-          . Je vous accompagne dans la création de votre application web, de la
-          conception à la mise en ligne. Que ce soit pour un dashboard
-          interactif, une solution SaaS ou un outil de reporting, je conçois une{' '}
-          <strong>
-            application parfaitement adaptée à vos attentes et à vos objectifs
-          </strong>
-          .
-        </p>
+        <p
+          className="text-normal font-montserrat text-sm font-light md:text-base"
+          dangerouslySetInnerHTML={{
+            __html: t.raw('application-web-description'),
+          }}
+        ></p>
       </motion.div>
       <motion.div
         ref={refService3}
@@ -87,19 +75,12 @@ export default function ServicesGrid() {
         <h2 className="font-montserrat text-dark-800 dark:text-almost-white text-2xl font-bold">
           {t('ux-ui')} <span className="ml-3 text-4xl">🌈</span>
         </h2>
-        <p className="text-normal font-montserrat text-sm font-light md:text-base">
-          <strong>
-            Un design adapté pour une expérience utilisateur optimale
-          </strong>
-          . Allier esthétique soignée, une navigation intuitive, et une
-          interface accessible pour garantir le succès de votre site web ou
-          application. Je conçois des designs personnalisés, en parfaite
-          harmonie avec votre identité visuelle, pour offrir{' '}
-          <strong>
-            une expérience captivante et mémorable à vos utilisateurs
-          </strong>
-          .
-        </p>
+        <p
+          className="text-normal font-montserrat text-sm font-light md:text-base"
+          dangerouslySetInnerHTML={{
+            __html: t.raw('ux-ui-description'),
+          }}
+        ></p>
         <div className="bg-primary-500 dark:bg-primary-900 animate-blob absolute top-0 -z-10 h-40 w-40 rounded-full opacity-10 mix-blend-multiply blur-2xl filter md:-right-3/4 md:h-96 md:w-96 dark:opacity-30"></div>
       </motion.div>
       <motion.div
@@ -120,18 +101,12 @@ export default function ServicesGrid() {
           {t('optimisation-maintenance')}
           <span className="ml-3 text-4xl">🚀</span>
         </h2>
-        <p className="text-normal font-montserrat text-sm font-light md:text-base">
-          Maintenance et optimisation :{' '}
-          <strong>un site toujours à jour et performant</strong>. Un site web ou
-          une application nécessite un suivi constant pour rester rapide,
-          sécurisé et efficace. Je vous propose des services de maintenance
-          régulière et d&apos;optimisation technique, assurant{' '}
-          <strong>
-            la pérennité, la maintenabilité et la performance de votre projet au
-            fil du temps
-          </strong>
-          .
-        </p>
+        <p
+          className="text-normal font-montserrat text-sm font-light md:text-base"
+          dangerouslySetInnerHTML={{
+            __html: t.raw('optimisation-maintenance-description'),
+          }}
+        ></p>
       </motion.div>
     </div>
   );

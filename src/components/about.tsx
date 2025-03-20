@@ -56,24 +56,21 @@ export default function About() {
 
       <div className="relative mt-24 flex flex-col items-center xl:mt-12 xl:w-1/2 xl:flex-row">
         <div className="dark:border-almost-white text-dark-800 dark:text-almost-white skew-container flex flex-col rounded-md border-solid p-8 pt-28 backdrop-blur-md md:pt-32 xl:pt-12 xl:pr-28">
-          <p
-            className="text-normal font-montserrat mb-6 text-sm font-light md:text-base"
-            dangerouslySetInnerHTML={{
-              __html: t.raw('presentation-paragraph'),
-            }}
-          ></p>
-          <p
-            className="text-normal font-montserrat mb-6 text-sm font-light md:text-base"
-            dangerouslySetInnerHTML={{
-              __html: t.raw('presentation-paragraph-2'),
-            }}
-          ></p>
-          <p
-            className="text-normal font-montserrat text-sm font-normal md:text-base"
-            dangerouslySetInnerHTML={{
-              __html: t.raw('presentation-conclusion'),
-            }}
-          ></p>
+          <p className="text-normal font-montserrat mb-6 text-sm font-light md:text-base">
+            {t.rich('presentation-paragraph', {
+              strong: (chunks) => <strong>{chunks}</strong>,
+            })}
+          </p>
+          <p className="text-normal font-montserrat mb-6 text-sm font-light md:text-base">
+            {t.rich('presentation-paragraph-2', {
+              strong: (chunks) => <strong>{chunks}</strong>,
+            })}
+          </p>
+          <p className="text-normal font-montserrat text-sm font-normal md:text-base">
+            {t.rich('presentation-conclusion', {
+              strong: (chunks) => <strong>{chunks}</strong>,
+            })}
+          </p>
         </div>
 
         <div className="from-primary-50 to-primary-100 dark:from-primary-950 border-primary-300 dark:border-primary-950 absolute -top-24 z-10 flex h-44 w-44 items-center justify-center rounded-full border-8 bg-linear-to-bl shadow-xl duration-300 hover:scale-105 hover:rotate-2 md:h-52 md:w-52 xl:-top-12 xl:-right-24 dark:to-slate-950">

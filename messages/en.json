@@ -92,7 +92,11 @@
       "site-web": "Website",
       "application-web": "Web Application",
       "ux-ui": "UX/UI",
-      "optimisation-maintenance": "Optimization & Maintenance"
+      "optimisation-maintenance": "Optimization & Maintenance",
+      "site-web-description": "Custom websites, e-commerce sites, and blogs with <strong> WordPress or Next.js/React </strong>. Whether you want to present your business, sell your products, or share your passions, I design custom and high-performance websites, adapted to your needs and image. Thanks to modern solutions like WordPress for flexibility or Next.js/React for optimal performance, <strong> your online presence will be up to your ambitions. </strong>",
+      "application-web-description": "<strong>A custom web application designed to meet your needs</strong>. I accompany you in the creation of your web application, from conception to deployment. Whether it's for an interactive dashboard, a SaaS solution, or a reporting tool, I design an <strong>application perfectly adapted to your expectations and objectives</strong>.",
+      "ux-ui-description": "<strong>A design adapted for an optimal user experience</strong>. Allier a design soignée, a intuitive navigation, and an accessible interface to ensure the success of your website or application. I design custom designs, in perfect harmony with your visual identity, to offer <strong>a captivating and memorable experience for your users</strong>.",
+      "optimisation-maintenance-description": "Maintenance and optimization : <strong>a website always up to date and performing</strong>. A website or an application requires constant monitoring to remain fast, secure, and efficient. I offer regular maintenance and technical optimization services, ensuring <strong>the longevity, maintainability, and performance of your project over time</strong>."
     }
   },
   "Navigation": {
