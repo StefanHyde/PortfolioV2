@@ -111,7 +111,9 @@
     "a-propos": "About",
     "services": "Services",
     "blog": "Blog",
-    "contact": "Contact me"
+    "contact": "Contact me",
+    "mentions-legales": "Legal notice",
+    "politique-confidentialite": "Privacy policy"
   },
   "Utils": {
     "themeSwitch": {

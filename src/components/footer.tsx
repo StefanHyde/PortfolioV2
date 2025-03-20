@@ -1,13 +1,13 @@
 'use client';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-
+import { useTranslations } from 'next-intl';
 import { links, socials } from '../../lib/data';
 
 export default function Footer() {
   const params = useParams();
   const locale = params.locale as string;
-
+  const t = useTranslations('Navigation');
   return (
     <footer className="bg-primary-600 dark:bg-primary-800 dark:text-almost-white mt-12 items-center p-8 text-white md:flex md:flex-row md:justify-between md:px-16 md:py-4">
       <div className="container mx-auto mb-7 text-center md:mb-0 md:text-start">
@@ -21,7 +21,7 @@ export default function Footer() {
                 href={`/${locale}/${link.url}`}
                 className="font-nunito text-almost-white hover:text-primary-200 text-xs font-light duration-300 ease-in-out"
               >
-                {link.name}
+                {t(link.name)}
               </Link>
             </li>
           ))}
@@ -32,7 +32,7 @@ export default function Footer() {
               href={`/${locale}/legal`}
               className="font-nunito text-almost-white hover:text-primary-200 text-xs font-light duration-300 ease-in-out"
             >
-              Mentions légales
+              {t('mentions-legales')}
             </Link>
           </li>
           <li>
@@ -40,7 +40,7 @@ export default function Footer() {
               href={`/${locale}/rgpd`}
               className="font-nunito text-almost-white hover:text-primary-200 text-xs font-light duration-300 ease-in-out"
             >
-              Politique de confidentialité
+              {t('politique-confidentialite')}
             </Link>
           </li>
         </ul>
