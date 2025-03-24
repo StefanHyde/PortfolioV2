@@ -13,11 +13,15 @@
     "mail": "email dev --dir src/email"
   },
   "dependencies": {
-    "@headlessui/react": "^2.1.10",
+    "@headlessui/react": "^2.2.0",
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@next/mdx": "^15.2.3",
     "@next/third-parties": "15.1.6",
     "@react-email/components": "0.0.28",
     "@react-email/tailwind": "1.0.2",
     "@tailwindcss/postcss": "^4.0.0",
+    "@types/mdx": "^2.0.13",
     "country-flag-icons": "^1.5.18",
     "embla-carousel-react": "^8.3.1",
     "motion": "^12.4.7",
