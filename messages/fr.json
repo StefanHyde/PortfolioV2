@@ -112,6 +112,11 @@
   "RGPD": {
     "title": "Politique de confidentialité"
   },
+  "404": {
+    "title": "404",
+    "subtitle": "⚠️ La page que vous cherchez n'existe pas ou a été déplacée.",
+    "retour-accueil": "Retour à l'accueil"
+  },
   "Navigation": {
     "accueil": "Accueil",
     "a-propos": "A propos",

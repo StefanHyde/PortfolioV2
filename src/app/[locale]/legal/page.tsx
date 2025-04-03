@@ -1,12 +1,14 @@
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 import PageTitle from '@/components/pageTitle';
 
 export default function LegalPage() {
+  const t = useTranslations('Legal');
   return (
     <main>
       <div className="relative mx-auto flex flex-col items-start">
-        <PageTitle title="Mentions légales" titleSize="small" />
+        <PageTitle title={t('title')} titleSize="small" />
       </div>
       <div className="text-normal font-montserrat text-dark-800 dark:text-almost-white mx-auto mt-24 mb-12 flex w-full flex-col items-start justify-center gap-20 p-6 text-sm font-light md:p-12 md:text-base xl:mt-32">
         <section className="mb-4">
