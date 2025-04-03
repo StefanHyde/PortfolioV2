@@ -106,6 +106,12 @@
       "derniers-articles": "Latest articles"
     }
   },
+  "Legal": {
+    "title": "Legal notice"
+  },
+  "RGPD": {
+    "title": "Privacy policy"
+  },
   "Navigation": {
     "accueil": "Home",
     "a-propos": "About",
