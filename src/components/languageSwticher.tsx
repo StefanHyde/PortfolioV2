@@ -11,9 +11,10 @@ import {
 } from '@headlessui/react';
 import { HiChevronDown, HiChevronUp } from 'react-icons/hi2';
 import { Tooltip } from 'react-tooltip';
-import { FR, GB } from 'country-flag-icons/react/3x2';
 import { Fragment } from 'react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+
 export default function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
@@ -35,7 +36,23 @@ export default function LanguageSwitcher() {
               className="languageswitchbtn inline-flex items-center justify-center gap-2 rounded-md px-2 py-1 text-lg transition-all duration-300 ease-in-out hover:text-white"
             >
               <span className="flex h-6 w-6 items-center justify-center">
-                {locale === 'en' ? <GB /> : <FR />}
+                {locale === 'en' ? (
+                  <Image
+                    src="/images/flags/gb.svg"
+                    alt="English"
+                    width={24}
+                    height={24}
+                    className="h-6 w-6"
+                  />
+                ) : (
+                  <Image
+                    src="/images/flags/fr.svg"
+                    alt="Français"
+                    width={24}
+                    height={24}
+                    className="h-6 w-6"
+                  />
+                )}
               </span>
               <span aria-hidden="true" className="flex items-center">
                 {open ? (
@@ -75,7 +92,13 @@ export default function LanguageSwitcher() {
                       }`}
                       onClick={() => handleLanguageChange('fr')}
                     >
-                      <FR className="h-6 w-6" />
+                      <Image
+                        src="/images/flags/fr.svg"
+                        alt="Français"
+                        width={24}
+                        height={24}
+                        className="h-6 w-6"
+                      />
                     </button>
                   )}
                 </MenuItem>
@@ -87,7 +110,13 @@ export default function LanguageSwitcher() {
                       }`}
                       onClick={() => handleLanguageChange('en')}
                     >
-                      <GB className="h-6 w-6" />
+                      <Image
+                        src="/images/flags/gb.svg"
+                        alt="English"
+                        width={24}
+                        height={24}
+                        className="h-6 w-6"
+                      />
                     </button>
                   )}
                 </MenuItem>
