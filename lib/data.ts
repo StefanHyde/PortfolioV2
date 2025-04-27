@@ -1,5 +1,5 @@
 import { createElement } from 'react';
-import { SiBluesky, SiGithub, SiLinkedin } from 'react-icons/si';
+import { SiGithub, SiLinkedin, SiMalt } from 'react-icons/si';
 
 import cuultImg from '../public/images/25h.png';
 import dhdaImg from '../public/images/dhda.png';
@@ -32,7 +32,7 @@ export const links = [
 export const socials = [
   {
     name: 'GitHub',
-    url: 'https://github.com/DrHyde01',
+    url: 'https://github.com/StefanHyde',
     icon: createElement(SiGithub),
   },
   {
@@ -41,9 +41,9 @@ export const socials = [
     icon: createElement(SiLinkedin),
   },
   {
-    name: 'BlueSky',
-    url: 'https://bsky.app/profile/hydev.bsky.social',
-    icon: createElement(SiBluesky),
+    name: 'Malt',
+    url: 'https://www.malt.fr/profile/stephaneheyd',
+    icon: createElement(SiMalt),
   },
 ] as const;
 
