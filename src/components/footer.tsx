@@ -50,7 +50,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             aria-label={social.name}
           >
-            <social.icon.type className="hover:text-primary-200 h-6 w-6 duration-300 ease-in-out md:h-4 md:w-4" />
+            <social.icon.type className="hover:text-primary-200 h-6 w-6 duration-300 ease-in-out" />
           </a>
         ))}
       </div>
