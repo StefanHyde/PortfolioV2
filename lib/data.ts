@@ -1,5 +1,5 @@
 import { createElement } from 'react';
-import { SiGithub, SiLinkedin, SiMalt } from 'react-icons/si';
+import { SiGithub, SiLinkedin } from 'react-icons/si';
 
 import cuultImg from '../public/images/25h.png';
 import dhdaImg from '../public/images/dhda.png';
@@ -39,11 +39,6 @@ export const socials = [
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/stephane-heyd/',
     icon: createElement(SiLinkedin),
-  },
-  {
-    name: 'Malt',
-    url: 'https://www.malt.fr/profile/stephaneheyd',
-    icon: createElement(SiMalt),
   },
 ] as const;
 
