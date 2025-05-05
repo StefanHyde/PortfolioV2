@@ -39,31 +39,52 @@ export default function ContactForm() {
 
   const onSubmit = async (formData: FormInputs) => {
     if (!isLoading) {
-      setIsLoading(true);
-      const response = await fetch('/api/sendMail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      try {
+        setIsLoading(true);
+        console.log('Submitting form with data:', {
+          ...formData,
+          honeyPot: undefined,
+        });
 
-        body: JSON.stringify({
-          name: formData.name,
-          senderMail: formData.senderMail,
-          message: formData.message,
-          honeyPot: formData.honeyPot,
-        }),
-      });
-      if (response.ok) {
-        toast.success(
-          'Votre message a bien été envoyé, je vous répondrai dans les plus brefs délais',
-        );
-        reset();
-      } else {
+        const response = await fetch('/api/sendMail', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            senderMail: formData.senderMail,
+            message: formData.message,
+            honeyPot: formData.honeyPot,
+          }),
+        });
+
+        const responseData = await response.json();
+        console.log('Server response:', {
+          status: response.status,
+          data: responseData,
+        });
+
+        if (response.ok) {
+          toast.success(
+            'Votre message a bien été envoyé, je vous répondrai dans les plus brefs délais',
+          );
+          reset();
+        } else {
+          const errorMessage =
+            responseData.error ||
+            "Une erreur est survenue lors de l'envoi de votre message";
+          console.error('Form submission error:', errorMessage);
+          toast.error(errorMessage);
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
         toast.error(
-          "Oups, une erreur est survenue lors de l'envoi de votre message",
+          "Une erreur inattendue s'est produite lors de l'envoi de votre message",
         );
+      } finally {
+        setIsLoading(false);
       }
-      setIsLoading(false);
     }
   };
 
