@@ -25,7 +25,15 @@ export default function ContactForm() {
     formState,
     formState: { errors },
     trigger,
-  } = useForm<FormInputs>();
+  } = useForm<FormInputs>({
+    mode: 'onChange',
+    defaultValues: {
+      name: '',
+      senderMail: '',
+      message: '',
+      rgpd: false,
+    },
+  });
 
   const { isSubmitting } = formState;
 
@@ -93,13 +101,19 @@ export default function ContactForm() {
               </span>
               <input
                 type="text"
-                className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:ring-1 focus:shadow-md focus:ring-purple-500 focus:outline-hidden"
-                {...register('name', { required: true })}
+                className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
+                {...register('name', {
+                  required: 'Veuillez renseigner votre nom et / ou prénom',
+                  minLength: {
+                    value: 2,
+                    message: 'Le nom doit contenir au moins 2 caractères',
+                  },
+                })}
                 onBlur={() => trigger('name')}
               />
               {errors.name && (
                 <p className="text-primary-500 pt-1 text-xs">
-                  Veuillez renseigner votre nom et / ou prénom
+                  {errors.name.message}
                 </p>
               )}
             </label>
@@ -109,13 +123,19 @@ export default function ContactForm() {
               </span>
               <input
                 type="email"
-                className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:ring-1 focus:shadow-md focus:ring-purple-500 focus:outline-hidden"
-                {...register('senderMail', { required: true })}
+                className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
+                {...register('senderMail', {
+                  required: 'Veuillez renseigner une adresse email',
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: 'Veuillez renseigner une adresse email valide',
+                  },
+                })}
                 onBlur={() => trigger('senderMail')}
               />
               {errors.senderMail && (
                 <p className="text-primary-500 pt-1 text-xs">
-                  Veuillez renseigner une adresse email valide
+                  {errors.senderMail.message}
                 </p>
               )}
             </label>
@@ -125,7 +145,7 @@ export default function ContactForm() {
               </span>
               <textarea
                 rows={6}
-                className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:ring-1 focus:shadow-md focus:ring-purple-500 focus:outline-hidden"
+                className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
                 {...register('message', { required: true })}
                 onBlur={() => trigger('message')}
               />
@@ -142,7 +162,7 @@ export default function ContactForm() {
               </label>
               <input
                 type="text"
-                className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:ring-1 focus:shadow-md focus:ring-purple-500 focus:outline-hidden"
+                className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
                 {...register('honeyPot')}
               />
             </div>
@@ -173,9 +193,11 @@ export default function ContactForm() {
 
             {!isLoading && (
               <button
-                disabled={!formState.isValid || isSubmitting}
+                disabled={isSubmitting}
                 type="submit"
-                className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white ease-in-out duration-300${!formState.isValid || isSubmitting ? 'cursor-not-allowed opacity-50' : ''}`}
+                className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white duration-300 ease-in-out ${
+                  isSubmitting ? 'cursor-not-allowed opacity-50' : ''
+                }`}
               >
                 Envoyer
               </button>
