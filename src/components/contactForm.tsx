@@ -25,66 +25,37 @@ export default function ContactForm() {
     formState,
     formState: { errors },
     trigger,
-  } = useForm<FormInputs>({
-    mode: 'onChange',
-    defaultValues: {
-      name: '',
-      senderMail: '',
-      message: '',
-      rgpd: false,
-    },
-  });
+  } = useForm<FormInputs>();
 
   const { isSubmitting } = formState;
 
   const onSubmit = async (formData: FormInputs) => {
     if (!isLoading) {
-      try {
-        setIsLoading(true);
-        console.log('Submitting form with data:', {
-          ...formData,
-          honeyPot: undefined,
-        });
+      setIsLoading(true);
+      const response = await fetch('/api/sendMail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
 
-        const response = await fetch('/api/sendMail', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            senderMail: formData.senderMail,
-            message: formData.message,
-            honeyPot: formData.honeyPot,
-          }),
-        });
-
-        const responseData = await response.json();
-        console.log('Server response:', {
-          status: response.status,
-          data: responseData,
-        });
-
-        if (response.ok) {
-          toast.success(
-            'Votre message a bien été envoyé, je vous répondrai dans les plus brefs délais',
-          );
-          reset();
-        } else {
-          const errorMessage =
-            responseData.error ||
-            "Une erreur est survenue lors de l'envoi de votre message";
-          console.error('Form submission error:', errorMessage);
-          toast.error(errorMessage);
-        }
-      } catch (error) {
-        console.error('Form submission error:', error);
-        toast.error(
-          "Une erreur inattendue s'est produite lors de l'envoi de votre message",
+        body: JSON.stringify({
+          name: formData.name,
+          senderMail: formData.senderMail,
+          message: formData.message,
+          honeyPot: formData.honeyPot,
+        }),
+      });
+      if (response.ok) {
+        toast.success(
+          'Votre message a bien été envoyé, je vous répondrai dans les plus brefs délais',
         );
-      } finally {
-        setIsLoading(false);
+        reset();
+      } else {
+        toast.error(
+          "Oups, une erreur est survenue lors de l'envoi de votre message",
+        );
       }
+      setIsLoading(false);
     }
   };
 
@@ -123,18 +94,12 @@ export default function ContactForm() {
               <input
                 type="text"
                 className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
-                {...register('name', {
-                  required: 'Veuillez renseigner votre nom et / ou prénom',
-                  minLength: {
-                    value: 2,
-                    message: 'Le nom doit contenir au moins 2 caractères',
-                  },
-                })}
+                {...register('name', { required: true })}
                 onBlur={() => trigger('name')}
               />
               {errors.name && (
                 <p className="text-primary-500 pt-1 text-xs">
-                  {errors.name.message}
+                  Veuillez renseigner votre nom et / ou prénom
                 </p>
               )}
             </label>
@@ -145,18 +110,12 @@ export default function ContactForm() {
               <input
                 type="email"
                 className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
-                {...register('senderMail', {
-                  required: 'Veuillez renseigner une adresse email',
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: 'Veuillez renseigner une adresse email valide',
-                  },
-                })}
+                {...register('senderMail', { required: true })}
                 onBlur={() => trigger('senderMail')}
               />
               {errors.senderMail && (
                 <p className="text-primary-500 pt-1 text-xs">
-                  {errors.senderMail.message}
+                  Veuillez renseigner une adresse email valide
                 </p>
               )}
             </label>
@@ -214,11 +173,9 @@ export default function ContactForm() {
 
             {!isLoading && (
               <button
-                disabled={isSubmitting}
+                disabled={!formState.isValid || isSubmitting}
                 type="submit"
-                className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white duration-300 ease-in-out ${
-                  isSubmitting ? 'cursor-not-allowed opacity-50' : ''
-                }`}
+                className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white ease-in-out duration-300${!formState.isValid || isSubmitting ? 'cursor-not-allowed opacity-50' : ''}`}
               >
                 Envoyer
               </button>
