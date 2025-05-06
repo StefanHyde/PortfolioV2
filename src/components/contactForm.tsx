@@ -190,14 +190,20 @@ export default function ContactForm() {
               name="rgpd"
               control={control}
               defaultValue={false}
-              rules={{ required: true }}
-              render={({ field }) => (
+              rules={{
+                required: 'Vous devez accepter les conditions pour continuer',
+                validate: (value) =>
+                  value === true ||
+                  'Vous devez accepter les conditions pour continuer',
+              }}
+              render={({ field: { onChange, value, ref } }) => (
                 <label className="flex pb-4">
                   <input
                     type="checkbox"
                     className="accent-primary-500 h-4 w-4"
-                    {...field}
-                    value={field.value ? 'true' : 'false'}
+                    checked={value}
+                    onChange={(e) => onChange(e.target.checked)}
+                    ref={ref}
                   />
                   <Link
                     href={'/rgpd'}
@@ -209,6 +215,11 @@ export default function ContactForm() {
                 </label>
               )}
             />
+            {errors.rgpd && (
+              <p className="text-primary-500 mb-4 text-xs">
+                {errors.rgpd.message}
+              </p>
+            )}
 
             {!isLoading && (
               <button
