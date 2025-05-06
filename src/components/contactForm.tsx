@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
 
 type FormInputs = {
@@ -16,15 +16,18 @@ type FormInputs = {
 
 export default function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
+  const [rgpdChecked, setRgpdChecked] = useState(false);
+  const [showRgpdError, setShowRgpdError] = useState(false);
 
   const {
     register,
     handleSubmit,
     reset,
-    control,
+
     formState,
-    formState: { errors },
+    formState: { errors, isValid },
     trigger,
+    setValue,
   } = useForm<FormInputs>({
     mode: 'onChange',
     defaultValues: {
@@ -38,32 +41,55 @@ export default function ContactForm() {
   const { isSubmitting } = formState;
 
   const onSubmit = async (formData: FormInputs) => {
-    if (!isLoading) {
+    if (!isLoading && rgpdChecked) {
       setIsLoading(true);
-      const response = await fetch('/api/sendMail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      try {
+        const response = await fetch('/api/sendMail', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            senderMail: formData.senderMail,
+            message: formData.message,
+            honeyPot: formData.honeyPot,
+          }),
+        });
 
-        body: JSON.stringify({
-          name: formData.name,
-          senderMail: formData.senderMail,
-          message: formData.message,
-          honeyPot: formData.honeyPot,
-        }),
-      });
-      if (response.ok) {
-        toast.success(
-          'Votre message a bien été envoyé, je vous répondrai dans les plus brefs délais',
-        );
-        reset();
-      } else {
+        const data = await response.json();
+
+        if (response.ok) {
+          toast.success(
+            'Votre message a bien été envoyé, je vous répondrai dans les plus brefs délais',
+          );
+          reset();
+          setRgpdChecked(false);
+          setShowRgpdError(false);
+        } else {
+          toast.error(
+            data.error ||
+              "Oups, une erreur est survenue lors de l'envoi de votre message",
+          );
+        }
+      } catch {
         toast.error(
           "Oups, une erreur est survenue lors de l'envoi de votre message",
         );
+      } finally {
+        setIsLoading(false);
       }
-      setIsLoading(false);
+    } else if (!rgpdChecked) {
+      setShowRgpdError(true);
+    }
+  };
+
+  const handleRgpdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const checked = e.target.checked;
+    setRgpdChecked(checked);
+    setValue('rgpd', checked, { shouldValidate: true });
+    if (checked) {
+      setShowRgpdError(false);
     }
   };
 
@@ -103,17 +129,14 @@ export default function ContactForm() {
                 type="text"
                 className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
                 {...register('name', {
-                  required: 'Veuillez renseigner votre nom et / ou prénom',
-                  minLength: {
-                    value: 2,
-                    message: 'Le nom doit contenir au moins 2 caractères',
-                  },
+                  required: 'Le nom est requis',
+                  onChange: () => trigger('name'),
                 })}
-                onBlur={() => trigger('name')}
               />
               {errors.name && (
                 <p className="text-primary-500 pt-1 text-xs">
-                  {errors.name.message}
+                  {errors.name.message ||
+                    'Veuillez renseigner votre nom et / ou prénom'}
                 </p>
               )}
             </label>
@@ -125,17 +148,18 @@ export default function ContactForm() {
                 type="email"
                 className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
                 {...register('senderMail', {
-                  required: 'Veuillez renseigner une adresse email',
+                  required: "L'email est requis",
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: 'Veuillez renseigner une adresse email valide',
+                    message: 'Adresse email invalide',
                   },
+                  onChange: () => trigger('senderMail'),
                 })}
-                onBlur={() => trigger('senderMail')}
               />
               {errors.senderMail && (
                 <p className="text-primary-500 pt-1 text-xs">
-                  {errors.senderMail.message}
+                  {errors.senderMail.message ||
+                    'Veuillez renseigner une adresse email valide'}
                 </p>
               )}
             </label>
@@ -146,12 +170,14 @@ export default function ContactForm() {
               <textarea
                 rows={6}
                 className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
-                {...register('message', { required: true })}
-                onBlur={() => trigger('message')}
+                {...register('message', {
+                  required: 'Le message est requis',
+                  onChange: () => trigger('message'),
+                })}
               />
               {errors.message && (
                 <p className="text-primary-500 pt-1 text-xs">
-                  Veuillez renseigner un message
+                  {errors.message.message || 'Veuillez renseigner un message'}
                 </p>
               )}
             </label>
@@ -167,37 +193,32 @@ export default function ContactForm() {
               />
             </div>
 
-            <Controller
-              name="rgpd"
-              control={control}
-              defaultValue={false}
-              rules={{ required: true }}
-              render={({ field }) => (
-                <label className="flex pb-4">
-                  <input
-                    type="checkbox"
-                    className="accent-primary-500 h-4 w-4"
-                    {...field}
-                    value={field.value ? 'true' : 'false'}
-                  />
-                  <Link
-                    href={'/rgpd'}
-                    className="text-dark-900 dark:text-almost-white ml-2 text-xs font-light hover:underline"
-                  >
-                    J&apos;accepte les conditions générales et la politique de
-                    confidentialité
-                  </Link>
-                </label>
-              )}
-            />
+            <div className="flex pb-4">
+              <input
+                type="checkbox"
+                className="accent-primary-500 h-4 w-4"
+                checked={rgpdChecked}
+                onChange={handleRgpdChange}
+              />
+              <Link
+                href={'/rgpd'}
+                className="text-dark-900 dark:text-almost-white ml-2 text-xs font-light hover:underline"
+              >
+                J&apos;accepte les conditions générales et la politique de
+                confidentialité
+              </Link>
+            </div>
+            {showRgpdError && !rgpdChecked && (
+              <p className="text-primary-500 mb-4 text-xs">
+                Vous devez accepter les conditions pour continuer
+              </p>
+            )}
 
             {!isLoading && (
               <button
-                disabled={isSubmitting}
+                disabled={!isValid || isSubmitting || !rgpdChecked}
                 type="submit"
-                className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white duration-300 ease-in-out ${
-                  isSubmitting ? 'cursor-not-allowed opacity-50' : ''
-                }`}
+                className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white ease-in-out duration-300${!isValid || isSubmitting || !rgpdChecked ? 'cursor-not-allowed opacity-50' : ''}`}
               >
                 Envoyer
               </button>
