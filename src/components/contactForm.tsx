@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
 
 type FormInputs = {
@@ -16,17 +16,25 @@ type FormInputs = {
 
 export default function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
+  const [rgpdChecked, setRgpdChecked] = useState(false);
 
   const {
     register,
     handleSubmit,
     reset,
-    control,
+
     formState,
     formState: { errors, isValid },
     trigger,
+    setValue,
   } = useForm<FormInputs>({
     mode: 'onChange',
+    defaultValues: {
+      name: '',
+      senderMail: '',
+      message: '',
+      rgpd: false,
+    },
   });
 
   const { isSubmitting } = formState;
@@ -36,11 +44,12 @@ export default function ContactForm() {
     isSubmitting,
     errors,
     formState,
+    rgpdChecked,
   });
 
   const onSubmit = async (formData: FormInputs) => {
-    console.log('Form submission started', { formData });
-    if (!isLoading) {
+    console.log('Form submission started', { formData, rgpdChecked });
+    if (!isLoading && rgpdChecked) {
       setIsLoading(true);
       try {
         console.log('Submitting form data:', {
@@ -68,6 +77,7 @@ export default function ContactForm() {
             'Votre message a bien été envoyé, je vous répondrai dans les plus brefs délais',
           );
           reset();
+          setRgpdChecked(false);
         } else {
           console.error('Error response:', data);
           toast.error(
@@ -84,6 +94,12 @@ export default function ContactForm() {
         setIsLoading(false);
       }
     }
+  };
+
+  const handleRgpdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const checked = e.target.checked;
+    setRgpdChecked(checked);
+    setValue('rgpd', checked, { shouldValidate: true });
   };
 
   const titleAnimationText = [...'contact'];
@@ -186,50 +202,37 @@ export default function ContactForm() {
               />
             </div>
 
-            <Controller
-              name="rgpd"
-              control={control}
-              defaultValue={false}
-              rules={{
-                required: 'Vous devez accepter les conditions pour continuer',
-                validate: (value) =>
-                  value === true ||
-                  'Vous devez accepter les conditions pour continuer',
-              }}
-              render={({ field: { onChange, value, ref } }) => (
-                <label className="flex pb-4">
-                  <input
-                    type="checkbox"
-                    className="accent-primary-500 h-4 w-4"
-                    checked={value}
-                    onChange={(e) => onChange(e.target.checked)}
-                    ref={ref}
-                  />
-                  <Link
-                    href={'/rgpd'}
-                    className="text-dark-900 dark:text-almost-white ml-2 text-xs font-light hover:underline"
-                  >
-                    J&apos;accepte les conditions générales et la politique de
-                    confidentialité
-                  </Link>
-                </label>
-              )}
-            />
-            {errors.rgpd && (
+            <div className="flex pb-4">
+              <input
+                type="checkbox"
+                className="accent-primary-500 h-4 w-4"
+                checked={rgpdChecked}
+                onChange={handleRgpdChange}
+              />
+              <Link
+                href={'/rgpd'}
+                className="text-dark-900 dark:text-almost-white ml-2 text-xs font-light hover:underline"
+              >
+                J&apos;accepte les conditions générales et la politique de
+                confidentialité
+              </Link>
+            </div>
+            {!rgpdChecked && (
               <p className="text-primary-500 mb-4 text-xs">
-                {errors.rgpd.message}
+                Vous devez accepter les conditions pour continuer
               </p>
             )}
 
             {!isLoading && (
               <button
-                disabled={!isValid || isSubmitting}
+                disabled={!isValid || isSubmitting || !rgpdChecked}
                 type="submit"
-                className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white ease-in-out duration-300${!isValid || isSubmitting ? 'cursor-not-allowed opacity-50' : ''}`}
+                className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white ease-in-out duration-300${!isValid || isSubmitting || !rgpdChecked ? 'cursor-not-allowed opacity-50' : ''}`}
                 onClick={() =>
                   console.log('Submit button clicked', {
                     isValid,
                     isSubmitting,
+                    rgpdChecked,
                   })
                 }
               >
