@@ -23,13 +23,23 @@ export default function ContactForm() {
     reset,
     control,
     formState,
-    formState: { errors },
+    formState: { errors, isValid },
     trigger,
-  } = useForm<FormInputs>();
+  } = useForm<FormInputs>({
+    mode: 'onChange',
+  });
 
   const { isSubmitting } = formState;
 
+  console.log('Form state:', {
+    isValid,
+    isSubmitting,
+    errors,
+    formState,
+  });
+
   const onSubmit = async (formData: FormInputs) => {
+    console.log('Form submission started', { formData });
     if (!isLoading) {
       setIsLoading(true);
       try {
@@ -111,12 +121,15 @@ export default function ContactForm() {
               <input
                 type="text"
                 className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
-                {...register('name', { required: true })}
-                onBlur={() => trigger('name')}
+                {...register('name', {
+                  required: 'Le nom est requis',
+                  onChange: () => trigger('name'),
+                })}
               />
               {errors.name && (
                 <p className="text-primary-500 pt-1 text-xs">
-                  Veuillez renseigner votre nom et / ou prénom
+                  {errors.name.message ||
+                    'Veuillez renseigner votre nom et / ou prénom'}
                 </p>
               )}
             </label>
@@ -127,12 +140,19 @@ export default function ContactForm() {
               <input
                 type="email"
                 className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
-                {...register('senderMail', { required: true })}
-                onBlur={() => trigger('senderMail')}
+                {...register('senderMail', {
+                  required: "L'email est requis",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: 'Adresse email invalide',
+                  },
+                  onChange: () => trigger('senderMail'),
+                })}
               />
               {errors.senderMail && (
                 <p className="text-primary-500 pt-1 text-xs">
-                  Veuillez renseigner une adresse email valide
+                  {errors.senderMail.message ||
+                    'Veuillez renseigner une adresse email valide'}
                 </p>
               )}
             </label>
@@ -143,12 +163,14 @@ export default function ContactForm() {
               <textarea
                 rows={6}
                 className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
-                {...register('message', { required: true })}
-                onBlur={() => trigger('message')}
+                {...register('message', {
+                  required: 'Le message est requis',
+                  onChange: () => trigger('message'),
+                })}
               />
               {errors.message && (
                 <p className="text-primary-500 pt-1 text-xs">
-                  Veuillez renseigner un message
+                  {errors.message.message || 'Veuillez renseigner un message'}
                 </p>
               )}
             </label>
@@ -190,9 +212,15 @@ export default function ContactForm() {
 
             {!isLoading && (
               <button
-                disabled={!formState.isValid || isSubmitting}
+                disabled={!isValid || isSubmitting}
                 type="submit"
-                className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white ease-in-out duration-300${!formState.isValid || isSubmitting ? 'cursor-not-allowed opacity-50' : ''}`}
+                className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white ease-in-out duration-300${!isValid || isSubmitting ? 'cursor-not-allowed opacity-50' : ''}`}
+                onClick={() =>
+                  console.log('Submit button clicked', {
+                    isValid,
+                    isSubmitting,
+                  })
+                }
               >
                 Envoyer
               </button>
