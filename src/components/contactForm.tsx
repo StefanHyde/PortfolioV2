@@ -17,6 +17,7 @@ type FormInputs = {
 export default function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [rgpdChecked, setRgpdChecked] = useState(false);
+  const [showRgpdError, setShowRgpdError] = useState(false);
 
   const {
     register,
@@ -39,23 +40,10 @@ export default function ContactForm() {
 
   const { isSubmitting } = formState;
 
-  console.log('Form state:', {
-    isValid,
-    isSubmitting,
-    errors,
-    formState,
-    rgpdChecked,
-  });
-
   const onSubmit = async (formData: FormInputs) => {
-    console.log('Form submission started', { formData, rgpdChecked });
     if (!isLoading && rgpdChecked) {
       setIsLoading(true);
       try {
-        console.log('Submitting form data:', {
-          ...formData,
-          honeyPot: undefined,
-        });
         const response = await fetch('/api/sendMail', {
           method: 'POST',
           headers: {
@@ -70,7 +58,6 @@ export default function ContactForm() {
         });
 
         const data = await response.json();
-        console.log('Response from API:', data);
 
         if (response.ok) {
           toast.success(
@@ -78,21 +65,22 @@ export default function ContactForm() {
           );
           reset();
           setRgpdChecked(false);
+          setShowRgpdError(false);
         } else {
-          console.error('Error response:', data);
           toast.error(
             data.error ||
               "Oups, une erreur est survenue lors de l'envoi de votre message",
           );
         }
-      } catch (error) {
-        console.error('Form submission error:', error);
+      } catch {
         toast.error(
           "Oups, une erreur est survenue lors de l'envoi de votre message",
         );
       } finally {
         setIsLoading(false);
       }
+    } else if (!rgpdChecked) {
+      setShowRgpdError(true);
     }
   };
 
@@ -100,6 +88,9 @@ export default function ContactForm() {
     const checked = e.target.checked;
     setRgpdChecked(checked);
     setValue('rgpd', checked, { shouldValidate: true });
+    if (checked) {
+      setShowRgpdError(false);
+    }
   };
 
   const titleAnimationText = [...'contact'];
@@ -217,7 +208,7 @@ export default function ContactForm() {
                 confidentialité
               </Link>
             </div>
-            {!rgpdChecked && (
+            {showRgpdError && !rgpdChecked && (
               <p className="text-primary-500 mb-4 text-xs">
                 Vous devez accepter les conditions pour continuer
               </p>
@@ -228,13 +219,6 @@ export default function ContactForm() {
                 disabled={!isValid || isSubmitting || !rgpdChecked}
                 type="submit"
                 className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white ease-in-out duration-300${!isValid || isSubmitting || !rgpdChecked ? 'cursor-not-allowed opacity-50' : ''}`}
-                onClick={() =>
-                  console.log('Submit button clicked', {
-                    isValid,
-                    isSubmitting,
-                    rgpdChecked,
-                  })
-                }
               >
                 Envoyer
               </button>
