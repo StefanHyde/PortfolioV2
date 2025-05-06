@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
 
     try {
       const data = await resend.emails.send({
-        from: 'contact@stefanheyd.fr',
+        from: 'contact@stefanheyd.com',
         to: 'contact@stefanheyd.com',
         subject: `You have a new message from ${senderMail}`,
         react: Email({
