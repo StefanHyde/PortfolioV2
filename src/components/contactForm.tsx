@@ -32,30 +32,47 @@ export default function ContactForm() {
   const onSubmit = async (formData: FormInputs) => {
     if (!isLoading) {
       setIsLoading(true);
-      const response = await fetch('/api/sendMail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      try {
+        console.log('Submitting form data:', {
+          ...formData,
+          honeyPot: undefined,
+        });
+        const response = await fetch('/api/sendMail', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            senderMail: formData.senderMail,
+            message: formData.message,
+            honeyPot: formData.honeyPot,
+          }),
+        });
 
-        body: JSON.stringify({
-          name: formData.name,
-          senderMail: formData.senderMail,
-          message: formData.message,
-          honeyPot: formData.honeyPot,
-        }),
-      });
-      if (response.ok) {
-        toast.success(
-          'Votre message a bien été envoyé, je vous répondrai dans les plus brefs délais',
-        );
-        reset();
-      } else {
+        const data = await response.json();
+        console.log('Response from API:', data);
+
+        if (response.ok) {
+          toast.success(
+            'Votre message a bien été envoyé, je vous répondrai dans les plus brefs délais',
+          );
+          reset();
+        } else {
+          console.error('Error response:', data);
+          toast.error(
+            data.error ||
+              "Oups, une erreur est survenue lors de l'envoi de votre message",
+          );
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
         toast.error(
           "Oups, une erreur est survenue lors de l'envoi de votre message",
         );
+      } finally {
+        setIsLoading(false);
       }
-      setIsLoading(false);
     }
   };
 
