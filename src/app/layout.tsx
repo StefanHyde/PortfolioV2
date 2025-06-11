@@ -5,6 +5,7 @@ import type { Metadata, Viewport } from 'next';
 import { Montserrat, Nunito_Sans } from 'next/font/google';
 
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
 
 import Footer from '@/components/footer';
 import Header from '@/components/header';
@@ -58,6 +59,7 @@ export default function RootLayout({
           <ScrollToTop />
           {children}
           <SpeedInsights />
+          <Analytics />
           <Footer />
         </ThemeContextProvider>
       </body>
