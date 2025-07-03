@@ -114,14 +114,14 @@ export default function ServicesGrid() {
         <div className="bg-secondary-500 dark:bg-secondary-800 animate-blob absolute top-0 -z-10 h-40 w-40 rounded-full opacity-20 mix-blend-multiply blur-2xl filter md:-left-3/4 md:h-72 md:w-72 dark:opacity-30"></div>
 
         <h2 className="font-montserrat text-dark-800 dark:text-almost-white text-2xl font-bold">
-          Optimisation et maintenance<span className="ml-3 text-4xl">🚀</span>
+          Optimisation et TMA<span className="ml-3 text-4xl">🚀</span>
         </h2>
         <p className="text-normal font-montserrat text-sm font-light md:text-base">
           Maintenance et optimisation :{' '}
           <strong>un site toujours à jour et performant</strong>. Un site web ou
           une application nécessite un suivi constant pour rester rapide,
-          sécurisé et efficace. Je vous propose des services de maintenance
-          régulière et d&apos;optimisation technique, assurant{' '}
+          sécurisé et efficace. Je vous propose des services de maintenance /
+          TMA régulière et d&apos;optimisation technique, assurant{' '}
           <strong>
             la pérennité, la maintenabilité et la performance de votre projet au
             fil du temps

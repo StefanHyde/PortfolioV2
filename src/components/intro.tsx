@@ -86,12 +86,12 @@ export default function Intro() {
         </div>
         <div className="border-primary-500 dark:border-almost-white dark:text-almost-white from-primary-50 dark:from-primary-950 row-span-1 rounded-md border-2 border-solid bg-linear-to-bl to-transparent p-4 text-end shadow-md backdrop-blur-md md:rounded-tr-2xl">
           <h3 className="mb-4 text-2xl font-semibold">
-            Optimisation<span className="ml-3 text-4xl">🚀</span>
+            Optimisation et TMA<span className="ml-3 text-4xl">🚀</span>
           </h3>
           <p className="text-sm font-extralight">
-            Une plateforme performante, fluide et facile à maintenir : renforcez
-            votre image en ligne avec un site rapide, agréable pour vos
-            utilisateurs et conçu pour durer.
+            Une plateforme performante, fluide et facile à maintenir : je suis
+            là pour optimiser votre projet web avec des services de maintenance
+            et d&apos;optimisation adaptés à vos besoins.
           </p>
         </div>
         <div className="border-primary-500 dark:border-almost-white dark:text-almost-white from-primary-50 dark:from-primary-950 row-span-2 rounded-md border-2 border-solid bg-linear-to-tl to-transparent p-4 text-end shadow-md backdrop-blur-md md:rounded-br-2xl">
@@ -128,7 +128,7 @@ export default function Intro() {
         </div>
         <div className="border-primary-500 dark:border-almost-white from-primary-50 dark:from-primary-950 row-span-1 flex w-full flex-col rounded-md border-2 border-solid bg-linear-to-l to-transparent p-4 shadow-md backdrop-blur-md md:rounded-l-2xl">
           <h3 className="mb-4 flex flex-col items-center text-center text-xl font-semibold">
-            Optimisation<span className="mt-4 text-3xl">🚀</span>
+            Optimisation et TMA<span className="mt-4 text-3xl">🚀</span>
           </h3>
         </div>
         <div className="border-primary-500 dark:border-almost-white from-primary-50 dark:from-primary-950 col-span-2 row-span-1 flex w-1/2 flex-col place-self-center rounded-md border-2 border-solid bg-linear-to-t to-transparent p-4 shadow-md backdrop-blur-md md:rounded-l-2xl">
