@@ -53,7 +53,7 @@
       "title": "À propos",
       "subtitle": "Mon parcours, mes expériences"
     },
-    "presentation-paragraph": "Je suis Stéphane, développeur web basé en France, spécialisé dans la création de sites internet et d&apos;applications web.<br />Après de nombreuses expériences dans le support technique et la communication, j&apos;ai décidé de me reconvertir dans le domaine du développement web. Passionné et curieux, j'enrichis chaque jour mes compétences en développement, conception, logique, pour répondre de manière optimale à chaque nouveau challenge qui s&rsquo;offre à moi. <br /> Au-delà de ma curiosité, je suis également créatif dans divers domaines. J&apos;utilise cette créativité dans le cadre du développement web pour proposer des solutions originales et adaptées à chaque projet. Car le développement ne doit pas s&apos;arrêter à une ligne de code !",
+    "presentation-paragraph": "Je suis Stéphane, développeur web basé en France, spécialisé dans la création de sites internet et d'applications web.<br></br>Après de nombreuses expériences dans le support technique et la communication, j'ai décidé de me reconvertir dans le domaine du développement web. Passionné et curieux, j'enrichis chaque jour mes compétences en développement, conception, logique, pour répondre de manière optimale à chaque nouveau challenge qui s'offre à moi. <br></br> Au-delà de ma curiosité, je suis également créatif dans divers domaines.<br></br> J'utilise cette créativité dans le cadre du développement web pour proposer des solutions originales et adaptées à chaque projet. Car le développement ne doit pas s'arrêter à une ligne de code !",
     "experiences": "Expériences",
     "stack-technique": "Stack technique",
     "developpeur-full-stack": "Développeur full-stack (freelance)",
@@ -107,7 +107,36 @@
     }
   },
   "Legal": {
-    "title": "Mentions légales"
+    "title": "Mentions légales",
+    "object-paragraph": "Le présent site est un site vitrine ayant pour objectif de présenter les services de Stéphane Heyd.",
+    "propriete-paragraph": "Le contenu de ce site (textes, images, graphismes, logo, icônes, etc.) est la propriété exclusive de Stéphane Heyd, sauf mentions contraires. Toute reproduction, distribution, modification ou utilisation, même partielle, sans l’autorisation préalable de Stéphane Heyd est strictement interdite et constitue une contrefaçon sanctionnée par le Code de la propriété intellectuelle.",
+    "protection-paragraph": "Le site ne collecte pas de données personnelles sans votre consentement. Les données collectées sont utilisées uniquement pour répondre à vos demandes et améliorer votre expérience sur le site.",
+    "cookies-paragraph": "Le site peut utiliser des cookies pour améliorer l’expérience utilisateur. Vous pouvez configurer vos paramètres de navigation pour accepter ou refuser les cookies.",
+    "responsabilite-paragraph": "Stéphane Heyd s’efforce de fournir sur ce site des informations fiables et actualisées, mais ne peut garantir l’exactitude, l’exhaustivité ou l’actualité des informations. Stéphane Heyd ne saurait être tenu responsable des dommages directs ou indirects résultant de l’utilisation de ce site.",
+    "contact-paragraph": "Pour toute question ou réclamation concernant ce site, vous pouvez contacter Stéphane Heyd à l’adresse suivante : ",
+
+    "Misc": {
+      "nom": "Nom",
+      "prenom": "Prénom",
+      "adresse": "Adresse",
+      "email": "Email",
+      "telephone": "Téléphone",
+      "site-web": "Site web",
+      "entreprise": "Entreprise",
+      "ville": "Ville",
+      "code-postal": "Code postal",
+      "pays": "Pays",
+      "editeur-du-site": "Éditeur du site",
+      "hebergement-du-site": "Hébergement du site",
+      "hebergeur": "Hébergeur",
+      "cookies": "Cookies",
+      "responsabilite": "Responsabilité",
+      "contact": "Contact",
+      "siret": "Siret",
+      "objet-du-site": "Objet du site",
+      "propriete-intellectuelle": "Propriété intellectuelle",
+      "protection-des-donnees-personnelles": "Protection des données personnelles"
+    }
   },
   "RGPD": {
     "title": "Politique de confidentialité"

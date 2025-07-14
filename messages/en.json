@@ -107,7 +107,35 @@
     }
   },
   "Legal": {
-    "title": "Legal notice"
+    "title": "Legal notice",
+    "object-paragraph": "The present site is a showcase site aiming to present the services of Stéphane Heyd.",
+    "propriete-paragraph": "The content of this site (texts, images, graphics, logos, icons, etc.) is the exclusive property of Stéphane Heyd, unless otherwise specified. Any reproduction, distribution, modification or use, even partial, without the prior authorization of Stéphane Heyd is strictly prohibited and constitutes an infringement sanctioned by the Intellectual Property Code.",
+    "protection-paragraph": "The site does not collect personal data without your consent. The data collected is used only to respond to your requests and improve your experience on the site.",
+    "cookies-paragraph": "The site may use cookies to improve the user experience. You can configure your navigation settings to accept or reject cookies.",
+    "responsabilite-paragraph": "Stéphane Heyd strives to provide on this site reliable and up-to-date information, but cannot guarantee the accuracy, completeness or currency of the information. Stéphane Heyd cannot be held responsible for direct or indirect damages resulting from the use of this site.",
+    "contact-paragraph": "For any question or complaint concerning this site, you can contact Stéphane Heyd at the following address: ",
+    "Misc": {
+      "nom": "Name",
+      "prenom": "First name",
+      "adresse": "Adresse",
+      "email": "Email",
+      "telephone": "Phone",
+      "site-web": "Website",
+      "entreprise": "Company",
+      "ville": "City",
+      "code-postal": "Postal code",
+      "pays": "Country",
+      "editeur-du-site": "Site editor",
+      "hebergement-du-site": "Site hosting",
+      "hebergeur": "Hosting provider",
+      "cookies": "Cookies",
+      "responsabilite": "Responsibility",
+      "contact": "Contact",
+      "siret": "Siret",
+      "objet-du-site": "Site object",
+      "propriete-intellectuelle": "Intellectual property",
+      "protection-des-donnees-personnelles": "Personal data protection"
+    }
   },
   "RGPD": {
     "title": "Privacy policy"
