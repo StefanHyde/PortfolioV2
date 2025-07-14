@@ -42,11 +42,13 @@ export default function About() {
         </div>
 
         <div className="dark:border-almost-white text-dark-800 dark:text-almost-white skew-container flex flex-col rounded-md border-solid p-8 backdrop-blur-md md:w-3/4">
-          <p className="text-normal font-montserrat text-sm font-light md:text-base">
-            {t.rich('presentation-paragraph', {
-              strong: (chunks) => <strong>{chunks}</strong>,
-            })}
-          </p>
+          <div className="text-normal font-montserrat text-sm font-light md:text-base">
+            <p
+              dangerouslySetInnerHTML={{
+                __html: t.raw('presentation-paragraph'),
+              }}
+            />
+          </div>
         </div>
       </div>
 
