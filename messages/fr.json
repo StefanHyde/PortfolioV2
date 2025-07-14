@@ -139,7 +139,33 @@
     }
   },
   "RGPD": {
-    "title": "Politique de confidentialité"
+    "title": "Politique de confidentialité",
+    "collect-data-paragraph": "Nous collectons les données personnelles suivantes :",
+    "use-data-paragraph": "Les données personnelles collectées sont utilisées pour :",
+    "protect-data-paragraph": "Nous prenons la sécurité des données personnelles au sérieux et mettons en place des mesures de sécurité pour protéger ces données contre tout accès non autorisé ou toute divulgation.",
+    "data-retention-paragraph": "Nous conservons les données personnelles collectées aussi longtemps que nécessaire pour répondre à vos demandes et améliorer votre expérience sur le site.",
+    "data-rights-paragraph": "Les utilisateurs ont les droits suivants concernant leurs données personnelles :",
+    "cookies-policy-paragraph": "Nous utilisons des cookies sur notre site web. Les cookies sont des petits fichiers texte stockés sur votre ordinateur, qui nous permettent de reconnaître votre navigateur et de personnaliser votre expérience sur le site.",
+    "contact-paragraph": "Pour toute question ou demande concernant notre politique de confidentialité, veuillez nous contacter à l'adresse suivante : ",
+    "Misc": {
+      "nom": "Nom",
+      "adresse-email": "Adresse email",
+      "protection-des-donnees": "Protection des données",
+      "utilisation-des-donnees-personnelles": "Utilisation des données personnelles",
+      "collecte-des-donnees-personnelles": "Collecte des données personnelles",
+      "conservation-des-donnees": "Conservation des données",
+      "droits-des-utilisateurs": "Droits des utilisateurs",
+      "politique-en-matiere-de-cookies": "Politique en matière de cookies",
+      "contact": "Contact",
+      "droit-dacces": "Droit d'accès",
+      "droit-de-rectification": "Droit de rectification",
+      "droit-a-leffacement": "Droit à l'effacement",
+      "droit-a-la-limitation-du-traitement": "Droit à la limitation du traitement",
+      "droit-a-la-portabilite-des-donnees": "Droit à la portabilité des données",
+      "repondre-aux-demandes": "Répondre aux demandes",
+      "ameliorer-le-site-web": "Améliorer le site web",
+      "envoyer-des-newsletters-et-communications-marketing": "Envoyer des newsletters et communications marketing"
+    }
   },
   "404": {
     "title": "404",

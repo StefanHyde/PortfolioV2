@@ -138,7 +138,33 @@
     }
   },
   "RGPD": {
-    "title": "Privacy policy"
+    "title": "Privacy policy",
+    "collect-data-paragraph": "We collect the following personal data :",
+    "use-data-paragraph": "The personal data collected is used for :",
+    "protect-data-paragraph": "We take the security of personal data seriously and put in place security measures to protect these data against unauthorized access or disclosure.",
+    "data-retention-paragraph": "We retain the personal data collected as long as necessary to respond to your requests and improve your experience on the site.",
+    "data-rights-paragraph": "Users have the following rights regarding their personal data :",
+    "cookies-policy-paragraph": "We use cookies on our website. Cookies are small text files stored on your computer, which allow us to recognize your browser and personalize your experience on the site.",
+    "contact-paragraph": "For any question or request concerning our privacy policy, please contact us at the following address : ",
+    "Misc": {
+      "nom": "Name",
+      "adresse-email": "Email address",
+      "protection-des-donnees": "Data protection",
+      "utilisation-des-donnees-personnelles": "Use of personal data",
+      "collecte-des-donnees-personnelles": "Collection of personal data",
+      "conservation-des-donnees": "Data retention",
+      "droits-des-utilisateurs": "Users rights",
+      "politique-en-matiere-de-cookies": "Cookies policy",
+      "contact": "Contact",
+      "droit-dacces": "Access right",
+      "droit-de-rectification": "Rectification right",
+      "droit-a-leffacement": "Erasure right",
+      "droit-a-la-limitation-du-traitement": "Limitation right",
+      "droit-a-la-portabilite-des-donnees": "Portability right",
+      "repondre-aux-demandes": "Respond to requests",
+      "ameliorer-le-site-web": "Improve the website",
+      "envoyer-des-newsletters-et-communications-marketing": "Send newsletters and marketing communications"
+    }
   },
   "404": {
     "title": "404",

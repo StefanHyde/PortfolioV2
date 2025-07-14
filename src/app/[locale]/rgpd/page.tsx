@@ -15,92 +15,75 @@ export default function RgpdPage() {
         <section className="mb-4">
           <div>
             <h2 className="mb-4 text-2xl font-semibold">
-              Collecte des données personnelles
+              {t('Misc.collecte-des-donnees-personnelles')}
             </h2>
-            <p>Nous collectons les données personnelles suivantes :</p>
+            <p>{t('collect-data-paragraph')}</p>
             <ul className="list-disc pl-8">
-              <li>Nom</li>
-              <li>Adresse e-mail</li>
+              <li>{t('Misc.nom')}</li>
+              <li>{t('Misc.adresse-email')}</li>
             </ul>
           </div>
         </section>
         <section className="mb-4">
           <div>
             <h2 className="mb-4 text-2xl font-semibold">
-              Utilisation des données personnelles
+              {t('Misc.utilisation-des-donnees-personnelles')}
             </h2>
-            <p>Les données personnelles collectées sont utilisées pour :</p>
+            <p>{t('use-data-paragraph')}</p>
             <ul className="list-disc pl-8">
-              <li>Répondre aux demandes des utilisateurs</li>
-              <li>Améliorer notre site web</li>
-              <li>Envoyer des newsletters et des communications marketing</li>
+              <li>{t('Misc.repondre-aux-demandes')}</li>
+              <li>{t('Misc.ameliorer-le-site-web')}</li>
+              <li>
+                {t('Misc.envoyer-des-newsletters-et-communications-marketing')}
+              </li>
             </ul>
           </div>
         </section>
         <section className="mb-4">
           <div>
             <h2 className="mb-4 text-2xl font-semibold">
-              Protection des données
+              {t('Misc.protection-des-donnees')}
             </h2>
-            <p>
-              Nous prenons la sécurité des données personnelles au sérieux et
-              mettons en place des mesures de sécurité pour protéger ces données
-              contre tout accès non autorisé ou toute divulgation.
-            </p>
+            <p>{t('protect-data-paragraph')}</p>
           </div>
         </section>
         <section className="mb-4">
           <div>
             <h2 className="mb-4 text-2xl font-semibold">
-              Conservation des données
+              {t('Misc.conservation-des-donnees')}
             </h2>
-            <p>
-              Nous conservons les données personnelles collectées aussi
-              longtemps que nécessaire pour atteindre les objectifs mentionnés
-              ci-dessus ou aussi longtemps que requis par la loi.
-            </p>
+            <p>{t('data-retention-paragraph')}</p>
           </div>
         </section>
         <section className="mb-4">
           <div>
             <h2 className="mb-4 text-2xl font-semibold">
-              Droits des utilisateurs
+              {t('Misc.droits-des-utilisateurs')}
             </h2>
-            <p>
-              Les utilisateurs ont les droits suivants concernant leurs données
-              personnelles :
-            </p>
+            <p>{t('data-rights-paragraph')}</p>
             <ul className="list-disc pl-8">
-              <li>Droit d&apos;accès</li>
-              <li>Droit de rectification</li>
-              <li>Droit à l&apos;effacement</li>
-              <li>Droit de limitation du traitement</li>
-              <li>Droit à la portabilité des données</li>
+              <li>{t('Misc.droit-dacces')}</li>
+              <li>{t('Misc.droit-de-rectification')}</li>
+              <li>{t('Misc.droit-a-leffacement')}</li>
+              <li>{t('Misc.droit-a-la-limitation-du-traitement')}</li>
+              <li>{t('Misc.droit-a-la-portabilite-des-donnees')}</li>
             </ul>
           </div>
         </section>
         <section className="mb-4">
           <div>
             <h2 className="mb-4 text-2xl font-semibold">
-              Politique en matière de cookies
+              {t('Misc.politique-en-matiere-de-cookies')}
             </h2>
-            <p>
-              Nous utilisons des cookies sur notre site web. Les cookies sont de
-              petits fichiers texte qui sont stockés sur l&apos;appareil de
-              l&apos;utilisateur par le navigateur web et qui permettent de
-              reconnaître l&apos;utilisateur lorsqu&apos;il revient sur le site
-              web.
-            </p>
+            <p>{t('cookies-policy-paragraph')}</p>
           </div>
         </section>
         <section className="mb-4">
           <div>
-            <h2 className="mb-4 text-2xl font-semibold">Contact</h2>
+            <h2 className="mb-4 text-2xl font-semibold">{t('Misc.contact')}</h2>
 
             <p>
-              Pour toute question ou demande concernant notre politique de
-              confidentialité, veuillez nous contacter à l&apos;adresse suivante
-              :{' '}
+              {t('contact-paragraph')}
               <Link
                 href={'mailto:contact@stefanheyd.com'}
                 className="hover:text-primary-500 hover:underline"
