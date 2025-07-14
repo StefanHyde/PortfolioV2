@@ -41,7 +41,7 @@ export default function Footer() {
         </ul>
       </div>
 
-      <div className="container mx-auto flex items-center justify-center gap-8 md:justify-end md:gap-4">
+      <div className="container mx-auto flex items-center justify-center gap-8 md:justify-end md:gap-6">
         {socials.map((social) => (
           <a
             key={social.name}
