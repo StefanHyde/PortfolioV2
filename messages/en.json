@@ -1,5 +1,189 @@
 {
-  "Home": {
-    "developpe-par": "Developed by"
+  "HomePage": {
+    "Hero": {
+      "surtitle": "Developped by",
+      "subtitle": "Website or web application ? Let’s turn your ideas into modern, accessible, and inclusive solutions together.",
+      "en-savoir-plus": "Learn more",
+      "un-projet-?-venez-en-parler": "A project ? Let’s talk about it"
+    },
+    "IntroSection": {
+      "quelque-soit-vos": "Whatever your",
+      "ambitions": "ambitions",
+      "je-vous-trouve-la": "i will find the",
+      "solution": "solution",
+      "intro-paragraph": "Whether you’re launching your first web project or looking to optimize your online presence, I support you at every stage. Together, we create solutions designed to your goals, needs, and budget.",
+      "site-web": "Website",
+      "site-web-description": "A website to promote your business, an e-commerce site to sell your creations, or a blog to share your passions ? I support you in the development of your project.",
+      "application-web": "Web Application",
+      "application-web-description": "A web application : much more than a website, a powerful lever to accelerate your growth and turn your ideas into powerful solutions.",
+      "conseil": "Advice",
+      "conseil-description": "Personalized advice to guide your choices and successfully transition to digital with a website or web application suited to your needs.",
+      "optimisation": "Optimization",
+      "optimisation-description": "A high-performance, smooth, and easy-to-maintain platform: strengthen your online image with a fast, user-friendly website built to last.",
+      "ux-ui": "UX/UI",
+      "ux-ui-description": "An accessible and inclusive mockup for a successful website or web application. I design modern, ergonomic interfaces that comply with current UX/UI standards, ensuring an experience tailored to all users.",
+      "decouvrez-mes-services": "Discover my services"
+    },
+    "AboutSection": {
+      "developper": "Develop",
+      "et-vous": "and",
+      "ecouter": "listen to you",
+      "presentation-paragraph": "I’m Stefan, <strong>a passionate and dedicated developer</strong> specializing in custom website and web application development. My goal: to turn your ideas into <strong>modern, accessible, and high-performance digital solutions</strong>. Attentive to your needs and ambitions, I design ergonomic, inclusive interfaces tailored to all your users while adhering to current UX/UI standards. Together, we will build a <strong>digital experience that reflects your identity</strong> while engaging and retaining your audience.",
+      "presentation-paragraph-2": "Together, we will bring your projects to life with solutions that combine aesthetics, functionality, and longevity. I am here to <strong>listen and create solutions that support your vision</strong>",
+      "presentation-conclusion": "<strong> Choose development designed to you and your users.</strong>",
+      "en-savoir-plus": "Learn more"
+    },
+    "ContactSection": {
+      "prenons": "Let's get in",
+      "contact": "touch",
+      "votre-nom": "Your name",
+      "veuillez-renseigner-votre-nom": "Please enter your name and / or first name",
+      "votre-email": "Your email address",
+      "veuillez-renseigner-votre-email": "Please enter a valid email address",
+      "votre-message": "Your message",
+      "veuillez-renseigner-votre-message": "Please enter a message",
+      "envoyer": "Send",
+      "j-accepte-les-cgv": "I accept the general conditions and the privacy policy",
+      "votre-message-a-bien-ete-envoye": "Your message has been sent, I will answer you in the shortest possible time",
+      "une-erreur-est-survenue-lors-de-l-envoi-de-votre-message": "Oops, an error occurred while sending your message"
+    }
+  },
+  "About": {
+    "Hero": { "title": "About", "subtitle": "My Path, My Experiences" },
+    "presentation-paragraph": "I am Stéphane, a web developer based in France, specializing in the creation of websites and web applications.  <br />   After many experiences in technical support and communication, I decided to transition into web development. Passionate and curious, I continuously enhance my skills in development, design, and logic to optimally tackle every new challenge that comes my way.  <br />   Beyond my curiosity, I am also creative in various fields. I apply this creativity to web development to offer original and tailored solutions for each project. Because development should not stop at a single line of code!  ",
+    "experiences": "Experiences",
+    "stack-technique": "Technical Stack",
+    "developpeur-full-stack": "Full-stack developer (freelance)",
+    "developpeur-frontend": "Frontend developer",
+    "freelance-description": "Development of websites and web applications. Design and creation of UX / UI",
+    "la-25eme-heure-description": "Development of evolutions on a back-office and front-end application intended for different actors in the cinema distribution",
+    "thuria-description": "Creation of platforms and personalized themes on Wordpress with the aim of promoting regional tourism",
+    "advisa-description": "Integration and customization of e-commerce solutions. Creation of themes and plugins under various platforms.",
+    "langages": "Languages",
+    "technologies-frontend": "Frontend tools",
+    "technologies-backend": "Backend tools",
+    "outils": "Tools",
+    "vous-souhaitez-en-savoir-plus-CV": "Want to know more ? Download my resume below.",
+    "telecharger-mon-CV": "Download my resume",
+    "projets": "Projects",
+    "nct-description": "A tattoo studio well-established in the industry for years, Neon Cobra Tattoo reached out to me to enhance its visibility in a highly competitive market. Thanks to my expertise combined with that of an SEO specialist, they now have all the tools to boost their attractiveness!",
+    "mariergo-description": "As a occupational therapist, Marie needed a website to present her activity and be easily contacted. This is now done thanks to a modern website respecting accessibility standards.",
+    "cuult-description": "In order to constantly evolve their platform for the distribution of cinema, the 25th Hour called on my expertise in React development to implement new features and improve the user experience of their front and back office.",
+    "dhda-description": "Having also worked in an agency, I was able to integrate various websites, in various fields. Among them, DHDA, a collaborative project valuing forest heritage. A Wordpress site powered by the Thuria agency.",
+    "services": {
+      "development": "Development",
+      "integration": "Integration",
+      "ux-ui": "UX/UI"
+    },
+    "plus-de-projets": "More projects are available on my GitHub repository ! Don't hesitate to take a look.",
+    "vers-mon-repo": "To my repository"
+  },
+  "Services": {
+    "Hero": {
+      "title": "My services & solutions",
+      "subtitle": "Creation of websites, web applications, … Custom solutions to give life to your digital projects."
+    },
+    "contact-message": "You want to know more about the services I offer ? Or you want to entrust me a project ? I am at your disposal.",
+    "contact-button": "Contact me",
+    "servicesGrid": {
+      "site-web": "Website",
+      "application-web": "Web Application",
+      "ux-ui": "UX/UI",
+      "optimisation-maintenance": "Optimization & Maintenance",
+      "site-web-description": "Custom websites, e-commerce sites, and blogs with <strong> WordPress or Next.js/React </strong>. Whether you want to present your business, sell your products, or share your passions, I design custom and high-performance websites, adapted to your needs and image. Thanks to modern solutions like WordPress for flexibility or Next.js/React for optimal performance, <strong> your online presence will be up to your ambitions. </strong>",
+      "application-web-description": "<strong>A custom web application designed to meet your needs</strong>. I accompany you in the creation of your web application, from conception to deployment. Whether it's for an interactive dashboard, a SaaS solution, or a reporting tool, I design an <strong>application perfectly adapted to your expectations and objectives</strong>.",
+      "ux-ui-description": "<strong>A design adapted for an optimal user experience</strong>. Allier a design soignée, a intuitive navigation, and an accessible interface to ensure the success of your website or application. I design custom designs, in perfect harmony with your visual identity, to offer <strong>a captivating and memorable experience for your users</strong>.",
+      "optimisation-maintenance-description": "Maintenance and optimization : <strong>a website always up to date and performing</strong>. A website or an application requires constant monitoring to remain fast, secure, and efficient. I offer regular maintenance and technical optimization services, ensuring <strong>the longevity, maintainability, and performance of your project over time</strong>."
+    }
+  },
+  "Blog": {
+    "PostsList": {
+      "title": "Blog",
+      "subtitle": "Discussions, reflections, news, or advice. Here we discuss various topics around web development 🧑‍💻",
+      "derniers-articles": "Latest articles",
+      "aucun-article-trouve": "Oops ! No article found"
+    }
+  },
+  "Legal": {
+    "title": "Legal notice",
+    "object-paragraph": "The present site is a showcase site aiming to present the services of Stéphane Heyd.",
+    "propriete-paragraph": "The content of this site (texts, images, graphics, logos, icons, etc.) is the exclusive property of Stéphane Heyd, unless otherwise specified. Any reproduction, distribution, modification or use, even partial, without the prior authorization of Stéphane Heyd is strictly prohibited and constitutes an infringement sanctioned by the Intellectual Property Code.",
+    "protection-paragraph": "The site does not collect personal data without your consent. The data collected is used only to respond to your requests and improve your experience on the site.",
+    "cookies-paragraph": "The site may use cookies to improve the user experience. You can configure your navigation settings to accept or reject cookies.",
+    "responsabilite-paragraph": "Stéphane Heyd strives to provide on this site reliable and up-to-date information, but cannot guarantee the accuracy, completeness or currency of the information. Stéphane Heyd cannot be held responsible for direct or indirect damages resulting from the use of this site.",
+    "contact-paragraph": "For any question or complaint concerning this site, you can contact Stéphane Heyd at the following address: ",
+    "Misc": {
+      "nom": "Name",
+      "prenom": "First name",
+      "adresse": "Adresse",
+      "email": "Email",
+      "telephone": "Phone",
+      "site-web": "Website",
+      "entreprise": "Company",
+      "ville": "City",
+      "code-postal": "Postal code",
+      "pays": "Country",
+      "editeur-du-site": "Site editor",
+      "hebergement-du-site": "Site hosting",
+      "hebergeur": "Hosting provider",
+      "cookies": "Cookies",
+      "responsabilite": "Responsibility",
+      "contact": "Contact",
+      "siret": "Siret",
+      "objet-du-site": "Site object",
+      "propriete-intellectuelle": "Intellectual property",
+      "protection-des-donnees-personnelles": "Personal data protection"
+    }
+  },
+  "RGPD": {
+    "title": "Privacy policy",
+    "collect-data-paragraph": "We collect the following personal data :",
+    "use-data-paragraph": "The personal data collected is used for :",
+    "protect-data-paragraph": "We take the security of personal data seriously and put in place security measures to protect these data against unauthorized access or disclosure.",
+    "data-retention-paragraph": "We retain the personal data collected as long as necessary to respond to your requests and improve your experience on the site.",
+    "data-rights-paragraph": "Users have the following rights regarding their personal data :",
+    "cookies-policy-paragraph": "We use cookies on our website. Cookies are small text files stored on your computer, which allow us to recognize your browser and personalize your experience on the site.",
+    "contact-paragraph": "For any question or request concerning our privacy policy, please contact us at the following address : ",
+    "Misc": {
+      "nom": "Name",
+      "adresse-email": "Email address",
+      "protection-des-donnees": "Data protection",
+      "utilisation-des-donnees-personnelles": "Use of personal data",
+      "collecte-des-donnees-personnelles": "Collection of personal data",
+      "conservation-des-donnees": "Data retention",
+      "droits-des-utilisateurs": "Users rights",
+      "politique-en-matiere-de-cookies": "Cookies policy",
+      "contact": "Contact",
+      "droit-dacces": "Access right",
+      "droit-de-rectification": "Rectification right",
+      "droit-a-leffacement": "Erasure right",
+      "droit-a-la-limitation-du-traitement": "Limitation right",
+      "droit-a-la-portabilite-des-donnees": "Portability right",
+      "repondre-aux-demandes": "Respond to requests",
+      "ameliorer-le-site-web": "Improve the website",
+      "envoyer-des-newsletters-et-communications-marketing": "Send newsletters and marketing communications"
+    }
+  },
+  "404": {
+    "title": "404",
+    "subtitle": "⚠️ The page you are looking for does not exist or has been moved.",
+    "retour-accueil": "Return to the home page"
+  },
+  "Navigation": {
+    "accueil": "Home",
+    "a-propos": "About",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact me",
+    "mentions-legales": "Legal notice",
+    "politique-confidentialite": "Privacy policy"
+  },
+  "Utils": {
+    "themeSwitch": {
+      "passer-en-mode": "Switch to",
+      "clair": "light mode",
+      "sombre": "dark mode"
+    },
+    "languageSwitcher": { "changer-langue": "Change language" }
   }
 }

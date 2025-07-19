@@ -1,18 +1,20 @@
-import { getPostBySlug } from '@api/wordPress/service';
+import { getPostBySlug, getCommentsByPostId } from '@api/wordPress/service';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import { Toaster } from 'react-hot-toast';
 
 import BlogPostHeader from '@/components/blog/blogPostHeader';
 import Breadcrumbs from '@/components/blog/blogBreadcrumbs';
+import Comments from '@/components/blog/blogPostComments';
 
 // To generate the metadata from WP
 export async function generateMetadata({
-  params: paramsPromise,
+  params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string; locale: string };
 }): Promise<Metadata> {
-  const { slug } = await paramsPromise;
-  const post = await getPostBySlug(slug);
+  const { slug, locale } = params;
+  const post = await getPostBySlug(slug, locale);
 
   if (!post) {
     return {
@@ -30,23 +32,20 @@ export async function generateMetadata({
       description: post.seo.opengraphDescription || post.seo.metaDesc,
       url: post.seo.opengraphUrl,
       images: [
-        {
-          url: post.seo.opengraphImage?.link || '',
-          width: 1200,
-          height: 630,
-        },
+        { url: post.seo.opengraphImage?.link || '', width: 1200, height: 630 },
       ],
     },
   };
 }
 
 export default async function BlogPost({
-  params: paramsPromise,
+  params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string; locale: string };
 }) {
-  const { slug } = await paramsPromise;
-  const post = await getPostBySlug(slug);
+  const { slug, locale } = params;
+  const post = await getPostBySlug(slug, locale);
+  const comments = await getCommentsByPostId(slug);
 
   if (!post) {
     notFound();
@@ -54,6 +53,7 @@ export default async function BlogPost({
 
   return (
     <main>
+      <Toaster position="top-center" />
       <div className="relative mx-auto flex w-full flex-col items-start">
         <BlogPostHeader
           title={post.title}
@@ -71,6 +71,10 @@ export default async function BlogPost({
             className="post-content mx-auto w-full space-y-6 py-6 text-base sm:w-4/5 xl:w-3/5"
             dangerouslySetInnerHTML={{ __html: post.content }}
           ></div>
+        </section>
+
+        <section className="border-dark-300 mx-auto mt-12 w-full space-y-6 border-t py-6 pt-6 text-base sm:w-4/5 xl:w-3/5">
+          <Comments postSlug={slug} initialComments={comments} />
         </section>
       </div>
     </main>

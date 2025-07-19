@@ -1,6 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
 
+import { useTranslations } from 'next-intl';
+
 import useAnimateOnView from '@/hooks/useAnimateOnView';
 
 import { experiencesData } from './../../lib/data';
@@ -10,7 +12,7 @@ export default function Experiences() {
     useAnimateOnView();
   const { ref: refExperience, controls: controlsExperience } =
     useAnimateOnView();
-
+  const t = useTranslations('About');
   return (
     <div ref={refExperience} className="flex w-full flex-col md:w-1/2">
       <div className="flex w-full flex-col">
@@ -26,7 +28,7 @@ export default function Experiences() {
           viewport={{ once: true }}
           transition={{ duration: 0.25, delay: 0.5 }}
         >
-          Expériences <span className="text-black">🧑‍💻</span>
+          {t('experiences')} <span className="text-black">🧑‍💻</span>
         </motion.h2>
 
         <div className="border-primary-500 dark:border-almost-white dark:text-almost-white from-primary-50 dark:from-primary-950 w-full overflow-hidden rounded-md border-2 border-solid bg-linear-to-b to-transparent p-4 text-center shadow-md backdrop-blur-md md:p-8">
@@ -44,7 +46,7 @@ export default function Experiences() {
               transition={{ duration: 0.25, delay: 0.5 }}
             >
               <h3 className="font-montserrat text-2xl font-semibold">
-                {experience.title}
+                {t(experience.title)}
               </h3>
               <p className="text-normal font-montserrat text-sm font-semibold md:text-base">
                 {experience.company}
@@ -53,7 +55,7 @@ export default function Experiences() {
                 {experience.date}
               </p>
               <p className="text-normal font-montserrat text-sm font-light md:text-base">
-                {experience.description}
+                {t(experience.description)}
               </p>
               <div className="mt-3 flex flex-wrap gap-4">
                 {experience.stack.map((tech, index) => (

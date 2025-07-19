@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 import useAnimateOnView from '@/hooks/useAnimateOnView';
 
@@ -8,6 +9,7 @@ import { skillsData } from './../../lib/data';
 export default function Skills() {
   const { ref: refSkillsTitle, controls: controlsSkillsTitle } =
     useAnimateOnView();
+  const t = useTranslations('About');
 
   const { ref: refSkills, controls: controlsSkills } = useAnimateOnView();
 
@@ -28,7 +30,7 @@ export default function Skills() {
         viewport={{ once: true }}
         transition={{ duration: 0.25, delay: 0.5 }}
       >
-        Stack technique <span className="text-black">⚙️</span>
+        {t('stack-technique')} <span className="text-black">⚙️</span>
       </motion.h2>
       <div className="border-secondary-500 dark:border-almost-white dark:text-almost-white from-secondary-50 dark:from-secondary-950 w-full rounded-md border-2 border-solid bg-linear-to-b to-transparent p-4 text-center shadow-md backdrop-blur-md md:p-8">
         {skillsData.map((skill, index) => (
@@ -45,7 +47,7 @@ export default function Skills() {
             transition={{ duration: 0.25, delay: 0.25 }}
           >
             <h3 className="font-montserrat text-2xl font-semibold">
-              Languages
+              {t('langages')}
             </h3>
             <div className="mt-3 mb-8 flex flex-wrap justify-end gap-4">
               {skill.languages.map((language, index) => (
@@ -60,7 +62,7 @@ export default function Skills() {
               ))}
             </div>
             <h3 className="font-montserrat mt-4 text-2xl font-semibold">
-              Technologies Frontend
+              {t('technologies-frontend')}
             </h3>
             <div className="mt-3 mb-8 flex flex-wrap justify-end gap-4">
               {skill.technologies.frontEnd.map((tech, index) => (
@@ -75,7 +77,7 @@ export default function Skills() {
               ))}
             </div>
             <h3 className="font-montserrat mt-4 text-2xl font-semibold">
-              Technologies Backend
+              {t('technologies-backend')}
             </h3>
             <div className="mt-3 mb-8 flex flex-wrap justify-end gap-4">
               {skill.technologies.backEnd.map((tech, index) => (
@@ -90,7 +92,7 @@ export default function Skills() {
               ))}
             </div>
             <h3 className="font-montserrat mt-4 text-2xl font-semibold">
-              Tools
+              {t('outils')}
             </h3>
             <div className="mt-3 mb-8 flex flex-wrap justify-end gap-4">
               {skill.tools.map((tool, index) => (

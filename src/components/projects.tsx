@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SiGithub } from 'react-icons/si';
+import { useTranslations } from 'next-intl';
 
 import useAnimateOnView from '@/hooks/useAnimateOnView';
 
@@ -12,7 +13,7 @@ export default function Projects() {
   const { ref: refProjectTitle, controls: controlsProjectTitle } =
     useAnimateOnView();
   const { ref: refProject, controls: controlsProject } = useAnimateOnView();
-
+  const t = useTranslations('About');
   return (
     <div ref={refProject} className="flex w-full flex-col xl:w-3/4">
       <div className="flex w-full flex-col">
@@ -28,7 +29,7 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.25, delay: 0.5 }}
         >
-          Projets <span className="text-black">💼</span>
+          {t('projets')} <span className="text-black">💼</span>
         </motion.h2>
 
         <div className="font-montserrat text-dark-800 dark:text-almost-white grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -64,16 +65,16 @@ export default function Projects() {
                 </figcaption>
 
                 <p className="text-normal font-montserrat group-hover:text-primary-500 my-8 px-4 text-sm font-extralight duration-300 ease-in-out">
-                  {project.description}
+                  {t(project.description)}
                 </p>
                 <div className="mt-3 flex flex-wrap justify-center gap-4">
                   {project.services.map((service, index) => (
-                    <div
+                    <span
                       key={index}
                       className="bg-primary-500 text-almost-white p-1 text-sm"
                     >
-                      {service}
-                    </div>
+                      {t(`services.${service}`)}
+                    </span>
                   ))}
                 </div>
               </motion.figure>
@@ -83,8 +84,7 @@ export default function Projects() {
       </div>
       <div className="mx-auto mt-12 mb-12 flex flex-col items-center justify-center p-6 md:p-12">
         <p className="text-normal font-montserrat text-dark-900 dark:text-almost-white text-center text-sm font-light md:text-base">
-          Davantage de projets sont disponibles sur mon repo GitHub !
-          N&apos;hésitez pas à y jeter un oeil.{' '}
+          {t('plus-de-projets')}
           <span className="text-black">🙌</span>
         </p>
         <Link
@@ -93,7 +93,7 @@ export default function Projects() {
           rel="noopener noreferrer"
         >
           <button className="bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white duration-300 ease-in-out">
-            Vers mon repo
+            {t('vers-mon-repo')}
             <SiGithub className="ml-2 inline-block h-5 w-5" />
           </button>
         </Link>
