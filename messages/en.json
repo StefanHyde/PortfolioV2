@@ -102,7 +102,8 @@
       "subtitle": "Discussions, reflections, news, or advice. Here we discuss various topics around web development 🧑‍💻",
       "derniers-articles": "Latest articles",
       "aucun-article-trouve": "Oops ! No article found"
-    }
+    },
+    "breadcrumbs": { "home": "Home", "blog": "Blog" }
   },
   "Legal": {
     "title": "Legal notice",

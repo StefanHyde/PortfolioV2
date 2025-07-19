@@ -105,7 +105,8 @@
       "subtitle": "Discussions, réfléxions, actualités, ou conseils. Ici on aborde divers sujets autour du développement web 🧑‍💻",
       "derniers-articles": "Derniers articles",
       "aucun-article-trouve": "Oops ! Aucun article trouvé"
-    }
+    },
+    "breadcrumbs": { "home": "Accueil", "blog": "Blog" }
   },
   "Legal": {
     "title": "Mentions légales",
