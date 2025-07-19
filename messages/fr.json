@@ -1,5 +1,193 @@
 {
-  "Home": {
-    "developpe-par": "Developed by"
+  "HomePage": {
+    "Hero": {
+      "surtitle": "Développé par",
+      "subtitle": "Site web ou application web ? Transformons ensemble vos idées en solutions modernes, accessibles et inclusives.",
+      "en-savoir-plus": "En savoir plus",
+      "un-projet-?-venez-en-parler": "Un projet ? Venez en parler"
+    },
+    "IntroSection": {
+      "quelque-soit-vos": "Quelque soit vos",
+      "ambitions": "ambitions",
+      "je-vous-trouve-la": "je vous trouve la",
+      "solution": "solution",
+      "intro-paragraph": "Que vous lanciez votre premier projet web ou que vous souhaitiez optimiser votre présence en ligne, je vous accompagne à chaque étape. Ensemble, nous concevons des solutions adaptées à vos objectifs, vos besoins et votre budget.",
+      "site-web": "Site web",
+      "site-web-description": "Un site destiné à promouvoir votre activité, un site e-commerce pour vendre vos créations, ou un blog pour partager vos passions ? Je vous accompagne dans le developpement de votre projet.",
+      "application-web": "Application web",
+      "application-web-description": "Une application web : bien plus qu'un site, un levier puissant pour accélérer votre croissance et transformer vos idées en solutions concrètes.",
+      "conseil": "Conseil",
+      "conseil-description": "Des conseils sur-mesure pour guider vos choix et réussir votre transition numérique grâce à un site ou une application web adaptée à vos besoins.",
+      "optimisation": "Optimisation et TMA",
+      "optimisation-description": "Une plateforme performante, fluide et facile à maintenir : je suis là pour optimiser votre projet web avec des services de maintenance et d'optimisation adaptés à vos besoins.",
+      "ux-ui": "UX/UI",
+      "ux-ui-description": "Une maquette accessible et inclusive pour un site ou une application web réussie. Je conçois des designs modernes, ergonomiques et conformes aux standards UX/UI actuels, en veillant à offrir une expérience adaptée à tous les utilisateurs.",
+      "decouvrez-mes-services": "Découvrez mes services"
+    },
+    "AboutSection": {
+      "developper": "Développer",
+      "et-vous": "et vous",
+      "ecouter": "écouter",
+      "presentation-paragraph": "Je suis Stefan, <strong>développeur passionné et engagé</strong>, spécialisé dans la création de sites et d'applications web sur mesure. Mon objectif : transformer vos idées en solutions numériques <strong>modernes, accessibles, et performantes</strong>. À l'écoute de vos besoins et de vos ambitions, je conçois des interfaces ergonomiques, inclusives et adaptées à tous vos utilisateurs, tout en respectant les standards UX/UI actuels. Ensemble, nous bâtirons une <strong>expérience numérique qui reflète votre identité</strong> tout en captivant et fidélisant votre audience.",
+      "presentation-paragraph-2": "Ensemble, nous donnerons vie à vos projets avec des solutions qui allient esthétique, fonctionnalité et longévité. Je suis ici pour <strong> écouter et créer des solutions qui soutiennent votre vision </strong>",
+      "presentation-conclusion": "<strong> Faites le choix d'un développement pensé pour vous et vos utilisateurs.</strong>",
+      "en-savoir-plus": "En savoir plus"
+    },
+    "ContactSection": {
+      "prenons": "Prenons",
+      "contact": "contact",
+      "votre-nom": "Votre nom",
+      "veuillez-renseigner-votre-nom": "Veuillez renseigner votre nom et / ou prénom",
+      "votre-email": "Votre adresse email",
+      "veuillez-renseigner-votre-email": "Veuillez renseigner une adresse email valide",
+      "votre-message": "Votre message",
+      "veuillez-renseigner-votre-message": "Veuillez renseigner un message",
+      "envoyer": "Envoyer",
+      "j-accepte-les-cgv": "J'accepte les conditions générales et la politique de confidentialité",
+      "votre-message-a-bien-ete-envoye": "Votre message a bien été envoyé, je vous répondrai dans les plus brefs délais",
+      "une-erreur-est-survenue-lors-de-l-envoi-de-votre-message": "Oups, une erreur est survenue lors de l'envoi de votre message"
+    }
+  },
+  "About": {
+    "Hero": {
+      "title": "À propos",
+      "subtitle": "Mon parcours, mes expériences"
+    },
+    "presentation-paragraph": "Je suis Stéphane, développeur web basé en France, spécialisé dans la création de sites internet et d'applications web.<br></br>Après de nombreuses expériences dans le support technique et la communication, j'ai décidé de me reconvertir dans le domaine du développement web. Passionné et curieux, j'enrichis chaque jour mes compétences en développement, conception, logique, pour répondre de manière optimale à chaque nouveau challenge qui s'offre à moi. <br></br> Au-delà de ma curiosité, je suis également créatif dans divers domaines.<br></br> J'utilise cette créativité dans le cadre du développement web pour proposer des solutions originales et adaptées à chaque projet. Car le développement ne doit pas s'arrêter à une ligne de code !",
+    "experiences": "Expériences",
+    "stack-technique": "Stack technique",
+    "developpeur-full-stack": "Développeur full-stack (freelance)",
+    "developpeur-frontend": "Développeur frontend",
+    "freelance-description": "Développement de sites web et applications web. Conception et création UX / UI",
+    "la-25eme-heure-description": "Développement d'évolutions sur une application back-office et front destinée aux différents acteurs de la distribution cinématographique",
+    "thuria-description": "Création de plateformes et de thèmes personnalisés sur Wordpress ayant pour but de promouvoir le tourisme régional",
+    "advisa-description": "Intégration et personnalisation de solutions e - commerce. Création de thèmes ainsi que de plugins sous diverses plateformes.",
+    "langages": "Langages",
+    "technologies-frontend": "Technologies frontend",
+    "technologies-backend": "Technologies backend",
+    "outils": "Outils",
+    "vous-souhaitez-en-savoir-plus-CV": "Vous souhaitez en savoir davantage ? Téléchargez mon CV ci-dessous.",
+    "telecharger-mon-CV": "Télécharger mon CV",
+    "projets": "Projets",
+    "nct-description": "Salon de tatouage ancré depuis des années dans le milieu, Neon Cobra Tattoo a fait appel à mes services afin de gagner en visibilité dans un secteur à très forte concurrence. Grâce à mon expertise couplée de celle d'un expert en SEO ils ont à présent toutes les clés pour gagner en attractivité !",
+    "mariergo-description": "En tant que ergothératpeute Marie nécessitait un site vitrine permettant de présenter son activité et être mise en relation de la manière la plus simple possible. C'est chose faite grâce à un site moderne respectant les normes d'accessibilité.",
+    "cuult-description": "Afin de constamment faire évoluer leur plateforme de diffusion cinématographique, la 25ème heure a fait appel à mon expérience en développement React pour mettre en place de nouvelles fonctionnalités et améliorer l'expérience utilisateur de leur front et back-office",
+    "dhda-description": "Ayant également travaillé en agence j'ai pu intégrer divers sites web, dans divers domaines. Parmi eux, DHDA, un projet collaboratif valorisant le patrimoine forestier. Un site Wordpress propulsé par l'agence Thuria.",
+    "services": {
+      "development": "Développement",
+      "integration": "Intégration",
+      "ux-ui": "UX/UI"
+    },
+    "plus-de-projets": "Plus de projets sont disponibles sur mon repo GitHub ! N'hésitez pas à y jeter un oeil.",
+    "vers-mon-repo": "Vers mon repo"
+  },
+  "Services": {
+    "Hero": {
+      "title": "Mes services & solutions",
+      "subtitle": "Création de sites vitrines, applications web, … Des solutions personnalisées pour donner vie à vos projets numériques."
+    },
+    "contact-message": "Vous souhaitez en savoir davantage sur les prestations que je propose ? Ou vous souhaitez me confier un projet ? Je suis à votre écoute.",
+    "contact-button": "Me contacter",
+    "servicesGrid": {
+      "site-web": "Site web",
+      "application-web": "Application web",
+      "ux-ui": "UX/UI",
+      "optimisation-maintenance": "Optimisation et TMA",
+      "site-web-description": "Des sites vitrines, e-commerces et blogs sur mesure avec<strong> WordPress ou Next.js/React</strong>. Que vous souhaitiez présenter votre entreprise, vendre vos produits ou partager vos idées, je conçois des sites web personnalisés et performants, adaptés à vos besoins et à votre image. Grâce à des solutions modernes comme WordPress pour la flexibilité ou Next.js/React pour des performances optimales,<strong>votre présence en ligne sera à la hauteur de vos ambitions.</strong>",
+      "application-web-description": "<strong>Une application web sur mesure pour répondre à vos besoins</strong>. Je vous accompagne dans la création de votre application web, de la conception à la mise en ligne. Que ce soit pour un dashboard interactif, une solution SaaS ou un outil de reporting, je conçois une <strong>application parfaitement adaptée à vos attentes et à vos objectifs</strong>.",
+      "ux-ui-description": "<strong>Un design adapté pour une expérience utilisateur optimale</strong>. Allier esthétique soignée, une navigation intuitive, et une interface accessible pour garantir le succès de votre site web ou application. Je conçois des designs personnalisés, en parfaite harmonie avec votre identité visuelle, pour offrir <strong>une expérience captivante et mémorable à vos utilisateurs</strong>.",
+      "optimisation-maintenance-description": "Maintenance et optimisation : <strong>un site toujours à jour et performant</strong>. Un site web ou une application nécessite un suivi constant pour rester rapide, sécurisé et efficace. Je vous propose des services de maintenance régulière et d&apos;optimisation technique, assurant <strong>la pérennité, la maintenabilité et la performance de votre projet au fil du temps</strong>."
+    }
+  },
+  "Blog": {
+    "PostsList": {
+      "title": "Le blog",
+      "subtitle": "Discussions, réfléxions, actualités, ou conseils. Ici on aborde divers sujets autour du développement web 🧑‍💻",
+      "derniers-articles": "Derniers articles",
+      "aucun-article-trouve": "Oops ! Aucun article trouvé"
+    }
+  },
+  "Legal": {
+    "title": "Mentions légales",
+    "object-paragraph": "Le présent site est un site vitrine ayant pour objectif de présenter les services de Stéphane Heyd.",
+    "propriete-paragraph": "Le contenu de ce site (textes, images, graphismes, logo, icônes, etc.) est la propriété exclusive de Stéphane Heyd, sauf mentions contraires. Toute reproduction, distribution, modification ou utilisation, même partielle, sans l’autorisation préalable de Stéphane Heyd est strictement interdite et constitue une contrefaçon sanctionnée par le Code de la propriété intellectuelle.",
+    "protection-paragraph": "Le site ne collecte pas de données personnelles sans votre consentement. Les données collectées sont utilisées uniquement pour répondre à vos demandes et améliorer votre expérience sur le site.",
+    "cookies-paragraph": "Le site peut utiliser des cookies pour améliorer l’expérience utilisateur. Vous pouvez configurer vos paramètres de navigation pour accepter ou refuser les cookies.",
+    "responsabilite-paragraph": "Stéphane Heyd s’efforce de fournir sur ce site des informations fiables et actualisées, mais ne peut garantir l’exactitude, l’exhaustivité ou l’actualité des informations. Stéphane Heyd ne saurait être tenu responsable des dommages directs ou indirects résultant de l’utilisation de ce site.",
+    "contact-paragraph": "Pour toute question ou réclamation concernant ce site, vous pouvez contacter Stéphane Heyd à l’adresse suivante : ",
+
+    "Misc": {
+      "nom": "Nom",
+      "prenom": "Prénom",
+      "adresse": "Adresse",
+      "email": "Email",
+      "telephone": "Téléphone",
+      "site-web": "Site web",
+      "entreprise": "Entreprise",
+      "ville": "Ville",
+      "code-postal": "Code postal",
+      "pays": "Pays",
+      "editeur-du-site": "Éditeur du site",
+      "hebergement-du-site": "Hébergement du site",
+      "hebergeur": "Hébergeur",
+      "cookies": "Cookies",
+      "responsabilite": "Responsabilité",
+      "contact": "Contact",
+      "siret": "Siret",
+      "objet-du-site": "Objet du site",
+      "propriete-intellectuelle": "Propriété intellectuelle",
+      "protection-des-donnees-personnelles": "Protection des données personnelles"
+    }
+  },
+  "RGPD": {
+    "title": "Politique de confidentialité",
+    "collect-data-paragraph": "Nous collectons les données personnelles suivantes :",
+    "use-data-paragraph": "Les données personnelles collectées sont utilisées pour :",
+    "protect-data-paragraph": "Nous prenons la sécurité des données personnelles au sérieux et mettons en place des mesures de sécurité pour protéger ces données contre tout accès non autorisé ou toute divulgation.",
+    "data-retention-paragraph": "Nous conservons les données personnelles collectées aussi longtemps que nécessaire pour répondre à vos demandes et améliorer votre expérience sur le site.",
+    "data-rights-paragraph": "Les utilisateurs ont les droits suivants concernant leurs données personnelles :",
+    "cookies-policy-paragraph": "Nous utilisons des cookies sur notre site web. Les cookies sont des petits fichiers texte stockés sur votre ordinateur, qui nous permettent de reconnaître votre navigateur et de personnaliser votre expérience sur le site.",
+    "contact-paragraph": "Pour toute question ou demande concernant notre politique de confidentialité, veuillez nous contacter à l'adresse suivante : ",
+    "Misc": {
+      "nom": "Nom",
+      "adresse-email": "Adresse email",
+      "protection-des-donnees": "Protection des données",
+      "utilisation-des-donnees-personnelles": "Utilisation des données personnelles",
+      "collecte-des-donnees-personnelles": "Collecte des données personnelles",
+      "conservation-des-donnees": "Conservation des données",
+      "droits-des-utilisateurs": "Droits des utilisateurs",
+      "politique-en-matiere-de-cookies": "Politique en matière de cookies",
+      "contact": "Contact",
+      "droit-dacces": "Droit d'accès",
+      "droit-de-rectification": "Droit de rectification",
+      "droit-a-leffacement": "Droit à l'effacement",
+      "droit-a-la-limitation-du-traitement": "Droit à la limitation du traitement",
+      "droit-a-la-portabilite-des-donnees": "Droit à la portabilité des données",
+      "repondre-aux-demandes": "Répondre aux demandes",
+      "ameliorer-le-site-web": "Améliorer le site web",
+      "envoyer-des-newsletters-et-communications-marketing": "Envoyer des newsletters et communications marketing"
+    }
+  },
+  "404": {
+    "title": "404",
+    "subtitle": "⚠️ La page que vous cherchez n'existe pas ou a été déplacée.",
+    "retour-accueil": "Retour à l'accueil"
+  },
+  "Navigation": {
+    "accueil": "Accueil",
+    "a-propos": "A propos",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Me contacter",
+    "mentions-legales": "Mentions légales",
+    "politique-confidentialite": "Politique de confidentialité"
+  },
+  "Utils": {
+    "themeSwitch": {
+      "passer-en-mode": "Passer en mode",
+      "clair": "clair",
+      "sombre": "sombre"
+    },
+    "languageSwitcher": { "changer-langue": "Changer de langue" }
   }
 }

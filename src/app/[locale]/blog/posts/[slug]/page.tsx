@@ -9,12 +9,12 @@ import Comments from '@/components/blog/blogPostComments';
 
 // To generate the metadata from WP
 export async function generateMetadata({
-  params: paramsPromise,
+  params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string; locale: string };
 }): Promise<Metadata> {
-  const { slug } = await paramsPromise;
-  const post = await getPostBySlug(slug);
+  const { slug, locale } = params;
+  const post = await getPostBySlug(slug, locale);
 
   if (!post) {
     return {
@@ -32,23 +32,19 @@ export async function generateMetadata({
       description: post.seo.opengraphDescription || post.seo.metaDesc,
       url: post.seo.opengraphUrl,
       images: [
-        {
-          url: post.seo.opengraphImage?.link || '',
-          width: 1200,
-          height: 630,
-        },
+        { url: post.seo.opengraphImage?.link || '', width: 1200, height: 630 },
       ],
     },
   };
 }
 
 export default async function BlogPost({
-  params: paramsPromise,
+  params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string; locale: string };
 }) {
-  const { slug } = await paramsPromise;
-  const post = await getPostBySlug(slug);
+  const { slug, locale } = params;
+  const post = await getPostBySlug(slug, locale);
   const comments = await getCommentsByPostId(slug);
 
   if (!post) {

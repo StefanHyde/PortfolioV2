@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
+
+import { useTranslations } from 'next-intl';
 
 type FormInputs = {
   name: string;
@@ -16,100 +18,66 @@ type FormInputs = {
 
 export default function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
-  const [rgpdChecked, setRgpdChecked] = useState(false);
-  const [showRgpdError, setShowRgpdError] = useState(false);
+
+  const t = useTranslations('HomePage.ContactSection');
 
   const {
     register,
     handleSubmit,
     reset,
-
+    control,
     formState,
     formState: { errors, isValid },
     trigger,
-    setValue,
+    watch,
   } = useForm<FormInputs>({
     mode: 'onChange',
-    defaultValues: {
-      name: '',
-      senderMail: '',
-      message: '',
-      rgpd: false,
-    },
+    defaultValues: { name: '', senderMail: '', message: '', rgpd: false },
   });
 
   const { isSubmitting } = formState;
+  const rgpdAccepted = watch('rgpd');
 
   const onSubmit = async (formData: FormInputs) => {
-    if (!isLoading && rgpdChecked) {
+    if (!isLoading && formData.rgpd) {
       setIsLoading(true);
-      try {
-        const response = await fetch('/api/sendMail', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            senderMail: formData.senderMail,
-            message: formData.message,
-            honeyPot: formData.honeyPot,
-          }),
-        });
+      const response = await fetch('/api/sendMail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
 
-        const data = await response.json();
-
-        if (response.ok) {
-          toast.success(
-            'Votre message a bien été envoyé, je vous répondrai dans les plus brefs délais',
-          );
-          reset();
-          setRgpdChecked(false);
-          setShowRgpdError(false);
-        } else {
-          toast.error(
-            data.error ||
-              "Oups, une erreur est survenue lors de l'envoi de votre message",
-          );
-        }
-      } catch {
+        body: JSON.stringify({
+          name: formData.name,
+          senderMail: formData.senderMail,
+          message: formData.message,
+          honeyPot: formData.honeyPot,
+        }),
+      });
+      if (response.ok) {
+        toast.success(t('votre-message-a-bien-ete-envoye'));
+        reset();
+      } else {
         toast.error(
-          "Oups, une erreur est survenue lors de l'envoi de votre message",
+          t('une-erreur-est-survenue-lors-de-l-envoi-de-votre-message'),
         );
-      } finally {
-        setIsLoading(false);
       }
-    } else if (!rgpdChecked) {
-      setShowRgpdError(true);
+      setIsLoading(false);
     }
   };
 
-  const handleRgpdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const checked = e.target.checked;
-    setRgpdChecked(checked);
-    setValue('rgpd', checked, { shouldValidate: true });
-    if (checked) {
-      setShowRgpdError(false);
-    }
-  };
-
-  const titleAnimationText = [...'contact'];
+  const titleAnimationText = [...t('contact')];
 
   return (
     <>
       <div className="flex h-full w-full flex-col items-center justify-center">
         <div className="">
           <h2 className="font-montserrat text-dark-800 dark:text-almost-white mb-6 text-2xl font-semibold md:text-4xl">
-            Prenons{' '}
+            {t('prenons')}{' '}
             <span className="from-primary-500 to-secondary-500 inline-block bg-linear-to-r bg-clip-text text-6xl text-transparent md:text-7xl">
               {titleAnimationText.map((element, index) => (
                 <motion.span
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{
-                    duration: 0.25,
-                    delay: index / 10,
-                  }}
+                  transition={{ duration: 0.25, delay: index / 10 }}
                   key={index}
                 >
                   {element}
@@ -123,7 +91,7 @@ export default function ContactForm() {
           <form onSubmit={handleSubmit(onSubmit)} className="font-montserrat">
             <label className="mb-6 block" htmlFor="name">
               <span className="text-dark-800 dark:text-almost-white">
-                Votre nom
+                {t('votre-nom')}
               </span>
               <input
                 type="text"
@@ -135,14 +103,13 @@ export default function ContactForm() {
               />
               {errors.name && (
                 <p className="text-primary-500 pt-1 text-xs">
-                  {errors.name.message ||
-                    'Veuillez renseigner votre nom et / ou prénom'}
+                  {t('veuillez-renseigner-votre-nom')}
                 </p>
               )}
             </label>
             <label className="mb-6 block" htmlFor="email">
               <span className="text-dark-800 dark:text-almost-white">
-                Votre adresse email
+                {t('votre-email')}
               </span>
               <input
                 type="email"
@@ -158,14 +125,13 @@ export default function ContactForm() {
               />
               {errors.senderMail && (
                 <p className="text-primary-500 pt-1 text-xs">
-                  {errors.senderMail.message ||
-                    'Veuillez renseigner une adresse email valide'}
+                  {t('veuillez-renseigner-votre-email')}
                 </p>
               )}
             </label>
             <label className="mb-6 block" htmlFor="message">
               <span className="text-dark-800 dark:text-almost-white">
-                Votre message
+                {t('votre-message')}
               </span>
               <textarea
                 rows={6}
@@ -177,7 +143,7 @@ export default function ContactForm() {
               />
               {errors.message && (
                 <p className="text-primary-500 pt-1 text-xs">
-                  {errors.message.message || 'Veuillez renseigner un message'}
+                  {t('veuillez-renseigner-votre-message')}
                 </p>
               )}
             </label>
@@ -193,51 +159,45 @@ export default function ContactForm() {
               />
             </div>
 
-            <div className="flex pb-4">
-              <input
-                type="checkbox"
-                className="accent-primary-500 h-4 w-4"
-                checked={rgpdChecked}
-                onChange={handleRgpdChange}
-              />
-              <Link
-                href={'/rgpd'}
-                className="text-dark-900 dark:text-almost-white ml-2 text-xs font-light hover:underline"
-              >
-                J&apos;accepte les conditions générales et la politique de
-                confidentialité
-              </Link>
-            </div>
-            {showRgpdError && !rgpdChecked && (
-              <p className="text-primary-500 mb-4 text-xs">
-                Vous devez accepter les conditions pour continuer
-              </p>
-            )}
+            <Controller
+              name="rgpd"
+              control={control}
+              defaultValue={false}
+              rules={{ required: true }}
+              render={({ field }) => (
+                <label className="flex pb-4">
+                  <input
+                    type="checkbox"
+                    className="accent-primary-500 h-4 w-4"
+                    {...field}
+                    value={field.value ? 'true' : 'false'}
+                  />
+                  <Link
+                    href={'/rgpd'}
+                    className="text-dark-900 dark:text-almost-white ml-2 text-xs font-light hover:underline"
+                  >
+                    {t('j-accepte-les-cgv')}
+                  </Link>
+                </label>
+              )}
+            />
 
             {!isLoading && (
               <button
-                disabled={!isValid || isSubmitting || !rgpdChecked}
+                disabled={!isValid || isSubmitting || !rgpdAccepted}
                 type="submit"
-                className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white ease-in-out duration-300${!isValid || isSubmitting || !rgpdChecked ? 'cursor-not-allowed opacity-50' : ''}`}
+                className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white ease-in-out duration-300${!isValid || isSubmitting || !rgpdAccepted ? 'cursor-not-allowed opacity-50' : ''}`}
               >
-                Envoyer
+                {t('envoyer')}
               </button>
             )}
             <Toaster
               toastOptions={{
                 success: {
-                  style: {
-                    color: '#fff',
-                    background: '#2BBB6E',
-                  },
+                  style: { color: '#fff', background: '#2BBB6E' },
                   duration: 5000,
                 },
-                error: {
-                  style: {
-                    background: '#D5474C',
-                  },
-                  duration: 5000,
-                },
+                error: { style: { background: '#D5474C' }, duration: 5000 },
               }}
             />
           </form>

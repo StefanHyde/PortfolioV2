@@ -5,9 +5,10 @@ import { HiOutlineMoon, HiOutlineSun } from 'react-icons/hi2';
 import { Tooltip } from 'react-tooltip';
 
 import { useTheme } from '@/context/themeContext';
-
+import { useTranslations } from 'next-intl';
 export default function ThemeSwitch() {
   const { theme, toggleTheme } = useTheme();
+  const t = useTranslations('Utils.themeSwitch');
   return (
     <>
       <button
@@ -28,7 +29,7 @@ export default function ThemeSwitch() {
         className="hidden md:block"
         style={{ padding: '4px', backgroundColor: '#aa5cf0', fontSize: '12px' }}
       >
-        {`Passer en mode ${theme === 'light' ? 'dark' : 'light'}`}
+        {`${t('passer-en-mode')} ${theme === 'light' ? t('sombre') : t('clair')}`}
       </Tooltip>
     </>
   );
