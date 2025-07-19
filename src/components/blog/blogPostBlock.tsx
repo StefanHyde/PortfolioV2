@@ -1,6 +1,9 @@
+'use client';
+
 import defaultPostImg from '@images/defaultblog.jpg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
 interface Post {
   id: string;
@@ -8,21 +11,16 @@ interface Post {
   date: string;
   excerpt: string;
   slug: string;
-  featuredImage: {
-    node: {
-      sourceUrl: string;
-    };
-  } | null;
-  tags: {
-    nodes: {
-      name: string;
-    }[];
-  };
+  featuredImage: { node: { sourceUrl: string } } | null;
+  tags: { nodes: { name: string }[] };
 }
 
 export default function BlogPostBlock({ post }: { post: Post }) {
+  const params = useParams();
+  const locale = params.locale as string;
+
   return (
-    <Link href={`/blog/posts/${post.slug}`}>
+    <Link href={`/${locale}/blog/posts/${post.slug}`}>
       <article
         key={post.id}
         className="group border-primary-500 dark:border-almost-white from-primary-50 dark:from-primary-950 relative row-span-3 flex h-80 flex-col overflow-hidden rounded-md border-2 border-solid bg-gradient-to-br to-transparent px-0 pt-0 shadow-md backdrop-blur-md duration-300 ease-in-out hover:shadow-lg md:h-96"

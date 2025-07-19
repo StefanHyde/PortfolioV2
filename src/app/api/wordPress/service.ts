@@ -2,93 +2,104 @@
  * Fetches a list of posts from the WordPress API.
  *
  * @param {number} [first=10] - The number of posts to fetch. Defaults to 10.
+ * @param {string} [language='fr'] - The language code to filter posts. Defaults to 'fr'.
  * @returns {Promise<Array<{ excerpt: string; featuredImage: { node: { sourceUrl: string } }; slug: string; title: string }>>}
  * A promise that resolves to an array of post objects, each containing the excerpt, featured image URL, slug, and title.
  */
 import { fetchWPAPI } from './base';
 
 // To gets posts
-export async function getPosts(first = 10) {
+export async function getPosts(first = 10, language = 'fr') {
   const data = await fetchWPAPI(
-    `query FetchPosts($first: Int = 10) {
-  posts(first: $first) {
-    nodes {
-      excerpt
-      featuredImage {
-        node {
-          sourceUrl
-        }
-      }
-      slug
-      title
-      date
-      tags {
+    `query FetchPosts($first: Int = 10, $language: LanguageCodeFilterEnum = FR) {
+      posts(first: $first, where: { language: $language }) {
         nodes {
-          name
+          excerpt
+          featuredImage {
+            node {
+              sourceUrl
+            }
+          }
+          slug
+          language {
+            code
+            locale
+          }
+          title
+          date
+          tags {
+            nodes {
+              name
+            }
+          }
         }
       }
-    }
-  }
-}`,
-    {
-      variables: {
-        first,
-      },
-    },
+    }`,
+    { variables: { first, language: language.toUpperCase() } },
   );
 
   return data?.posts?.nodes;
 }
 
 // To get a single post
-export async function getPostBySlug(slug: string) {
+export async function getPostBySlug(slug: string, language = 'fr') {
   const data = await fetchWPAPI(
-    `query GetPost($id: ID = "") {
-    post(id: $id, idType: SLUG) {
-      databaseId
-      content
-      featuredImage {
-        node {
-          sourceUrl
+    `query GetPost($slug: String!, $language: LanguageCodeFilterEnum!) {
+    posts(where: { language: $language, nameIn: [$slug] }, first: 1) {
+      nodes {
+        databaseId
+        content
+        featuredImage {
+          node {
+            sourceUrl
+          }
         }
-      }
-      slug
-      seo {
-        metaDesc
+        slug
+        language {
+          code
+          locale
+        }
+        translations {
+          slug
+          language {
+            code
+            locale
+          }
+        }
+        seo {
+          metaDesc
+          title
+          fullHead
+          focuskw
+          opengraphImage {
+            id
+            uri
+            link
+          }
+          opengraphDescription
+          opengraphTitle
+          opengraphUrl
+        }
         title
-        fullHead
-        focuskw
-        opengraphImage {
-          id
-          uri
-          link
+        date
+        author {
+          node {
+            name
+          }
         }
-        opengraphDescription
-        opengraphTitle
-        opengraphUrl
-      }
-      title
-      date
-      author {
-        node {
-          name
-        }
-      }
-      tags {
-        nodes {
-          name
+        tags {
+          nodes {
+            name
+          }
         }
       }
     }
   }`,
-    {
-      variables: {
-        id: slug,
-      },
-    },
+    { variables: { slug, language: language.toUpperCase() } },
   );
 
-  return data?.post;
+  // Return the first post from the nodes array, or null if no posts found
+  return data?.posts?.nodes?.[0] || null;
 }
 
 // To get comments for a post
@@ -124,11 +135,7 @@ export async function getCommentsByPostId(postId: string) {
         }
       }
     }`,
-    {
-      variables: {
-        postId,
-      },
-    },
+    { variables: { postId } },
   );
 
   return data?.post?.comments?.nodes || [];

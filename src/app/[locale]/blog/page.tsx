@@ -4,6 +4,7 @@
 import { Suspense, useEffect, useState } from 'react';
 import { getPosts } from '@api/wordPress/service';
 import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 import BlogPostBlock from '@/components/blog/blogPostBlock';
 import PageTitle from '@/components/pageTitle';
 import Pagination from '@/components/pagination';
@@ -26,6 +27,8 @@ function BlogPostList({ posts }: { posts: any[] }) {
 
 export default function BlogPage() {
   const t = useTranslations('Blog.PostsList');
+  const params = useParams();
+  const locale = params.locale as string;
   const [posts, setPosts] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -34,14 +37,14 @@ export default function BlogPage() {
   useEffect(() => {
     const fetchPosts = async () => {
       setIsLoading(true);
-      const allPosts = await getPosts(50);
+      const allPosts = await getPosts(50, locale);
       setPosts(allPosts);
       setTotalPosts(allPosts.length);
       setIsLoading(false);
     };
 
     fetchPosts();
-  }, []);
+  }, [locale]);
 
   const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
   const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
