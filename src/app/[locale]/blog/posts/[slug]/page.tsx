@@ -7,13 +7,21 @@ import BlogPostHeader from '@/components/blog/blogPostHeader';
 import Breadcrumbs from '@/components/blog/blogBreadcrumbs';
 import Comments from '@/components/blog/blogPostComments';
 
+interface PageParams {
+  slug: string;
+  locale: string;
+}
+
+interface PageProps {
+  params: Promise<PageParams>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
 // To generate the metadata from WP
 export async function generateMetadata({
   params,
-}: {
-  params: { slug: string; locale: string };
-}): Promise<Metadata> {
-  const { slug, locale } = params;
+}: PageProps): Promise<Metadata> {
+  const { slug, locale } = await params;
   const post = await getPostBySlug(slug, locale);
 
   if (!post) {
@@ -38,12 +46,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function BlogPost({
-  params,
-}: {
-  params: { slug: string; locale: string };
-}) {
-  const { slug, locale } = params;
+export default async function BlogPost({ params }: PageProps) {
+  const { slug, locale } = await params;
   const post = await getPostBySlug(slug, locale);
   const comments = await getCommentsByPostId(slug);
 
