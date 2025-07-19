@@ -103,7 +103,8 @@
     "PostsList": {
       "title": "Le blog",
       "subtitle": "Discussions, réfléxions, actualités, ou conseils. Ici on aborde divers sujets autour du développement web 🧑‍💻",
-      "derniers-articles": "Derniers articles"
+      "derniers-articles": "Derniers articles",
+      "aucun-article-trouve": "Oops ! Aucun article trouvé"
     }
   },
   "Legal": {
@@ -187,8 +188,6 @@
       "clair": "clair",
       "sombre": "sombre"
     },
-    "languageSwitcher": {
-      "changer-langue": "Changer de langue"
-    }
+    "languageSwitcher": { "changer-langue": "Changer de langue" }
   }
 }

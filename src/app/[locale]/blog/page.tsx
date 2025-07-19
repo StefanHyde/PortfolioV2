@@ -74,8 +74,12 @@ export default function BlogPage() {
                   <BlogPostBlockSkeleton key={index} />
                 ))}
             </div>
-          ) : (
+          ) : visiblePosts.length > 0 ? (
             <BlogPostList posts={visiblePosts} />
+          ) : (
+            <div className="my-20 text-center text-2xl font-semibold">
+              {t('aucun-article-trouve')}
+            </div>
           )}
           <Pagination
             currentPage={currentPage}
