@@ -13,6 +13,7 @@
     "mail": "email dev --dir src/email"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.4",
     "@next/third-parties": "15.2.3",
     "@react-email/components": "0.0.28",
     "@react-email/tailwind": "1.0.2",

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
 
 import { useTranslations } from 'next-intl';
@@ -25,20 +25,21 @@ export default function ContactForm() {
     register,
     handleSubmit,
     reset,
-
+    control,
     formState,
     formState: { errors, isValid },
     trigger,
-    setValue,
+    watch,
   } = useForm<FormInputs>({
     mode: 'onChange',
     defaultValues: { name: '', senderMail: '', message: '', rgpd: false },
   });
 
   const { isSubmitting } = formState;
+  const rgpdAccepted = watch('rgpd');
 
   const onSubmit = async (formData: FormInputs) => {
-    if (!isLoading && rgpdChecked) {
+    if (!isLoading && formData.rgpd) {
       setIsLoading(true);
       const response = await fetch('/api/sendMail', {
         method: 'POST',
@@ -71,7 +72,7 @@ export default function ContactForm() {
         <div className="">
           <h2 className="font-montserrat text-dark-800 dark:text-almost-white mb-6 text-2xl font-semibold md:text-4xl">
             {t('prenons')}{' '}
-            <span className="from-primary-500 to-secondary-500 bg-linear-to-r inline-block bg-clip-text text-6xl text-transparent md:text-7xl">
+            <span className="from-primary-500 to-secondary-500 inline-block bg-linear-to-r bg-clip-text text-6xl text-transparent md:text-7xl">
               {titleAnimationText.map((element, index) => (
                 <motion.span
                   initial={{ opacity: 0 }}
@@ -94,7 +95,7 @@ export default function ContactForm() {
               </span>
               <input
                 type="text"
-                className="border-dark-300 focus:border-primary-500 focus:outline-hidden mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500"
+                className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
                 {...register('name', {
                   required: 'Le nom est requis',
                   onChange: () => trigger('name'),
@@ -112,7 +113,7 @@ export default function ContactForm() {
               </span>
               <input
                 type="email"
-                className="border-dark-300 focus:border-primary-500 focus:outline-hidden mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500"
+                className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
                 {...register('senderMail', {
                   required: "L'email est requis",
                   pattern: {
@@ -134,7 +135,7 @@ export default function ContactForm() {
               </span>
               <textarea
                 rows={6}
-                className="border-dark-300 focus:border-primary-500 focus:outline-hidden mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500"
+                className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
                 {...register('message', {
                   required: 'Le message est requis',
                   onChange: () => trigger('message'),
@@ -153,7 +154,7 @@ export default function ContactForm() {
               </label>
               <input
                 type="text"
-                className="border-dark-300 focus:border-primary-500 focus:outline-hidden mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500"
+                className="border-dark-300 focus:border-primary-500 mt-1 block w-full rounded-md border p-2 transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
                 {...register('honeyPot')}
               />
             </div>
@@ -183,9 +184,9 @@ export default function ContactForm() {
 
             {!isLoading && (
               <button
-                disabled={!isValid || isSubmitting || !rgpdChecked}
+                disabled={!isValid || isSubmitting || !rgpdAccepted}
                 type="submit"
-                className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white ease-in-out duration-300${!isValid || isSubmitting || !rgpdChecked ? 'cursor-not-allowed opacity-50' : ''}`}
+                className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-6 flex rounded-md border-2 border-solid px-4 py-2 text-left text-sm font-light text-white ease-in-out duration-300${!isValid || isSubmitting || !rgpdAccepted ? 'cursor-not-allowed opacity-50' : ''}`}
               >
                 {t('envoyer')}
               </button>
