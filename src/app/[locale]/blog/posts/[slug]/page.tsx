@@ -78,7 +78,11 @@ export default async function BlogPost({ params }: PageProps) {
         </section>
 
         <section className="border-dark-300 mx-auto mt-12 w-full space-y-6 border-t py-6 pt-6 text-base sm:w-4/5 xl:w-3/5">
-          <Comments postSlug={slug} initialComments={comments} />
+          <Comments
+            postSlug={slug}
+            initialComments={comments}
+            locale={locale}
+          />
         </section>
       </div>
     </main>

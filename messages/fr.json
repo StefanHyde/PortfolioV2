@@ -107,7 +107,32 @@
       "aucun-article-trouve": "Oops ! Aucun article trouvé"
     },
     "breadcrumbs": { "home": "Accueil", "blog": "Blog" },
-    "postHeader": { "posté-le": "Posté le", "par": "par" }
+    "postHeader": { "posté-le": "Posté le", "par": "par" },
+    "postComments": {
+      "commentaire": "Commentaire",
+      "votre-commentaire": "Votre commentaire",
+      "votre-adresse-email": "Votre adresse email",
+      "votre-nom": "Votre nom",
+      "votre-reponse": "Votre réponse",
+      "j-accepte-les-conditions-generales-et-la-politique-de-confidentialite": "J'accepte les conditions générales et la politique de confidentialité",
+      "envoyer": "Envoyer",
+      "envoi": "Envoi",
+      "repondre": "Répondre",
+      "annuler": "Annuler",
+      "ajouter-un-commentaire": "Ajouter un commentaire",
+      "a-toi-d-ajouter-le-premier-commentaire": "A toi d'ajouter le premier commentaire !",
+      "le": "le",
+      "votre-commentaire-a-bien-ete-ajoute-il-sera-publie-apres-validation": "Votre commentaire a bien été ajouté, il sera publié après validation",
+      "une-erreur-est-survenue-lors-de-l-ajout-du-commentaire": "Une erreur est survenue lors de l'ajout du commentaire",
+      "envoi-de-la-reponse-en-cours": "Envoi de la réponse en cours...",
+      "votre-reponse-a-bien-ete-ajoutee-elle-sera-publiee-apres-validation": "Votre réponse a bien été ajoutée, elle sera publiée après validation",
+      "une-erreur-est-survenue-lors-de-l-ajout-de-la-reponse": "Une erreur est survenue lors de l'ajout de la réponse",
+      "envoi-du-commentaire-en-cours": "Envoi du commentaire en cours...",
+      "le-nom-est-obligatoire": "Le nom est obligatoire",
+      "adresse-email-invalide": "Adresse email invalide",
+      "le-commentaire-est-obligatoire": "Le commentaire est obligatoire",
+      "vous-devez-accepter-les-conditions-rgpd": "Vous devez accepter les conditions RGPD"
+    }
   },
   "Legal": {
     "title": "Mentions légales",

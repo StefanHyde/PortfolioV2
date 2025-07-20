@@ -147,9 +147,10 @@ export async function addComment(
   author: string,
   content: string,
   email: string,
+  language = 'fr',
 ) {
   // First, get the post's database ID
-  const post = await getPostBySlug(postSlug);
+  const post = await getPostBySlug(postSlug, language);
   if (!post?.databaseId) {
     throw new Error("Impossible de trouver l'ID de l'article");
   }
@@ -193,9 +194,10 @@ export async function addReply(
   author: string,
   content: string,
   email: string,
+  language = 'fr',
 ) {
   // First, get the post's database ID
-  const post = await getPostBySlug(postSlug);
+  const post = await getPostBySlug(postSlug, language);
   if (!post?.databaseId) {
     throw new Error("Impossible de trouver l'ID de l'article");
   }

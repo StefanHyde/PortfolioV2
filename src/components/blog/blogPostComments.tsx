@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { addComment, addReply } from '@/app/api/wordPress/service';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 import { HiOutlineChatBubbleOvalLeftEllipsis } from 'react-icons/hi2';
 
@@ -14,19 +15,14 @@ interface Comment {
   date: string;
   status?: string;
   parentId?: string;
-  author?: {
-    node?: {
-      name?: string;
-    };
-  } | null;
-  replies?: {
-    nodes: Comment[];
-  };
+  author?: { node?: { name?: string } } | null;
+  replies?: { nodes: Comment[] };
 }
 
 interface CommentsProps {
   postSlug: string;
   initialComments: Comment[];
+  locale: string;
 }
 
 interface CommentFormData {
@@ -40,7 +36,12 @@ interface ReplyFormData extends CommentFormData {
   parentId: string;
 }
 
-export default function Comments({ postSlug, initialComments }: CommentsProps) {
+export default function Comments({
+  postSlug,
+  initialComments,
+  locale,
+}: CommentsProps) {
+  const t = useTranslations('Blog.postComments');
   const [comments, setComments] = useState<Comment[]>(
     initialComments?.filter(Boolean) || [],
   );
@@ -53,12 +54,7 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
     reset,
     formState: { errors, isValid },
   } = useForm<CommentFormData>({
-    defaultValues: {
-      name: '',
-      email: '',
-      content: '',
-      rgpd: false,
-    },
+    defaultValues: { name: '', email: '', content: '', rgpd: false },
     mode: 'onChange',
   });
 
@@ -68,18 +64,13 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
     reset: resetReply,
     formState: { errors: replyErrors, isValid: isReplyValid },
   } = useForm<ReplyFormData>({
-    defaultValues: {
-      name: '',
-      email: '',
-      content: '',
-      rgpd: false,
-    },
+    defaultValues: { name: '', email: '', content: '', rgpd: false },
     mode: 'onChange',
   });
 
   const onSubmit = async (data: CommentFormData) => {
     setIsLoading(true);
-    const toastId = toast.loading('Envoi du commentaire en cours...', {
+    const toastId = toast.loading(t('envoi-du-commentaire-en-cours'), {
       duration: Infinity,
     });
 
@@ -89,41 +80,38 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
         data.name,
         data.content,
         data.email,
+        locale,
       );
       if (result?.success) {
         if (result.comment?.status === 'APPROVE') {
           setComments((prev) => [result.comment, ...prev]);
         }
         toast.success(
-          'Votre commentaire a bien été ajouté, il sera publié après validation',
+          t(
+            'votre-commentaire-a-bien-ete-ajoute-il-sera-publie-apres-validation',
+          ),
           {
             id: toastId,
             duration: 5000,
-            style: {
-              color: '#fff',
-              background: '#2BBB6E',
-            },
+            style: { color: '#fff', background: '#2BBB6E' },
           },
         );
         reset();
       } else {
-        toast.error("Une erreur est survenue lors de l'ajout du commentaire", {
-          id: toastId,
-          duration: 4000,
-          style: {
-            background: '#D5474C',
-            color: '#fff',
+        toast.error(
+          t('une-erreur-est-survenue-lors-de-l-ajout-du-commentaire'),
+          {
+            id: toastId,
+            duration: 4000,
+            style: { background: '#D5474C', color: '#fff' },
           },
-        });
+        );
       }
     } catch {
-      toast.error("Une erreur est survenue lors de l'ajout du commentaire", {
+      toast.error(t('une-erreur-est-survenue-lors-de-l-ajout-du-commentaire'), {
         id: toastId,
         duration: 4000,
-        style: {
-          background: '#D5474C',
-          color: '#fff',
-        },
+        style: { background: '#D5474C', color: '#fff' },
       });
     } finally {
       setIsLoading(false);
@@ -132,7 +120,7 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
 
   const onSubmitReply = async (data: ReplyFormData) => {
     setIsLoading(true);
-    const toastId = toast.loading('Envoi de la réponse en cours...', {
+    const toastId = toast.loading(t('envoi-de-la-reponse-en-cours'), {
       duration: Infinity,
     });
 
@@ -143,6 +131,7 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
         data.name,
         data.content,
         data.email,
+        locale,
       );
       if (result?.success) {
         if (result.comment?.status === 'APPROVE') {
@@ -154,10 +143,7 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
                   replies: {
                     nodes: [
                       ...(comment.replies?.nodes || []),
-                      {
-                        ...result.comment,
-                        replies: { nodes: [] },
-                      },
+                      { ...result.comment, replies: { nodes: [] } },
                     ],
                   },
                 };
@@ -167,36 +153,32 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
           );
         }
         toast.success(
-          'Votre réponse a bien été ajoutée, elle sera publiée après validation',
+          t(
+            'votre-reponse-a-bien-ete-ajoutee-elle-sera-publiee-apres-validation',
+          ),
           {
             id: toastId,
             duration: 5000,
-            style: {
-              color: '#fff',
-              background: '#2BBB6E',
-            },
+            style: { color: '#fff', background: '#2BBB6E' },
           },
         );
         resetReply();
         setReplyingTo(null);
       } else {
-        toast.error("Une erreur est survenue lors de l'ajout de la réponse", {
-          id: toastId,
-          duration: 4000,
-          style: {
-            background: '#D5474C',
-            color: '#fff',
+        toast.error(
+          t('une-erreur-est-survenue-lors-de-l-ajout-de-la-reponse'),
+          {
+            id: toastId,
+            duration: 4000,
+            style: { background: '#D5474C', color: '#fff' },
           },
-        });
+        );
       }
     } catch {
-      toast.error("Une erreur est survenue lors de l'ajout de la réponse", {
+      toast.error(t('une-erreur-est-survenue-lors-de-l-ajout-de-la-reponse'), {
         id: toastId,
         duration: 4000,
-        style: {
-          background: '#D5474C',
-          color: '#fff',
-        },
+        style: { background: '#D5474C', color: '#fff' },
       });
     } finally {
       setIsLoading(false);
@@ -218,19 +200,15 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <label className="block" htmlFor={`name-${parentId || 'main'}`}>
           <span className="text-dark-800 dark:text-almost-white text-sm">
-            Votre nom
+            {t('votre-nom')}
           </span>
           <input
             type="text"
             id={`name-${parentId || 'main'}`}
             {...(parentId
-              ? registerReply('name', {
-                  required: 'Le nom est obligatoire',
-                })
-              : register('name', {
-                  required: 'Le nom est obligatoire',
-                }))}
-            className="border-dark-300 focus:border-primary-500 text-dark-900 mt-1 block w-full rounded-md border p-1.5 text-sm transition duration-200 ease-in-out focus:ring-1 focus:shadow-md focus:ring-purple-500 focus:outline-hidden"
+              ? registerReply('name', { required: t('le-nom-est-obligatoire') })
+              : register('name', { required: t('le-nom-est-obligatoire') }))}
+            className="border-dark-300 focus:border-primary-500 text-dark-900 mt-1 block w-full rounded-md border p-1.5 text-sm transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
             disabled={isLoading}
           />
           {(parentId ? replyErrors : errors).name && (
@@ -241,7 +219,7 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
         </label>
         <label className="block" htmlFor={`email-${parentId || 'main'}`}>
           <span className="text-dark-800 dark:text-almost-white text-sm">
-            Votre adresse email
+            {t('votre-adresse-email')}
           </span>
           <div className="flex items-center gap-2">
             <div className="flex-1">
@@ -253,17 +231,17 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
                       required: "L'adresse email est obligatoire",
                       pattern: {
                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: 'Adresse email invalide',
+                        message: t('adresse-email-invalide'),
                       },
                     })
                   : register('email', {
                       required: "L'adresse email est obligatoire",
                       pattern: {
                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: 'Adresse email invalide',
+                        message: t('adresse-email-invalide'),
                       },
                     }))}
-                className="border-dark-300 focus:border-primary-500 text-dark-900 mt-1 block w-full rounded-md border p-1.5 text-sm transition duration-200 ease-in-out focus:ring-1 focus:shadow-md focus:ring-purple-500 focus:outline-hidden"
+                className="border-dark-300 focus:border-primary-500 text-dark-900 mt-1 block w-full rounded-md border p-1.5 text-sm transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
                 disabled={isLoading}
               />
               {(parentId ? replyErrors : errors).email && (
@@ -277,19 +255,19 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
       </div>
       <label className="mt-6 block" htmlFor={`comment-${parentId || 'main'}`}>
         <span className="text-dark-800 dark:text-almost-white text-sm">
-          {parentId ? 'Votre réponse' : 'Votre commentaire'}
+          {parentId ? t('votre-reponse') : t('votre-commentaire')}
         </span>
         <textarea
           id={`comment-${parentId || 'main'}`}
           rows={parentId ? 3 : 6}
           {...(parentId
             ? registerReply('content', {
-                required: 'Le commentaire est obligatoire',
+                required: t('le-commentaire-est-obligatoire'),
               })
             : register('content', {
-                required: 'Le commentaire est obligatoire',
+                required: t('le-commentaire-est-obligatoire'),
               }))}
-          className="border-dark-300 focus:border-primary-500 text-dark-900 mt-1 block w-full rounded-md border p-1.5 text-sm transition duration-200 ease-in-out focus:ring-1 focus:shadow-md focus:ring-purple-500 focus:outline-hidden"
+          className="border-dark-300 focus:border-primary-500 text-dark-900 mt-1 block w-full rounded-md border p-1.5 text-sm transition duration-200 ease-in-out focus:shadow-md focus:ring-1 focus:ring-purple-500 focus:outline-hidden"
           disabled={isLoading}
         />
         {(parentId ? replyErrors : errors).content && (
@@ -308,10 +286,10 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
           id={`rgpd-${parentId || 'main'}`}
           {...(parentId
             ? registerReply('rgpd', {
-                required: 'Vous devez accepter les conditions RGPD',
+                required: t('vous-devez-accepter-les-conditions-rgpd'),
               })
             : register('rgpd', {
-                required: 'Vous devez accepter les conditions RGPD',
+                required: t('vous-devez-accepter-les-conditions-rgpd'),
               }))}
           className="accent-primary-500 h-4 w-4"
         />
@@ -320,8 +298,9 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
           className="text-dark-900 dark:text-almost-white text-xs font-light"
         >
           <Link href="/rgpd" className="hover:underline">
-            J&apos;accepte les conditions générales et la politique de
-            confidentialité
+            {t(
+              'j-accepte-les-conditions-generales-et-la-politique-de-confidentialite',
+            )}
           </Link>
         </label>
       </div>
@@ -337,7 +316,7 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
           disabled={isLoading || !(parentId ? isReplyValid : isValid)}
           className={`submitbtn bg-primary-600 hover:bg-primary-800 to-secondary-500 border-primary-600 hover:border-primary-800 font-montserrat mt-4 flex rounded-md border-2 border-solid px-3 py-1.5 text-left text-xs font-light text-white ease-in-out duration-300${isLoading || !(parentId ? isReplyValid : isValid) ? 'cursor-not-allowed opacity-50' : ''}`}
         >
-          {isLoading ? 'Envoi...' : parentId ? 'Répondre' : 'Envoyer'}
+          {isLoading ? t('envoi') : parentId ? t('repondre') : t('envoyer')}
         </button>
       )}
     </form>
@@ -347,7 +326,8 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
     <div className="mx-auto w-full space-y-8">
       <h2 className="font-montserrat text-dark-800 dark:text-almost-white mb-6 text-xl font-semibold">
         {/* Filter comments by parentId , to avoid displaying the replies in the comments list */}
-        {comments.filter((comment) => !comment.parentId).length} Commentaire
+        {comments.filter((comment) => !comment.parentId).length}{' '}
+        {t('commentaire')}
         {comments.filter((comment) => !comment.parentId).length > 1 ? 's' : ''}
       </h2>
 
@@ -363,7 +343,7 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
                     {getAuthorName(comment)}
                   </h3>
                   <time className="text-xs font-thin text-gray-500">
-                    le {''}
+                    {t('le')} {''}
                     {new Date(comment.date).toLocaleDateString('fr-FR', {
                       year: 'numeric',
                       month: 'long',
@@ -401,7 +381,7 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
                           {getAuthorName(reply)}
                         </h3>
                         <time className="text-xs font-thin text-gray-500">
-                          le {''}
+                          {t('le')} {''}
                           {new Date(reply.date).toLocaleDateString('fr-FR', {
                             year: 'numeric',
                             month: 'long',
@@ -433,8 +413,8 @@ export default function Comments({ postSlug, initialComments }: CommentsProps) {
       {/* Formulaire d'ajout de commentaire */}
       <h2 className="font-montserrat text-dark-800 dark:text-almost-white mb-6 text-xl font-semibold">
         {comments.length > 0
-          ? 'Ajouter un commentaire'
-          : "A toi d'ajouter le premier commentaire !"}
+          ? t('ajouter-un-commentaire')
+          : t('a-toi-d-ajouter-le-premier-commentaire')}
       </h2>
       <CommentForm />
     </div>

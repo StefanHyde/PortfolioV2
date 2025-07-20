@@ -104,7 +104,32 @@
       "aucun-article-trouve": "Oops ! No article found"
     },
     "breadcrumbs": { "home": "Home", "blog": "Blog" },
-    "postHeader": { "posté-le": "Posted on", "par": "by" }
+    "postHeader": { "posté-le": "Posted on", "par": "by" },
+    "postComments": {
+      "commentaire": "Comment",
+      "votre-commentaire": "Your comment",
+      "votre-adresse-email": "Your email address",
+      "votre-nom": "Your name",
+      "votre-reponse": "Your response",
+      "j-accepte-les-conditions-generales-et-la-politique-de-confidentialite": "I accept the general conditions and the privacy policy",
+      "envoyer": "Send",
+      "envoi": "Send",
+      "repondre": "Reply",
+      "annuler": "Cancel",
+      "ajouter-un-commentaire": "Add a comment",
+      "a-toi-d-ajouter-le-premier-commentaire": "You have to add the first comment !",
+      "le": "the",
+      "votre-commentaire-a-bien-ete-ajoute-il-sera-publie-apres-validation": "Your comment has been added, it will be published after validation",
+      "une-erreur-est-survenue-lors-de-l-ajout-du-commentaire": "An error occurred while adding your comment",
+      "envoi-de-la-reponse-en-cours": "Sending the response...",
+      "envoi-du-commentaire-en-cours": "Sending the comment...",
+      "votre-reponse-a-bien-ete-ajoutee-elle-sera-publiee-apres-validation": "Your response has been added, it will be published after validation",
+      "une-erreur-est-survenue-lors-de-l-ajout-de-la-reponse": "An error occurred while adding your response",
+      "le-nom-est-obligatoire": "The name is required",
+      "adresse-email-invalide": "Invalid email address",
+      "le-commentaire-est-obligatoire": "The comment is required",
+      "vous-devez-accepter-les-conditions-rgpd": "You must accept the RGPD conditions"
+    }
   },
   "Legal": {
     "title": "Legal notice",
