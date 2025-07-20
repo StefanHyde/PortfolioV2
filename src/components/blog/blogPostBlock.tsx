@@ -4,6 +4,7 @@ import defaultPostImg from '@images/defaultblog.jpg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 interface Post {
   id: string;
@@ -18,7 +19,7 @@ interface Post {
 export default function BlogPostBlock({ post }: { post: Post }) {
   const params = useParams();
   const locale = params.locale as string;
-
+  const t = useTranslations('Blog.postBlock');
   return (
     <Link href={`/${locale}/blog/posts/${post.slug}`}>
       <article
@@ -50,8 +51,8 @@ export default function BlogPostBlock({ post }: { post: Post }) {
           <h3 className="font-montserrat group-hover:text-primary-500 flex-1 overflow-hidden text-base font-semibold text-ellipsis duration-300 ease-in-out md:text-lg">
             {post.title}
           </h3>
-          <p className="font-montserrat text-dark-800 dark:text-almost-white text-xs font-thin">{`le 
-          ${new Date(post.date).toLocaleDateString('fr-FR', {
+          <p className="font-montserrat text-dark-800 dark:text-almost-white text-xs font-thin">{`${t('le')} 
+          ${new Date(post.date).toLocaleDateString(locale, {
             month: 'long',
             day: 'numeric',
             year: 'numeric',

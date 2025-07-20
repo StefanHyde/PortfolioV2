@@ -106,6 +106,7 @@
       "derniers-articles": "Derniers articles",
       "aucun-article-trouve": "Oops ! Aucun article trouvé"
     },
+    "postBlock": { "le": "le" },
     "breadcrumbs": { "home": "Accueil", "blog": "Blog" },
     "postHeader": { "posté-le": "Posté le", "par": "par" },
     "postComments": {

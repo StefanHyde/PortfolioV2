@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 import defaultCoverImage from '@images/defaultblog.jpg';
@@ -19,6 +22,8 @@ export default function BlogPostHeader({
   coverImage,
   tags,
 }: blogPostHeaderProps) {
+  const params = useParams();
+  const locale = params.locale as string;
   const t = useTranslations('Blog.postHeader');
   return (
     <div className="relative mx-auto mt-14 flex h-auto w-full flex-col items-start">
@@ -29,7 +34,7 @@ export default function BlogPostHeader({
         </h1>
         <p className="font-montserrat text-almost-white mb-6 text-sm">
           {`${t('posté-le')} 
-          ${new Date(date).toLocaleDateString('fr-FR', {
+          ${new Date(date).toLocaleDateString(locale, {
             month: 'long',
             day: 'numeric',
             year: 'numeric',
