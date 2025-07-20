@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+
 import defaultCoverImage from '@images/defaultblog.jpg';
 
 type blogPostHeaderProps = {
@@ -7,11 +9,7 @@ type blogPostHeaderProps = {
   author: string;
   coverImage: string;
   defaultCoverImage?: string;
-  tags?: {
-    nodes: {
-      name: string;
-    }[];
-  } | null;
+  tags?: { nodes: { name: string }[] } | null;
 };
 
 export default function BlogPostHeader({
@@ -21,6 +19,7 @@ export default function BlogPostHeader({
   coverImage,
   tags,
 }: blogPostHeaderProps) {
+  const t = useTranslations('Blog.postHeader');
   return (
     <div className="relative mx-auto mt-14 flex h-auto w-full flex-col items-start">
       <div className="from-dark-950 absolute top-0 left-0 z-10 h-full w-full bg-gradient-to-t from-5% to-transparent dark:from-slate-950"></div>
@@ -29,12 +28,12 @@ export default function BlogPostHeader({
           {title}
         </h1>
         <p className="font-montserrat text-almost-white mb-6 text-sm">
-          {`Posté le 
+          {`${t('posté-le')} 
           ${new Date(date).toLocaleDateString('fr-FR', {
             month: 'long',
             day: 'numeric',
             year: 'numeric',
-          })} par ${author}`}
+          })} ${t('par')} ${author}`}
         </p>
 
         <div className="flex flex-wrap gap-2">

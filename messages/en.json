@@ -103,7 +103,8 @@
       "derniers-articles": "Latest articles",
       "aucun-article-trouve": "Oops ! No article found"
     },
-    "breadcrumbs": { "home": "Home", "blog": "Blog" }
+    "breadcrumbs": { "home": "Home", "blog": "Blog" },
+    "postHeader": { "posté-le": "Posted on", "par": "by" }
   },
   "Legal": {
     "title": "Legal notice",
