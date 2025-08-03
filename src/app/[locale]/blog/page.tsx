@@ -5,6 +5,7 @@ import { Suspense, useEffect, useState } from 'react';
 import { getPosts } from '@api/wordPress/service';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import type { Metadata } from 'next';
 import BlogPostBlock from '@/components/blog/blogPostBlock';
 import PageTitle from '@/components/pageTitle';
 import Pagination from '@/components/pagination';
@@ -24,6 +25,15 @@ function BlogPostList({ posts }: { posts: any[] }) {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: 'Développé par Stefan H - A propos',
+  description:
+    'Développeur web spécialisé dans la création de sites et d’applications web. Transformons ensemble vos idées en solutions modernes, accessibles, et inclusives.',
+  keywords:
+    'développeur web, développeur freelance, développeur strasbourg, développeur react, développeur wordpress, création site web, nextjs, react, wordpress, UX UI',
+  authors: [{ name: 'Stefan Heyd' }],
+};
 
 export default function BlogPage() {
   const t = useTranslations('Blog.PostsList');
