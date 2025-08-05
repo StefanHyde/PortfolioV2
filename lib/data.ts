@@ -1,5 +1,5 @@
 import { createElement } from 'react';
-import { SiGithub, SiLinkedin, SiX } from 'react-icons/si';
+import { SiGithub, SiLinkedin, SiX, SiMedium } from 'react-icons/si';
 
 import cuultImg from '../public/images/25h.png';
 import dhdaImg from '../public/images/dhda.png';
@@ -44,6 +44,11 @@ export const socials = [
     name: 'X',
     url: 'https://x.com/StefahnDev',
     icon: createElement(SiX),
+  },
+  {
+    name: 'Medium',
+    url: 'https://medium.com/@stephaneheyd',
+    icon: createElement(SiMedium),
   },
 ] as const;
 
