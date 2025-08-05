@@ -27,7 +27,7 @@ function BlogPostList({ posts }: { posts: any[] }) {
 }
 
 export const metadata: Metadata = {
-  title: 'Développé par Stefan H - A propos',
+  title: 'Développé par Stefan H - Blog',
   description:
     'Développeur web spécialisé dans la création de sites et d’applications web. Transformons ensemble vos idées en solutions modernes, accessibles, et inclusives.',
   keywords:
