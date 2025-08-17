@@ -102,7 +102,7 @@
   "Blog": {
     "PostsList": {
       "title": "Le blog",
-      "subtitle": "Discussions, réfléxions, actualités, ou conseils. Ici on aborde divers sujets autour du développement web 🧑‍💻",
+      "subtitle": "Discussions, réflexions, actualités, ou conseils. Ici on aborde divers sujets autour du développement web 🧑‍💻",
       "derniers-articles": "Derniers articles",
       "aucun-article-trouve": "Oops ! Aucun article trouvé"
     },
