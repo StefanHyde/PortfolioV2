@@ -85,9 +85,17 @@ export const experiencesData = [
 
 export const skillsData = [
   {
-    languages: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Twig', 'SQL'],
+    languages: ['HTML', 'CSS', 'JavaScript', 'PHP'],
     technologies: {
-      frontEnd: ['React', 'NextJS', 'Vue', 'Nuxt', 'Tailwind', 'WordPress'],
+      frontEnd: [
+        'React',
+        'NextJS',
+        'Vue',
+        'Nuxt',
+        'Tailwind',
+        'WordPress',
+        'Prestashop',
+      ],
       backEnd: ['NodeJS', 'Express', 'MySQL'],
     },
     tools: ['GitHub / GitLab', 'Git', 'Docker', 'Figma'],
